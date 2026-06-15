@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DOMAIN = "https://www.pantomime-la-france.eu"
 GA4_ID = "G-XXXXXXXXXX"                 # <-- echte GA4-ID hier eintragen
-WEB3FORMS_KEY = "DEIN-WEB3FORMS-KEY"    # <-- echten Access-Key hier eintragen
+WEB3FORMS_KEY = "e651ce96-e5a5-4088-9947-7c87d557a71e"    # Web3Forms Access-Key
 TODAY = datetime.date.today().isoformat()
 
 PHONE = "0172-1517578"
