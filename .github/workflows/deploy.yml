@@ -25,7 +25,7 @@ jobs:
           set sftp:auto-confirm yes
           set net:timeout 20
           set net:max-retries 2
-          mirror -R --verbose --delete=false \
+          mirror -R --verbose --no-delete \
             --exclude-glob .git* \
             --exclude .github/ \
             --exclude scripts/ \
