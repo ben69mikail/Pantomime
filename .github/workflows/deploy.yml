@@ -1,0 +1,33 @@
+name: Deploy to IONOS
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via SFTP to IONOS (/PantomimeNeu)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          protocol: sftp
+          server: home362401740.1and1-data.host
+          port: 22
+          username: u62702423
+          password: ${{ secrets.SFTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /PantomimeNeu/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            scripts/**
+            assets/img-src/**
+            *.md
+            **/.DS_Store
