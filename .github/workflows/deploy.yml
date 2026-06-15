@@ -13,7 +13,23 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install lftp
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp rsync
+
+      - name: Build clean publish dir
+        run: |
+          mkdir -p _site
+          rsync -a \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='.gitignore' \
+            --exclude='scripts' \
+            --exclude='assets/img-src' \
+            --exclude='deploy' \
+            --exclude='_site' \
+            --exclude='*.md' \
+            ./ _site/
+          echo "----- _site Inhalt -----"
+          ls -la _site
 
       - name: Deploy via SFTP (lftp mirror) to IONOS /PantomimeNeu
         env:
@@ -25,13 +41,10 @@ jobs:
           set sftp:auto-confirm yes
           set net:timeout 20
           set net:max-retries 2
-          mirror -R --verbose \
-            --exclude-glob .git* \
-            --exclude .github/ \
-            --exclude scripts/ \
-            --exclude assets/img-src/ \
-            --exclude deploy/ \
-            --exclude-glob *.md \
-            ./ /PantomimeNeu/
+          rm -rf /PantomimeNeu/.git
+          rm -rf /PantomimeNeu/.github
+          rm -rf /PantomimeNeu/scripts
+          rm -rf /PantomimeNeu/deploy
+          mirror -R --verbose _site/ /PantomimeNeu/
           bye
           EOF
