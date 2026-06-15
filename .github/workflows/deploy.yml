@@ -12,22 +12,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy via SFTP to IONOS (/PantomimeNeu)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          protocol: sftp
-          server: ${{ secrets.IONOS_SFTP_HOST }}
-          port: 22
-          username: ${{ secrets.IONOS_SFTP_USER }}
-          password: ${{ secrets.IONOS_SFTP_PASS }}
-          local-dir: ./
-          server-dir: /PantomimeNeu/
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            scripts/**
-            assets/img-src/**
-            *.md
-            **/.DS_Store
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Deploy via SFTP (lftp mirror) to IONOS /PantomimeNeu
+        env:
+          SFTP_HOST: ${{ secrets.IONOS_SFTP_HOST }}
+          SFTP_USER: ${{ secrets.IONOS_SFTP_USER }}
+          SFTP_PASS: ${{ secrets.IONOS_SFTP_PASS }}
+        run: |
+          lftp -u "$SFTP_USER","$SFTP_PASS" "sftp://$SFTP_HOST" <<'EOF'
+          set sftp:auto-confirm yes
+          set net:timeout 20
+          set net:max-retries 2
+          mirror -R --verbose --delete=false \
+            --exclude-glob .git* \
+            --exclude .github/ \
+            --exclude scripts/ \
+            --exclude assets/img-src/ \
+            --exclude deploy/ \
+            --exclude-glob *.md \
+            ./ /PantomimeNeu/
+          bye
+          EOF
