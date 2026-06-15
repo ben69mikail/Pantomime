@@ -16,10 +16,10 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           protocol: sftp
-          server: home362401740.1and1-data.host
+          server: ${{ secrets.IONOS_SFTP_HOST }}
           port: 22
-          username: u62702423
-          password: ${{ secrets.SFTP_PASSWORD }}
+          username: ${{ secrets.IONOS_SFTP_USER }}
+          password: ${{ secrets.IONOS_SFTP_PASS }}
           local-dir: ./
           server-dir: /PantomimeNeu/
           dangerous-clean-slate: false
