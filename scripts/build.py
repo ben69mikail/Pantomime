@@ -109,7 +109,7 @@ def head(title, desc, path, schema, og_img="/assets/img/og-pantomime.jpg"):
 <link rel="apple-touch-icon" href="/assets/img/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,800;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,500;1,6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="/assets/style.css" />
 {blocks}
 <script>
@@ -197,7 +197,7 @@ def cta_band(title="Bereit für einen Moment ohne Worte?",
              text="Erzählen Sie mir von Ihrem Anlass — ich entwickle das passende Programm. Anfragen am besten 2–4 Wochen vorab; kurzfristige Termine sind oft möglich."):
     return f"""<section class="cta-band">
   <div class="container">
-    <span class="tag">Kontakt</span>
+    <span class="kicker">Kontakt</span>
     <h2 class="reveal">{title}</h2>
     <p class="reveal">{text}</p>
     <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
@@ -366,11 +366,13 @@ built = []
 # ---- Startseite
 home_body = f"""<main>
 <section class="hero">
-  <div class="hero-media">{img('cropped-pantomime-11.webp','Pantomime LIAR beim Stadtfest in Gladbeck').replace('loading="lazy"','fetchpriority="high"')}</div>
+  <div class="hero-media" aria-hidden="true">{img('pantomime-10-scaled.webp','').replace('loading="lazy"','fetchpriority="high"').replace('alt=""','alt="" role="presentation"')}</div>
+  <div class="spotlight" aria-hidden="true"></div>
+  <div class="hero-grad" aria-hidden="true"></div>
   <div class="hero-inner">
-    <p class="hero-kicker reveal">Brillant &amp; charmant — aus Frankreich</p>
+    <p class="kicker reveal">Brillant &amp; charmant — aus Frankreich</p>
     <h1 class="reveal" style="--d:.1s">Eine Kunst, die <em>ohne Worte</em> begeistert.</h1>
-    <p class="hero-sub reveal" style="--d:.25s">Pantomime &amp; Walk Act für Hochzeit, Firmenfeier, Messe und Stadtfest — in ganz Nordrhein-Westfalen. Gestik, Mimik und Kreativität schaffen Momente, die jede Sprache verstehen.</p>
+    <p class="hero-lead reveal" style="--d:.25s">Pantomime &amp; Walk Act für Hochzeit, Firmenfeier, Messe und Stadtfest — in ganz Nordrhein-Westfalen. Gestik, Mimik und Kreativität schaffen Momente, die jede Sprache verstehen.</p>
     <div class="hero-actions reveal" style="--d:.4s">
       <a href="/kontakt/" class="btn btn-primary">Künstler anfragen</a>
       <a href="/figuren/" class="btn btn-ghost">Figuren entdecken</a>
@@ -380,14 +382,38 @@ home_body = f"""<main>
 </section>
 
 <section class="section container">
-  <p class="lead reveal">Als Künstler und Pantomime erzähle ich Geschichten und erwecke Objekte zum Leben — staunend oder lachend ziehe ich das Publikum in den Bann. <strong>Ganz ohne Worte</strong>, universell verständlich, über Sprachen und Kulturen hinweg.</p>
+  <div class="playbill">
+    <div class="reveal">
+      <p class="kicker">Künstler mit Takt und Humor</p>
+      <h2>Tauchen Sie ein in die Welt der Pantomime</h2>
+      <div class="rule"><span>❦</span></div>
+      <div class="prose" style="margin-top:1.4rem">
+        <p>Als Künstler, bzw. Pantomime erzähle ich Geschichten mit der Fähigkeit Objekte zum Leben zu erwecken und ziehe das Publikum staunend oder lachend in den Bann. Meine künstlerischen Darbietungen öffnen Türen zu einer Welt voller Emotionen, Humor und überraschender Wendungen. Dabei benötige ich keine Worte – meine Kunst ist universell verständlich und überwindet spielend Sprachbarrieren und kulturelle Unterschiede.</p>
+        <p>Ob Veranstaltungen, Firmenevents, Messen oder Stadtfeste – ich begeistere Menschen jeden Alters und verleihe jedem Anlass eine besondere Magie. Lassen Sie sich von einem Künstler verzaubern, der mit seiner Gestik, Mimik und Kreativität eine ganz eigene Sprache spricht und unvergessliche Erlebnisse schafft. Tauchen Sie mit ein in die fesselnde Welt der Pantomime!</p>
+        <p>Seit 2021 habe ich mein Programm erweitert und erwecke verschiedene <a href="/figuren/" style="color:var(--crimson);text-decoration:underline">Figuren</a> zum Leben. Mit wachsender Kreativität gestalte ich individuelle Darbietungen für spezifische Veranstaltungen. Ob humorvoll, poetisch oder interaktiv – meine Pantomime passt sich den Bedürfnissen des Publikums an und bereichert jedes Event auf einzigartige Weise.</p>
+      </div>
+    </div>
+    <div class="montage-wrap reveal" style="--d:.15s">
+      <div class="montage">
+        <figure>{img('pantomime-4-scaled.webp','Pantomime LIAR mit rotem Apfel begrüßt einen Gast beim Stadtfest')}</figure>
+        <figure>{img('pantomime-7-scaled.webp','Pantomime LIAR reicht lachend einen Apfel — Walk Act im Ruhrgebiet')}</figure>
+        <figure>{img('pantomime-6-scaled.webp','Pantomime LIAR interagiert wortlos mit einem Besucher')}</figure>
+        <figure>{img('pantomime-9-scaled.webp','Pantomime LIAR – Situationskomik mit Apfel ganz ohne Worte')}</figure>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="section--crimson"><div class="container center" style="text-align:center;max-width:50rem;margin-inline:auto">
+  <p class="kicker" style="justify-content:center">Kurz und knapp</p>
+  <p class="lead" style="max-width:none">Eine Kunstform, bei der Geschichten, Emotionen oder Situationen ausschließlich durch Körpersprache, Gestik und Mimik dargestellt werden – ganz ohne gesprochene Worte.</p>
+</div></section>
 
 <section class="section container" id="figuren">
   <div class="section-head reveal">
-    <span class="tag">Das Repertoire</span>
-    <h2>Sechs Figuren, ein Künstler</h2>
-    <p>Klassisch oder modern — für jeden Anlass die passende Erscheinung. Seit 2021 erwecke ich verschiedene Figuren zum Leben.</p>
+    <p class="kicker">Künstler-Charaktere</p>
+    <h2>Klassisch und/oder modern?</h2>
+    <p>Sechs Figuren, ein Künstler — vom stillen Pantomime bis zum lebendigen Nussknacker. Für jeden Anlass die passende Erscheinung.</p>
   </div>
   <div class="fig-grid">
 """ + "".join(
@@ -402,35 +428,38 @@ home_body = f"""<main>
 <section class="section container">
   <div class="split">
     <div class="reveal">
-      <span class="tag">Was Pantomime kann</span>
-      <h2>Klassisch und&nbsp;/&nbsp;oder modern?</h2>
-      <p class="prose" style="margin-top:1.2rem">Pantomime passt sich Ihrem Publikum an: mal poetisch und leise, mal frech und interaktiv. Ich entwickle maßgeschneiderte Programme und Charaktere — vom intimen Empfang bis zum großen Stadtfest.</p>
+      <p class="kicker">Das können Pantomime-Künstler</p>
+      <h2>Noch keine Idee für Ihr Event?</h2>
+      <div class="prose" style="margin-top:1.3rem">
+        <p>Sie haben noch keine konkrete Idee, wie Sie Ihre Gäste begeistern können? Kein Problem! Mit meiner Kreativität zaubere ich unvergessliche Erlebnisse und entwickle gemeinsam mit Ihnen traumhafte, individuell gestaltete Programme und Figuren – perfekt abgestimmt auf Ihre Veranstaltung!</p>
+      </div>
       <ul class="feature-list">
         <li>Objekte zum Leben erwecken</li>
         <li>Publikum interaktiv einbeziehen</li>
         <li>Stimmungen ohne ein einziges Wort transportieren</li>
         <li>Für jedes Alter — sprach- und kulturübergreifend</li>
       </ul>
+      <a href="/walk-act/" class="btn btn-primary" style="margin-top:1.6rem">Walk Act entdecken</a>
     </div>
-    <div class="split-media reveal">""" + img('pantomime-12-scaled.webp','Pantomime LIAR vor Saalpublikum') + """</div>
+    <div class="split-media reveal">""" + img('pantomime-ruhrgebiet-scaled.webp','Pantomime LIAR im Ruhrgebiet – Künstler mit weiß geschminktem Gesicht') + """</div>
   </div>
-  <div class="quote reveal"><blockquote>„Meine Kunst braucht keine Worte — und wird überall verstanden.“</blockquote><cite>— LIAR</cite></div>
+  <div class="quote reveal"><blockquote>„Meine Kunst braucht keine Worte — und wird überall verstanden.“</blockquote><cite>LIAR</cite></div>
 </section>
 
-<section class="section container" id="anlaesse">
-  <div class="section-head reveal"><span class="tag">Für Ihren Anlass</span><h2>Wo LIAR begeistert</h2></div>
+<section class="section section--crimson" id="anlaesse"><div class="container">
+  <div class="section-head center reveal" style="text-align:center;margin-inline:auto"><p class="kicker" style="justify-content:center">Für Ihren Anlass</p><h2>Wo LIAR begeistert</h2></div>
   """ + WARUM_GRID([
       ("Hochzeit", "Stilvolle Überraschung für den schönsten Tag."),
       ("Firmenfeier", "Ein Highlight, das im Gedächtnis bleibt."),
       ("Messe &amp; Event", "Walk Act, der Aufmerksamkeit an den Stand zieht."),
       ("Stadtfest", "Straßentheater für Publikum jeden Alters."),
   ]) + f"""
-  <div class="chips reveal" style="margin-top:2rem">{"".join(f'<span class="chip">{c}</span>' for c in CITIES)}</div>
-</section>
+  <div class="chips reveal" style="margin-top:2rem;justify-content:center">{"".join(f'<span class="chip">{c}</span>' for c in CITIES)}</div>
+</div></section>
 </main>
 """ + cta_band()
 
-built.append(page("/", "Pantomime buchen in NRW – LIAR | Künstler ohne Worte",
+built.append(page("/", "Pantomime buchen in NRW – LIAR | Walk Act & Künstler ohne Worte",
      "Pantomime &amp; Walk Act in NRW buchen: LIAR – brillant &amp; charmant im französischen Stil. Stilvolle Pantomime für Hochzeit, Firmenfeier, Messe &amp; Stadtfest. Eine Kunst, die ohne Worte begeistert.",
      home_body, [org_schema(), breadcrumb([("Start", "/")]),
                  faq_schema([("Kann man LIAR als Pantomime in NRW buchen?", "Ja. LIAR ist Pantomime-Künstler aus Gladbeck und in ganz NRW buchbar — als Pantomime, Walk Act und in verschiedenen Figuren."),
@@ -449,7 +478,7 @@ figuren_body = f"""<main>
 <section class="subhero">
   <div class="container">
     <p class="crumb"><a href="/">Start</a> → Figuren</p>
-    <span class="tag">Künstler-Charaktere</span>
+    <span class="kicker">Künstler-Charaktere</span>
     <h1>Klassisch und/oder modern?</h1>
     <p class="intro">Sechs Figuren, ein Künstler — vom stillen Pantomime bis zum lebendigen Nussknacker. Für jeden Anlass die passende Erscheinung.</p>
   </div>
@@ -471,7 +500,7 @@ for slug in FIG_ORDER:
 <section class="subhero">
   <div class="container">
     <p class="crumb"><a href="/">Start</a> → <a href="/figuren/">Figuren</a> → {f['menu']}</p>
-    <span class="tag">Figur</span>
+    <span class="kicker">Figur</span>
     <h1>{f['name']}</h1>
     <p class="intro">{f['intro']}</p>
   </div>
@@ -489,7 +518,7 @@ for slug in FIG_ORDER:
 </section>
 
 <section class="section container">
-  <div class="section-head reveal"><span class="tag">Gute Gründe</span><h2>{f['warum_title']}</h2></div>
+  <div class="section-head reveal"><span class="kicker">Gute Gründe</span><h2>{f['warum_title']}</h2></div>
   {WARUM_GRID(f['warum'])}
   <div class="split rev" style="margin-top:3rem">
     <div class="split-media wide reveal">{img(f['img2'], f['img2_alt'])}</div>
@@ -515,7 +544,7 @@ walk_body = f"""<main>
 <section class="subhero">
   <div class="container">
     <p class="crumb"><a href="/">Start</a> → Walk Act</p>
-    <span class="tag">Mobile Unterhaltung</span>
+    <span class="kicker">Mobile Unterhaltung</span>
     <h1>Walk Act in NRW buchen</h1>
     <p class="intro">Unterhaltung, die zu den Gästen kommt — als Pantomime, Nussknacker oder Weihnachtsmann mitten im Publikum.</p>
   </div>
@@ -541,7 +570,7 @@ walk_body = f"""<main>
 </section>
 
 <section class="section container">
-  <div class="section-head reveal"><span class="tag">Einsatzorte</span><h2>Wo ein Walk Act glänzt</h2></div>
+  <div class="section-head reveal"><span class="kicker">Einsatzorte</span><h2>Wo ein Walk Act glänzt</h2></div>
   {WARUM_GRID([
       ("Messe & Stand", "Zieht Aufmerksamkeit zum Messestand und bleibt im Gedächtnis."),
       ("Stadtfest & Straße", "Straßentheater, das mitten im Publikum entsteht."),
@@ -563,7 +592,7 @@ ueber_body = f"""<main>
 <section class="subhero">
   <div class="container">
     <p class="crumb"><a href="/">Start</a> → Über mich</p>
-    <span class="tag">Über mich</span>
+    <span class="kicker">Über mich</span>
     <h1>Künstler mit Takt und Humor</h1>
     <p class="intro">Mathe – Hotellerie – Skifahren – Kunst: ein ungewöhnlicher Weg zur Pantomime.</p>
   </div>
@@ -616,18 +645,18 @@ ref_body = f"""<main>
 <section class="subhero">
   <div class="container">
     <p class="crumb"><a href="/">Start</a> → Referenzen</p>
-    <span class="tag">Vertrauen &amp; Erfahrung</span>
+    <span class="kicker">Vertrauen &amp; Erfahrung</span>
     <h1>Referenzen</h1>
     <p class="intro">Über viele Jahre für Marken, Städte und Institutionen im Ruhrgebiet und darüber hinaus im Einsatz.</p>
   </div>
 </section>
 <section class="section container">
-  <div class="section-head reveal"><span class="tag">Eine Auswahl</span><h2>Für diese Auftraggeber war LIAR im Einsatz</h2></div>
+  <div class="section-head reveal"><span class="kicker">Eine Auswahl</span><h2>Für diese Auftraggeber war LIAR im Einsatz</h2></div>
   <div class="ref-grid">{"".join(f"<span class='reveal'>{r}</span>" for r in REFS)}</div>
   <p class="form-note reveal" style="margin-top:1rem">… und viele andere mehr.</p>
 </section>
 <section class="section container">
-  <div class="section-head reveal"><span class="tag">Eindrücke</span><h2>Momente aus der Praxis</h2></div>
+  <div class="section-head reveal"><span class="kicker">Eindrücke</span><h2>Momente aus der Praxis</h2></div>
   <div class="gallery">{"".join(img(n, a) for n, a in GALLERY)}</div>
 </section>
 </main>
@@ -641,7 +670,7 @@ kontakt_body = f"""<main>
 <section class="subhero">
   <div class="container">
     <p class="crumb"><a href="/">Start</a> → Kontakt</p>
-    <span class="tag">Noch Fragen?</span>
+    <span class="kicker">Noch Fragen?</span>
     <h1>Fragen Sie einfach an</h1>
     <p class="intro">Ganz unverbindlich. Je mehr Informationen ich erhalte, desto besser kann ich Ihr Angebot machen.</p>
   </div>
@@ -697,7 +726,7 @@ built.append(page("/kontakt/", "Kontakt – LIAR Pantomime buchen | Unverbindlic
 # ---- Impressum
 impressum_body = f"""<main>
 <section class="subhero"><div class="container">
-  <p class="crumb"><a href="/">Start</a> → Impressum</p><span class="tag">Rechtliches</span><h1>Impressum</h1>
+  <p class="crumb"><a href="/">Start</a> → Impressum</p><span class="kicker">Rechtliches</span><h1>Impressum</h1>
 </div></section>
 <section class="section container"><div class="prose reveal" style="max-width:62ch">
   <h3>Betreiber der Website</h3>
@@ -724,7 +753,7 @@ built.append(page("/impressum/", "Impressum – LIAR Pantomime",
 # ---- Datenschutz
 datenschutz_body = f"""<main>
 <section class="subhero"><div class="container">
-  <p class="crumb"><a href="/">Start</a> → Datenschutz</p><span class="tag">Rechtliches</span><h1>Datenschutzerklärung</h1>
+  <p class="crumb"><a href="/">Start</a> → Datenschutz</p><span class="kicker">Rechtliches</span><h1>Datenschutzerklärung</h1>
 </div></section>
 <section class="section container"><div class="prose reveal" style="max-width:62ch">
   <h3>1. Verantwortlicher</h3>
@@ -764,7 +793,7 @@ built.append(page("/datenschutz/", "Datenschutzerklärung – LIAR Pantomime",
 # ---- 404
 nf_body = """<main>
 <section class="subhero" style="min-height:60vh;display:flex;align-items:center"><div class="container">
-  <span class="tag">Fehler 404</span>
+  <span class="kicker">Fehler 404</span>
   <h1>Diese Seite gibt es nicht — oder sie schweigt.</h1>
   <p class="intro">Wie ein Pantomime: keine Worte. Kehren Sie zurück zur Startseite.</p>
   <a href="/" class="btn btn-primary" style="margin-top:2rem">Zur Startseite</a>
