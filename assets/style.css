@@ -107,23 +107,21 @@ main,.site-header,.site-footer{position:relative;z-index:var(--z-base)}
   -webkit-mask:radial-gradient(14px 26px at 50% 0,#000 98%,transparent) repeat-x;mask:radial-gradient(14px 26px at 50% 0,#000 98%,transparent) repeat-x;
   -webkit-mask-size:28px 26px;mask-size:28px 26px;opacity:.9}
 
-/* ============ Hero (HELL, Split: Text + gerahmtes Foto) ============ */
-.hero{position:relative;background:
-    radial-gradient(120% 80% at 80% 10%,rgba(184,134,43,.12),transparent 55%),
-    linear-gradient(180deg,var(--cream),var(--paper));
-  padding:8.5rem var(--pad) 4.5rem;overflow:hidden}
-.hero-inner{max-width:var(--maxw);margin-inline:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
-@media (max-width:900px){.hero-inner{grid-template-columns:1fr;gap:2.5rem}}
-.hero h1{max-width:14ch;margin-bottom:1.3rem}
+/* ============ Hero (HELL mit durchscheinendem Hintergrundbild) ============ */
+.hero{position:relative;min-height:92svh;display:flex;align-items:center;
+  padding:9rem var(--pad) 4.5rem;overflow:hidden;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2;opacity:.3}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 28%;filter:grayscale(.3) contrast(1.04)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(98deg,rgba(250,243,228,.95) 0%,rgba(248,240,221,.88) 42%,rgba(248,240,221,.5) 72%,rgba(248,240,221,.22) 100%),
+  linear-gradient(180deg,rgba(250,243,228,.55),transparent 26%,transparent 72%,rgba(248,240,221,.55))}
+@media (max-width:760px){.hero::after{background:linear-gradient(180deg,rgba(250,243,228,.9),rgba(248,240,221,.86))}}
+.hero-inner{position:relative;z-index:1;max-width:var(--maxw);margin-inline:auto;width:100%}
+.hero h1{max-width:15ch;margin-bottom:1.3rem}
 .hero h1 em{font-style:italic;color:var(--crimson)}
 .hero-lead{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--ink-soft);max-width:46ch;margin-bottom:2.1rem;line-height:1.7}
 .hero-actions{display:flex;flex-wrap:wrap;gap:1rem}
 .hero-scroll{margin-top:2.6rem;font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--gold-deep)}
-.hero-figure{position:relative;justify-self:center;max-width:440px;width:100%}
-.hero-figure img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px;box-shadow:var(--shadow-frame);filter:grayscale(.15) contrast(1.04)}
-.hero-figure::before{content:"";position:absolute;inset:-14px;border:2px solid var(--gold);border-radius:6px;z-index:-1;transform:rotate(-2deg)}
-.hero-figure::after{content:"❦";position:absolute;bottom:-18px;right:-10px;width:46px;height:46px;display:grid;place-items:center;
-  background:var(--crimson);color:var(--gold-2);font-family:var(--display);border-radius:50%;box-shadow:var(--shadow)}
 
 /* ============ Buttons ============ */
 .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--body);font-weight:700;font-size:.92rem;letter-spacing:.03em;
@@ -168,7 +166,7 @@ main,.site-header,.site-footer{position:relative;z-index:var(--z-base)}
 .montage img{width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
 .montage figure:hover img{transform:scale(1.05)}
 .montage-wrap{position:relative;padding-bottom:1.5rem}
-.montage-wrap::after{content:"❦ Walk Act in NRW ❦";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+.montage-wrap::after{content:"❦ LIAR ❦";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
   background:var(--crimson);color:var(--gold-2);font-family:var(--display);font-size:.74rem;letter-spacing:.14em;
   padding:.3rem 1rem;border-radius:2px;box-shadow:var(--shadow);white-space:nowrap}
 

@@ -367,18 +367,15 @@ built = []
 home_body = f"""<main>
 <section class="hero">
   <div class="valance" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true">{img('cropped-pantomime-11.webp','').replace('loading="lazy"','fetchpriority="high"').replace('alt=""','alt="" role="presentation"')}</div>
   <div class="hero-inner">
-    <div>
-      <p class="kicker reveal">Brillant &amp; charmant — aus Frankreich</p>
-      <h1 class="reveal" style="--d:.1s">Eine Kunst, die <em>ohne Worte</em> begeistert.</h1>
-      <p class="hero-lead reveal" style="--d:.25s">Pantomime &amp; Walk Act für Hochzeit, Firmenfeier, Messe und Stadtfest — in ganz Nordrhein-Westfalen. Gestik, Mimik und Kreativität schaffen Momente, die jede Sprache verstehen.</p>
-      <div class="hero-actions reveal" style="--d:.4s">
-        <a href="/kontakt/" class="btn btn-primary">Künstler anfragen</a>
-        <a href="/figuren/" class="btn btn-ghost">Figuren entdecken</a>
-      </div>
-      <p class="hero-scroll reveal" style="--d:.6s">… leise weiter ↓</p>
+    <p class="kicker reveal">Brillant &amp; charmant — aus Frankreich</p>
+    <h1 class="reveal" style="--d:.1s">Eine Kunst, die <em>ohne Worte</em> begeistert.</h1>
+    <p class="hero-lead reveal" style="--d:.25s">Pantomime &amp; Walk Act für Hochzeit, Firmenfeier, Messe und Stadtfest — in ganz Nordrhein-Westfalen. Gestik, Mimik und Kreativität schaffen Momente, die jede Sprache verstehen.</p>
+    <div class="hero-actions reveal" style="--d:.4s">
+      <a href="/kontakt/" class="btn btn-primary">Künstler anfragen</a>
+      <a href="/figuren/" class="btn btn-ghost">Figuren entdecken</a>
     </div>
-    <figure class="hero-figure reveal" style="--d:.2s">{img('pantomime-nrw.webp','Pantomime LIAR – Künstler mit weiß geschminktem Gesicht und Baskenmütze').replace('loading="lazy"','fetchpriority="high"')}</figure>
   </div>
 </section>
 
