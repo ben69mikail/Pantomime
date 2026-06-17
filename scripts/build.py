@@ -5,10 +5,17 @@ Statischer Seiten-Generator fuer LIAR Pantomime (www.pantomime-la-france.eu).
 DRY: gemeinsamer Head/Header/Footer + pro Seite Inhalt/Meta/Schema.
 Inhalte ausschliesslich aus INHALTE-VERIFIZIERT.md (umformuliert, nichts erfunden).
 """
-import json, os, datetime
+import json, os, datetime, hashlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+
+def _ver(rel):
+    """Kurzer Inhalts-Hash fuer Cache-Busting (CSS/JS)."""
+    p = ROOT / rel
+    return hashlib.md5(p.read_bytes()).hexdigest()[:8] if p.exists() else "1"
+CSS_VER = _ver("assets/style.css")
+JS_VER = _ver("assets/app.js")
 DOMAIN = "https://www.pantomime-la-france.eu"
 GA4_ID = "G-PQ5XK66N5M"                 # GA4-Property "Pantomime La France"
 WEB3FORMS_KEY = "e651ce96-e5a5-4088-9947-7c87d557a71e"    # Web3Forms Access-Key
@@ -110,7 +117,7 @@ def head(title, desc, path, schema, og_img="/assets/img/og-pantomime.jpg"):
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,500;1,6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="/assets/style.css" />
+<link rel="stylesheet" href="/assets/style.css?v={CSS_VER}" />
 {blocks}
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -172,14 +179,14 @@ FOOTER = f"""<footer class="site-footer">
 </footer>
 """
 
-COOKIE = """<div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie-Hinweis" hidden>
+COOKIE = f"""<div class="cookie" id="cookie" role="dialog" aria-live="polite" aria-label="Cookie-Hinweis" hidden>
   <p>Diese Seite nutzt Cookies nur für anonyme Statistik (Google Analytics), um das Angebot zu verbessern. Das Tracking startet erst nach Ihrer Zustimmung. Mehr in der <a href="/datenschutz/">Datenschutzerklärung</a>.</p>
   <div class="cookie-actions">
     <button class="btn btn-ghost btn-sm" id="cookieDecline">Ablehnen</button>
     <button class="btn btn-primary btn-sm" id="cookieAccept">Zustimmen</button>
   </div>
 </div>
-<script src="/assets/app.js" defer></script>
+<script src="/assets/app.js?v={JS_VER}" defer></script>
 </body>
 </html>"""
 
