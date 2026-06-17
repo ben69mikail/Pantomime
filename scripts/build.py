@@ -165,6 +165,12 @@ def header(active):
 </header>
 """
 
+def subimg(name, pos="50% 28%"):
+    """Durchscheinendes Hero-Hintergrundbild fuer Unterseiten (wie Startseite)."""
+    return ('<div class="valance" aria-hidden="true"></div>'
+            f'<div class="hero-bg" aria-hidden="true"><img src="/assets/img/{name}" alt="" '
+            f'role="presentation" loading="eager" decoding="async" style="object-position:{pos}" /></div>')
+
 FOOTER = f"""<footer class="site-footer">
   <div class="container footer-grid">
     <div>
@@ -500,7 +506,6 @@ fig_cards = "".join(
 figuren_body = f"""<main>
 <section class="subhero">
   <div class="container">
-    <p class="crumb"><a href="/">Start</a> → Figuren</p>
     <span class="kicker">Künstler-Charaktere</span>
     <h1>Klassisch und/oder modern?</h1>
     <p class="intro">Sechs Figuren, ein Künstler — vom stillen Pantomime bis zum lebendigen Nussknacker. Für jeden Anlass die passende Erscheinung.</p>
@@ -517,12 +522,20 @@ built.append(page("/figuren/", "Figuren & Charaktere – LIAR Pantomime | Pantom
      figuren_body, [breadcrumb([("Start", "/"), ("Figuren", "/figuren/")])], active="/figuren/"))
 
 # ---- Figuren-Detailseiten
+HEROIMG = {
+  "der-pantomime-in-nrw": ("pantomime-nrw.webp", "50% 16%"),
+  "der-zauberer":         ("zauberer.webp", "50% 40%"),
+  "der-clown":            ("20170718-090815.webp", "50% 26%"),
+  "der-crazy-kellner":    ("20230623-195739-scaled.webp", "50% 30%"),
+  "der-nussknacker":      ("nussknacker-scaled.webp", "50% 22%"),
+  "der-weihnachtsmann":   ("img-20170624-wa0010-1024x768.webp", "50% 32%"),
+}
 for slug in FIG_ORDER:
     f = FIGUREN[slug]
     body = f"""<main>
-<section class="subhero">
+<section class="subhero subhero--img">
+  {subimg(*HEROIMG[slug])}
   <div class="container">
-    <p class="crumb"><a href="/">Start</a> → <a href="/figuren/">Figuren</a> → {f['menu']}</p>
     <span class="kicker">Figur</span>
     <h1>{f['name']}</h1>
     <p class="intro">{f['intro']}</p>
@@ -564,9 +577,9 @@ for slug in FIG_ORDER:
 
 # ---- Walk Act
 walk_body = f"""<main>
-<section class="subhero">
+<section class="subhero subhero--img">
+  {subimg('pantomime-5.webp', '50% 22%')}
   <div class="container">
-    <p class="crumb"><a href="/">Start</a> → Walk Act</p>
     <span class="kicker">Mobile Unterhaltung</span>
     <h1>Walk Act in NRW buchen</h1>
     <p class="intro">Unterhaltung, die zu den Gästen kommt — als Pantomime, Nussknacker oder Weihnachtsmann mitten im Publikum.</p>
@@ -612,9 +625,9 @@ built.append(page("/walk-act/", "Walk Act in NRW buchen – LIAR | Pantomime & m
 
 # ---- Über mich
 ueber_body = f"""<main>
-<section class="subhero">
+<section class="subhero subhero--img">
+  {subimg('pantomime-3-scaled.webp', '50% 24%')}
   <div class="container">
-    <p class="crumb"><a href="/">Start</a> → Über mich</p>
     <span class="kicker">Über mich</span>
     <h1>Künstler mit Takt und Humor</h1>
     <p class="intro">Mathe – Hotellerie – Skifahren – Kunst: ein ungewöhnlicher Weg zur Pantomime.</p>
@@ -665,9 +678,9 @@ GALLERY = [("cropped-pantomime-11.webp", "Pantomime LIAR beim Stadtfest in Gladb
            ("img-20170624-wa0010-1024x768.webp", "LIAR als Weihnachtsmann"),
            ("verrueckter-kellner.webp", "Verrückter Kellner LIAR am Tisch")]
 ref_body = f"""<main>
-<section class="subhero">
+<section class="subhero subhero--img">
+  {subimg('pantomime-buchen-scaled.webp', '50% 18%')}
   <div class="container">
-    <p class="crumb"><a href="/">Start</a> → Referenzen</p>
     <span class="kicker">Vertrauen &amp; Erfahrung</span>
     <h1>Referenzen</h1>
     <p class="intro">Über viele Jahre für Marken, Städte und Institutionen im Ruhrgebiet und darüber hinaus im Einsatz.</p>
@@ -690,9 +703,9 @@ built.append(page("/referenzen/", "Referenzen – LIAR Pantomime | OPEL, IKEA, M
 
 # ---- Kontakt
 kontakt_body = f"""<main>
-<section class="subhero">
+<section class="subhero subhero--img">
+  {subimg('pantomime-1.webp', '50% 22%')}
   <div class="container">
-    <p class="crumb"><a href="/">Start</a> → Kontakt</p>
     <span class="kicker">Noch Fragen?</span>
     <h1>Fragen Sie einfach an</h1>
     <p class="intro">Ganz unverbindlich. Je mehr Informationen ich erhalte, desto besser kann ich Ihr Angebot machen.</p>
@@ -748,8 +761,8 @@ built.append(page("/kontakt/", "Kontakt – LIAR Pantomime buchen | Unverbindlic
 
 # ---- Impressum
 impressum_body = f"""<main>
-<section class="subhero"><div class="container">
-  <p class="crumb"><a href="/">Start</a> → Impressum</p><span class="kicker">Rechtliches</span><h1>Impressum</h1>
+<section class="subhero subhero--img">{subimg('pantomime-2.webp', '50% 22%')}<div class="container">
+  <span class="kicker">Rechtliches</span><h1>Impressum</h1>
 </div></section>
 <section class="section container"><div class="prose reveal" style="max-width:62ch">
   <h3>Betreiber der Website</h3>
@@ -775,8 +788,8 @@ built.append(page("/impressum/", "Impressum – LIAR Pantomime",
 
 # ---- Datenschutz
 datenschutz_body = f"""<main>
-<section class="subhero"><div class="container">
-  <p class="crumb"><a href="/">Start</a> → Datenschutz</p><span class="kicker">Rechtliches</span><h1>Datenschutzerklärung</h1>
+<section class="subhero subhero--img">{subimg('pantomime-10-scaled.webp', '50% 26%')}<div class="container">
+  <span class="kicker">Rechtliches</span><h1>Datenschutzerklärung</h1>
 </div></section>
 <section class="section container"><div class="prose reveal" style="max-width:62ch">
   <h3>1. Verantwortlicher</h3>
