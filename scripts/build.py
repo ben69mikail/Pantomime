@@ -135,15 +135,33 @@ def header(active):
     for label, url in NAV:
         cls = ' aria-current="page"' if url == active else ""
         links += f'<a href="{url}"{cls}>{label}</a>'
+    phone_svg = ('<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" '
+                 'stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+                 '<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 '
+                 '19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11'
+                 'L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>')
+    wa_svg = ('<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">'
+              '<path d="M17.47 14.38c-.3-.15-1.74-.86-2-.96-.27-.1-.46-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.64.07'
+              '-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.64-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.18.2-.3.3-.5'
+              '.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5-.17 0-.37-.02-.56-.02-.2 0-.5.07-.77.37'
+              '-.26.3-1 .98-1 2.38 0 1.4 1.02 2.76 1.17 2.95.15.2 2.01 3.07 4.87 4.3.68.3 1.21.47 1.62.6.68.22 1.3.18 1.79.11'
+              '.55-.08 1.74-.71 1.98-1.4.24-.68.24-1.27.17-1.4-.07-.13-.27-.2-.56-.35zM12 2C6.48 2 2 6.48 2 12c0 1.77.46 3.45'
+              ' 1.27 4.91L2 22l5.25-1.38A9.96 9.96 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>')
     return f"""<header class="site-header">
-  <a href="/" class="brand" aria-label="LIAR Pantomime – Startseite">
-    <img src="/assets/img/logo.png" alt="LIAR Pantomime Logo" width="120" height="94" />
-  </a>
-  <nav class="site-nav" aria-label="Hauptnavigation">
-    {links}
-    <a href="/kontakt/" class="nav-cta">Anfragen</a>
-  </nav>
-  <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="header-left">
+    <a href="/" class="brand" aria-label="LIAR Pantomime – Startseite">
+      <img src="/assets/img/logo.png" alt="LIAR Pantomime Logo" width="120" height="94" />
+    </a>
+    <a class="header-tel" href="tel:{PHONE_INTL}" aria-label="Anrufen: {PHONE}">{phone_svg}<span>{PHONE}</span></a>
+  </div>
+  <div class="header-right">
+    <nav class="site-nav" aria-label="Hauptnavigation">
+      {links}
+      <a href="/kontakt/" class="nav-cta">Anfragen</a>
+    </nav>
+    <a class="wa-btn" href="https://wa.me/491721517578" target="_blank" rel="noopener" aria-label="WhatsApp-Nachricht an LIAR senden">{wa_svg}</a>
+    <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
 </header>
 """
 

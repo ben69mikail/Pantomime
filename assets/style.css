@@ -77,6 +77,14 @@ main,.site-header,.site-footer{position:relative;z-index:var(--z-base)}
 .brand{display:flex;align-items:center;gap:.6rem}
 .brand img{height:60px;width:auto;transition:height .4s var(--ease)}
 .site-header.scrolled .brand img{height:48px}
+.header-left{display:flex;align-items:center;gap:clamp(.55rem,2vw,1.35rem)}
+.header-right{display:flex;align-items:center;gap:1.2rem}
+.header-tel{display:inline-flex;align-items:center;gap:.4rem;font-weight:700;font-size:.95rem;color:var(--crimson);white-space:nowrap;transition:color .3s}
+.header-tel svg{color:var(--gold-deep);flex:none}
+.header-tel:hover{color:var(--crimson-2)}.header-tel:hover svg{color:var(--gold)}
+.wa-btn{display:none;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;
+  background:#25d366;color:#fff;flex:none;box-shadow:0 6px 16px -7px rgba(37,211,102,.8);transition:transform .25s var(--ease),background .25s}
+.wa-btn:hover{transform:translateY(-2px);background:#1fae55}
 
 .site-nav{display:flex;align-items:center;gap:2rem}
 .site-nav a{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--ink);position:relative;padding:.3rem 0;transition:color .3s}
@@ -99,7 +107,14 @@ main,.site-header,.site-footer{position:relative;z-index:var(--z-base)}
   .site-nav.open{transform:none}
   .site-nav a{color:var(--cream);font-size:1.4rem;letter-spacing:.05em}
   .site-nav .nav-cta{color:var(--gold-2)!important;border-color:var(--gold-2)}
+  .wa-btn{display:inline-flex}
+  .brand img{height:44px}
+  .site-header.scrolled .brand img{height:40px}
+  .header-tel{font-size:.82rem;gap:.32rem}
+  .header-left{gap:.5rem}
+  .header-right{gap:.7rem}
 }
+@media (max-width:400px){.header-tel{font-size:.76rem}.wa-btn{width:38px;height:38px}.header-right{gap:.55rem}}
 
 /* ============ Gold-Vorhang-Valance (oben) ============ */
 .valance{position:absolute;top:0;left:0;right:0;height:26px;z-index:var(--z-curtain);pointer-events:none;
@@ -113,9 +128,9 @@ main,.site-header,.site-footer{position:relative;z-index:var(--z-base)}
 .hero-bg{position:absolute;inset:0;z-index:-2;opacity:.75}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;filter:grayscale(.3) contrast(1.04)}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
-  linear-gradient(98deg,rgba(250,243,228,.82) 0%,rgba(248,240,221,.75) 42%,rgba(248,240,221,.37) 72%,rgba(248,240,221,.09) 100%),
-  linear-gradient(180deg,rgba(250,243,228,.42),transparent 26%,transparent 72%,rgba(248,240,221,.42))}
-@media (max-width:760px){.hero::after{background:linear-gradient(180deg,rgba(250,243,228,.77),rgba(248,240,221,.73))}}
+  linear-gradient(98deg,rgba(250,243,228,.72) 0%,rgba(248,240,221,.65) 42%,rgba(248,240,221,.27) 72%,rgba(248,240,221,0) 100%),
+  linear-gradient(180deg,rgba(250,243,228,.32),transparent 26%,transparent 72%,rgba(248,240,221,.32))}
+@media (max-width:760px){.hero::after{background:linear-gradient(180deg,rgba(250,243,228,.67),rgba(248,240,221,.63))}}
 .hero-inner{position:relative;z-index:1;max-width:var(--maxw);margin-inline:auto;width:100%}
 .hero h1{max-width:15ch;margin-bottom:1.3rem;text-shadow:0 1px 16px rgba(250,243,228,.55)}
 .hero h1 em{font-style:italic;color:var(--crimson)}
