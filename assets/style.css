@@ -70,7 +70,7 @@ main,.site-header,.site-footer{position:relative;z-index:var(--z-base)}
 /* ============ Header ============ */
 .site-header{position:fixed;top:0;left:0;right:0;z-index:var(--z-header);
   display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:.6rem var(--pad);
-  background:rgba(253,248,236,.86);backdrop-filter:blur(10px) saturate(1.05);
+  background:rgba(253,248,236,.96);
   box-shadow:0 1px 0 rgba(140,19,38,.12);transition:padding .4s var(--ease),box-shadow .4s,background .4s}
 .site-header.scrolled{padding-block:.35rem;background:rgba(253,248,236,.95);
   box-shadow:0 1px 0 rgba(140,19,38,.16),0 12px 30px -24px rgba(77,8,19,.5)}
@@ -111,8 +111,9 @@ main,.site-header,.site-footer{position:relative;z-index:var(--z-base)}
   .brand img{height:44px}
   .site-header.scrolled .brand img{height:40px}
   .header-tel{font-size:.82rem;gap:.32rem}
-  .header-left{gap:.5rem}
-  .header-right{gap:.7rem}
+  /* Logo, Telefon, WhatsApp, Menue gleichmaessig verteilen */
+  .header-left,.header-right{display:contents}
+  .site-header{gap:.5rem}
 }
 @media (max-width:400px){.header-tel{font-size:.76rem}.wa-btn{width:38px;height:38px}.header-right{gap:.55rem}}
 
