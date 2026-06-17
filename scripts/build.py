@@ -366,18 +366,19 @@ built = []
 # ---- Startseite
 home_body = f"""<main>
 <section class="hero">
-  <div class="hero-media" aria-hidden="true">{img('pantomime-10-scaled.webp','').replace('loading="lazy"','fetchpriority="high"').replace('alt=""','alt="" role="presentation"')}</div>
-  <div class="spotlight" aria-hidden="true"></div>
-  <div class="hero-grad" aria-hidden="true"></div>
+  <div class="valance" aria-hidden="true"></div>
   <div class="hero-inner">
-    <p class="kicker reveal">Brillant &amp; charmant — aus Frankreich</p>
-    <h1 class="reveal" style="--d:.1s">Eine Kunst, die <em>ohne Worte</em> begeistert.</h1>
-    <p class="hero-lead reveal" style="--d:.25s">Pantomime &amp; Walk Act für Hochzeit, Firmenfeier, Messe und Stadtfest — in ganz Nordrhein-Westfalen. Gestik, Mimik und Kreativität schaffen Momente, die jede Sprache verstehen.</p>
-    <div class="hero-actions reveal" style="--d:.4s">
-      <a href="/kontakt/" class="btn btn-primary">Künstler anfragen</a>
-      <a href="/figuren/" class="btn btn-ghost">Figuren entdecken</a>
+    <div>
+      <p class="kicker reveal">Brillant &amp; charmant — aus Frankreich</p>
+      <h1 class="reveal" style="--d:.1s">Eine Kunst, die <em>ohne Worte</em> begeistert.</h1>
+      <p class="hero-lead reveal" style="--d:.25s">Pantomime &amp; Walk Act für Hochzeit, Firmenfeier, Messe und Stadtfest — in ganz Nordrhein-Westfalen. Gestik, Mimik und Kreativität schaffen Momente, die jede Sprache verstehen.</p>
+      <div class="hero-actions reveal" style="--d:.4s">
+        <a href="/kontakt/" class="btn btn-primary">Künstler anfragen</a>
+        <a href="/figuren/" class="btn btn-ghost">Figuren entdecken</a>
+      </div>
+      <p class="hero-scroll reveal" style="--d:.6s">… leise weiter ↓</p>
     </div>
-    <p class="hero-scroll reveal" style="--d:.6s">… leise weiter ↓</p>
+    <figure class="hero-figure reveal" style="--d:.2s">{img('pantomime-nrw.webp','Pantomime LIAR – Künstler mit weiß geschminktem Gesicht und Baskenmütze').replace('loading="lazy"','fetchpriority="high"')}</figure>
   </div>
 </section>
 
@@ -446,7 +447,7 @@ home_body = f"""<main>
   <div class="quote reveal"><blockquote>„Meine Kunst braucht keine Worte — und wird überall verstanden.“</blockquote><cite>LIAR</cite></div>
 </section>
 
-<section class="section section--crimson" id="anlaesse"><div class="container">
+<section class="section section--paper2" id="anlaesse"><div class="container">
   <div class="section-head center reveal" style="text-align:center;margin-inline:auto"><p class="kicker" style="justify-content:center">Für Ihren Anlass</p><h2>Wo LIAR begeistert</h2></div>
   """ + WARUM_GRID([
       ("Hochzeit", "Stilvolle Überraschung für den schönsten Tag."),
