@@ -2,17 +2,18 @@
   "plan_zyklus_start": "2026-06-18",
   "aktueller_plan_tag": 1,
   "letzter_lauf": "2026-06-18",
+  "WICHTIG_naechster_lauf": "build.py auf main hat NOCH die ALTEN langen Titles (Start/Figuren/Walk-Act). Die fixierten kurzen Titles liegen nur in den committeten HTML-Dateien. Bevor build.py das naechste Mal ausgefuehrt wird, MUSS build.py zuerst auf die 3 kurzen Titles synchronisiert werden (Zeilen ~491/520/619), sonst werden die HTML-Titles ueberschrieben/regrediert. Heute nicht committet wegen 2-Commit-Limit.",
   "erledigte_schritte": [
     {
       "tag": 1,
       "datum": "2026-06-18",
       "schritt": "Title-Tags aller 15 Seiten auf 50-60 Zeichen + Keyword vorn",
-      "ergebnis": "3 zu lange Titles gekuerzt (Start 63->52, Figuren 66->55, Walk-Act 63->51). Restliche 12 Seiten OK (Figuren-Unterseiten 52-58, Legal/404 bewusst kurz). Build mit Python 3.12 regeneriert + HTML validiert.",
-      "commits": ["SEO: Title-Tags Start/Figuren/Walk-Act auf <=60 Zeichen gekuerzt"]
+      "ergebnis": "3 zu lange Titles gekuerzt (Start 63->52, Figuren 66->55, Walk-Act 63->51). Restliche 12 Seiten OK (Figuren-Unterseiten 52-58, Legal/404 bewusst kurz). Build mit Python 3.12 regeneriert + HTML validiert. HTML committet (215dab6); build.py-Sync offen.",
+      "commits": ["SEO: Title-Tags Start/Figuren/Walk-Act <=60 Zeichen (HTML)", "SEO: State Tag 1"]
     }
   ],
   "naechster_plan_tag": 2,
-  "naechster_schritt": "Tag 2: Meta-Descriptions aller Seiten auf 120-160 Zeichen + Keyword natuerlich pruefen/fixen.",
+  "naechster_schritt": "ZUERST build.py-Titles auf main synchronisieren (Regressionsschutz), DANN Tag 2: Meta-Descriptions aller Seiten auf 120-160 Zeichen + Keyword natuerlich pruefen/fixen.",
   "offene_vorschlaege": [],
   "gsc_snapshots": [
     {
