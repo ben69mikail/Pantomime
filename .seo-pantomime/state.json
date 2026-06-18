@@ -1,0 +1,35 @@
+{
+  "plan_zyklus_start": "2026-06-18",
+  "aktueller_plan_tag": 1,
+  "letzter_lauf": "2026-06-18",
+  "erledigte_schritte": [
+    {
+      "tag": 1,
+      "datum": "2026-06-18",
+      "schritt": "Title-Tags aller 15 Seiten auf 50-60 Zeichen + Keyword vorn",
+      "ergebnis": "3 zu lange Titles gekuerzt (Start 63->52, Figuren 66->55, Walk-Act 63->51). Restliche 12 Seiten OK (Figuren-Unterseiten 52-58, Legal/404 bewusst kurz). Build mit Python 3.12 regeneriert + HTML validiert.",
+      "commits": ["SEO: Title-Tags Start/Figuren/Walk-Act auf <=60 Zeichen gekuerzt"]
+    }
+  ],
+  "naechster_plan_tag": 2,
+  "naechster_schritt": "Tag 2: Meta-Descriptions aller Seiten auf 120-160 Zeichen + Keyword natuerlich pruefen/fixen.",
+  "offene_vorschlaege": [],
+  "gsc_snapshots": [
+    {
+      "datum": "2026-06-18",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "Standard (Daten seit 14.06.26)",
+      "klicks": 0,
+      "impressionen": 0,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 0,
+      "top_queries": [],
+      "hinweis": "Domain frisch migriert (von pantomime.liar-entertainer.com). Noch keine Such-Performance-Daten. Baseline-Snapshot."
+    }
+  ],
+  "technische_hinweise": {
+    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit escaped quotes in img(), Zeile ~392). Laeuft NICHT auf 3.10/3.11. Im Worker via 'uv python install 3.12' geloest.",
+    "deploy": "GitHub Action rsynct committete HTML direkt zu IONOS /PantomimeNeu. build.py wird NICHT im CI ausgefuehrt -> generierte HTML muss mitcommittet werden.",
+    "fokus_keywords": ["Pantomime", "Walk Act"]
+  }
+}
