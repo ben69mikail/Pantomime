@@ -1,19 +1,29 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 1,
-  "letzter_lauf": "2026-06-18",
-  "WICHTIG_naechster_lauf": "build.py auf main hat NOCH die ALTEN langen Titles (Start/Figuren/Walk-Act). Die fixierten kurzen Titles liegen nur in den committeten HTML-Dateien. Bevor build.py das naechste Mal ausgefuehrt wird, MUSS build.py zuerst auf die 3 kurzen Titles synchronisiert werden (Zeilen ~491/520/619), sonst werden die HTML-Titles ueberschrieben/regrediert. Heute nicht committet wegen 2-Commit-Limit.",
+  "aktueller_plan_tag": 2,
+  "letzter_lauf": "2026-06-19",
+  "WICHTIG_naechster_lauf": "build.py ist jetzt mit den kurzen Titles synchronisiert (commit 2e056bd) und reproduziert die committeten HTML 1:1 (verifiziert via Clone+Build+git-diff = leer ausser auto-Stand-Datum in datenschutz). KEINE offene Regression mehr. Naechster Schritt regulaer Tag 3.",
   "erledigte_schritte": [
     {
       "tag": 1,
       "datum": "2026-06-18",
       "schritt": "Title-Tags aller 15 Seiten auf 50-60 Zeichen + Keyword vorn",
-      "ergebnis": "3 zu lange Titles gekuerzt (Start 63->52, Figuren 66->55, Walk-Act 63->51). Restliche 12 Seiten OK (Figuren-Unterseiten 52-58, Legal/404 bewusst kurz). Build mit Python 3.12 regeneriert + HTML validiert. HTML committet (215dab6); build.py-Sync offen.",
+      "ergebnis": "3 zu lange Titles gekuerzt (Start 63->52, Figuren 66->55, Walk-Act 63->51). Restliche 12 Seiten OK. HTML committet (215dab6); build.py-Sync war offen.",
       "commits": ["SEO: Title-Tags Start/Figuren/Walk-Act <=60 Zeichen (HTML)", "SEO: State Tag 1"]
+    },
+    {
+      "tag": 2,
+      "datum": "2026-06-19",
+      "schritt": "ZUERST build.py-Title-Regression behoben, DANN Tag 2: Meta-Descriptions aller 15 Seiten 120-160 Zeichen + Keyword pruefen",
+      "ergebnis": "Regressionsschutz: build.py-Titles Start/Figuren/Walk-Act auf kurze <=60-Versionen synchronisiert (commit 2e056bd) -> reproduziert committete HTML 1:1 (verifiziert). Tag-2-Befund: 14 von 15 Descriptions OK (120-165 Z., Keyword vorhanden); Impressum (82) und 404 (33) bewusst kurz. EINZIGER Fix noetig: Start/index Description war 202 Z. (zu lang, Google schneidet ab) -> auf 149 gerendert gekuerzt, Keyword 'Pantomime & Walk Act' vorn, in build.py+index.html. Build mit Python 3.12 regeneriert, HTML validiert (alle 15 Titles <=60, alle schliessen </html>, FAQ-Schema unveraendert/matcht).",
+      "commits": [
+        "SEO: build.py-Titles sync + Start-Meta-Description gekuerzt (index.html, sitemap.xml)",
+        "SEO: build.py-Titles auf kurze <=60-Zeichen-Versionen synchronisiert (2e056bd)"
+      ]
     }
   ],
-  "naechster_plan_tag": 2,
-  "naechster_schritt": "ZUERST build.py-Titles auf main synchronisieren (Regressionsschutz), DANN Tag 2: Meta-Descriptions aller Seiten auf 120-160 Zeichen + Keyword natuerlich pruefen/fixen.",
+  "naechster_plan_tag": 3,
+  "naechster_schritt": "Tag 3: Alt-Texte aller Bilder pruefen - beschreibend, Keyword wo natuerlich (Pantomime/Walk Act + Ort/Anlass). Build.py ist sauber, keine Vorarbeit noetig.",
   "offene_vorschlaege": [],
   "gsc_snapshots": [
     {
@@ -25,12 +35,24 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 0,
       "top_queries": [],
-      "hinweis": "Domain frisch migriert (von pantomime.liar-entertainer.com). Noch keine Such-Performance-Daten. Baseline-Snapshot."
+      "hinweis": "Domain frisch migriert. Noch keine Such-Performance-Daten. Baseline-Snapshot."
+    },
+    {
+      "datum": "2026-06-19",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "Daten seit 14.06.26 (14./15./16.06 sichtbar)",
+      "klicks": 0,
+      "impressionen": 0,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 0,
+      "top_queries": [],
+      "hinweis": "Weiterhin 0 Klicks/0 Impressionen, keine Query-Daten. Kein Trend ggue. Baseline. Domain noch zu jung fuer Performance-Daten; GSC zeigt nur leere Tagesleiste 14.-16.06."
     }
   ],
   "technische_hinweise": {
-    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit escaped quotes in img(), Zeile ~392). Laeuft NICHT auf 3.10/3.11. Im Worker via 'uv python install 3.12' geloest.",
+    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit escaped quotes in img(), Zeile ~392). Laeuft NICHT auf 3.10/3.11. Im Worker via 'uv python install 3.12' + 'uv run --python 3.12 python scripts/build.py' geloest.",
     "deploy": "GitHub Action rsynct committete HTML direkt zu IONOS /PantomimeNeu. build.py wird NICHT im CI ausgefuehrt -> generierte HTML muss mitcommittet werden.",
+    "datenschutz_stand": "datenschutz/index.html hat eine auto-generierte 'Stand: {TODAY}'-Zeile. Bei jedem Build aendert sich nur dieses Datum -> NICHT bei jedem Lauf mitcommitten (reine Datums-Churn ohne SEO-Wert), nur wenn ohnehin inhaltlich committet wird.",
     "fokus_keywords": ["Pantomime", "Walk Act"]
   }
 }
