@@ -488,8 +488,8 @@ home_body = f"""<main>
 </main>
 """ + cta_band()
 
-built.append(page("/", "Pantomime buchen in NRW – LIAR | Walk Act & Künstler ohne Worte",
-     "Pantomime &amp; Walk Act in NRW buchen: LIAR – brillant &amp; charmant im französischen Stil. Stilvolle Pantomime für Hochzeit, Firmenfeier, Messe &amp; Stadtfest. Eine Kunst, die ohne Worte begeistert.",
+built.append(page("/", "Pantomime buchen in NRW – LIAR | Walk Act ohne Worte",
+     "Pantomime &amp; Walk Act in NRW buchen: LIAR – brillant &amp; charmant im französischen Stil, für Hochzeit, Firmenfeier, Messe &amp; Stadtfest. Kunst ohne Worte.",
      home_body, [org_schema(), breadcrumb([("Start", "/")]),
                  faq_schema([("Kann man LIAR als Pantomime in NRW buchen?", "Ja. LIAR ist Pantomime-Künstler aus Gladbeck und in ganz NRW buchbar — als Pantomime, Walk Act und in verschiedenen Figuren."),
                              ("Für welche Anlässe ist Pantomime geeignet?", "Für Hochzeiten, Firmenfeiern, Messen, Stadtfeste und viele weitere Veranstaltungen — für Publikum jeden Alters.")])],
@@ -517,7 +517,7 @@ figuren_body = f"""<main>
 </section>
 </main>
 """ + cta_band()
-built.append(page("/figuren/", "Figuren & Charaktere – LIAR Pantomime | Pantomime, Clown, Zauberer",
+built.append(page("/figuren/", "Figuren & Charaktere – LIAR Pantomime | Clown, Zauberer",
      "Die Figuren von LIAR: Pantomime, Zauberer, Clown, Crazy Kellner, Nussknacker und Weihnachtsmann — klassisch oder modern, für jeden Anlass in NRW buchbar.",
      figuren_body, [breadcrumb([("Start", "/"), ("Figuren", "/figuren/")])], active="/figuren/"))
 
@@ -616,7 +616,7 @@ walk_body = f"""<main>
 </section>
 </main>
 """ + cta_band("Walk Act für Ihr Event?", "Sagen Sie mir Datum, Ort und Art der Veranstaltung — ich entwickle den passenden Walk Act.")
-built.append(page("/walk-act/", "Walk Act in NRW buchen – LIAR | Pantomime & mobile Unterhaltung",
+built.append(page("/walk-act/", "Walk Act in NRW buchen – LIAR | Mobile Unterhaltung",
      "Walk Act in NRW buchen: LIAR kommt als Pantomime, Nussknacker oder Weihnachtsmann mitten ins Publikum — ohne Bühne, ohne Technik, für Messe, Stadtfest & Firmenfeier.",
      walk_body, [breadcrumb([("Start", "/"), ("Walk Act", "/walk-act/")]),
                  faq_schema([("Was ist ein Walk Act?", "Ein Walk Act ist mobile Unterhaltung, die sich unter die Gäste mischt — ohne feste Bühne. LIAR tritt als Pantomime, Nussknacker oder Weihnachtsmann mitten im Publikum auf."),
