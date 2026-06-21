@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 2,
-  "letzter_lauf": "2026-06-19",
-  "WICHTIG_naechster_lauf": "build.py ist jetzt mit den kurzen Titles synchronisiert (commit 2e056bd) und reproduziert die committeten HTML 1:1 (verifiziert via Clone+Build+git-diff = leer ausser auto-Stand-Datum in datenschutz). KEINE offene Regression mehr. Naechster Schritt regulaer Tag 3.",
+  "aktueller_plan_tag": 3,
+  "letzter_lauf": "2026-06-21",
+  "WICHTIG_naechster_lauf": "build.py sauber. Tag-3-Audit ergab: KEIN Alt-Text-Fix noetig (alle Content-Bilder haben beschreibende, keyword-reiche Alts; leere Alts nur bei dekorativen aria-hidden/role=presentation-Bildern = korrekt). Kein Commit ausser State. Naechster Schritt regulaer Tag 4 (H1/H2/H3-Hierarchie).",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -15,15 +15,22 @@
       "tag": 2,
       "datum": "2026-06-19",
       "schritt": "ZUERST build.py-Title-Regression behoben, DANN Tag 2: Meta-Descriptions aller 15 Seiten 120-160 Zeichen + Keyword pruefen",
-      "ergebnis": "Regressionsschutz: build.py-Titles Start/Figuren/Walk-Act auf kurze <=60-Versionen synchronisiert (commit 2e056bd) -> reproduziert committete HTML 1:1 (verifiziert). Tag-2-Befund: 14 von 15 Descriptions OK (120-165 Z., Keyword vorhanden); Impressum (82) und 404 (33) bewusst kurz. EINZIGER Fix noetig: Start/index Description war 202 Z. (zu lang, Google schneidet ab) -> auf 149 gerendert gekuerzt, Keyword 'Pantomime & Walk Act' vorn, in build.py+index.html. Build mit Python 3.12 regeneriert, HTML validiert (alle 15 Titles <=60, alle schliessen </html>, FAQ-Schema unveraendert/matcht).",
+      "ergebnis": "Regressionsschutz: build.py-Titles Start/Figuren/Walk-Act auf kurze <=60-Versionen synchronisiert (commit 2e056bd) -> reproduziert committete HTML 1:1 (verifiziert). Tag-2-Befund: 14 von 15 Descriptions OK; Start/index Description von 202 auf 149 Z. gekuerzt, Keyword 'Pantomime & Walk Act' vorn, in build.py+index.html. Build mit Python 3.12 regeneriert, HTML validiert.",
       "commits": [
         "SEO: build.py-Titles sync + Start-Meta-Description gekuerzt (index.html, sitemap.xml)",
         "SEO: build.py-Titles auf kurze <=60-Zeichen-Versionen synchronisiert (2e056bd)"
       ]
+    },
+    {
+      "tag": 3,
+      "datum": "2026-06-21",
+      "schritt": "Tag 3: Alt-Texte aller Bilder pruefen - beschreibend, Keyword wo natuerlich",
+      "ergebnis": "AUDIT, KEIN CODE-FIX NOETIG. Live verifiziert auf Start-, Walk-Act- und Figuren-Seite via Chrome-DOM. Befund: (a) img()-Helper in build.py erzwingt ein alt-Argument; alle ~20 Content-Bilder gehen durch img() und haben beschreibende, keyword-reiche Alts (z.B. 'Pantomime LIAR mit rotem Apfel begruesst einen Gast beim Stadtfest', 'Walk Act im Ruhrgebiet', 'Clown LIAR bei einem Kinderfest in NRW'). (b) Leere alt='' nur bei dekorativen Bildern: Logo (redundant zu Textlink) und Hero-Hintergrundbild cropped-pantomime-11.webp, das in build.py bewusst in <div class=hero-bg aria-hidden=true> liegt und per .replace() alt='' role='presentation' erhaelt = WCAG-konforme Behandlung dekorativer Bilder. (c) Auf Walk-Act und Figuren 0 nicht-dekorative leere Alts. FAZIT: Alt-Texte sind bereits SEO-/Accessibility-sauber. Keyword-Stuffing oder Alt auf aria-hidden-Bildern waere Qualitaetsverstoss -> bewusst NICHT gemacht.",
+      "commits": ["SEO: State Tag 3 - Alt-Text-Audit (kein Fix noetig)"]
     }
   ],
-  "naechster_plan_tag": 3,
-  "naechster_schritt": "Tag 3: Alt-Texte aller Bilder pruefen - beschreibend, Keyword wo natuerlich (Pantomime/Walk Act + Ort/Anlass). Build.py ist sauber, keine Vorarbeit noetig.",
+  "naechster_plan_tag": 4,
+  "naechster_schritt": "Tag 4: H1/H2/H3-Hierarchie je Seite pruefen (genau 1 H1, sinnvolle Struktur). Build.py ist sauber, keine Vorarbeit noetig.",
   "offene_vorschlaege": [],
   "gsc_snapshots": [
     {
@@ -40,19 +47,31 @@
     {
       "datum": "2026-06-19",
       "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "Daten seit 14.06.26 (14./15./16.06 sichtbar)",
+      "zeitraum": "Daten seit 14.06.26",
       "klicks": 0,
       "impressionen": 0,
       "ctr_prozent": 0,
       "durchschnitt_position": 0,
       "top_queries": [],
-      "hinweis": "Weiterhin 0 Klicks/0 Impressionen, keine Query-Daten. Kein Trend ggue. Baseline. Domain noch zu jung fuer Performance-Daten; GSC zeigt nur leere Tagesleiste 14.-16.06."
+      "hinweis": "Weiterhin 0 Klicks/0 Impressionen, keine Query-Daten."
+    },
+    {
+      "datum": "2026-06-21",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "Daten seit 14.06.26 (Tagesleiste 14.-19.06 sichtbar)",
+      "klicks": 0,
+      "impressionen": 0,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 0,
+      "top_queries": [],
+      "hinweis": "Uebersicht zeigt weiterhin 0 Klicks gesamt. Indexierungsbericht: 'Daten werden verarbeitet'. Kein Trend ggue. Baseline; Domain noch zu jung fuer Performance-Daten."
     }
   ],
   "technische_hinweise": {
-    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit escaped quotes in img(), Zeile ~392). Laeuft NICHT auf 3.10/3.11. Im Worker via 'uv python install 3.12' + 'uv run --python 3.12 python scripts/build.py' geloest.",
+    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit escaped quotes in img(), Zeile ~392). Laeuft NICHT auf 3.10/3.11.",
     "deploy": "GitHub Action rsynct committete HTML direkt zu IONOS /PantomimeNeu. build.py wird NICHT im CI ausgefuehrt -> generierte HTML muss mitcommittet werden.",
-    "datenschutz_stand": "datenschutz/index.html hat eine auto-generierte 'Stand: {TODAY}'-Zeile. Bei jedem Build aendert sich nur dieses Datum -> NICHT bei jedem Lauf mitcommitten (reine Datums-Churn ohne SEO-Wert), nur wenn ohnehin inhaltlich committet wird.",
+    "datenschutz_stand": "datenschutz/index.html hat eine auto-generierte 'Stand: {TODAY}'-Zeile. NICHT bei jedem Lauf mitcommitten (reine Datums-Churn).",
+    "alt_text_struktur": "img(name, alt, cls='') erzwingt alt-Argument. Hero-Bild ist dekorativ (hero-bg aria-hidden=true, alt='' role='presentation') - bewusst so, nicht aendern. Logo-alt='LIAR Pantomime Logo'.",
     "fokus_keywords": ["Pantomime", "Walk Act"]
   }
 }
