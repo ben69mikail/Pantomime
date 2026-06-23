@@ -642,7 +642,6 @@ ueber_body = f"""<main>
         <p>Mit dem Abitur in der Tasche habe ich Naturwissenschaft (Schwerpunkt Mathe) und Erziehungswissenschaft studiert. Dazu kam eine komplette Ausbildung zum Animateur — mit Schauspiel, Tanz, Zauberei, Ballonmodellage, Schminken, Stand-up, Comedy, Sportaktivitäten sowie PR &amp; Management — und drei Jahre Kinderanimation in Frankreich.</p>
         <p>Mit zwei Koffern flog ich los: vier Jahre künstlerische Unterhaltung in Europa (Spanien, Griechenland u. a.), gefolgt von fünf Jahren als Abteilungsleiter (Floor Manager) im Alpincenter Bottrop, der längsten Skihalle der Welt — mit Verantwortung auch für PR, Personal, Vertrieb und Promotion.</p>
         <p>Seit 2021 habe ich mein Programm um <strong>Pantomime</strong> erweitert und erwecke verschiedene Figuren zum Leben. Mit wachsender Kreativität gestalte ich individuelle Darbietungen — humorvoll, poetisch oder interaktiv, immer passend zum Publikum.</p>
-        <p>Ob auf der Bühne, beim Stadtfest oder als Walk Act zwischen den Gästen: Mein Anspruch ist es, mit Takt, Humor und Hingabe Momente zu schaffen, die im Gedächtnis bleiben.</p>
       </div>
       <a href="/referenzen/" class="btn btn-ghost" style="margin-top:1.5rem">Referenzen ansehen</a>
     </div>
