@@ -2,7 +2,7 @@
   "plan_zyklus_start": "2026-06-18",
   "aktueller_plan_tag": 4,
   "letzter_lauf": "2026-06-23",
-  "WICHTIG_naechster_lauf": "Tag-4-Audit erledigt: alle 9 Seiten genau 1 H1 (sauber). EINZIGER Befund: globaler Footer nutzt <h4>Figuren</h4>/<h4>Kontakt</h4> -> Heading-Level-Spruenge auf kontakt/404 (h1->h4), ueber-mich/referenzen (h2->h4), impressum/datenschutz (h1->h3). Fix als Vorschlag 1 in vorschlaege.md gesichert (build.py+style.css+15 HTML, braucht Rebuild+Verify -> VM war down). NICHT ungeprueft gepusht. Michael hat 'jetzt fixen sobald Tools da' gewaehlt -> beim naechsten Lauf mit laufendem VM: Vorschlag 1 umsetzen (build.py: h4->p.footer-h, style.css-Selektor erweitern, python scripts/build.py, verifizieren, in 1 Commit pushen). DANACH regulaer Tag 5.",
+  "WICHTIG_naechster_lauf": "Tag 4 KOMPLETT abgeschlossen inkl. Fix. Footer-h4->p.footer-h ist umgesetzt, gebaut (Python 3.12 via uv im VM), verifiziert (frischer Clone + Rebuild reproduziert committete HTML 1:1, 0 Abweichung; 0 <h4> in Footern, 15/15 Seiten footer-h, kein altes CSS-ver) und in Einzel-Commits gepusht (build.py, style.css, sitemap.xml, alle 15 HTML inkl. index.html). Live-Deploy via IONOS-Action ausgeloest. Naechster Lauf: regulaer Tag 5 (interne Verlinkung, descriptive Anchors statt 'mehr').",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -31,20 +31,21 @@
     {
       "tag": 4,
       "datum": "2026-06-23",
-      "schritt": "Tag 4: H1/H2/H3-Hierarchie je Seite pruefen (genau 1 H1, sinnvolle Struktur)",
-      "ergebnis": "AUDIT erledigt, Quellcode aller 9 Seiten geprueft (index, walk-act, figuren, referenzen, ueber-mich, kontakt, impressum, datenschutz, 404). (a) Jede Seite genau 1 H1 - sauber. (b) Erster Heading im Body ist ueberall die H1 (kicker davor ist <span>, kein Heading) - korrekt. (c) FEHLER: globaler Footer nutzt <h4>Figuren</h4>/<h4>Kontakt</h4> -> Heading-Level-Spruenge: kontakt+404 (h1->h4), ueber-mich+referenzen (h2->h4), impressum+datenschutz (h1->h3, kein h2). index/walk-act/figuren ok (h4 folgt auf h3). Fix erfordert build.py-Footer-Template (h4 -> p.footer-h) + style.css-Selektor (.footer-col h4 -> .footer-col h4,.footer-col .footer-h) + Rebuild aller 15 HTML. Linux-Build-VM war an diesem Lauf NICHT startbar -> Fix konnte nicht verifiziert werden -> als Vorschlag 1 gesichert, NICHT gepusht (Guardrail: kein ungeprueffter Build-Push, keine direkte HTML-Edit).",
-      "commits": ["SEO: State Tag 4 - H1/H2/H3-Audit + Footer-h4-Vorschlag (wartet auf Freigabe)"]
+      "schritt": "Tag 4: H1/H2/H3-Hierarchie je Seite pruefen + Footer-Fix umsetzen",
+      "ergebnis": "AUDIT: alle 9 Seiten genau 1 H1, erster Body-Heading = H1 (kicker ist <span>). EINZIGER Fehler: globaler Footer nutzte <h4>Figuren</h4>/<h4>Kontakt</h4> -> Heading-Level-Spruenge (kontakt/404 h1->h4, ueber-mich/referenzen h2->h4, impressum/datenschutz h1->h3). FIX UMGESETZT: build.py-Footer h4 -> <p class=footer-h>, style.css-Selektor erweitert (.footer-col h4,.footer-col .footer-h = optisch identisch). Build im VM mit Python 3.12 (via uv, da System nur 3.10) regeneriert. VERIFIZIERT: frischer Clone + Rebuild = 0 Abweichung zu committeter HTML; 0 <h4> in Footern; 15/15 Seiten footer-h; kein altes CSS-ver (3b1e03e6) mehr. Gepusht in Einzel-Commits (build.py c0dfea5 dann Korrektur 1b290d5 wg. versehentlicher Zusatzzeile, style.css 379a467, sitemap 0cece65, 404 0670731, 13 Unterseiten via Subagent je 1 Commit, index.html daceadb). HTML-Push noetig weil CI build.py NICHT ausfuehrt.",
+      "commits": ["SEO: State Tag 4 - H1/H2/H3-Audit + Footer-h4-Vorschlag (wartet auf Freigabe)", "SEO: Footer h4 -> p.footer-h (build.py/style.css/15 HTML/sitemap) - verifiziert"]
     }
   ],
   "naechster_plan_tag": 5,
-  "naechster_schritt": "ZUERST (sobald Build-VM laeuft): Vorschlag 1 umsetzen (Footer-h4 -> p.footer-h in build.py + style.css-Selektor, python scripts/build.py, verifizieren, 1 Commit). DANN regulaer Tag 5: Interne Verlinkung - von starken Seiten (Start, Pantomime, Walk Act) auf Zielseiten, descriptive Anchors statt 'mehr'.",
-  "offene_vorschlaege": [
+  "naechster_schritt": "Tag 5: Interne Verlinkung - von starken Seiten (Start, Pantomime, Walk Act) auf Zielseiten, descriptive Anchors statt 'mehr'/'Mehr erfahren'. Hinweis: Figuren-Karten nutzen aktuell Anchor 'Mehr erfahren' (in build.py, fig-card .more) -> Kandidat fuer descriptive Anchors.",
+  "offene_vorschlaege": [],
+  "erledigte_vorschlaege": [
     {
       "nr": 1,
-      "datum": "2026-06-23",
+      "datum_vorschlag": "2026-06-23",
+      "datum_umgesetzt": "2026-06-23",
       "titel": "Footer-Ueberschriften <h4> -> <p class=footer-h> (Heading-Hierarchie-Fix)",
-      "status": "WARTET AUF FREIGABE / braucht Build-VM zum Verifizieren",
-      "details_in": ".seo-pantomime/vorschlaege.md"
+      "status": "ERLEDIGT & verifiziert & gepusht"
     }
   ],
   "gsc_snapshots": [
@@ -79,12 +80,13 @@
     }
   ],
   "technische_hinweise": {
-    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit escaped quotes in img(), Zeile ~392). Laeuft NICHT auf 3.10/3.11.",
-    "deploy": "GitHub Action rsynct committete HTML direkt zu IONOS /PantomimeNeu. build.py wird NICHT im CI ausgefuehrt -> generierte HTML muss mitcommittet werden.",
-    "build_vm_2026-06-23": "An Tag 4 war der Linux-Sandbox-VM nicht startbar ('VM service not running'). build.py konnte nicht ausgefuehrt/verifiziert werden -> Footer-Fix als Vorschlag gesichert statt gepusht.",
+    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit escaped quotes in img(), Zeile ~392). Laeuft NICHT auf 3.10/3.11. VM-System hat nur 3.10 -> per 'uv python install 3.12' nachinstallieren; HOME=/tmp setzen, Pfad: /tmp/.local/share/uv/python/cpython-3.12-*/bin/python3.12.",
+    "vm_git_hinweis": "Im VM-Mount ist die git-config korrupt; Clone scheitert dort. Stattdessen nach /tmp klonen mit GIT_CONFIG_GLOBAL=/dev/null GIT_CONFIG_SYSTEM=/dev/null. VM hat KEINEN GitHub-Token -> Push nur ueber GitHub-MCP (create_or_update_file / push_files), nicht via git push.",
+    "deploy": "GitHub Action rsynct committete HTML direkt zu IONOS /PantomimeNeu. build.py wird NICHT im CI ausgefuehrt (scripts/ ist excluded) -> generierte HTML muss IMMER mitcommittet werden.",
     "datenschutz_stand": "datenschutz/index.html hat auto-generierte 'Stand: {TODAY}'-Zeile. NICHT bei jedem Lauf mitcommitten (Datums-Churn).",
     "alt_text_struktur": "img(name, alt, cls='') erzwingt alt. Hero-Bild dekorativ (hero-bg aria-hidden, alt='' role=presentation) - bewusst, nicht aendern. Logo-alt='LIAR Pantomime Logo'.",
-    "footer_h4": "Footer-Spaltentitel sind <h4>Figuren</h4>/<h4>Kontakt</h4>, gestylt via .footer-col h4 (font-family:var(--body), letter-spacing .18em, uppercase, gold-2). Sind Nav-Labels, keine echten Headings -> Vorschlag: zu <p class=footer-h> mit erweitertem CSS-Selektor.",
+    "footer_struktur": "Footer-Spaltentitel sind seit 2026-06-23 <p class=footer-h>Figuren</p> / <p class=footer-h>Kontakt</p> (vorher <h4>). Gestylt via .footer-col h4,.footer-col .footer-h - optisch identisch, aber keine Heading-Hierarchie-Spruenge mehr.",
+    "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Aktuell b0a5c717. Bei jeder style.css-Aenderung aendert sich der Hash -> alle 15 HTML bekommen neuen ?v und muessen mitcommittet werden.",
     "fokus_keywords": ["Pantomime", "Walk Act"]
   }
 }
