@@ -592,7 +592,7 @@ walk_body = f"""<main>
       <p class="lead">Als Walk Act bin ich dort, wo die Gäste sind: zwischen den Tischen, auf der Gastromeile, am Messestand oder über das Festgelände.</p>
       <div class="prose" style="margin-top:1.6rem">
         <p>Die Kunst der Pantomime basiert auf Körpersprache — sie funktioniert unabhängig von der Sprache des Publikums. Als Walk Act brauche ich keine Bühne und keine Technik: Ich bin platzsparend, flexibel, anpassungsfähig und sofort einsatzbereit. So begrüße ich Gäste, sorge für festliche Stimmung und schaffe Momente, die in Erinnerung bleiben.</p>
-        <p>Ob als <strong>Pantomime</strong> als Hauptattraktion oder mobiler Act, als <strong>Nussknacker</strong>, der Gäste begrüßt und kleine Geschenke verteilt, oder als <strong>Weihnachtsmann</strong> auf dem Markt — den Walk Act gestalte ich passend zu Ihrem Anlass.</p>
+        <p>Ob als <a href="/figuren/der-pantomime-in-nrw/"><strong>Pantomime</strong></a> als Hauptattraktion oder mobiler Act, als <a href="/figuren/der-nussknacker/"><strong>Nussknacker</strong></a>, der Gäste begrüßt und kleine Geschenke verteilt, oder als <a href="/figuren/der-weihnachtsmann/"><strong>Weihnachtsmann</strong></a> auf dem Markt — den Walk Act gestalte ich passend zu Ihrem Anlass.</p>
       </div>
       <ul class="feature-list">
         <li>Keine Bühne, keine Ton- oder Lichttechnik nötig</li>
