@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 4,
-  "letzter_lauf": "2026-06-23",
-  "WICHTIG_naechster_lauf": "Tag 4 KOMPLETT abgeschlossen inkl. Fix. Footer-h4->p.footer-h ist umgesetzt, gebaut (Python 3.12 via uv im VM), verifiziert (frischer Clone + Rebuild reproduziert committete HTML 1:1, 0 Abweichung; 0 <h4> in Footern, 15/15 Seiten footer-h, kein altes CSS-ver) und in Einzel-Commits gepusht (build.py, style.css, sitemap.xml, alle 15 HTML inkl. index.html). Live-Deploy via IONOS-Action ausgeloest. Naechster Lauf: regulaer Tag 5 (interne Verlinkung, descriptive Anchors statt 'mehr').",
+  "aktueller_plan_tag": 5,
+  "letzter_lauf": "2026-06-24",
+  "WICHTIG_naechster_lauf": "Tag 5 KOMPLETT abgeschlossen. Interne Verlinkung: Walk-Act-Seite verlinkt jetzt die Fliesstext-Erwaehnungen Pantomime/Nussknacker/Weihnachtsmann descriptiv auf die jeweiligen Figurenseiten (/figuren/der-pantomime-in-nrw/, /der-nussknacker/, /der-weihnachtsmann/). Strong-Tags bleiben fuer Optik erhalten (a>strong). build.py + walk-act/index.html + sitemap (lastmod 2026-06-24) gepusht. Verifiziert: frischer Clone + Rebuild (Python 3.12 via uv) reproduziert committete walk-act HTML 1:1, 0 Abweichung; HTML valide. Figuren-Karten-Anchor 'Mehr erfahren' wurde NICHT geaendert: ist nur ein <span> innerhalb der gesamten <a class=fig-card> (Card-Link), Accessible Name = H3-Figurenname + Intro -> bereits keyword-tragend, kein generischer Anchor. Cross-Domain-Links (liar-entertainer.com, zauberer-liar.de) sind im Footer bereits vorhanden (relevant fuer Tag 15). Naechster Lauf: Tag 6 - Schema.org validieren (LocalBusiness/Service/FAQ/Breadcrumb), matcht Schema den sichtbaren Inhalt?",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -32,12 +32,19 @@
       "tag": 4,
       "datum": "2026-06-23",
       "schritt": "Tag 4: H1/H2/H3-Hierarchie je Seite pruefen + Footer-Fix umsetzen",
-      "ergebnis": "AUDIT: alle 9 Seiten genau 1 H1, erster Body-Heading = H1 (kicker ist <span>). EINZIGER Fehler: globaler Footer nutzte <h4>Figuren</h4>/<h4>Kontakt</h4> -> Heading-Level-Spruenge (kontakt/404 h1->h4, ueber-mich/referenzen h2->h4, impressum/datenschutz h1->h3). FIX UMGESETZT: build.py-Footer h4 -> <p class=footer-h>, style.css-Selektor erweitert (.footer-col h4,.footer-col .footer-h = optisch identisch). Build im VM mit Python 3.12 (via uv, da System nur 3.10) regeneriert. VERIFIZIERT: frischer Clone + Rebuild = 0 Abweichung zu committeter HTML; 0 <h4> in Footern; 15/15 Seiten footer-h; kein altes CSS-ver (3b1e03e6) mehr. Gepusht in Einzel-Commits (build.py c0dfea5 dann Korrektur 1b290d5 wg. versehentlicher Zusatzzeile, style.css 379a467, sitemap 0cece65, 404 0670731, 13 Unterseiten via Subagent je 1 Commit, index.html daceadb). HTML-Push noetig weil CI build.py NICHT ausfuehrt.",
-      "commits": ["SEO: State Tag 4 - H1/H2/H3-Audit + Footer-h4-Vorschlag (wartet auf Freigabe)", "SEO: Footer h4 -> p.footer-h (build.py/style.css/15 HTML/sitemap) - verifiziert"]
+      "ergebnis": "AUDIT: alle 9 Seiten genau 1 H1, erster Body-Heading = H1 (kicker ist <span>). EINZIGER Fehler: globaler Footer nutzte <h4>Figuren</h4>/<h4>Kontakt</h4> -> Heading-Level-Spruenge. FIX UMGESETZT: build.py-Footer h4 -> <p class=footer-h>, style.css-Selektor erweitert. Build im VM mit Python 3.12 regeneriert. VERIFIZIERT: frischer Clone + Rebuild = 0 Abweichung; 0 <h4> in Footern; 15/15 Seiten footer-h. Gepusht in Einzel-Commits.",
+      "commits": ["SEO: State Tag 4 - H1/H2/H3-Audit + Footer-h4-Vorschlag", "SEO: Footer h4 -> p.footer-h (build.py/style.css/15 HTML/sitemap) - verifiziert"]
+    },
+    {
+      "tag": 5,
+      "datum": "2026-06-24",
+      "schritt": "Tag 5: Interne Verlinkung - von starken Seiten auf Zielseiten, descriptive Anchors statt 'mehr'",
+      "ergebnis": "Befund: Walk-Act-Seite (starke Fokus-Keyword-Seite) erwaehnte Pantomime/Nussknacker/Weihnachtsmann im Fliesstext als <strong> OHNE interne Links -> verschenkte descriptive interne Verlinkung. FIX: build.py walk_body, 3 Erwaehnungen zu descriptiven internen Links auf Figurenseiten gemacht (a href=/figuren/der-pantomime-in-nrw/ etc., strong bleibt fuer Optik). Keyword-tragende Anchors von starker Seite auf Zielseiten. Build (Python 3.12 via uv) regeneriert, VERIFIZIERT: frischer Clone+Rebuild reproduziert committete walk-act HTML 1:1, 0 Abweichung, HTML valide. Figuren-Karten 'Mehr erfahren' bewusst NICHT geaendert (ist span im Card-Link, Accessible Name=H3-Name+Intro, bereits gut). 2 Commits: (1) walk-act/index.html+sitemap.xml, (2) build.py-Sync.",
+      "commits": ["SEO: Walk-Act-Seite verlinkt Pantomime/Nussknacker/Weihnachtsmann intern auf Figurenseiten + sitemap lastmod (babb004)", "SEO: build.py-Sync Walk-Act interne Verlinkung (c93cf03)"]
     }
   ],
-  "naechster_plan_tag": 5,
-  "naechster_schritt": "Tag 5: Interne Verlinkung - von starken Seiten (Start, Pantomime, Walk Act) auf Zielseiten, descriptive Anchors statt 'mehr'/'Mehr erfahren'. Hinweis: Figuren-Karten nutzen aktuell Anchor 'Mehr erfahren' (in build.py, fig-card .more) -> Kandidat fuer descriptive Anchors.",
+  "naechster_plan_tag": 6,
+  "naechster_schritt": "Tag 6: Schema.org validieren (LocalBusiness/Service/FAQ/Breadcrumb) - matcht das Schema den sichtbaren Inhalt? FAQ-Schema gegen sichtbaren FAQ-Inhalt pruefen, Breadcrumb-Items, org_schema-Felder.",
   "offene_vorschlaege": [],
   "erledigte_vorschlaege": [
     {
@@ -57,13 +64,6 @@
       "hinweis": "Domain frisch migriert. Baseline-Snapshot."
     },
     {
-      "datum": "2026-06-19",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Weiterhin 0/0, keine Query-Daten."
-    },
-    {
       "datum": "2026-06-21",
       "property": "sc-domain:pantomime-la-france.eu",
       "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0,
@@ -73,20 +73,28 @@
     {
       "datum": "2026-06-23",
       "property": "sc-domain:pantomime-la-france.eu",
+      "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0,
+      "top_queries": [],
+      "hinweis": "Live via Chrome geprueft. Weiterhin 0/0, 'Keine Daten'. Domain noch zu jung."
+    },
+    {
+      "datum": "2026-06-24",
+      "property": "sc-domain:pantomime-la-france.eu",
       "zeitraum": "Datenfenster 14.06.-21.06.26 sichtbar",
       "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0,
       "top_queries": [],
-      "hinweis": "Live via Chrome (Michael eingeloggt) geprueft. Weiterhin 0 Klicks/0 Impressionen, 'Keine Daten' bei Suchanfragen. Kein Trend ggue. Baseline; Domain noch zu jung fuer Pantomime-/Walk-Act-Query-Daten."
+      "hinweis": "Live via Chrome (Michael eingeloggt) geprueft. Weiterhin 0 Klicks / 0 Impressionen, 'Keine Daten' bei Suchanfragen. Kein Trend ggue. Baseline; Domain weiterhin zu jung fuer Pantomime-/Walk-Act-Query-Daten. Sobald Impressionen kommen: Tag 8/9 (Query-Analyse) priorisieren."
     }
   ],
   "technische_hinweise": {
-    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit escaped quotes in img(), Zeile ~392). Laeuft NICHT auf 3.10/3.11. VM-System hat nur 3.10 -> per 'uv python install 3.12' nachinstallieren; HOME=/tmp setzen, Pfad: /tmp/.local/share/uv/python/cpython-3.12-*/bin/python3.12.",
-    "vm_git_hinweis": "Im VM-Mount ist die git-config korrupt; Clone scheitert dort. Stattdessen nach /tmp klonen mit GIT_CONFIG_GLOBAL=/dev/null GIT_CONFIG_SYSTEM=/dev/null. VM hat KEINEN GitHub-Token -> Push nur ueber GitHub-MCP (create_or_update_file / push_files), nicht via git push.",
-    "deploy": "GitHub Action rsynct committete HTML direkt zu IONOS /PantomimeNeu. build.py wird NICHT im CI ausgefuehrt (scripts/ ist excluded) -> generierte HTML muss IMMER mitcommittet werden.",
-    "datenschutz_stand": "datenschutz/index.html hat auto-generierte 'Stand: {TODAY}'-Zeile. NICHT bei jedem Lauf mitcommitten (Datums-Churn).",
-    "alt_text_struktur": "img(name, alt, cls='') erzwingt alt. Hero-Bild dekorativ (hero-bg aria-hidden, alt='' role=presentation) - bewusst, nicht aendern. Logo-alt='LIAR Pantomime Logo'.",
-    "footer_struktur": "Footer-Spaltentitel sind seit 2026-06-23 <p class=footer-h>Figuren</p> / <p class=footer-h>Kontakt</p> (vorher <h4>). Gestylt via .footer-col h4,.footer-col .footer-h - optisch identisch, aber keine Heading-Hierarchie-Spruenge mehr.",
-    "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Aktuell b0a5c717. Bei jeder style.css-Aenderung aendert sich der Hash -> alle 15 HTML bekommen neuen ?v und muessen mitcommittet werden.",
+    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit escaped quotes in img(), Zeile ~392). Laeuft NICHT auf 3.10/3.11. VM-System hat nur 3.10 -> 'uv python install 3.12'; HOME=/tmp setzen, Pfad: /tmp/.local/share/uv/python/cpython-3.12-*/bin/python3.12.",
+    "vm_git_hinweis": "Im VM nach /tmp klonen mit GIT_CONFIG_GLOBAL=/dev/null GIT_CONFIG_SYSTEM=/dev/null. VM hat KEINEN GitHub-Token -> Push nur ueber GitHub-MCP (create_or_update_file / push_files).",
+    "github_mcp_sha_hinweis": "create_or_update_file braucht die VOLLE 40-Zeichen-blob-sha (Kurz-sha wird abgelehnt). Bei Mismatch get_file_contents fuer den aktuellen sha aufrufen. push_files braucht KEINE sha (mehrere Dateien/1 Commit).",
+    "deploy": "GitHub Action rsynct committete HTML direkt zu IONOS /PantomimeNeu. build.py wird NICHT im CI ausgefuehrt (scripts/ excluded) -> generierte HTML muss IMMER mitcommittet werden.",
+    "datenschutz_stand": "datenschutz/index.html hat auto-generierte 'Stand: {TODAY}'-Zeile. NICHT bei jedem Lauf mitcommitten (Datums-Churn). Tag 5 bewusst ausgelassen.",
+    "footer_struktur": "Footer-Spaltentitel sind <p class=footer-h> (seit 2026-06-23). Footer enthaelt bereits Cross-Domain-Links liar-entertainer.com + zauberer-liar.de (relevant fuer Tag 15).",
+    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act-Seite verlinkt Pantomime/Nussknacker/Weihnachtsmann descriptiv auf Figurenseiten. Figuren-Karten-Anchor 'Mehr erfahren' ist span im Card-Link (kein generischer Text-Anchor, OK). Weitere Kandidaten fuer naechste interne-Link-Runden: Figurenseiten <-> Walk-Act gegenseitig, Pantomime-Figurseite -> Walk-Act.",
+    "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Aktuell b0a5c717. Bei style.css-Aenderung alle 15 HTML mitcommitten.",
     "fokus_keywords": ["Pantomime", "Walk Act"]
   }
 }
