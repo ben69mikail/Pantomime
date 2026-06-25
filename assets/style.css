@@ -313,3 +313,14 @@ textarea{min-height:140px;resize:vertical}
 
 :focus-visible{outline:2px solid var(--crimson);outline-offset:3px;border-radius:2px}
 ::selection{background:var(--crimson);color:var(--gold-2)}
+
+/* FAQ-Akkordeon (sichtbare FAQ, deckt FAQPage-Schema) */
+.faq{max-width:48rem;display:flex;flex-direction:column;gap:.6rem}
+.faq-item{border:1px solid rgba(184,134,43,.32);border-radius:var(--radius);background:rgba(255,255,255,.35);overflow:hidden}
+.faq-item summary{cursor:pointer;list-style:none;padding:1rem 1.25rem;font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";font-family:var(--display);font-size:1.4rem;color:var(--crimson);transition:transform .3s var(--ease);line-height:1}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary:hover{color:var(--crimson)}
+.faq-a{padding:0 1.25rem 1.1rem}
+.faq-a p{margin:0;color:var(--ink-soft);font-size:1.02rem;line-height:1.7;max-width:64ch}
