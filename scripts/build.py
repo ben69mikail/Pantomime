@@ -88,6 +88,15 @@ def faq_schema(qa):
         ],
     }
 
+
+def faq_block(qa, title="Häufige Fragen"):
+    items = "".join(
+        f'<details class="faq-item"><summary>{q}</summary>'
+        f'<div class="faq-a"><p>{a}</p></div></details>' for q, a in qa)
+    return (f'<section class="section container faq-section"><div class="section-head reveal">'
+            f'<span class="kicker">FAQ</span><h2>{title}</h2></div>'
+            f'<div class="faq reveal">{items}</div></section>')
+
 # ---------------------------------------------------------------- HTML-Gerüst
 def head(title, desc, path, schema, og_img="/assets/img/og-pantomime.jpg"):
     url = DOMAIN + path
@@ -395,6 +404,8 @@ def img(name, alt, cls=""):
 built = []
 
 # ---- Startseite
+home_faq = [("Kann man LIAR als Pantomime in NRW buchen?", "Ja. LIAR ist Pantomime-Künstler aus Gladbeck und in ganz NRW buchbar — als Pantomime, Walk Act und in verschiedenen Figuren."),
+            ("Für welche Anlässe ist Pantomime geeignet?", "Für Hochzeiten, Firmenfeiern, Messen, Stadtfeste und viele weitere Veranstaltungen — für Publikum jeden Alters.")]
 home_body = f"""<main>
 <section class="hero">
   <div class="valance" aria-hidden="true"></div>
@@ -485,14 +496,14 @@ home_body = f"""<main>
   ]) + f"""
   <div class="chips reveal" style="margin-top:2rem;justify-content:center">{"".join(f'<span class="chip">{c}</span>' for c in CITIES)}</div>
 </div></section>
+{faq_block(home_faq)}
 </main>
 """ + cta_band()
 
 built.append(page("/", "Pantomime buchen in NRW – LIAR | Walk Act ohne Worte",
      "Pantomime &amp; Walk Act in NRW buchen: LIAR – brillant &amp; charmant im französischen Stil, für Hochzeit, Firmenfeier, Messe &amp; Stadtfest. Kunst ohne Worte.",
      home_body, [org_schema(), breadcrumb([("Start", "/")]),
-                 faq_schema([("Kann man LIAR als Pantomime in NRW buchen?", "Ja. LIAR ist Pantomime-Künstler aus Gladbeck und in ganz NRW buchbar — als Pantomime, Walk Act und in verschiedenen Figuren."),
-                             ("Für welche Anlässe ist Pantomime geeignet?", "Für Hochzeiten, Firmenfeiern, Messen, Stadtfeste und viele weitere Veranstaltungen — für Publikum jeden Alters.")])],
+                 faq_schema(home_faq)],
      active="/"))
 
 # ---- Figuren-Übersicht
@@ -565,6 +576,7 @@ for slug in FIG_ORDER:
     </div>
   </div>
 </section>
+{faq_block(f['faq'], f"Häufige Fragen – {f['name']}")}
 </main>
 """ + cta_band()
     schema = [breadcrumb([("Start", "/"), ("Figuren", "/figuren/"), (f['menu'], f"/figuren/{slug}/")]),
@@ -576,6 +588,8 @@ for slug in FIG_ORDER:
                       active="/figuren/", og_img="/assets/img/" + ("og-pantomime.jpg")))
 
 # ---- Walk Act
+walk_faq = [("Was ist ein Walk Act?", "Ein Walk Act ist mobile Unterhaltung, die sich unter die Gäste mischt — ohne feste Bühne. LIAR tritt als Pantomime, Nussknacker oder Weihnachtsmann mitten im Publikum auf."),
+            ("Braucht ein Walk Act Technik?", "Nein. Als Walk Act benötige ich keine Bühne und keine Ton- oder Lichttechnik und bin sofort einsatzbereit.")]
 walk_body = f"""<main>
 <section class="subhero subhero--img">
   {subimg('pantomime-5.webp', '50% 22%')}
@@ -614,13 +628,13 @@ walk_body = f"""<main>
       ("Einkaufszentrum & Markt", "Festliche Walking-Acts wie Nussknacker und Weihnachtsmann."),
   ])}
 </section>
+{faq_block(walk_faq)}
 </main>
 """ + cta_band("Walk Act für Ihr Event?", "Sagen Sie mir Datum, Ort und Art der Veranstaltung — ich entwickle den passenden Walk Act.")
 built.append(page("/walk-act/", "Walk Act in NRW buchen – LIAR | Mobile Unterhaltung",
      "Walk Act in NRW buchen: LIAR kommt als Pantomime, Nussknacker oder Weihnachtsmann mitten ins Publikum — ohne Bühne, ohne Technik, für Messe, Stadtfest & Firmenfeier.",
      walk_body, [breadcrumb([("Start", "/"), ("Walk Act", "/walk-act/")]),
-                 faq_schema([("Was ist ein Walk Act?", "Ein Walk Act ist mobile Unterhaltung, die sich unter die Gäste mischt — ohne feste Bühne. LIAR tritt als Pantomime, Nussknacker oder Weihnachtsmann mitten im Publikum auf."),
-                             ("Braucht ein Walk Act Technik?", "Nein. Als Walk Act benötige ich keine Bühne und keine Ton- oder Lichttechnik und bin sofort einsatzbereit.")])],
+                 faq_schema(walk_faq)],
      active="/walk-act/"))
 
 # ---- Über mich
