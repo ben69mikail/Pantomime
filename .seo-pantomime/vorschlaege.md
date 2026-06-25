@@ -11,8 +11,8 @@ Jede Seite hat genau 1 H1. Der globale Footer nutzte `<h4>Figuren</h4>` und `<h4
 
 ## Vorschlag 2 — 2026-06-25 (Tag 6): FAQ-Inhalte sichtbar auf der Seite rendern (Schema <-> Sichtbarkeit)
 
-**Status:** WARTET AUF FREIGABE von Michael.
-**Typ:** Content-/Struktur-Aenderung (sichtbarer FAQ-Block auf 8 Seiten) -> KEINE Auto-Fix-Kategorie, daher Vorschlag.
+**Status:** ERLEDIGT, verifiziert & gepusht am 2026-06-25 (von Michael freigegeben, Option "sichtbar rendern"). faq_block()-Helper in build.py, sichtbarer FAQ-Block (<details>/<summary>) auf allen 8 Seiten, identischer Text wie im FAQPage-Schema. style.css um FAQ-Akkordeon ergaenzt. Rebuild (Py3.12) + Verify: frischer Clone+Rebuild reproduziert gepushte HTML 1:1 (0 Abweichung); auf allen 8 Seiten = sichtbare faq-items == Schema-Questions; live main == working dir (18 Dateien, 0 Mismatch). Kein offener Handlungsbedarf.
+**Typ:** Content-/Struktur-Aenderung (sichtbarer FAQ-Block auf 8 Seiten).
 
 ### Befund (Tag-6-Schema-Audit, im Build-VM verifiziert)
 Alle anderen Schema-Typen sind sauber:
@@ -21,36 +21,10 @@ Alle anderen Schema-Typen sind sauber:
 - LocalBusiness/PerformingGroup (`org_schema`, Startseite): Adresse, Telefon, E-Mail, areaServed - faktische Konstanten, stimmen mit Impressum/Kontakt ueberein. OK.
 - Person (Ueber mich), ContactPage (Kontakt): strukturell korrekt. OK.
 
-EINZIGES Problem - FAQPage ohne sichtbaren Inhalt:
-8 Seiten geben `FAQPage`-Structured-Data aus, aber der Frage-/Antworttext steht NUR im `<script type="application/ld+json">`-Block - NICHT im sichtbaren Seiteninhalt. Verifiziert: nach Entfernen aller `<script>`-Bloecke ist die Trefferzahl fuer jeden FAQ-Fragetext = 0.
+War das Problem: FAQPage auf 8 Seiten hatte Q/A nur im ld+json, nicht sichtbar (Verstoss gegen Google-FAQ-Richtlinie). BEHOBEN durch sichtbaren faq_block (siehe Status oben).
 
-| Seite | FAQPage-Schema | Sichtbarer FAQ-Block |
-|---|---|---|
-| / (Start) | ja (2 Fragen) | NEIN |
-| /walk-act/ | ja (2 Fragen) | NEIN |
-| /figuren/der-pantomime-in-nrw/ | ja | NEIN |
-| /figuren/der-clown/ | ja | NEIN |
-| /figuren/der-zauberer/ | ja | NEIN |
-| /figuren/der-crazy-kellner/ | ja | NEIN |
-| /figuren/der-nussknacker/ | ja | NEIN |
-| /figuren/der-weihnachtsmann/ | ja | NEIN |
-
-Warum das ein Problem ist: Googles FAQPage-Richtlinie verlangt, dass der vollstaendige Frage- und Antworttext fuer den Nutzer auf der Seite sichtbar ist. Schema ohne sichtbaren Gegenpart gilt als Verstoss und kann zu einer manuellen Massnahme / Aberkennung der strukturierten Daten fuehren. Zudem zeigt Google FAQ-Rich-Results seit April 2023 nur noch fuer staatliche/Gesundheits-Seiten - der unsichtbare Markup bringt also keinen Rich-Result-Vorteil, traegt aber das Richtlinienrisiko.
-
-### Empfohlener Fix (Inhalt ist bereits vorhanden - nur sichtbar machen)
-Die Frage-/Antwort-Paare existieren schon als Daten (`f['faq']` bzw. die inline-Listen fuer Start/Walk-Act). Sie muessen nur zusaetzlich als sichtbarer HTML-Block gerendert werden, dann deckt sich Schema mit Sichtbarem.
-
-1. scripts/build.py - neuen Helper ergaenzen (Akkordeon ueber natives `<details>`/`<summary>`, kein JS), der pro Q/A ein `<details class="faq-item"><summary>Frage</summary><div class="faq-a"><p>Antwort</p></div></details>` erzeugt und in eine `<section>` mit `<h2>Haeufige Fragen</h2>` haengt.
-2. Block einbauen vor `cta_band()` / vor dem Footer auf den 8 Seiten, die FAQ-Schema haben:
-   - Startseite (`home_body`): faq_block mit den selben 2 Q/A wie im faq_schema
-   - Walk-Act (`walk_body`): dito mit den 2 Walk-Act-Fragen
-   - Figuren-Builder (Schleife ~Zeile 540-575): faq_block(f['faq'], Titel "Haeufige Fragen - <Figurenname>")
-   - WICHTIG: Exakt denselben Text wie im jeweiligen faq_schema(...) verwenden, sonst bleibt die Diskrepanz.
-3. assets/style.css - minimales Styling fuer `.faq-item`/`summary`/`.faq-a`. CSS-Aenderung -> `style.css?v=<md5>` aendert sich -> alle 15 HTML mitcommitten.
-4. Build + Verify (PFLICHT): `python scripts/build.py` (Python 3.12+), pruefen dass auf jeder der 8 Seiten der FAQ-Text jetzt AUCH ausserhalb von `<script>` erscheint (Trefferzahl >= 2), schliessendes `</html>`, kein abgeschnittener Output. Dann build.py + style.css + 15 HTML + sitemap (lastmod) in einem Commit.
-
-### Alternative (falls kein sichtbarer FAQ-Block gewuenscht)
-FAQPage-Schema auf allen 8 Seiten entfernen. Vermeidet das Risiko sofort, verschenkt aber sichtbaren keyword-tragenden FAQ-Content. Empfehlung: sichtbar machen (Option oben), nicht entfernen.
-
-### Aufwand / Risiko
-Mittel. Inhalt existiert bereits (kein Erfinden noetig, INHALTE-VERIFIZIERT-konform), nur Rendering + etwas CSS. Nutzen: Schema-Konformitaet wiederhergestellt + zusaetzlicher sichtbarer, suchrelevanter Text auf 8 Seiten (positiv fuer klassische Suche und KI-Antworten).
+### Umgesetzter Fix
+1. scripts/build.py: faq_block(qa, title) Helper - rendert pro Q/A ein `<details class="faq-item"><summary>Frage</summary><div class="faq-a"><p>Antwort</p></div></details>` in einer `<section>` mit `<h2>`.
+2. Eingebaut auf 8 Seiten vor cta_band(): home (home_faq), walk-act (walk_faq), 6 Figuren (f['faq']). Dieselbe Q/A-Liste geht an faq_schema UND faq_block -> Deckungsgleichheit garantiert.
+3. assets/style.css: FAQ-Akkordeon-Styling (.faq/.faq-item/summary/.faq-a), natives <details>, kein JS. Hash -> 91d09e05.
+4. Build (Py3.12) + Verify: auf allen 8 Seiten FAQ-Text auch ausserhalb <script> (sichtbare faq-items == Schema-Questions), schliessendes </html>, Repro 1:1, live main == working dir.
