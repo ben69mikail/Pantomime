@@ -266,7 +266,7 @@ FIGUREN = {
     "feat": ["Vielfältig einsetzbar: Messen, Autohäuser, Geschäftseröffnungen, Gastromeile, Galas, Stadtfeste und Feiern",
              "Keine Bühne, keine Ton- oder Lichttechnik nötig — flexibel an nahezu jedem Ort",
              "Kein Sprachproblem: ideal für internationale und multikulturelle Veranstaltungen",
-             "Als Hauptattraktion oder als Walk Act buchbar"],
+             "Als Hauptattraktion oder als <a href=\"/walk-act/\">Walk Act</a> buchbar"],
     "img2": "pantomime-12-scaled.webp", "img2_alt": "Pantomime LIAR vor Saalpublikum bei einer Feier",
     "warum_title": "Warum einen Pantomime in NRW buchen?",
     "warum": [("Universell verständlich", "Die Kunst basiert auf Körpersprache und funktioniert unabhängig von der Sprache des Publikums."),
