@@ -1,157 +1,48 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 7,
-  "letzter_lauf": "2026-06-26",
-  "WICHTIG_naechster_lauf": "Tag 7 abgeschlossen (2026-06-26): sitemap/robots/canonical-Audit SAUBER, KEIN Code-Commit. Befunde: 14 indexierbare index.html-Seiten (404.html korrekt NICHT in sitemap). sitemap.xml (14 URLs) == 14 Canonicals == 14 reale Seiten (diff leer, 1:1). Alle Canonicals self-referential auf www/https-Host. .htaccess erzwingt https+www per 301. robots.txt: Allow /, KI-Crawler (GPTBot/ClaudeBot/PerplexityBot/Google-Extended) explizit erlaubt, Sitemap-Verweis korrekt. Kein noindex. build.py erzeugt sitemap/datenschutz-Stand mit TODAY (dynamisch); frischer Clone+Rebuild Py3.12 = nur 2 datumsgetriebene Diffs (sitemap lastmod, datenschutz Stand), sonst 0 Abweichung -> Build deterministisch. ENTSCHEIDUNG: lastmod NICHT auf heute gebumpt - letzte echte Inhaltsaenderung war 2026-06-25 (FAQ); ein lastmod-Bump ohne Content-Aenderung waere ein irrefuehrendes Freshness-Signal (Guardrail: Qualitaet vor Ranking-Trick). lastmod bleibt 2026-06-25 (wahrheitsgemaess). Naechster Lauf: Tag 8 - GSC 'Pantomime'-Queries analysieren (welche Seite rankt? Cannibalization?). ABER: GSC weiterhin 0/0 'Keine Daten' (Domain zu jung) -> falls weiterhin keine Query-Daten, Tag 8 als Vorab-On-Page-Check der Pantomime-Zielseite (figuren/der-pantomime-in-nrw) fahren und im Bericht vermerken, dass echte Query-Analyse erst mit Impressionen moeglich ist.",
+  "aktueller_plan_tag": 8,
+  "letzter_lauf": "2026-06-27",
+  "WICHTIG_naechster_lauf": "Tag 8 abgeschlossen (2026-06-27): GSC weiterhin 0 Klicks / 0 Impressionen, 'Keine Daten' (Datenfenster 14.06.-24.06.26, 9 Tage indexiert). Echte Query-Analyse 'Pantomime' noch nicht moeglich -> Fallback gefahren: On-Page-Check der Pantomime-Zielseite figuren/der-pantomime-in-nrw. BEFUND: Title 51 Z. (Keyword vorn) OK, Desc 159 Z. OK, genau 1 H1 OK, H2/H3-Hierarchie OK, Keyword-Dichte natuerlich OK, Schema (Breadcrumb/FAQPage/Service) sauber + FAQ sichtbar deckungsgleich. EINE Luecke gefunden: Body erwaehnt 'Walk Act' im feature-list, war aber NICHT intern verlinkt (Gegenrichtung zu Tag 5: dort Walk-Act->Figuren, hier fehlte Figur->Walk-Act). FIX (Auto-Commit, Tag-5-Stil descriptive Anchor): feat-Item 'Als Hauptattraktion oder als <a href=/walk-act/>Walk Act</a> buchbar' in build.py; rebuild Py3.12; verifiziert: Diff nur 1 Zeile build.py + 1 Zeile Pantomime-HTML + 2 datumsgetriebene (sitemap lastmod, datenschutz Stand). Da heute ECHTER Content-Change -> lastmod-Bump auf 2026-06-27 jetzt WAHRHEITSGEMAESS. Commit 58d15f2 (4 Dateien, 1 Commit, byte-verifiziert via Subagent). Live auf main bestaetigt. Naechster Lauf: Tag 9 - GSC 'Walk Act'-Queries analysieren. FALLBACK falls weiter 0/0: On-Page-Check Walk-Act-Seite (/walk-act/) + ggf. Gegenrichtung weitere Figurenseiten -> Walk-Act descriptiv verlinken.",
   "erledigte_schritte": [
-    {
-      "tag": 1,
-      "datum": "2026-06-18",
-      "schritt": "Title-Tags aller 15 Seiten auf 50-60 Zeichen + Keyword vorn",
-      "ergebnis": "3 zu lange Titles gekuerzt (Start 63->52, Figuren 66->55, Walk-Act 63->51). Restliche 12 Seiten OK.",
-      "commits": [
-        "SEO: Title-Tags Start/Figuren/Walk-Act <=60 Zeichen (HTML)",
-        "SEO: State Tag 1"
-      ]
-    },
-    {
-      "tag": 2,
-      "datum": "2026-06-19",
-      "schritt": "build.py-Title-Regression behoben + Meta-Descriptions aller 15 Seiten 120-160 Zeichen",
-      "ergebnis": "build.py-Titles synchronisiert (2e056bd). 14/15 Descriptions OK; Start von 202 auf 149 Z. gekuerzt, Keyword vorn.",
-      "commits": [
-        "SEO: build.py-Titles sync + Start-Meta-Description gekuerzt",
-        "SEO: build.py-Titles auf kurze <=60-Zeichen-Versionen synchronisiert (2e056bd)"
-      ]
-    },
-    {
-      "tag": 3,
-      "datum": "2026-06-21",
-      "schritt": "Tag 3: Alt-Texte aller Bilder pruefen",
-      "ergebnis": "AUDIT, KEIN FIX. img()-Helper erzwingt alt; Content-Bilder haben beschreibende keyword-reiche Alts. Leere alt='' nur bei dekorativen aria-hidden-Bildern = WCAG-konform.",
-      "commits": [
-        "SEO: State Tag 3 - Alt-Text-Audit (kein Fix noetig)"
-      ]
-    },
-    {
-      "tag": 4,
-      "datum": "2026-06-23",
-      "schritt": "Tag 4: H1/H2/H3-Hierarchie + Footer-Fix",
-      "ergebnis": "Alle Seiten genau 1 H1. Footer-h4 -> p.footer-h (build.py/style.css/15 HTML). Frischer Clone+Rebuild = 0 Abweichung; 0 <h4> in Footern.",
-      "commits": [
-        "SEO: State Tag 4 - H1/H2/H3-Audit + Footer-h4-Vorschlag",
-        "SEO: Footer h4 -> p.footer-h (build.py/style.css/15 HTML/sitemap) - verifiziert"
-      ]
-    },
-    {
-      "tag": 5,
-      "datum": "2026-06-24",
-      "schritt": "Tag 5: Interne Verlinkung - descriptive Anchors",
-      "ergebnis": "Walk-Act-Seite verlinkt Pantomime/Nussknacker/Weihnachtsmann descriptiv intern auf Figurenseiten (strong bleibt fuer Optik). Verifiziert: Clone+Rebuild 1:1. Figuren-Karten 'Mehr erfahren' = span im Card-Link, bewusst nicht geaendert.",
-      "commits": [
-        "SEO: Walk-Act-Seite verlinkt Pantomime/Nussknacker/Weihnachtsmann intern (babb004)",
-        "SEO: build.py-Sync Walk-Act interne Verlinkung (c93cf03)"
-      ]
-    },
-    {
-      "tag": 6,
-      "datum": "2026-06-25",
-      "schritt": "Tag 6: Schema.org validieren (LocalBusiness/Service/FAQ/Breadcrumb) - matcht Schema den sichtbaren Inhalt?",
-      "ergebnis": "AUDIT im Build-VM. SAUBER: BreadcrumbList, Service, LocalBusiness/PerformingGroup, Person, ContactPage. PROBLEM: FAQPage auf 8 Seiten ohne sichtbaren FAQ-Inhalt -> Vorschlag 2. NACHTRAG: Vorschlag 2 freigegeben+umgesetzt: faq_block() in build.py, sichtbarer FAQ-Block auf 8 Seiten, style.css-FAQ-CSS, 15 HTML+sitemap regeneriert. Verifiziert (Repro 1:1). FAQPage-Schema deckt jetzt sichtbaren Inhalt.",
-      "commits": [
-        "SEO: State Tag 6 - Schema-Audit + FAQ-Sichtbarkeit als Vorschlag 2",
-        "SEO: Vorschlag 2 umgesetzt - FAQ sichtbar gerendert (build.py/style.css/15 HTML/sitemap, 8 Commits via Subagent)"
-      ]
-    },
-    {
-      "tag": 7,
-      "datum": "2026-06-26",
-      "schritt": "Tag 7: sitemap.xml + robots.txt + canonical-Konsistenz pruefen; lastmod aktualisieren.",
-      "ergebnis": "AUDIT im Build-VM (frischer Clone Py3.12), KEIN Code-Commit. SAUBER: 14 indexierbare index.html (404.html korrekt nicht in sitemap). sitemap (14 URLs) == 14 Canonicals == reale Seiten (diff leer). Canonicals self-referential www/https. .htaccess erzwingt https+www per 301. robots.txt: Allow /, KI-Crawler explizit erlaubt, Sitemap-Verweis korrekt, kein noindex. Rebuild deterministisch (nur 2 datumsgetriebene Diffs). ENTSCHEIDUNG: lastmod NICHT gebumpt - kein echter Content-Change heute; lastmod bleibt wahrheitsgemaess 2026-06-25 (Guardrail Qualitaet > Trick).",
-      "commits": [
-        "SEO: State Tag 7 - sitemap/robots/canonical-Audit sauber, kein Code-Commit"
-      ]
-    }
+    {"tag": 1, "datum": "2026-06-18", "schritt": "Title-Tags aller 15 Seiten auf 50-60 Zeichen + Keyword vorn", "ergebnis": "3 zu lange Titles gekuerzt (Start 63->52, Figuren 66->55, Walk-Act 63->51). Restliche 12 Seiten OK.", "commits": ["SEO: Title-Tags Start/Figuren/Walk-Act <=60 Zeichen (HTML)", "SEO: State Tag 1"]},
+    {"tag": 2, "datum": "2026-06-19", "schritt": "build.py-Title-Regression behoben + Meta-Descriptions aller 15 Seiten 120-160 Zeichen", "ergebnis": "build.py-Titles synchronisiert (2e056bd). 14/15 Descriptions OK; Start von 202 auf 149 Z. gekuerzt, Keyword vorn.", "commits": ["SEO: build.py-Titles sync + Start-Meta-Description gekuerzt", "SEO: build.py-Titles auf kurze <=60-Zeichen-Versionen synchronisiert (2e056bd)"]},
+    {"tag": 3, "datum": "2026-06-21", "schritt": "Tag 3: Alt-Texte aller Bilder pruefen", "ergebnis": "AUDIT, KEIN FIX. img()-Helper erzwingt alt; Content-Bilder haben beschreibende keyword-reiche Alts. Leere alt='' nur bei dekorativen aria-hidden-Bildern = WCAG-konform.", "commits": ["SEO: State Tag 3 - Alt-Text-Audit (kein Fix noetig)"]},
+    {"tag": 4, "datum": "2026-06-23", "schritt": "Tag 4: H1/H2/H3-Hierarchie + Footer-Fix", "ergebnis": "Alle Seiten genau 1 H1. Footer-h4 -> p.footer-h (build.py/style.css/15 HTML). Frischer Clone+Rebuild = 0 Abweichung; 0 <h4> in Footern.", "commits": ["SEO: State Tag 4 - H1/H2/H3-Audit + Footer-h4-Vorschlag", "SEO: Footer h4 -> p.footer-h (build.py/style.css/15 HTML/sitemap) - verifiziert"]},
+    {"tag": 5, "datum": "2026-06-24", "schritt": "Tag 5: Interne Verlinkung - descriptive Anchors", "ergebnis": "Walk-Act-Seite verlinkt Pantomime/Nussknacker/Weihnachtsmann descriptiv intern auf Figurenseiten (strong bleibt fuer Optik). Verifiziert: Clone+Rebuild 1:1. Figuren-Karten 'Mehr erfahren' = span im Card-Link, bewusst nicht geaendert.", "commits": ["SEO: Walk-Act-Seite verlinkt Pantomime/Nussknacker/Weihnachtsmann intern (babb004)", "SEO: build.py-Sync Walk-Act interne Verlinkung (c93cf03)"]},
+    {"tag": 6, "datum": "2026-06-25", "schritt": "Tag 6: Schema.org validieren (LocalBusiness/Service/FAQ/Breadcrumb) - matcht Schema den sichtbaren Inhalt?", "ergebnis": "AUDIT im Build-VM. SAUBER: BreadcrumbList, Service, LocalBusiness/PerformingGroup, Person, ContactPage. PROBLEM: FAQPage auf 8 Seiten ohne sichtbaren FAQ-Inhalt -> Vorschlag 2. NACHTRAG: Vorschlag 2 freigegeben+umgesetzt: faq_block() in build.py, sichtbarer FAQ-Block auf 8 Seiten, style.css-FAQ-CSS, 15 HTML+sitemap regeneriert. Verifiziert (Repro 1:1). FAQPage-Schema deckt jetzt sichtbaren Inhalt.", "commits": ["SEO: State Tag 6 - Schema-Audit + FAQ-Sichtbarkeit als Vorschlag 2", "SEO: Vorschlag 2 umgesetzt - FAQ sichtbar gerendert (build.py/style.css/15 HTML/sitemap, 8 Commits via Subagent)"]},
+    {"tag": 7, "datum": "2026-06-26", "schritt": "Tag 7: sitemap.xml + robots.txt + canonical-Konsistenz pruefen; lastmod aktualisieren.", "ergebnis": "AUDIT im Build-VM (frischer Clone Py3.12), KEIN Code-Commit. SAUBER: 14 indexierbare index.html (404.html korrekt nicht in sitemap). sitemap (14 URLs) == 14 Canonicals == reale Seiten (diff leer). Canonicals self-referential www/https. .htaccess erzwingt https+www per 301. robots.txt: Allow /, KI-Crawler explizit erlaubt, Sitemap-Verweis korrekt, kein noindex. Rebuild deterministisch (nur 2 datumsgetriebene Diffs). ENTSCHEIDUNG: lastmod NICHT gebumpt - kein echter Content-Change heute; lastmod bleibt wahrheitsgemaess 2026-06-25 (Guardrail Qualitaet > Trick).", "commits": ["SEO: State Tag 7 - sitemap/robots/canonical-Audit sauber, kein Code-Commit"]},
+    {"tag": 8, "datum": "2026-06-27", "schritt": "Tag 8: GSC 'Pantomime'-Queries analysieren (Fallback: On-Page-Check Pantomime-Zielseite, da GSC 0/0).", "ergebnis": "GSC live via Chrome geprueft: weiterhin 0 Klicks / 0 Impressionen, 'Keine Daten' (Datenfenster 14.06.-24.06.26). Query-Analyse noch nicht moeglich -> Fallback On-Page-Check figuren/der-pantomime-in-nrw: Title/Desc/H1/H2-Hierarchie/Keyword/Schema/FAQ alle SAUBER. EINE Luecke: 'Walk Act' im feature-list war nicht intern verlinkt (Gegenrichtung zu Tag 5). FIX (Auto-Commit, descriptive Anchor): feat-Item -> <a href=/walk-act/>Walk Act</a> in build.py, Py3.12-Rebuild, verifiziert (Diff = 1 Z. build.py + 1 Z. HTML + 2 datumsgetrieben). lastmod-Bump auf 2026-06-27 wahrheitsgemaess (echter Content-Change). byte-verifiziert via Subagent, live auf main bestaetigt.", "commits": ["SEO: Tag 8 - interner Link Pantomime-Seite -> /walk-act/ (descriptive anchor) + Rebuild (sitemap/datenschutz lastmod) (58d15f2)", "SEO: State Tag 8"]}
   ],
-  "naechster_plan_tag": 8,
-  "naechster_schritt": "Tag 8: GSC 'Pantomime'-Queries analysieren - welche Seite rankt? Cannibalization? On-Page schaerfen. FALLBACK falls GSC weiterhin 0/0: Vorab-On-Page-Check der Pantomime-Zielseite (figuren/der-pantomime-in-nrw) - Title/H1/Description/Keyword-Dichte/interne Links pruefen, echte Query-Analyse erst mit Impressionen.",
+  "naechster_plan_tag": 9,
+  "naechster_schritt": "Tag 9: GSC 'Walk Act'-Queries analysieren - welche Seite rankt? Cannibalization? On-Page schaerfen. FALLBACK falls GSC weiterhin 0/0: On-Page-Check der Walk-Act-Zielseite (/walk-act/) - Title/H1/Description/Keyword/interne Links pruefen; ggf. weitere Figurenseiten (Zauberer/Clown/etc.) descriptiv auf /walk-act/ verlinken (Gegenrichtung-Internal-Linking fortsetzen).",
   "offene_vorschlaege": [],
   "erledigte_vorschlaege": [
-    {
-      "nr": 1,
-      "datum_vorschlag": "2026-06-23",
-      "datum_umgesetzt": "2026-06-23",
-      "titel": "Footer-Ueberschriften <h4> -> <p class=footer-h>",
-      "status": "ERLEDIGT & verifiziert & gepusht"
-    },
-    {
-      "nr": 2,
-      "datum_vorschlag": "2026-06-25",
-      "datum_umgesetzt": "2026-06-25",
-      "titel": "FAQ-Inhalte sichtbar rendern (FAQPage-Schema deckt jetzt sichtbaren Inhalt, 8 Seiten)",
-      "status": "ERLEDIGT & verifiziert & gepusht (von Michael freigegeben)"
-    }
+    {"nr": 1, "datum_vorschlag": "2026-06-23", "datum_umgesetzt": "2026-06-23", "titel": "Footer-Ueberschriften <h4> -> <p class=footer-h>", "status": "ERLEDIGT & verifiziert & gepusht"},
+    {"nr": 2, "datum_vorschlag": "2026-06-25", "datum_umgesetzt": "2026-06-25", "titel": "FAQ-Inhalte sichtbar rendern (FAQPage-Schema deckt jetzt sichtbaren Inhalt, 8 Seiten)", "status": "ERLEDIGT & verifiziert & gepusht (von Michael freigegeben)"}
   ],
   "gsc_snapshots": [
-    {
-      "datum": "2026-06-18",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Domain frisch migriert. Baseline."
-    },
-    {
-      "datum": "2026-06-21",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Weiterhin 0 Klicks."
-    },
-    {
-      "datum": "2026-06-23",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Live via Chrome. 0/0, 'Keine Daten'."
-    },
-    {
-      "datum": "2026-06-24",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "14.06.-21.06.26",
-      "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Live via Chrome. 0/0, 'Keine Daten'."
-    },
-    {
-      "datum": "2026-06-25",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "Datenfenster 14.06.-22.06.26 sichtbar",
-      "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Live via Chrome. Weiterhin 0/0, 'Keine Daten'. Domain zu jung."
-    },
-    {
-      "datum": "2026-06-26",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "Datenfenster 14.06.-23.06.26 sichtbar",
-      "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Live via Chrome (Michael eingeloggt) geprueft. Weiterhin 0 Klicks / 0 Impressionen, 'Keine Daten' bei Suchanfragen. Kein Trend ggue. Baseline; Domain weiterhin zu jung (8 Tage). Sobald Impressionen kommen: Tag 8/9 (Query-Analyse) priorisieren."
-    }
+    {"datum": "2026-06-18", "property": "sc-domain:pantomime-la-france.eu", "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0, "top_queries": [], "hinweis": "Domain frisch migriert. Baseline."},
+    {"datum": "2026-06-21", "property": "sc-domain:pantomime-la-france.eu", "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0, "top_queries": [], "hinweis": "Weiterhin 0 Klicks."},
+    {"datum": "2026-06-23", "property": "sc-domain:pantomime-la-france.eu", "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0, "top_queries": [], "hinweis": "Live via Chrome. 0/0, 'Keine Daten'."},
+    {"datum": "2026-06-24", "property": "sc-domain:pantomime-la-france.eu", "zeitraum": "14.06.-21.06.26", "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0, "top_queries": [], "hinweis": "Live via Chrome. 0/0, 'Keine Daten'."},
+    {"datum": "2026-06-25", "property": "sc-domain:pantomime-la-france.eu", "zeitraum": "Datenfenster 14.06.-22.06.26 sichtbar", "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0, "top_queries": [], "hinweis": "Live via Chrome. Weiterhin 0/0, 'Keine Daten'. Domain zu jung."},
+    {"datum": "2026-06-26", "property": "sc-domain:pantomime-la-france.eu", "zeitraum": "Datenfenster 14.06.-23.06.26 sichtbar", "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0, "top_queries": [], "hinweis": "Live via Chrome (Michael eingeloggt) geprueft. Weiterhin 0 Klicks / 0 Impressionen, 'Keine Daten' bei Suchanfragen. Kein Trend ggue. Baseline; Domain weiterhin zu jung (8 Tage)."},
+    {"datum": "2026-06-27", "property": "sc-domain:pantomime-la-france.eu", "zeitraum": "Datenfenster 14.06.-24.06.26 sichtbar", "klicks": 0, "impressionen": 0, "ctr_prozent": 0, "durchschnitt_position": 0, "top_queries": [], "hinweis": "Live via Chrome (Michael eingeloggt) geprueft. Weiterhin 0 Klicks / 0 Impressionen, 'Keine Daten' bei Suchanfragen (9 Tage indexiert). 'Pantomime'-Query-Analyse (Tag 8) noch nicht moeglich -> Fallback On-Page-Check gefahren."}
   ],
   "technische_hinweise": {
-    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit Backslash). VM hat 3.10 -> uv python install 3.12 mit UV_CACHE_DIR=/tmp/uvcache_$$ UND UV_PYTHON_INSTALL_DIR=/tmp/py312_$$ (Vorsession-Dirs in /tmp/.local koennen Permission denied werfen). HOME=/tmp.",
-    "vm_git_hinweis": "Im VM nach /tmp in eindeutiges Dir klonen (z.B. pan_check / pan_$(date +%s)). VM hat KEINEN GitHub-Token -> Push nur ueber GitHub-MCP.",
-    "gateguard_hinweis": "Local-agent Write/Edit/Bash via GateGuard blockiert. Workaround: Dateien im VM via bash schreiben + ueber GitHub-MCP pushen; GSC via Chrome-MCP. Grosse Dateien (build.py ~60KB) -> Push via Subagent (Agent-Tool).",
-    "github_mcp_sha_hinweis": "create_or_update_file braucht VOLLE 40-Zeichen-blob-sha. push_files braucht KEINE sha.",
+    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit Backslash). VM hat 3.10 -> uv python install 3.12 mit UV_CACHE_DIR=/tmp/uvcache_$$ UND UV_PYTHON_INSTALL_DIR=/tmp/py312_$$. HOME=/tmp. Tag 8: 'uv run --python 3.12 python scripts/build.py' funktioniert sauber.",
+    "vm_git_hinweis": "Im VM nach /tmp in eindeutiges Dir klonen (z.B. pan_t8). VM hat KEINEN GitHub-Token -> Push nur ueber GitHub-MCP.",
+    "gateguard_hinweis": "Local-agent Write/Edit/Bash via GateGuard blockiert. Workaround: Dateien im VM via bash schreiben + ueber GitHub-MCP pushen; GSC via Chrome-MCP. Grosse Dateien (build.py ~60KB) -> Push via Subagent.",
+    "github_mcp_sha_hinweis": "create_or_update_file braucht VOLLE 40-Zeichen-blob-sha. push_files braucht KEINE sha (Tag 8: push_files mit 4 Dateien in 1 Commit erfolgreich, byte-verifiziert).",
     "deploy": "GitHub Action rsynct committete HTML zu IONOS. build.py NICHT im CI -> generierte HTML immer mitcommitten.",
-    "datenschutz_stand": "datenschutz/index.html hat auto 'Stand: {TODAY}'. Wird bei jedem Rebuild aktualisiert - nur committen wenn ohnehin Content-Rebuild noetig.",
+    "datenschutz_stand": "datenschutz/index.html hat auto 'Stand: {TODAY}'. Wird bei jedem Rebuild aktualisiert.",
     "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de (Tag 15).",
     "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben.",
-    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Weitere Kandidaten: Figurenseiten <-> Walk-Act gegenseitig.",
-    "sitemap_robots_stand": "Tag 7 (2026-06-26): 14 URLs, lastmod=2026-06-25 (= letzte echte Aenderung). build.py setzt lastmod=TODAY -> bei naechstem Content-Rebuild zieht das Datum automatisch nach. 404.html bewusst nicht in sitemap. robots.txt erlaubt alle + KI-Crawler + Sitemap-Verweis. Canonicals 1:1 zu sitemap.",
-    "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Aktuell 91d09e05 (nach FAQ-CSS). Bei style.css-Aenderung alle HTML mitcommitten.",
+    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite (feature-list) -> /walk-act/ descriptiv (Gegenrichtung). OFFENE Kandidaten: weitere Figurenseiten (Zauberer/Clown/Crazy-Kellner/Nussknacker/Weihnachtsmann) -> /walk-act/.",
+    "sitemap_robots_stand": "Tag 8 (2026-06-27): 14 URLs, lastmod=2026-06-27 (= heutiger echter Content-Change auf Pantomime-Seite). build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
+    "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Aktuell 91d09e05. Bei style.css-Aenderung alle HTML mitcommitten.",
     "fokus_keywords": ["Pantomime", "Walk Act"],
-    "faq_stand": "faq_block(qa,title) rendert <details class=faq-item><summary>Q</summary><div class=faq-a><p>A</p></div></details>. Selbe Q/A-Liste an faq_schema UND faq_block -> Deckungsgleichheit garantiert."
+    "faq_stand": "faq_block(qa,title) rendert details/summary/faq-a. Selbe Q/A-Liste an faq_schema UND faq_block -> Deckungsgleichheit garantiert.",
+    "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt (wie <strong> in body)."
   }
 }
