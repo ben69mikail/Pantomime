@@ -303,7 +303,7 @@ FIGUREN = {
   "der-clown": {
     "name": "Der Clown", "menu": "Clown",
     "title": "Clown in NRW buchen – LIAR | Kinderfest & Firmenfeier",
-    "desc": "Clown in NRW buchen: LIAR bringt mit Mimik, Slapstick und Improvisation Menschen jeden Alters zum Lachen – ideal für Kinderfeste, Stadtfeste und Firmenfeiern.",
+    "desc": "Clown & Comedy-Walk-Act in NRW buchen: LIAR bringt mit Mimik, Slapstick und Improvisation alle zum Lachen – für Kinderfeste, Stadtfeste & Firmenfeiern.",
     "card": "geburtstag.webp", "card_alt": "Clown LIAR bei einem Kinderfest in NRW",
     "hero_alt": "Clown LIAR bringt Menschen zum Lachen",
     "intro": "Der Clown bringt Menschen jeden Alters zum Lachen, Staunen und Nachdenken.",
