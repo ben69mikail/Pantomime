@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 9,
-  "letzter_lauf": "2026-06-28",
-  "WICHTIG_naechster_lauf": "Tag 9 abgeschlossen (2026-06-28): GSC live via Chrome geprueft -> ERSTES SIGNAL: 2 Impressionen (vorher 0), 0 Klicks, CTR 0%, Durchschnittsposition 58 (Datenfenster 14.06.-25.06.26). Query-Aufschluesselung weiterhin 'Keine Daten' (zu wenige Impressionen fuer Zuordnung) -> 'Walk Act'-Query-Analyse noch nicht moeglich. Fallback gefahren: On-Page-Check /walk-act/ (SAUBER: Title 50 Z. Keyword vorn, Desc ~165 Z., 1 H1, H2/H3 OK, FAQ sichtbar==Schema). Gegenrichtung-Internal-Linking fortgesetzt: Nussknacker- und Weihnachtsmann-Seite erwaehnten 'Walking-Act'/'Walk Act' im feature-list bzw. Body, ohne intern auf /walk-act/ zu verlinken. FIX (Auto-Commit, descriptive Anchors): build.py 2 feat/body-Strings -> <a href=/walk-act/>; Py3.12-Rebuild; verifiziert (Diff = 2 Z. build.py + 1 Z. je Figuren-HTML + 2 datumsgetrieben sitemap/datenschutz). lastmod-Bump 2026-06-28 wahrheitsgemaess (echter Content-Change). Commit f6212861 (5 Dateien, 1 Commit), byte-verifiziert via Subagent (git-blob-SHA match). Live auf main. Naechster Lauf: Tag 10 - High-Impression/Low-CTR-Seiten finden, Title/Desc attraktiver (Auto-Fix erlaubt). FALLBACK falls GSC weiter zu duenn: GSC Seiten-Tab (welche URLs haben die 2 Impressionen?) + ggf. restliche Figurenseiten (Zauberer/Clown/Crazy-Kellner) Gegenrichtung auf /walk-act/ verlinken.",
+  "aktueller_plan_tag": 10,
+  "letzter_lauf": "2026-06-29",
+  "WICHTIG_naechster_lauf": "Tag 10 abgeschlossen (2026-06-29): GSC live via Chrome geprueft -> DURCHBRUCH bei Seiten-Tab: 3 Impressionen gesamt (vorher 2), 0 Klicks, CTR 0%, Durchschnittsposition VERBESSERT auf 40,3 (vorher 58). Seiten-Aufschluesselung jetzt verfuegbar: /figuren/der-clown/ = 2 Impressionen (die rankende Seite), Startseite / = 1 Impression. Query-Aufschluesselung weiterhin 'Keine Daten' (zu duenn). Primaere Tag-10-Aufgabe damit AUSFUEHRBAR: hoechste-Impression-Seite = Clown -> Meta-Description attraktiver + sekundaeres Fokus-Keyword 'Walk Act' eingewoben (neu: 'Clown & Comedy-Walk-Act in NRW buchen...', 151 Z., wahrheitsgemaess - Clown wird als Walk Act gespielt). FALLBACK (Gegenrichtung-Linking Zauberer/Clown/Crazy-Kellner) NICHT noetig: alle 3 verlinken bereits via Nav auf /walk-act/ und haben KEINE unverlinkte Walk-Act-Erwaehnung im Body (nur Shared-Header-Subtitle). Auto-Fix erlaubt; Schema+og:desc mitgezogen (Deckungsgleichheit). Py3.12-Rebuild; Diff minimal (build.py 1 Z. + clown-HTML 3 Z. [meta/og/schema] + 2 datumsgetrieben sitemap/datenschutz). lastmod-Bump 2026-06-29 wahrheitsgemaess. Commit 8b9b82cd (4 Dateien, 1 Commit), byte-verifiziert via Subagent (git-blob-SHA match, 4/4 PASS). Live auf main. Naechster Lauf: Tag 11 - Content-Luecken-Analyse -> VORSCHLAG fuer Content-Erweiterung (Freigabe noetig, NICHT committen). Bei GSC: Clown-Seite + Startseite weiter beobachten (CTR bleibt bei Position ~40 vermutlich 0% bis Ranking steigt).",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -91,10 +91,20 @@
         "SEO: Tag 9 - Nussknacker/Weihnachtsmann feature-list -> /walk-act/ (descriptive anchors, Gegenrichtung) + Rebuild (sitemap/datenschutz lastmod) (f6212861)",
         "SEO: State Tag 9"
       ]
+    },
+    {
+      "tag": 10,
+      "datum": "2026-06-29",
+      "schritt": "Tag 10: High-Impression/Low-CTR-Seite finden -> Title/Description attraktiver (Auto-Fix).",
+      "ergebnis": "GSC Seiten-Tab jetzt befuellt: /figuren/der-clown/ 2 Impr., Start / 1 Impr.; gesamt 3 Impr./0 Klicks/Pos 40,3 (von 58 verbessert). Clown = hoechste-Impression-Seite. Deren Title (53 Z.) + Desc (158 Z.) waren technisch sauber, aber Desc enthielt KEINS der Fokus-Keywords. FIX (Auto-Commit): Clown-Meta-Description umformuliert -> fuehrt jetzt mit 'Clown & Comedy-Walk-Act in NRW buchen' (151 Z., in Range, wahrheitsgemaess), weaving Fokus-Keyword 'Walk Act'. meta description + og:description + Service-Schema-description synchron geaendert (Deckungsgleichheit gewahrt). Fallback Gegenrichtung-Linking geprueft aber NICHT noetig (Zauberer/Clown/Crazy-Kellner verlinken bereits via Nav auf /walk-act/, keine unverlinkte Body-Erwaehnung). Py3.12-Rebuild, 3/3 JSON-LD parsen, HTML valide (1x </html>), Diff minimal, byte-verifiziert via Subagent (4/4 SHA PASS).",
+      "commits": [
+        "SEO: Tag 10 - Clown-Seite (hoechste GSC-Impressionen) Meta-Description attraktiver + 'Walk Act'-Keyword (Auto-Fix) + Rebuild (sitemap/datenschutz lastmod) (8b9b82cd)",
+        "SEO: State Tag 10"
+      ]
     }
   ],
-  "naechster_plan_tag": 10,
-  "naechster_schritt": "Tag 10: High-Impression/Low-CTR-Seiten finden -> Title/Description attraktiver machen (Auto-Fix erlaubt). FALLBACK falls GSC weiter zu duenn (nur 2 Impressionen): GSC Seiten-Tab pruefen (welche URLs erhalten Impressionen?) und ggf. restliche Figurenseiten (Zauberer/Clown/Crazy-Kellner) Gegenrichtung descriptiv auf /walk-act/ verlinken.",
+  "naechster_plan_tag": 11,
+  "naechster_schritt": "Tag 11: Content-Luecken-Analyse -> VORSCHLAG fuer Content-Erweiterung (Freigabe von Michael noetig, NICHT committen). In vorschlaege.md anfuegen. Datengetrieben: Clown-Seite + Startseite erhalten Impressionen - pruefen ob diese genug Tiefe/Keyword-Abdeckung fuer Pantomime/Walk Act haben und wo eine staerkere Pantomime-fokussierte Landingpage/Section fehlt.",
   "offene_vorschlaege": [],
   "erledigte_vorschlaege": [
     {
@@ -197,6 +207,29 @@
       "durchschnitt_position": 58,
       "top_queries": [],
       "hinweis": "Live via Chrome (Michael eingeloggt). ERSTES SIGNAL: 2 Impressionen (vorher durchgaengig 0), 0 Klicks, Position 58. Query-Aufschluesselung weiterhin 'Keine Daten' - zu wenige Impressionen fuer Query-Zuordnung. Domain beginnt zu indexieren/ranken (12 Tage)."
+    },
+    {
+      "datum": "2026-06-29",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "Datenfenster 14.06.-27.06.26 sichtbar",
+      "klicks": 0,
+      "impressionen": 3,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 40.3,
+      "top_pages": [
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "top_queries": [],
+      "hinweis": "Live via Chrome (Michael eingeloggt). Seiten-Tab erstmals befuellt: Clown-Seite 2 Impr., Startseite 1 Impr. Position deutlich verbessert (58 -> 40,3). Query-Tab weiterhin 'Keine Daten'. Domain rankt langsam an (15 Tage)."
     }
   ],
   "technische_hinweise": {
@@ -208,8 +241,8 @@
     "datenschutz_stand": "datenschutz/index.html hat auto 'Stand: {TODAY}'. Wird bei jedem Rebuild aktualisiert.",
     "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de (Tag 15).",
     "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben.",
-    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker (feat 'Walking-Act') + Weihnachtsmann (Body 'Walk Act') -> /walk-act/ descriptiv (Gegenrichtung). OFFENE Kandidaten: Zauberer/Clown/Crazy-Kellner -> /walk-act/ (falls dort Walk-Act-Erwaehnung im Text).",
-    "sitemap_robots_stand": "Tag 9 (2026-06-28): 14 URLs, lastmod=2026-06-28 (echter Content-Change Nussknacker+Weihnachtsmann). build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
+    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/ (Gegenrichtung). Tag 10: Zauberer/Clown/Crazy-Kellner GEPRUEFT - verlinken bereits via Nav auf /walk-act/, KEINE unverlinkte Body-Erwaehnung (nur Shared-Header-Subtitle). Gegenrichtung-Linking damit abgeschlossen.",
+    "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, lastmod=2026-06-29 (echter Content-Change Clown-Desc). build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
     "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Aktuell 91d09e05. Bei style.css-Aenderung alle HTML mitcommitten.",
     "fokus_keywords": [
       "Pantomime",
@@ -217,6 +250,7 @@
     ],
     "faq_stand": "faq_block(qa,title) rendert details/summary/faq-a. Selbe Q/A-Liste an faq_schema UND faq_block -> Deckungsgleichheit garantiert.",
     "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt (wie <strong> in body).",
-    "uv_cache_hinweis": "Tag 9: UV_CACHE_DIR=/tmp/uvcache_$$ kollidierte (Permission denied bei wiederverwendetem Dir). Loesung: frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es."
+    "uv_cache_hinweis": "Tag 9: UV_CACHE_DIR=/tmp/uvcache_$$ kollidierte (Permission denied bei wiederverwendetem Dir). Loesung: frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es.",
+    "meta_desc_stand": "Tag 10: Clown-Desc fuehrt mit 'Clown & Comedy-Walk-Act' (Fokus-Keyword Walk Act eingewoben, 151 Z.). Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei)."
   }
 }
