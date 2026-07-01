@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 10,
-  "letzter_lauf": "2026-06-29",
-  "WICHTIG_naechster_lauf": "Tag 10 abgeschlossen (2026-06-29): GSC live via Chrome geprueft -> DURCHBRUCH bei Seiten-Tab: 3 Impressionen gesamt (vorher 2), 0 Klicks, CTR 0%, Durchschnittsposition VERBESSERT auf 40,3 (vorher 58). Seiten-Aufschluesselung jetzt verfuegbar: /figuren/der-clown/ = 2 Impressionen (die rankende Seite), Startseite / = 1 Impression. Query-Aufschluesselung weiterhin 'Keine Daten' (zu duenn). Primaere Tag-10-Aufgabe damit AUSFUEHRBAR: hoechste-Impression-Seite = Clown -> Meta-Description attraktiver + sekundaeres Fokus-Keyword 'Walk Act' eingewoben (neu: 'Clown & Comedy-Walk-Act in NRW buchen...', 151 Z., wahrheitsgemaess - Clown wird als Walk Act gespielt). FALLBACK (Gegenrichtung-Linking Zauberer/Clown/Crazy-Kellner) NICHT noetig: alle 3 verlinken bereits via Nav auf /walk-act/ und haben KEINE unverlinkte Walk-Act-Erwaehnung im Body (nur Shared-Header-Subtitle). Auto-Fix erlaubt; Schema+og:desc mitgezogen (Deckungsgleichheit). Py3.12-Rebuild; Diff minimal (build.py 1 Z. + clown-HTML 3 Z. [meta/og/schema] + 2 datumsgetrieben sitemap/datenschutz). lastmod-Bump 2026-06-29 wahrheitsgemaess. Commit 8b9b82cd (4 Dateien, 1 Commit), byte-verifiziert via Subagent (git-blob-SHA match, 4/4 PASS). Live auf main. Naechster Lauf: Tag 11 - Content-Luecken-Analyse -> VORSCHLAG fuer Content-Erweiterung (Freigabe noetig, NICHT committen). Bei GSC: Clown-Seite + Startseite weiter beobachten (CTR bleibt bei Position ~40 vermutlich 0% bis Ranking steigt).",
+  "aktueller_plan_tag": 11,
+  "letzter_lauf": "2026-07-01",
+  "WICHTIG_naechster_lauf": "Tag 11 abgeschlossen (2026-07-01): Content-Luecken-Analyse, KEIN Code-Commit (Proposal-Tag). GSC live via Chrome: 0 Klicks, 5 Impressionen (von 3), CTR 0%, Position 27,8 (stetige Verbesserung 58 -> 40,3 -> 27,8). Seiten: /figuren/der-clown/ 4 Impr., Startseite / 1 Impr. Query-Tab weiter 'Keine Daten'. BEFUND: Fokus-Seiten (Pantomime-in-NRW, Walk-Act) sind bereits inhaltlich TIEF (Staedteliste, Gute-Gruende, FAQ) - Tiefe ist NICHT das Problem. Referenzen-Seite deckt E-E-A-T (verifizierte Kundenliste) bereits ab. Echte Luecke = ANLASSBEZOGENER Content: Startseite-Anlaesse (Hochzeit/Firmenfeier/Messe/Stadtfest) nur duenne 1-Satz-Teaser, keine Tiefe fuer Long-Tail 'Pantomime Hochzeit' / 'Walk Act Firmenfeier' etc. VORSCHLAG 3 in vorschlaege.md angefuegt (Commit 9b50abfb), WARTET AUF FREIGABE: Option A (empfohlen) = Startseite-Section 'Fuer Ihren Anlass' auf je 2-3 belegte Saetze + descriptive interne Links vertiefen (nur INHALTE-VERIFIZIERT-Fakten, kein neuer URL, kein Thin-Page-Risiko); Option B (spaeter) = eigene Anlass-Landingpages, erst wenn GSC Anlass-Queries zeigt. Naechster Lauf: Tag 12 - Stadtbezogene Landingpage-Idee (z.B. 'Pantomime Essen buchen') als VORSCHLAG ausarbeiten (Freigabe noetig, NICHT committen). Bei GSC weiter Clown+Startseite beobachten; pruefen ob Query-Tab endlich Daten zeigt.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -101,11 +101,29 @@
         "SEO: Tag 10 - Clown-Seite (hoechste GSC-Impressionen) Meta-Description attraktiver + 'Walk Act'-Keyword (Auto-Fix) + Rebuild (sitemap/datenschutz lastmod) (8b9b82cd)",
         "SEO: State Tag 10"
       ]
+    },
+    {
+      "tag": 11,
+      "datum": "2026-07-01",
+      "schritt": "Tag 11: Content-Luecken-Analyse -> VORSCHLAG fuer Content-Erweiterung (Freigabe noetig, NICHT committen).",
+      "ergebnis": "GSC live via Chrome: 0 Klicks, 5 Impr. (von 3), CTR 0%, Pos 27,8 (stetig besser). Clown 4 Impr., Startseite 1 Impr.; Query-Tab weiter 'Keine Daten'. Analyse rankende + Fokus-Seiten: Pantomime-in-NRW und Walk-Act sind bereits TIEF (Staedteliste/Gute-Gruende/FAQ) - kein Tiefen-Defizit. Referenzen-Seite deckt E-E-A-T (verifizierte Kundenliste sichtbar) ab. ECHTE LUECKE = anlassbezogener Content: Startseite-Anlaesse (Hochzeit/Firmenfeier/Messe/Stadtfest) nur duenne 1-Satz-Teaser, keine Tiefe fuer Long-Tail-Anlass-Queries. VORSCHLAG 3 angefuegt (Commit 9b50abfb): Option A (empfohlen) Startseite-Section vertiefen (belegte Saetze + interne Links, kein neuer URL); Option B (spaeter) Anlass-Landingpages sobald GSC Anlass-Queries zeigt. KEIN Code-/HTML-Commit (Proposal-Tag).",
+      "commits": [
+        "SEO: Tag 11 - Vorschlag 3 (Anlass-fokussierter Content) angefuegt, wartet auf Freigabe (9b50abfb)",
+        "SEO: State Tag 11 - Content-Luecken-Analyse + Vorschlag 3 + GSC-Snapshot 2026-07-01"
+      ]
     }
   ],
-  "naechster_plan_tag": 11,
-  "naechster_schritt": "Tag 11: Content-Luecken-Analyse -> VORSCHLAG fuer Content-Erweiterung (Freigabe von Michael noetig, NICHT committen). In vorschlaege.md anfuegen. Datengetrieben: Clown-Seite + Startseite erhalten Impressionen - pruefen ob diese genug Tiefe/Keyword-Abdeckung fuer Pantomime/Walk Act haben und wo eine staerkere Pantomime-fokussierte Landingpage/Section fehlt.",
-  "offene_vorschlaege": [],
+  "naechster_plan_tag": 12,
+  "naechster_schritt": "Tag 12: Stadtbezogene Landingpage-Idee (z.B. 'Pantomime Essen buchen') als VORSCHLAG ausarbeiten (Freigabe von Michael noetig, NICHT committen). In vorschlaege.md anfuegen. Datengetrieben: Essen-Kunden real belegt (Messe Essen, Sparkasse Essen, Stadt Essen, AWO Essen u.a.) -> Essen als erste Stadt-Landingpage pruefen; Abgrenzung zu bestehender Staedteliste auf Figurenseiten beachten (Thin-Page-Risiko vermeiden). Wechselwirkung mit Vorschlag 3 Option B beachten (nicht doppeln).",
+  "offene_vorschlaege": [
+    {
+      "nr": 3,
+      "datum_vorschlag": "2026-07-01",
+      "titel": "Anlass-fokussierter Content ('Pantomime & Walk Act fuer Ihren Anlass') - Option A: Startseite-Section vertiefen; Option B: Anlass-Landingpages spaeter",
+      "status": "WARTET AUF FREIGABE von Michael",
+      "typ": "Content-Erweiterung (sichtbarer Fliesstext + interne Verlinkung)"
+    }
+  ],
   "erledigte_vorschlaege": [
     {
       "nr": 1,
@@ -230,6 +248,29 @@
       ],
       "top_queries": [],
       "hinweis": "Live via Chrome (Michael eingeloggt). Seiten-Tab erstmals befuellt: Clown-Seite 2 Impr., Startseite 1 Impr. Position deutlich verbessert (58 -> 40,3). Query-Tab weiterhin 'Keine Daten'. Domain rankt langsam an (15 Tage)."
+    },
+    {
+      "datum": "2026-07-01",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "Datenfenster 14.06.-29.06.26 sichtbar",
+      "klicks": 0,
+      "impressionen": 5,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 27.8,
+      "top_pages": [
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 4
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "top_queries": [],
+      "hinweis": "Live via Chrome (Michael eingeloggt). Weiter aufwaerts: 5 Impr. (von 3), Pos 27,8 (von 40,3 - Trend 58->40,3->27,8 sehr positiv). Clown-Seite 4 Impr., Startseite 1 Impr. Query-Tab weiter 'Keine Daten' (17 Tage). Kein Code-Commit (Proposal-Tag 11)."
     }
   ],
   "technische_hinweise": {
@@ -242,7 +283,7 @@
     "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de (Tag 15).",
     "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben.",
     "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/ (Gegenrichtung). Tag 10: Zauberer/Clown/Crazy-Kellner GEPRUEFT - verlinken bereits via Nav auf /walk-act/, KEINE unverlinkte Body-Erwaehnung (nur Shared-Header-Subtitle). Gegenrichtung-Linking damit abgeschlossen.",
-    "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, lastmod=2026-06-29 (echter Content-Change Clown-Desc). build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
+    "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, lastmod=2026-06-29 (echter Content-Change Clown-Desc). Tag 11 (2026-07-01): KEIN Rebuild (Proposal-Tag), lastmod bleibt 2026-06-29. build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
     "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Aktuell 91d09e05. Bei style.css-Aenderung alle HTML mitcommitten.",
     "fokus_keywords": [
       "Pantomime",
@@ -251,6 +292,7 @@
     "faq_stand": "faq_block(qa,title) rendert details/summary/faq-a. Selbe Q/A-Liste an faq_schema UND faq_block -> Deckungsgleichheit garantiert.",
     "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt (wie <strong> in body).",
     "uv_cache_hinweis": "Tag 9: UV_CACHE_DIR=/tmp/uvcache_$$ kollidierte (Permission denied bei wiederverwendetem Dir). Loesung: frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es.",
-    "meta_desc_stand": "Tag 10: Clown-Desc fuehrt mit 'Clown & Comedy-Walk-Act' (Fokus-Keyword Walk Act eingewoben, 151 Z.). Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei)."
+    "meta_desc_stand": "Tag 10: Clown-Desc fuehrt mit 'Clown & Comedy-Walk-Act' (Fokus-Keyword Walk Act eingewoben, 151 Z.). Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei).",
+    "content_luecken_stand": "Tag 11 (2026-07-01): Fokus-Seiten (Pantomime-in-NRW, Walk-Act) bereits inhaltlich tief; Referenzen-Seite deckt E-E-A-T ab. Offene Luecke = anlassbezogener Content (Startseite-Anlass-Teaser zu duenn) -> Vorschlag 3 (Freigabe offen). Stadt-Landingpages = Tag 12 / Vorschlag 3 Option B (erst bei GSC-Query-Daten)."
   }
 }
