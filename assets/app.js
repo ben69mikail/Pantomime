@@ -98,6 +98,12 @@
       ev.preventDefault();
       if (form.querySelector('input[name="botcheck"]') &&
           form.querySelector('input[name="botcheck"]').checked) return;
+      var consent = form.querySelector('input[name="consent"]');
+      if (consent && !consent.checked) {
+        if (status) { status.className = "form-status err"; status.textContent = "Bitte bestätigen Sie die Einwilligung zur Datenverarbeitung."; }
+        consent.focus();
+        return;
+      }
       var btn = form.querySelector('button[type="submit"]');
       var data = new FormData(form);
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = "Wird gesendet…"; }
