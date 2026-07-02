@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 11,
-  "letzter_lauf": "2026-07-01",
-  "WICHTIG_naechster_lauf": "Tag 11 abgeschlossen (2026-07-01): Content-Luecken-Analyse, KEIN Code-Commit (Proposal-Tag). GSC live via Chrome: 0 Klicks, 5 Impressionen (von 3), CTR 0%, Position 27,8 (stetige Verbesserung 58 -> 40,3 -> 27,8). Seiten: /figuren/der-clown/ 4 Impr., Startseite / 1 Impr. Query-Tab weiter 'Keine Daten'. BEFUND: Fokus-Seiten (Pantomime-in-NRW, Walk-Act) sind bereits inhaltlich TIEF (Staedteliste, Gute-Gruende, FAQ) - Tiefe ist NICHT das Problem. Referenzen-Seite deckt E-E-A-T (verifizierte Kundenliste) bereits ab. Echte Luecke = ANLASSBEZOGENER Content: Startseite-Anlaesse (Hochzeit/Firmenfeier/Messe/Stadtfest) nur duenne 1-Satz-Teaser, keine Tiefe fuer Long-Tail 'Pantomime Hochzeit' / 'Walk Act Firmenfeier' etc. VORSCHLAG 3 in vorschlaege.md angefuegt (Commit 9b50abfb), WARTET AUF FREIGABE: Option A (empfohlen) = Startseite-Section 'Fuer Ihren Anlass' auf je 2-3 belegte Saetze + descriptive interne Links vertiefen (nur INHALTE-VERIFIZIERT-Fakten, kein neuer URL, kein Thin-Page-Risiko); Option B (spaeter) = eigene Anlass-Landingpages, erst wenn GSC Anlass-Queries zeigt. Naechster Lauf: Tag 12 - Stadtbezogene Landingpage-Idee (z.B. 'Pantomime Essen buchen') als VORSCHLAG ausarbeiten (Freigabe noetig, NICHT committen). Bei GSC weiter Clown+Startseite beobachten; pruefen ob Query-Tab endlich Daten zeigt.",
+  "aktueller_plan_tag": 12,
+  "letzter_lauf": "2026-07-02",
+  "WICHTIG_naechster_lauf": "Tag 12 abgeschlossen (2026-07-02): Stadt-Landingpage-Idee als VORSCHLAG 4 ausgearbeitet, KEIN Code-Commit (Proposal-Tag). GSC live via Chrome: UNVERAENDERT ggue. 07-01 (Datenfenster noch 14.06.-29.06.) - 0 Klicks, 5 Impr., CTR 0%, Pos 27,8; Clown 4 Impr., Startseite 1 Impr.; Query-Tab weiter 'Keine Daten'. VORSCHLAG 4 (Commit a2048b72, vorschlaege.md) WARTET AUF FREIGABE: neue Seite /pantomime-essen/ 'Pantomime in Essen buchen'. Datengetrieben gewaehlt - Essen ist das mit Abstand dichteste belegte Referenz-Cluster (8 Essen-Kunden: Messe/Stadt/Sparkasse/AWO/VKJ/Kinderschutzbund/St-Gobain/Feldschloesschen Essen) -> einzigartiges lokales E-E-A-T-Signal vermeidet Thin-Page-Problem. Empfehlung: Essen als EINZELNEN Piloten freigeben, 4-6 Wochen in GSC messen, erst dann weitere Staedte (nur mit eigener Referenzbasis). Abgrenzung: Figurenseiten behalten NRW-Staedteliste (Essen = 1 Eintrag), Essen-Seite bedient lokale Intention -> keine Kannibalisierung. Wechselwirkung Vorschlag 3: V3=Anlass-Achse, V4=Stadt-Achse (orthogonal); bei Doppelfreigabe zuerst V3 Option A, dann V4. OFFEN: Vorschlag 3 (Anlass) UND Vorschlag 4 (Essen) warten beide auf Michael. Naechster Lauf: Tag 13 - Core Web Vitals grob pruefen (Bildgroessen, render-blocking, LCP-Bild preload). GSC weiter Clown+Startseite beobachten; pruefen ob Datenfenster endlich ueber 29.06. hinaus vorrueckt und Query-Tab Daten zeigt.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -106,15 +106,25 @@
       "tag": 11,
       "datum": "2026-07-01",
       "schritt": "Tag 11: Content-Luecken-Analyse -> VORSCHLAG fuer Content-Erweiterung (Freigabe noetig, NICHT committen).",
-      "ergebnis": "GSC live via Chrome: 0 Klicks, 5 Impr. (von 3), CTR 0%, Pos 27,8 (stetig besser). Clown 4 Impr., Startseite 1 Impr.; Query-Tab weiter 'Keine Daten'. Analyse rankende + Fokus-Seiten: Pantomime-in-NRW und Walk-Act sind bereits TIEF (Staedteliste/Gute-Gruende/FAQ) - kein Tiefen-Defizit. Referenzen-Seite deckt E-E-A-T (verifizierte Kundenliste sichtbar) ab. ECHTE LUECKE = anlassbezogener Content: Startseite-Anlaesse (Hochzeit/Firmenfeier/Messe/Stadtfest) nur duenne 1-Satz-Teaser, keine Tiefe fuer Long-Tail-Anlass-Queries. VORSCHLAG 3 angefuegt (Commit 9b50abfb): Option A (empfohlen) Startseite-Section vertiefen (belegte Saetze + interne Links, kein neuer URL); Option B (spaeter) Anlass-Landingpages sobald GSC Anlass-Queries zeigt. KEIN Code-/HTML-Commit (Proposal-Tag).",
+      "ergebnis": "GSC live via Chrome: 0 Klicks, 5 Impr. (von 3), CTR 0%, Pos 27,8 (stetig besser). Clown 4 Impr., Startseite 1 Impr.; Query-Tab weiter 'Keine Daten'. Analyse rankende + Fokus-Seiten: Pantomime-in-NRW und Walk-Act sind bereits TIEF (Staedteliste/Gute-Gruende/FAQ) - kein Tiefen-Defizit. Referenzen-Seite deckt E-E-A-T ab. ECHTE LUECKE = anlassbezogener Content: Startseite-Anlaesse (Hochzeit/Firmenfeier/Messe/Stadtfest) nur duenne 1-Satz-Teaser. VORSCHLAG 3 angefuegt (Commit 9b50abfb): Option A (empfohlen) Startseite-Section vertiefen; Option B (spaeter) Anlass-Landingpages. KEIN Code-/HTML-Commit (Proposal-Tag).",
       "commits": [
         "SEO: Tag 11 - Vorschlag 3 (Anlass-fokussierter Content) angefuegt, wartet auf Freigabe (9b50abfb)",
         "SEO: State Tag 11 - Content-Luecken-Analyse + Vorschlag 3 + GSC-Snapshot 2026-07-01"
       ]
+    },
+    {
+      "tag": 12,
+      "datum": "2026-07-02",
+      "schritt": "Tag 12: Stadtbezogene Landingpage-Idee als VORSCHLAG ausarbeiten (Freigabe noetig, NICHT committen).",
+      "ergebnis": "GSC live via Chrome: UNVERAENDERT ggue. 07-01 (Datenfenster noch 14.06.-29.06.) - 0 Klicks, 5 Impr., CTR 0%, Pos 27,8; Clown 4 Impr., Startseite 1 Impr.; Query-Tab weiter 'Keine Daten'. VORSCHLAG 4 ausgearbeitet + angefuegt (Commit a2048b72): neue Seite /pantomime-essen/ 'Pantomime in Essen buchen'. Datengetrieben: Essen = dichtestes belegtes Referenz-Cluster (8 Essen-Kunden aus INHALTE-VERIFIZIERT.md: Messe/Stadt/Sparkasse/AWO/VKJ/Kinderschutzbund/St-Gobain/Feldschloesschen Essen) -> einzigartiges lokales E-E-A-T-Signal vermeidet Thin-Page-Problem. Empfehlung: Essen als EINZELNEN Piloten freigeben, 4-6 Wo in GSC messen, erst dann weitere Staedte (nur mit eigener Referenzbasis). Abgrenzung zu Figuren-NRW-Staedteliste beschrieben (keine Kannibalisierung), Wechselwirkung mit Vorschlag 3 (orthogonal, V3 zuerst) notiert. KEIN Code-/HTML-Commit (Proposal-Tag).",
+      "commits": [
+        "SEO: Tag 12 - Vorschlag 4 (Stadt-Landingpage Pantomime Essen) angefuegt, wartet auf Freigabe (a2048b72)",
+        "SEO: State Tag 12 - Vorschlag 4 (Stadt-Landingpage Essen) + GSC-Snapshot 2026-07-02"
+      ]
     }
   ],
-  "naechster_plan_tag": 12,
-  "naechster_schritt": "Tag 12: Stadtbezogene Landingpage-Idee (z.B. 'Pantomime Essen buchen') als VORSCHLAG ausarbeiten (Freigabe von Michael noetig, NICHT committen). In vorschlaege.md anfuegen. Datengetrieben: Essen-Kunden real belegt (Messe Essen, Sparkasse Essen, Stadt Essen, AWO Essen u.a.) -> Essen als erste Stadt-Landingpage pruefen; Abgrenzung zu bestehender Staedteliste auf Figurenseiten beachten (Thin-Page-Risiko vermeiden). Wechselwirkung mit Vorschlag 3 Option B beachten (nicht doppeln).",
+  "naechster_plan_tag": 13,
+  "naechster_schritt": "Tag 13: Core Web Vitals grob pruefen (Bildgroessen, render-blocking, LCP-Bild preload). Technik-Audit im Build-VM (frischer Clone Py3.12): LCP-Kandidat je Seite bestimmen (Hero-Bild), pruefen ob preload/fetchpriority sinnvoll; grosse Bilddateien identifizieren (>200KB); render-blocking CSS/JS pruefen (aktuell nur style.css, kein JS-Framework -> vermutlich unkritisch). Auto-Fix nur technisch (preload-Hint, loading/fetchpriority-Attribute, ggf. Bildkompression-VORSCHLAG falls Neu-Encoding noetig -> Freigabe). GSC weiter beobachten; pruefen ob Datenfenster ueber 29.06. hinaus vorrueckt.",
   "offene_vorschlaege": [
     {
       "nr": 3,
@@ -122,6 +132,13 @@
       "titel": "Anlass-fokussierter Content ('Pantomime & Walk Act fuer Ihren Anlass') - Option A: Startseite-Section vertiefen; Option B: Anlass-Landingpages spaeter",
       "status": "WARTET AUF FREIGABE von Michael",
       "typ": "Content-Erweiterung (sichtbarer Fliesstext + interne Verlinkung)"
+    },
+    {
+      "nr": 4,
+      "datum_vorschlag": "2026-07-02",
+      "titel": "Stadt-Landingpage /pantomime-essen/ ('Pantomime in Essen buchen') - Essen als Pilot wegen dichtestem belegtem Referenz-Cluster (8 Essen-Kunden), einzigartiges lokales E-E-A-T",
+      "status": "WARTET AUF FREIGABE von Michael",
+      "typ": "Neue Unterseite (neuer URL + Schema + interne Verlinkung)"
     }
   ],
   "erledigte_vorschlaege": [
@@ -152,147 +169,69 @@
       "hinweis": "Domain frisch migriert. Baseline."
     },
     {
-      "datum": "2026-06-21",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "klicks": 0,
-      "impressionen": 0,
-      "ctr_prozent": 0,
-      "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Weiterhin 0 Klicks."
-    },
-    {
-      "datum": "2026-06-23",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "klicks": 0,
-      "impressionen": 0,
-      "ctr_prozent": 0,
-      "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Live via Chrome. 0/0, 'Keine Daten'."
-    },
-    {
-      "datum": "2026-06-24",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "14.06.-21.06.26",
-      "klicks": 0,
-      "impressionen": 0,
-      "ctr_prozent": 0,
-      "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Live via Chrome. 0/0, 'Keine Daten'."
-    },
-    {
-      "datum": "2026-06-25",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "Datenfenster 14.06.-22.06.26 sichtbar",
-      "klicks": 0,
-      "impressionen": 0,
-      "ctr_prozent": 0,
-      "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Live via Chrome. Weiterhin 0/0, 'Keine Daten'. Domain zu jung."
-    },
-    {
-      "datum": "2026-06-26",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "Datenfenster 14.06.-23.06.26 sichtbar",
-      "klicks": 0,
-      "impressionen": 0,
-      "ctr_prozent": 0,
-      "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Live via Chrome (Michael eingeloggt) geprueft. Weiterhin 0 Klicks / 0 Impressionen, 'Keine Daten' bei Suchanfragen. Kein Trend ggue. Baseline; Domain weiterhin zu jung (8 Tage)."
-    },
-    {
-      "datum": "2026-06-27",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "Datenfenster 14.06.-24.06.26 sichtbar",
-      "klicks": 0,
-      "impressionen": 0,
-      "ctr_prozent": 0,
-      "durchschnitt_position": 0,
-      "top_queries": [],
-      "hinweis": "Live via Chrome (Michael eingeloggt) geprueft. Weiterhin 0 Klicks / 0 Impressionen, 'Keine Daten' bei Suchanfragen (9 Tage indexiert). 'Pantomime'-Query-Analyse (Tag 8) noch nicht moeglich -> Fallback On-Page-Check gefahren."
-    },
-    {
-      "datum": "2026-06-28",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "Datenfenster 14.06.-25.06.26 sichtbar",
-      "klicks": 0,
-      "impressionen": 2,
-      "ctr_prozent": 0,
-      "durchschnitt_position": 58,
-      "top_queries": [],
-      "hinweis": "Live via Chrome (Michael eingeloggt). ERSTES SIGNAL: 2 Impressionen (vorher durchgaengig 0), 0 Klicks, Position 58. Query-Aufschluesselung weiterhin 'Keine Daten' - zu wenige Impressionen fuer Query-Zuordnung. Domain beginnt zu indexieren/ranken (12 Tage)."
-    },
-    {
       "datum": "2026-06-29",
       "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "Datenfenster 14.06.-27.06.26 sichtbar",
+      "zeitraum": "14.06.-27.06.26",
       "klicks": 0,
       "impressionen": 3,
       "ctr_prozent": 0,
       "durchschnitt_position": 40.3,
       "top_pages": [
-        {
-          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
-          "klicks": 0,
-          "impressionen": 2
-        },
-        {
-          "url": "https://www.pantomime-la-france.eu/",
-          "klicks": 0,
-          "impressionen": 1
-        }
+        { "url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "klicks": 0, "impressionen": 2 },
+        { "url": "https://www.pantomime-la-france.eu/", "klicks": 0, "impressionen": 1 }
       ],
       "top_queries": [],
-      "hinweis": "Live via Chrome (Michael eingeloggt). Seiten-Tab erstmals befuellt: Clown-Seite 2 Impr., Startseite 1 Impr. Position deutlich verbessert (58 -> 40,3). Query-Tab weiterhin 'Keine Daten'. Domain rankt langsam an (15 Tage)."
+      "hinweis": "Seiten-Tab erstmals befuellt. Position 58 -> 40,3."
     },
     {
       "datum": "2026-07-01",
       "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "Datenfenster 14.06.-29.06.26 sichtbar",
+      "zeitraum": "14.06.-29.06.26",
       "klicks": 0,
       "impressionen": 5,
       "ctr_prozent": 0,
       "durchschnitt_position": 27.8,
       "top_pages": [
-        {
-          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
-          "klicks": 0,
-          "impressionen": 4
-        },
-        {
-          "url": "https://www.pantomime-la-france.eu/",
-          "klicks": 0,
-          "impressionen": 1
-        }
+        { "url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "klicks": 0, "impressionen": 4 },
+        { "url": "https://www.pantomime-la-france.eu/", "klicks": 0, "impressionen": 1 }
       ],
       "top_queries": [],
-      "hinweis": "Live via Chrome (Michael eingeloggt). Weiter aufwaerts: 5 Impr. (von 3), Pos 27,8 (von 40,3 - Trend 58->40,3->27,8 sehr positiv). Clown-Seite 4 Impr., Startseite 1 Impr. Query-Tab weiter 'Keine Daten' (17 Tage). Kein Code-Commit (Proposal-Tag 11)."
+      "hinweis": "5 Impr. (von 3), Pos 27,8 (Trend 58->40,3->27,8). Query-Tab 'Keine Daten'."
+    },
+    {
+      "datum": "2026-07-02",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "14.06.-29.06.26",
+      "klicks": 0,
+      "impressionen": 5,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 27.8,
+      "top_pages": [
+        { "url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "klicks": 0, "impressionen": 4 },
+        { "url": "https://www.pantomime-la-france.eu/", "klicks": 0, "impressionen": 1 }
+      ],
+      "top_queries": [],
+      "hinweis": "Live via Chrome (Michael eingeloggt). UNVERAENDERT ggue. 07-01: Datenfenster steht noch bei 14.06.-29.06. (kein neuer Tag geliefert). 0 Klicks, 5 Impr., Pos 27,8; Clown 4 Impr., Startseite 1 Impr.; Query-Tab 'Keine Daten' (18 Tage). Kein Code-Commit (Proposal-Tag 12)."
     }
   ],
   "technische_hinweise": {
-    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit Backslash). VM hat 3.10 -> uv python install 3.12 mit UV_CACHE_DIR=/tmp/uvcache_$$ UND UV_PYTHON_INSTALL_DIR=/tmp/py312_$$. HOME=/tmp. Tag 8: 'uv run --python 3.12 python scripts/build.py' funktioniert sauber.",
+    "build_python_version": "build.py benoetigt Python 3.12+ (f-string mit Backslash). VM hat 3.10 -> uv python install 3.12 mit UV_CACHE_DIR=/tmp/uvcache_$$ UND UV_PYTHON_INSTALL_DIR=/tmp/py312_$$. HOME=/tmp. 'uv run --python 3.12 python scripts/build.py' funktioniert sauber.",
     "vm_git_hinweis": "Im VM nach /tmp in eindeutiges Dir klonen (z.B. pan_t8). VM hat KEINEN GitHub-Token -> Push nur ueber GitHub-MCP.",
     "gateguard_hinweis": "Local-agent Write/Edit/Bash via GateGuard blockiert. Workaround: Dateien im VM via bash schreiben + ueber GitHub-MCP pushen; GSC via Chrome-MCP. Grosse Dateien (build.py ~60KB) -> Push via Subagent.",
-    "github_mcp_sha_hinweis": "create_or_update_file braucht VOLLE 40-Zeichen-blob-sha. push_files braucht KEINE sha (Tag 8: push_files mit 4 Dateien in 1 Commit erfolgreich, byte-verifiziert).",
+    "github_mcp_sha_hinweis": "create_or_update_file braucht VOLLE 40-Zeichen-blob-sha. push_files braucht KEINE sha.",
     "deploy": "GitHub Action rsynct committete HTML zu IONOS. build.py NICHT im CI -> generierte HTML immer mitcommitten.",
     "datenschutz_stand": "datenschutz/index.html hat auto 'Stand: {TODAY}'. Wird bei jedem Rebuild aktualisiert.",
     "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de (Tag 15).",
     "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben.",
-    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/ (Gegenrichtung). Tag 10: Zauberer/Clown/Crazy-Kellner GEPRUEFT - verlinken bereits via Nav auf /walk-act/, KEINE unverlinkte Body-Erwaehnung (nur Shared-Header-Subtitle). Gegenrichtung-Linking damit abgeschlossen.",
-    "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, lastmod=2026-06-29 (echter Content-Change Clown-Desc). Tag 11 (2026-07-01): KEIN Rebuild (Proposal-Tag), lastmod bleibt 2026-06-29. build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
+    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner GEPRUEFT - verlinken bereits via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen.",
+    "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, lastmod=2026-06-29 (echter Content-Change Clown-Desc). Tag 11+12: KEIN Rebuild (Proposal-Tage), lastmod bleibt 2026-06-29. build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
     "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Aktuell 91d09e05. Bei style.css-Aenderung alle HTML mitcommitten.",
-    "fokus_keywords": [
-      "Pantomime",
-      "Walk Act"
-    ],
+    "fokus_keywords": [ "Pantomime", "Walk Act" ],
     "faq_stand": "faq_block(qa,title) rendert details/summary/faq-a. Selbe Q/A-Liste an faq_schema UND faq_block -> Deckungsgleichheit garantiert.",
-    "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt (wie <strong> in body).",
-    "uv_cache_hinweis": "Tag 9: UV_CACHE_DIR=/tmp/uvcache_$$ kollidierte (Permission denied bei wiederverwendetem Dir). Loesung: frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es.",
+    "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt.",
+    "uv_cache_hinweis": "Frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es.",
     "meta_desc_stand": "Tag 10: Clown-Desc fuehrt mit 'Clown & Comedy-Walk-Act' (Fokus-Keyword Walk Act eingewoben, 151 Z.). Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei).",
-    "content_luecken_stand": "Tag 11 (2026-07-01): Fokus-Seiten (Pantomime-in-NRW, Walk-Act) bereits inhaltlich tief; Referenzen-Seite deckt E-E-A-T ab. Offene Luecke = anlassbezogener Content (Startseite-Anlass-Teaser zu duenn) -> Vorschlag 3 (Freigabe offen). Stadt-Landingpages = Tag 12 / Vorschlag 3 Option B (erst bei GSC-Query-Daten)."
+    "content_luecken_stand": "Tag 11: Offene Luecke = anlassbezogener Content (Startseite-Anlass-Teaser zu duenn) -> Vorschlag 3 (Freigabe offen). Tag 12: Stadt-Landingpage Essen = Vorschlag 4 (Freigabe offen). Essen datengetrieben gewaehlt (8 belegte Essen-Referenzen). Vorschlag 3 (Anlass-Achse) + Vorschlag 4 (Stadt-Achse) orthogonal - bei Doppelfreigabe V3 Option A zuerst.",
+    "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen (+ Bild-Alt Walk-Act-Fest-Essen.jpg). Dichtestes Stadt-Cluster -> Basis fuer Vorschlag 4."
   }
 }
