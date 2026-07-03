@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 12,
-  "letzter_lauf": "2026-07-02",
-  "WICHTIG_naechster_lauf": "Tag 12 abgeschlossen (2026-07-02): Stadt-Landingpage-Idee als VORSCHLAG 4 ausgearbeitet, KEIN Code-Commit (Proposal-Tag). GSC live via Chrome: UNVERAENDERT ggue. 07-01 (Datenfenster noch 14.06.-29.06.) - 0 Klicks, 5 Impr., CTR 0%, Pos 27,8; Clown 4 Impr., Startseite 1 Impr.; Query-Tab weiter 'Keine Daten'. VORSCHLAG 4 (Commit a2048b72, vorschlaege.md) WARTET AUF FREIGABE: neue Seite /pantomime-essen/ 'Pantomime in Essen buchen'. Datengetrieben gewaehlt - Essen ist das mit Abstand dichteste belegte Referenz-Cluster (8 Essen-Kunden: Messe/Stadt/Sparkasse/AWO/VKJ/Kinderschutzbund/St-Gobain/Feldschloesschen Essen) -> einzigartiges lokales E-E-A-T-Signal vermeidet Thin-Page-Problem. Empfehlung: Essen als EINZELNEN Piloten freigeben, 4-6 Wochen in GSC messen, erst dann weitere Staedte (nur mit eigener Referenzbasis). Abgrenzung: Figurenseiten behalten NRW-Staedteliste (Essen = 1 Eintrag), Essen-Seite bedient lokale Intention -> keine Kannibalisierung. Wechselwirkung Vorschlag 3: V3=Anlass-Achse, V4=Stadt-Achse (orthogonal); bei Doppelfreigabe zuerst V3 Option A, dann V4. OFFEN: Vorschlag 3 (Anlass) UND Vorschlag 4 (Essen) warten beide auf Michael. Naechster Lauf: Tag 13 - Core Web Vitals grob pruefen (Bildgroessen, render-blocking, LCP-Bild preload). GSC weiter Clown+Startseite beobachten; pruefen ob Datenfenster endlich ueber 29.06. hinaus vorrueckt und Query-Tab Daten zeigt.",
+  "aktueller_plan_tag": 13,
+  "letzter_lauf": "2026-07-03",
+  "WICHTIG_naechster_lauf": "Tag 13 abgeschlossen (2026-07-03): Core-Web-Vitals-Audit im Build-VM. KRITISCHER BEFUND: build.py ist NICHT synchron mit der live-committeten HTML. Der einzige Commit 88ca226 ('DSGVO: Google Fonts lokal, Kontakt-Consent, Datenschutz aktualisiert') hat die DSGVO-Fixes NUR in die HTML geschrieben - build.py generiert weiterhin die ALTE Version: externe Google-Fonts (fonts.googleapis.com statt self-hosted /assets/fonts.css), KEINE Kontakt-Consent-Checkbox, alte Datenschutz-Texte, andere style.css/app.js-Hashes. => Jeder 'python scripts/build.py'-Rebuild REVERTET die DSGVO-/Rechts-Fixes. Verifiziert per frischem Clone Py3.12 (git checkout HEAD, clean rebuild -> 16 HTML geaendert, index.html bekommt 2x fonts.googleapis.com, live-HTML hat 0). KONSEQUENZ: Der normale Tag-Ablauf (build.py aendern -> rebuild -> HTML mitcommitten) ist derzeit UNSICHER und wurde bewusst NICHT ausgefuehrt. KEIN Code-/HTML-Commit heute. CWV-Sachbefund (unabhaengig): Hero-LCP-Bild - Startseite hat fetchpriority=high, aber die 13 Unterseiten-Heroes (subimg() in build.py) haben nur loading=eager OHNE fetchpriority=high => LCP-Prioritaets-Hint fehlt auf Unterseiten. Ready-to-apply-Fix (1 Zeile in subimg()) in Vorschlag 5 dokumentiert - anwendbar ERST nach build.py-Reconciliation. Fonts: font-display:swap ueberall (ok). Nur CSS render-blocking (kein JS-Framework, GA laedt spaeter) - unkritisch. Grosse Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, 20230623-195739-scaled.webp/pantomime-10-scaled.webp ~220KB -> Re-Kompression als Vorschlag 5 (Freigabe noetig, Neu-Encoding). GSC: KEIN Chrome-Browser verbunden (list_connected_browsers leer) => GSC-Live-Check heute uebersprungen, kein neuer Snapshot. Letzter Stand 2026-07-02: 0 Klicks, 5 Impr., Pos 27,8. OFFEN: Vorschlag 3 (Anlass), Vorschlag 4 (Essen), Vorschlag 5 (KRITISCH: build.py-Reconciliation + fetchpriority + Bild-Kompression) - alle warten auf Michael. Naechster Lauf: Tag 14 - Backlink-/Verzeichnis-Idee (Kuenstlerverzeichnisse, Eventportale) als VORSCHLAG. WICHTIG vor jedem kuenftigen Rebuild: zuerst build.py-Reconciliation (Vorschlag 5) - sonst DSGVO-Regression.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -121,10 +121,19 @@
         "SEO: Tag 12 - Vorschlag 4 (Stadt-Landingpage Pantomime Essen) angefuegt, wartet auf Freigabe (a2048b72)",
         "SEO: State Tag 12 - Vorschlag 4 (Stadt-Landingpage Essen) + GSC-Snapshot 2026-07-02"
       ]
+    },
+    {
+      "tag": 13,
+      "datum": "2026-07-03",
+      "schritt": "Tag 13: Core Web Vitals grob pruefen (Bildgroessen, render-blocking, LCP-Bild preload/fetchpriority).",
+      "ergebnis": "Audit im Build-VM (frischer Clone, Py3.12). KRITISCHER NEBENBEFUND: build.py OUT-OF-SYNC mit live-HTML - clean rebuild (ohne eigene Aenderung) revertet die DSGVO-Fixes aus Commit 88ca226 (Google-Fonts extern statt self-hosted, Consent-Checkbox weg, Datenschutz-Text alt). Deshalb KEIN Rebuild-Commit heute (Guardrail: Qualitaet/DSGVO > Ranking-Trick; bei Unsicherheit nicht pushen). CWV-Sachbefunde: (1) LCP-Hero - subimg() der 13 Unterseiten ohne fetchpriority=high (nur Startseite hat es). Fix = 1 Zeile in subimg(), dokumentiert in Vorschlag 5, anwendbar erst nach build.py-Reconciliation. (2) font-display:swap ueberall vorhanden (18x) - ok. (3) Render-blocking: nur fonts+style CSS, kein JS-Framework - unkritisch. (4) Grosse Hero-webp >200KB (pantomime-buchen 592KB, nussknacker 320KB, 2x ~220KB) -> Re-Kompression Vorschlag 5 (Freigabe). GSC: kein Chrome verbunden -> Live-Check uebersprungen (im Bericht vermerkt).",
+      "commits": [
+        "SEO: State Tag 13 - CWV-Audit + KRITISCHER Befund build.py/HTML-Divergenz (DSGVO-Revert-Risiko) + Vorschlag 5"
+      ]
     }
   ],
-  "naechster_plan_tag": 13,
-  "naechster_schritt": "Tag 13: Core Web Vitals grob pruefen (Bildgroessen, render-blocking, LCP-Bild preload). Technik-Audit im Build-VM (frischer Clone Py3.12): LCP-Kandidat je Seite bestimmen (Hero-Bild), pruefen ob preload/fetchpriority sinnvoll; grosse Bilddateien identifizieren (>200KB); render-blocking CSS/JS pruefen (aktuell nur style.css, kein JS-Framework -> vermutlich unkritisch). Auto-Fix nur technisch (preload-Hint, loading/fetchpriority-Attribute, ggf. Bildkompression-VORSCHLAG falls Neu-Encoding noetig -> Freigabe). GSC weiter beobachten; pruefen ob Datenfenster ueber 29.06. hinaus vorrueckt.",
+  "naechster_plan_tag": 14,
+  "naechster_schritt": "Tag 14: Backlink-/Verzeichnis-Idee (Kuenstlerverzeichnisse, Eventportale, z.B. eventpeppers/Regionalverzeichnisse/Google-Unternehmensprofil) als VORSCHLAG ausarbeiten (Freigabe noetig, kein Commit ausser Tracking). WICHTIG: Vor jedem kuenftigen build.py-Rebuild ZUERST build.py-Reconciliation (Vorschlag 5) durchfuehren/freigeben lassen, sonst DSGVO-Regression. GSC weiter beobachten (sobald Chrome verbunden): pruefen ob Datenfenster ueber 29.06. hinaus vorrueckt und Query-Tab Daten zeigt.",
   "offene_vorschlaege": [
     {
       "nr": 3,
@@ -139,6 +148,13 @@
       "titel": "Stadt-Landingpage /pantomime-essen/ ('Pantomime in Essen buchen') - Essen als Pilot wegen dichtestem belegtem Referenz-Cluster (8 Essen-Kunden), einzigartiges lokales E-E-A-T",
       "status": "WARTET AUF FREIGABE von Michael",
       "typ": "Neue Unterseite (neuer URL + Schema + interne Verlinkung)"
+    },
+    {
+      "nr": 5,
+      "datum_vorschlag": "2026-07-03",
+      "titel": "KRITISCH: build.py mit live-HTML reconciliaten (build.py revertet sonst DSGVO-Fixes aus Commit 88ca226) + danach Tag-13-CWV-Fixes: fetchpriority=high fuer Unterseiten-Hero (subimg, 1 Zeile) + Re-Kompression grosser Hero-webp (pantomime-buchen 592KB / nussknacker 320KB)",
+      "status": "WARTET AUF FREIGABE / ENTSCHEIDUNG von Michael",
+      "typ": "Build-Infrastruktur (build.py-Reconciliation, blockierend) + Technik-Fix (fetchpriority) + Bild-Kompression (Neu-Encoding)"
     }
   ],
   "erledigte_vorschlaege": [
@@ -177,8 +193,16 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 40.3,
       "top_pages": [
-        { "url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "klicks": 0, "impressionen": 2 },
-        { "url": "https://www.pantomime-la-france.eu/", "klicks": 0, "impressionen": 1 }
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 1
+        }
       ],
       "top_queries": [],
       "hinweis": "Seiten-Tab erstmals befuellt. Position 58 -> 40,3."
@@ -192,8 +216,16 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 27.8,
       "top_pages": [
-        { "url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "klicks": 0, "impressionen": 4 },
-        { "url": "https://www.pantomime-la-france.eu/", "klicks": 0, "impressionen": 1 }
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 4
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 1
+        }
       ],
       "top_queries": [],
       "hinweis": "5 Impr. (von 3), Pos 27,8 (Trend 58->40,3->27,8). Query-Tab 'Keine Daten'."
@@ -207,8 +239,16 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 27.8,
       "top_pages": [
-        { "url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "klicks": 0, "impressionen": 4 },
-        { "url": "https://www.pantomime-la-france.eu/", "klicks": 0, "impressionen": 1 }
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 4
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 1
+        }
       ],
       "top_queries": [],
       "hinweis": "Live via Chrome (Michael eingeloggt). UNVERAENDERT ggue. 07-01: Datenfenster steht noch bei 14.06.-29.06. (kein neuer Tag geliefert). 0 Klicks, 5 Impr., Pos 27,8; Clown 4 Impr., Startseite 1 Impr.; Query-Tab 'Keine Daten' (18 Tage). Kein Code-Commit (Proposal-Tag 12)."
@@ -226,12 +266,17 @@
     "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner GEPRUEFT - verlinken bereits via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen.",
     "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, lastmod=2026-06-29 (echter Content-Change Clown-Desc). Tag 11+12: KEIN Rebuild (Proposal-Tage), lastmod bleibt 2026-06-29. build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
     "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Aktuell 91d09e05. Bei style.css-Aenderung alle HTML mitcommitten.",
-    "fokus_keywords": [ "Pantomime", "Walk Act" ],
+    "fokus_keywords": [
+      "Pantomime",
+      "Walk Act"
+    ],
     "faq_stand": "faq_block(qa,title) rendert details/summary/faq-a. Selbe Q/A-Liste an faq_schema UND faq_block -> Deckungsgleichheit garantiert.",
     "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt.",
     "uv_cache_hinweis": "Frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es.",
     "meta_desc_stand": "Tag 10: Clown-Desc fuehrt mit 'Clown & Comedy-Walk-Act' (Fokus-Keyword Walk Act eingewoben, 151 Z.). Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei).",
     "content_luecken_stand": "Tag 11: Offene Luecke = anlassbezogener Content (Startseite-Anlass-Teaser zu duenn) -> Vorschlag 3 (Freigabe offen). Tag 12: Stadt-Landingpage Essen = Vorschlag 4 (Freigabe offen). Essen datengetrieben gewaehlt (8 belegte Essen-Referenzen). Vorschlag 3 (Anlass-Achse) + Vorschlag 4 (Stadt-Achse) orthogonal - bei Doppelfreigabe V3 Option A zuerst.",
-    "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen (+ Bild-Alt Walk-Act-Fest-Essen.jpg). Dichtestes Stadt-Cluster -> Basis fuer Vorschlag 4."
+    "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen (+ Bild-Alt Walk-Act-Fest-Essen.jpg). Dichtestes Stadt-Cluster -> Basis fuer Vorschlag 4.",
+    "KRITISCH_build_py_divergenz": "STAND 2026-07-03 (Tag 13): build.py generiert NICHT die live-committete HTML. Commit 88ca226 hat DSGVO-Fixes nur in HTML geschrieben (self-hosted Fonts /assets/fonts.css, Kontakt-Consent-Checkbox, aktualisierter Datenschutz, style.css?v=91d09e05, app.js?v=41872035). build.py erzeugt weiterhin ALT: externe Google-Fonts (fonts.googleapis.com preconnect+stylesheet), form-note statt Consent-Checkbox, alten Datenschutz-Text, style.css?v=fc99917e, app.js?v=45732809. => NICHT rebuilden+pushen bis build.py reconciliaten ist (Vorschlag 5), sonst DSGVO-/Consent-Regression live. Betrifft ALLE kuenftigen build.py-basierten Schritte.",
+    "cwv_stand": "Tag 13: LCP=Hero-bg-Bild. Startseite (build.py Zeile ~412) hat fetchpriority=high; subimg() (Zeile ~180) fuer 13 Unterseiten nur loading=eager. Ready-Fix: 'loading=\"eager\"' -> 'loading=\"eager\" fetchpriority=\"high\"' in subimg(). Anwenden ERST nach build.py-Reconciliation. font-display:swap ok. Grosse Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, pantomime-10-scaled/20230623-195739 ~220KB -> Re-Kompression-Kandidaten."
   }
 }
