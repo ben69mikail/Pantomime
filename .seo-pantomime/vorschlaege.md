@@ -154,7 +154,7 @@ Datenfenster erstmals bis 05.07. vorgerueckt: 0 Klicks, **25 Impressionen** (von
 2. **Kuenstler-/Eventportale (pruefen, seriose Basis-Eintraege):** Kandidaten: eventpeppers, Stagepool, kuenstlervermittlung-Portale, regionale Eventdienstleister-Verzeichnisse. Kriterium: echtes redaktionelles Profil mit Link, kein bezahltes Link-Netzwerk. Ein Eintrag = Profiltext aus INHALTE-VERIFIZIERT.md (nichts erfinden).
 3. **Cross-Domain-Backlinks aus eigenem Bestand (schnell, in Michaels Hand):** liar-entertainer.com und zauberer-liar.de verlinken idealerweise prominent (nicht nur Footer) und descriptiv ("Pantomime & Walk Act in NRW – pantomime-la-france.eu") auf die neue Domain. Wird in Tag 15 im Detail geprueft.
 4. **Lokal Gladbeck/Ruhrgebiet:** Stadtportal-/Vereins-/Kultureintraege, lokale Presse (z.B. bei naechstem oeffentlichen Auftritt). Nur reale Anlaesse, kein Fake-PR.
-5. **Hochzeits-/Eventportale** (z.B. Hochzeitsportale mit Dienstleisterverzeichnis): erst NACH FreigabE pruefen, ob kostenfreie Basisprofile sinnvoll sind (Hochzeit ist belegter Anlass).
+5. **Hochzeits-/Eventportale** (z.B. Hochzeitsportale mit Dienstleisterverzeichnis): erst NACH Freigabe pruefen, ob kostenfreie Basisprofile sinnvoll sind (Hochzeit ist belegter Anlass).
 
 ### Leitplanken
 Qualitaet vor Menge (5 gute Eintraege > 50 Spam-Verzeichnisse), KEINE Linkkaeufe, NAP (Name/Adresse/Telefon) ueberall identisch zum Impressum, jede Beschreibung nur aus INHALTE-VERIFIZIERT.md. Erfolgskontrolle: GSC-Impressionen fuer "Pantomime <Stadt>"-Queries + Referral-Traffic in GA4.
