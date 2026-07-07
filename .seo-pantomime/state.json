@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 13,
-  "letzter_lauf": "2026-07-03",
-  "WICHTIG_naechster_lauf": "Tag 13 abgeschlossen (2026-07-03): Core-Web-Vitals-Audit im Build-VM. KRITISCHER BEFUND: build.py ist NICHT synchron mit der live-committeten HTML. Der einzige Commit 88ca226 ('DSGVO: Google Fonts lokal, Kontakt-Consent, Datenschutz aktualisiert') hat die DSGVO-Fixes NUR in die HTML geschrieben - build.py generiert weiterhin die ALTE Version: externe Google-Fonts (fonts.googleapis.com statt self-hosted /assets/fonts.css), KEINE Kontakt-Consent-Checkbox, alte Datenschutz-Texte, andere style.css/app.js-Hashes. => Jeder 'python scripts/build.py'-Rebuild REVERTET die DSGVO-/Rechts-Fixes. Verifiziert per frischem Clone Py3.12 (git checkout HEAD, clean rebuild -> 16 HTML geaendert, index.html bekommt 2x fonts.googleapis.com, live-HTML hat 0). KONSEQUENZ: Der normale Tag-Ablauf (build.py aendern -> rebuild -> HTML mitcommitten) ist derzeit UNSICHER und wurde bewusst NICHT ausgefuehrt. KEIN Code-/HTML-Commit heute. CWV-Sachbefund (unabhaengig): Hero-LCP-Bild - Startseite hat fetchpriority=high, aber die 13 Unterseiten-Heroes (subimg() in build.py) haben nur loading=eager OHNE fetchpriority=high => LCP-Prioritaets-Hint fehlt auf Unterseiten. Ready-to-apply-Fix (1 Zeile in subimg()) in Vorschlag 5 dokumentiert - anwendbar ERST nach build.py-Reconciliation. Fonts: font-display:swap ueberall (ok). Nur CSS render-blocking (kein JS-Framework, GA laedt spaeter) - unkritisch. Grosse Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, 20230623-195739-scaled.webp/pantomime-10-scaled.webp ~220KB -> Re-Kompression als Vorschlag 5 (Freigabe noetig, Neu-Encoding). GSC: KEIN Chrome-Browser verbunden (list_connected_browsers leer) => GSC-Live-Check heute uebersprungen, kein neuer Snapshot. Letzter Stand 2026-07-02: 0 Klicks, 5 Impr., Pos 27,8. OFFEN: Vorschlag 3 (Anlass), Vorschlag 4 (Essen), Vorschlag 5 (KRITISCH: build.py-Reconciliation + fetchpriority + Bild-Kompression) - alle warten auf Michael. Naechster Lauf: Tag 14 - Backlink-/Verzeichnis-Idee (Kuenstlerverzeichnisse, Eventportale) als VORSCHLAG. WICHTIG vor jedem kuenftigen Rebuild: zuerst build.py-Reconciliation (Vorschlag 5) - sonst DSGVO-Regression.",
+  "aktueller_plan_tag": 14,
+  "letzter_lauf": "2026-07-07",
+  "WICHTIG_naechster_lauf": "Tag 14 abgeschlossen (2026-07-07). GSC-DURCHBRUCH: Fenster bis 05.07., 25 Impressionen (von 5), Pos 21,9, Query-Tab erstmals befuellt (clown pantomime/pantomime clown je 2, brand-Queries) - noch KEINE Walk-Act-/Stadt-Queries. Vorschlag 6 (Backlinks/Verzeichnisse, prio Google Unternehmensprofil) angefuegt. V5-RECONCILIATION HEUTE UNABHAENGIG DURCHGEFUEHRT+BYTE-VERIFIZIERT: Patch liegt LOKAL in .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch (Michaels Cowork-Ordner), NICHT gepusht (V5 wartet auf Freigabe). Bei Freigabe: Patch anwenden ODER die 5 dokumentierten Replacements (fonts.css statt Google-CDN, Consent-Checkbox statt form-note, 3 Datenschutz-Textbloecke, Stand hart 2026-07-02) in build.py, Py3.12-Rebuild, Diff==nur Asset-Hash-Bumps+lastmod. NEUE VM-LAGE: lokaler Cowork-Mount haengt auf altem Checkout 88ca226; .git/HEAD.lock+index.lock (02.07.) im Mount NICHT loeschbar -> lokale Commits UNMOEGLICH, Schreibzugriff auf Repo NUR via GitHub-MCP push_files; Remote main = einzige Wahrheit fuer State UND Code. VORSICHT Mount-Dateisystem: Write/Edit-Tool kann Dateien nicht verlaengern/kuerzen (Null-Byte-Padding/Truncation!) - Dateien im Mount nur per bash-Redirect (cat > file) schreiben. Naechster Lauf: Tag 15 - Cross-Links liar-entertainer.com <-> pantomime-la-france.eu <-> zauberer-liar.de pruefen/staerken (Achtung: Aenderungen an den beiden anderen Domains = nur VORSCHLAG).",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -130,10 +130,19 @@
       "commits": [
         "SEO: State Tag 13 - CWV-Audit + KRITISCHER Befund build.py/HTML-Divergenz (DSGVO-Revert-Risiko) + Vorschlag 5"
       ]
+    },
+    {
+      "tag": 14,
+      "datum": "2026-07-07",
+      "schritt": "Tag 14: Backlink-/Verzeichnis-Idee als VORSCHLAG + V5-Reconciliation-Patch verifiziert + GSC-Snapshot",
+      "ergebnis": "GSC live via Chrome: DEUTLICHER SPRUNG - Datenfenster jetzt 14.06.-05.07.26: 0 Klicks, 25 Impr. (von 5), Pos 21,9 (von 27,8). Query-Tab ERSTMALS mit Daten: 'clown pantomime' (2), 'pantomime clown' (2), 'clown liar' (1), 'clown zauberer liar' (1), 'zauberer liar' (1) - Clown-/Brand-lastig, noch KEINE Walk-Act- oder Stadt-Queries. VORSCHLAG 6 (Backlinks/Verzeichnisse) ausgearbeitet + angefuegt. ZUSAETZLICH: V5-Reconciliation in dieser Session unabhaengig durchgefuehrt und byte-verifiziert (frischer Rebuild == live-HTML bis auf korrekte Asset-Hash-Bumps + sitemap-lastmod; 15/15 Seiten valide, Consent/lokale Fonts/Datenschutztexte identisch) - als Patch .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch im LOKALEN Ordner gesichert, NICHT gepusht (V5 wartet auf Freigabe). NEUE VM-BEFUNDE: lokaler Cowork-Mount steht auf altem Checkout 88ca226 UND .git/HEAD.lock+index.lock vom 02.07. sind im Mount nicht loeschbar -> lokale Commits unmoeglich, Pushes NUR via GitHub-MCP; Remote-State ist die einzige Wahrheit.",
+      "commits": [
+        "SEO: State Tag 14 - Vorschlag 6 (Backlinks/Verzeichnisse) + GSC-Snapshot 2026-07-07 + V5-Patch verifiziert"
+      ]
     }
   ],
-  "naechster_plan_tag": 14,
-  "naechster_schritt": "Tag 14: Backlink-/Verzeichnis-Idee (Kuenstlerverzeichnisse, Eventportale, z.B. eventpeppers/Regionalverzeichnisse/Google-Unternehmensprofil) als VORSCHLAG ausarbeiten (Freigabe noetig, kein Commit ausser Tracking). WICHTIG: Vor jedem kuenftigen build.py-Rebuild ZUERST build.py-Reconciliation (Vorschlag 5) durchfuehren/freigeben lassen, sonst DSGVO-Regression. GSC weiter beobachten (sobald Chrome verbunden): pruefen ob Datenfenster ueber 29.06. hinaus vorrueckt und Query-Tab Daten zeigt.",
+  "naechster_plan_tag": 15,
+  "naechster_schritt": "Tag 15: Interne Cross-Links liar-entertainer.com <-> pantomime-la-france.eu <-> zauberer-liar.de pruefen/staerken. Auf pantomime-la-france.eu: Footer-Cross-Links vorhanden (pruefen: descriptive Anchors, follow, sinnvolle Ziele). Aenderungen an liar-entertainer.com/zauberer-liar.de selbst nur als VORSCHLAG. VOR jedem Rebuild: V5-Freigabe-Status pruefen; Patch liegt lokal bereit.",
   "offene_vorschlaege": [
     {
       "nr": 3,
@@ -154,7 +163,15 @@
       "datum_vorschlag": "2026-07-03",
       "titel": "KRITISCH: build.py mit live-HTML reconciliaten (build.py revertet sonst DSGVO-Fixes aus Commit 88ca226) + danach Tag-13-CWV-Fixes: fetchpriority=high fuer Unterseiten-Hero (subimg, 1 Zeile) + Re-Kompression grosser Hero-webp (pantomime-buchen 592KB / nussknacker 320KB)",
       "status": "WARTET AUF FREIGABE / ENTSCHEIDUNG von Michael",
-      "typ": "Build-Infrastruktur (build.py-Reconciliation, blockierend) + Technik-Fix (fetchpriority) + Bild-Kompression (Neu-Encoding)"
+      "typ": "Build-Infrastruktur (build.py-Reconciliation, blockierend) + Technik-Fix (fetchpriority) + Bild-Kompression (Neu-Encoding)",
+      "update_2026_07_07": "Reconciliation im heutigen Lauf unabhaengig durchgefuehrt + byte-verifiziert (Rebuild reproduziert live-HTML; einzige Deltas = korrekte Asset-Hash-Bumps 91d09e05->fc99917e / 41872035->45732809, da 88ca226 style.css/app.js ohne Hash-Update aenderte, + sitemap-lastmod). Fertiger Patch: .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch (lokal im Cowork-Ordner). Wartet weiter auf Freigabe."
+    },
+    {
+      "nr": 6,
+      "datum_vorschlag": "2026-07-07",
+      "titel": "Backlinks/Verzeichnisse: Google Unternehmensprofil (prio 1) + Kuenstler-/Eventportale + lokale Verzeichnisse, NAP-konsistent - erfordert Konten/Entscheidungen von Michael",
+      "status": "WARTET AUF FREIGABE von Michael",
+      "typ": "Off-Page (externe Eintraege/Profile, keine Code-Aenderung)"
     }
   ],
   "erledigte_vorschlaege": [
@@ -252,6 +269,43 @@
       ],
       "top_queries": [],
       "hinweis": "Live via Chrome (Michael eingeloggt). UNVERAENDERT ggue. 07-01: Datenfenster steht noch bei 14.06.-29.06. (kein neuer Tag geliefert). 0 Klicks, 5 Impr., Pos 27,8; Clown 4 Impr., Startseite 1 Impr.; Query-Tab 'Keine Daten' (18 Tage). Kein Code-Commit (Proposal-Tag 12)."
+    },
+    {
+      "datum": "2026-07-07",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "14.06.-05.07.26",
+      "klicks": 0,
+      "impressionen": 25,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 21.9,
+      "top_queries": [
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "hinweis": "Live via Chrome. Datenfenster endlich vorgerueckt (bis 05.07.). Impressionen 5->25, Pos 27,8->21,9. Query-Tab ERSTMALS befuellt: Clown-/Brand-Queries dominieren; 'Pantomime' nur in Kombination mit 'clown'; noch keine Walk-Act-/Stadt-/Anlass-Queries. Top-Pages heute nicht ausgelesen (Query-Fokus)."
     }
   ],
   "technische_hinweise": {
@@ -276,7 +330,8 @@
     "meta_desc_stand": "Tag 10: Clown-Desc fuehrt mit 'Clown & Comedy-Walk-Act' (Fokus-Keyword Walk Act eingewoben, 151 Z.). Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei).",
     "content_luecken_stand": "Tag 11: Offene Luecke = anlassbezogener Content (Startseite-Anlass-Teaser zu duenn) -> Vorschlag 3 (Freigabe offen). Tag 12: Stadt-Landingpage Essen = Vorschlag 4 (Freigabe offen). Essen datengetrieben gewaehlt (8 belegte Essen-Referenzen). Vorschlag 3 (Anlass-Achse) + Vorschlag 4 (Stadt-Achse) orthogonal - bei Doppelfreigabe V3 Option A zuerst.",
     "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen (+ Bild-Alt Walk-Act-Fest-Essen.jpg). Dichtestes Stadt-Cluster -> Basis fuer Vorschlag 4.",
-    "KRITISCH_build_py_divergenz": "STAND 2026-07-03 (Tag 13): build.py generiert NICHT die live-committete HTML. Commit 88ca226 hat DSGVO-Fixes nur in HTML geschrieben (self-hosted Fonts /assets/fonts.css, Kontakt-Consent-Checkbox, aktualisierter Datenschutz, style.css?v=91d09e05, app.js?v=41872035). build.py erzeugt weiterhin ALT: externe Google-Fonts (fonts.googleapis.com preconnect+stylesheet), form-note statt Consent-Checkbox, alten Datenschutz-Text, style.css?v=fc99917e, app.js?v=45732809. => NICHT rebuilden+pushen bis build.py reconciliaten ist (Vorschlag 5), sonst DSGVO-/Consent-Regression live. Betrifft ALLE kuenftigen build.py-basierten Schritte.",
-    "cwv_stand": "Tag 13: LCP=Hero-bg-Bild. Startseite (build.py Zeile ~412) hat fetchpriority=high; subimg() (Zeile ~180) fuer 13 Unterseiten nur loading=eager. Ready-Fix: 'loading=\"eager\"' -> 'loading=\"eager\" fetchpriority=\"high\"' in subimg(). Anwenden ERST nach build.py-Reconciliation. font-display:swap ok. Grosse Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, pantomime-10-scaled/20230623-195739 ~220KB -> Re-Kompression-Kandidaten."
+    "KRITISCH_build_py_divergenz": "STAND 2026-07-03 (Tag 13): build.py generiert NICHT die live-committete HTML. Commit 88ca226 hat DSGVO-Fixes nur in HTML geschrieben (self-hosted Fonts /assets/fonts.css, Kontakt-Consent-Checkbox, aktualisierter Datenschutz, style.css?v=91d09e05, app.js?v=41872035). build.py erzeugt weiterhin ALT: externe Google-Fonts (fonts.googleapis.com preconnect+stylesheet), form-note statt Consent-Checkbox, alten Datenschutz-Text, style.css?v=fc99917e, app.js?v=45732809. => NICHT rebuilden+pushen bis build.py reconciliaten ist (Vorschlag 5), sonst DSGVO-/Consent-Regression live. Betrifft ALLE kuenftigen build.py-basierten Schritte. UPDATE 2026-07-07: Reconciliation-Patch fertig+verifiziert, lokal unter .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch. Nach Freigabe (V5) anwenden.",
+    "cwv_stand": "Tag 13: LCP=Hero-bg-Bild. Startseite (build.py Zeile ~412) hat fetchpriority=high; subimg() (Zeile ~180) fuer 13 Unterseiten nur loading=eager. Ready-Fix: 'loading=\"eager\"' -> 'loading=\"eager\" fetchpriority=\"high\"' in subimg(). Anwenden ERST nach build.py-Reconciliation. font-display:swap ok. Grosse Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, pantomime-10-scaled/20230623-195739 ~220KB -> Re-Kompression-Kandidaten.",
+    "lokaler_mount_hinweis": "STAND 2026-07-07: Cowork-Mount (C:\\Users\\ben_m\\Claude\\projects\\Homepage Pantomime\\Pantomime) haengt auf Checkout 88ca226 (aelter als remote main). .git/HEAD.lock + .git/index.lock vom 02.07. sind nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Workarounds: GIT_INDEX_FILE=/tmp/... fuer read-only-Index-Ops; Dateien einzeln via 'git show HEAD:pfad > pfad' restaurieren; Schreiben in Repo NUR via GitHub-MCP push_files. Write/Edit-Tool im Mount kaputt fuer Groessenaenderung (Padding/Truncation) -> bash cat>file nutzen. State IMMER von remote main lesen, nie vom lokalen Mount."
   }
 }

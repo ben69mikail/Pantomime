@@ -104,6 +104,7 @@ Inhaltsgeruest (alles belegt, nichts erfunden):
 **Status:** WARTET AUF FREIGABE / ENTSCHEIDUNG von Michael. NICHT committet.
 **Typ:** (a) Build-Infrastruktur — blockierend; (b) Technik-Fix fetchpriority; (c) Bild-Kompression (Neu-Encoding).
 **Prioritaet:** HOCH — blockiert den normalen Tages-Ablauf des SEO-Workers.
+**UPDATE 2026-07-07 (Tag 14):** Reconciliation wurde im heutigen Lauf unabhaengig durchgefuehrt und **byte-verifiziert** — fertiger Patch liegt lokal in `.seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch` (Cowork-Ordner). Nach Freigabe direkt anwendbar. Details unten.
 
 ### KRITISCHER BEFUND (beim Tag-13-Audit entdeckt)
 `build.py` ist **nicht mehr synchron** mit der live-committeten HTML. Es gibt genau einen Commit:
@@ -122,26 +123,40 @@ Verifiziert per frischem Clone (Py3.12, `git checkout -- .` = sauberer HEAD-Stan
 
 `grep -c fonts.googleapis.com index.html`: clean-Rebuild = **2**, live-HTML = **0**.
 
-**Konsequenz:** Jeder `python scripts/build.py`-Rebuild **revertet die DSGVO-/Rechts-Fixes** (Google-Fonts-Einbindung reaktiviert, Consent-Checkbox entfernt, Datenschutz-Text verfaelscht). Deshalb wurde am Tag 13 **kein Rebuild committet** (Guardrail: Qualitaet/DSGVO vor Ranking-Trick; bei Unsicherheit nicht pushen). **Solange build.py nicht reconciliaten ist, ist der normale Worker-Ablauf (build.py aendern -> rebuild -> HTML mitcommitten) blockiert.**
+**Konsequenz:** Jeder `python scripts/build.py`-Rebuild **revertet die DSGVO-/Rechts-Fixes**. Solange build.py nicht reconciliaten ist, ist der normale Worker-Ablauf (build.py aendern -> rebuild -> HTML mitcommitten) blockiert.
 
-### Empfohlene Reconciliation (durch Michael bzw. nach Freigabe)
-`build.py` so nachziehen, dass es die live-HTML **1:1 reproduziert** — d.h. die im Commit 88ca226 an der HTML vorgenommenen DSGVO-Aenderungen in den Generator ueberfuehren:
-1. Head-Template: externe Google-Fonts-Bloecke **entfernen**, self-hosted `<link rel="stylesheet" href="/assets/fonts.css">` einsetzen.
-2. Kontaktformular-Template: `form-note` durch die **Consent-Checkbox**-Markup ersetzen (wie in live `kontakt/index.html`).
-3. Datenschutz-Generator: Font-Abschnitt auf "lokal gehostet" + WhatsApp-Abschnitt anpassen (Text wie live `datenschutz/index.html`).
-4. style.css/app.js: pruefen, welche Datei-Version die Wahrheit ist (live-HTML referenziert `91d09e05`/`41872035`); sicherstellen, dass der md5-Hash-Mechanismus in build.py dazu passt.
-5. Akzeptanzkriterium: frischer Clone + `python scripts/build.py` erzeugt **0 Abweichung** gegen die aktuell committete HTML (ausser bewusst datumsgetriebenen `lastmod`/`Stand:`).
+### Durchgefuehrte, verifizierte Reconciliation (2026-07-07, wartet auf Freigabe)
+5 chirurgische Aenderungen in build.py (Patch enthaelt zusaetzlich die daraus regenerierten 15 HTML + sitemap):
+1. Head-Template: Google-Fonts-CDN-Block (2x preconnect + stylesheet) -> `<link rel="stylesheet" href="/assets/fonts.css" />`.
+2. Kontaktformular: `form-note` -> Consent-Checkbox-Markup (identisch zu live `kontakt/index.html`).
+3. Datenschutz Abschnitt 5 (Web3Forms): erweiterter live-Text (Checkbox-Einwilligung, Drittland/EU-Standardvertragsklauseln, Art. 49).
+4. Datenschutz Abschnitte 8/9/10: "Schriftarten (lokal gehostet)" + neuer WhatsApp-Abschnitt + Umnummerierung "Ihre Rechte" auf 10 (identisch zu live).
+5. `Stand: {TODAY}` -> hart `Stand: 2026-07-02` (kein falscher Datums-Bump bei technischen Rebuilds; bei echten Datenschutz-Aenderungen manuell bumpen).
 
-### Danach: aufgeschobene Tag-13-CWV-Fixes (erst nach erfolgreicher Reconciliation anwenden)
-**(b) fetchpriority=high fuer Unterseiten-Hero (LCP).** Die 13 Unterseiten-Heroes werden ueber `subimg()` (build.py ~Zeile 180) erzeugt und haben nur `loading="eager"` — **ohne** `fetchpriority="high"`. Die Startseite (Zeile ~412) hat es bereits. Das Hero-`<img>` ist das LCP-Element jeder Seite. **1-Zeilen-Fix** in `subimg()`:
-`... role="presentation" loading="eager" decoding="async" ...` -> `... role="presentation" loading="eager" fetchpriority="high" decoding="async" ...`
-Rein technisch, kein Content-Change, verbessert LCP-Prioritaet auf allen Unterseiten. (Am Tag 13 lokal gebaut+verifiziert: 13/13 Heroes erhalten das Attribut, HTML valide, JSON-LD parst — aber bewusst NICHT gepusht wegen build.py-Divergenz.)
+**Verifikation:** Py3.12-Rebuild reproduziert die live-HTML; einzige Deltas: (a) Asset-Hashes `style.css?v=91d09e05 -> fc99917e`, `app.js?v=41872035 -> 45732809` — KORREKT, weil 88ca226 style.css/app.js geaendert hat, ohne die ?v=-Parameter in der HTML nachzuziehen (Cache-Bust faellig); (b) sitemap-lastmod (datumsgetrieben). 15/15 Seiten: valides Ende, genau 1 H1, keine fonts.googleapis-Referenz, fonts.css vorhanden, Consent-Checkbox + alle Datenschutz-Textmarker vorhanden.
 
-**(c) Re-Kompression grosser Hero-webp (Neu-Encoding -> Freigabe).** Ausgelieferte Hero-Bilder ueber Budget:
-- `assets/img/pantomime-buchen-scaled.webp` — **592 KB** (klar zu gross fuer ein Hero-webp)
-- `assets/img/nussknacker-scaled.webp` — **320 KB**
-- `assets/img/pantomime-10-scaled.webp` — ~225 KB; `20230623-195739-scaled.webp` — ~217 KB
-Vorschlag: auf ~120–180 KB re-encodieren (Qualitaet ~80, sinnvolle Zielbreite fuer Hero). Verkleinert LCP-Payload spuerbar. Neu-Encoding = Freigabe noetig; `scripts/process_images.py` vorhanden (Pipeline pruefen). Quelle in `assets/img-src/` (nicht ausgeliefert) bleibt unveraendert.
+### Danach: aufgeschobene Tag-13-CWV-Fixes (erst nach Reconciliation-Freigabe)
+**(b) fetchpriority=high fuer Unterseiten-Hero (LCP):** 1-Zeilen-Fix in `subimg()` (`loading="eager"` -> `loading="eager" fetchpriority="high"`).
+**(c) Re-Kompression grosser Hero-webp (Neu-Encoding, Freigabe):** pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, 2x ~220KB -> Ziel ~120-180KB.
 
-### Render-blocking / Fonts (Sachstand, kein Handlungsbedarf)
-`assets/fonts.css` nutzt durchgaengig `font-display: swap` (18x) — Text rendert sofort. Nur `fonts.css` + `style.css` sind render-blocking, kein JS-Framework (GA4 laedt via defer/spaeter). Fuer diese Seitengroesse unkritisch.
+---
+
+## Vorschlag 6 — 2026-07-07 (Tag 14): Backlinks & Verzeichnisse (Off-Page)
+
+**Status:** WARTET AUF FREIGABE von Michael (alle Punkte erfordern seine Konten/Entscheidungen — keine Code-Aenderung an der Website).
+**Typ:** Off-Page-SEO (externe Profile/Eintraege, NAP-Konsistenz).
+
+### Kontext (GSC-Stand 2026-07-07)
+Datenfenster erstmals bis 05.07. vorgerueckt: 0 Klicks, **25 Impressionen** (von 5), Pos **21,9** (Trend 58 -> 40,3 -> 27,8 -> 21,9). Query-Tab erstmals befuellt: `clown pantomime` (2), `pantomime clown` (2), `clown liar`, `clown zauberer liar`, `zauberer liar` — Clown-/Brand-lastig. Die Domain (3,5 Wochen alt) hat praktisch keine externen Signale -> Off-Page ist jetzt der wirksamste naechste Hebel, besonders fuer lokale Sichtbarkeit.
+
+### Vorschlag (priorisiert; nur wahrheitsgemaesse Angaben, NAP konsistent zum Impressum)
+1. **Google Unternehmensprofil (PRIO 1, kostenlos, groesster Hebel):** Profil "LIAR – Pantomime & Walk Act" als Dienstleister mit Einzugsgebiet (Service-Area: Gladbeck/Ruhrgebiet/NRW). WICHTIG: Als Service-Area-Business muss die Privatadresse NICHT oeffentlich angezeigt werden — Entscheidung liegt bei Michael. Kategorie z.B. "Unterhaltungskuenstler". Website-Link auf https://www.pantomime-la-france.eu. Fotos aus dem vorhandenen verifizierten Bildbestand. Erschliesst Google-Maps-/Local-Pack-Sichtbarkeit fuer "Pantomime <Stadt>"-Suchen, die die Website allein kaum erreicht.
+2. **Kuenstler-/Eventportale (pruefen, seriose Basis-Eintraege):** Kandidaten: eventpeppers, Stagepool, kuenstlervermittlung-Portale, regionale Eventdienstleister-Verzeichnisse. Kriterium: echtes redaktionelles Profil mit Link, kein bezahltes Link-Netzwerk. Ein Eintrag = Profiltext aus INHALTE-VERIFIZIERT.md (nichts erfinden).
+3. **Cross-Domain-Backlinks aus eigenem Bestand (schnell, in Michaels Hand):** liar-entertainer.com und zauberer-liar.de verlinken idealerweise prominent (nicht nur Footer) und descriptiv ("Pantomime & Walk Act in NRW – pantomime-la-france.eu") auf die neue Domain. Wird in Tag 15 im Detail geprueft.
+4. **Lokal Gladbeck/Ruhrgebiet:** Stadtportal-/Vereins-/Kultureintraege, lokale Presse (z.B. bei naechstem oeffentlichen Auftritt). Nur reale Anlaesse, kein Fake-PR.
+5. **Hochzeits-/Eventportale** (z.B. Hochzeitsportale mit Dienstleisterverzeichnis): erst NACH FreigabE pruefen, ob kostenfreie Basisprofile sinnvoll sind (Hochzeit ist belegter Anlass).
+
+### Leitplanken
+Qualitaet vor Menge (5 gute Eintraege > 50 Spam-Verzeichnisse), KEINE Linkkaeufe, NAP (Name/Adresse/Telefon) ueberall identisch zum Impressum, jede Beschreibung nur aus INHALTE-VERIFIZIERT.md. Erfolgskontrolle: GSC-Impressionen fuer "Pantomime <Stadt>"-Queries + Referral-Traffic in GA4.
+
+**Umfang bei Freigabe:** Michael legt Profile an (Konten noetig); der Worker kann Profiltexte (NAP-konsistent, belegt) vorbereiten und nach Livegang die Wirkung in GSC tracken. Kein Website-Commit noetig.
