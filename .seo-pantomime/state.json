@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 14,
-  "letzter_lauf": "2026-07-07",
-  "WICHTIG_naechster_lauf": "Tag 14 abgeschlossen (2026-07-07). GSC-DURCHBRUCH: Fenster bis 05.07., 25 Impressionen (von 5), Pos 21,9, Query-Tab erstmals befuellt (clown pantomime/pantomime clown je 2, brand-Queries) - noch KEINE Walk-Act-/Stadt-Queries. Vorschlag 6 (Backlinks/Verzeichnisse, prio Google Unternehmensprofil) angefuegt. V5-RECONCILIATION HEUTE UNABHAENGIG DURCHGEFUEHRT+BYTE-VERIFIZIERT: Patch liegt LOKAL in .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch (Michaels Cowork-Ordner), NICHT gepusht (V5 wartet auf Freigabe). Bei Freigabe: Patch anwenden ODER die 5 dokumentierten Replacements (fonts.css statt Google-CDN, Consent-Checkbox statt form-note, 3 Datenschutz-Textbloecke, Stand hart 2026-07-02) in build.py, Py3.12-Rebuild, Diff==nur Asset-Hash-Bumps+lastmod. NEUE VM-LAGE: lokaler Cowork-Mount haengt auf altem Checkout 88ca226; .git/HEAD.lock+index.lock (02.07.) im Mount NICHT loeschbar -> lokale Commits UNMOEGLICH, Schreibzugriff auf Repo NUR via GitHub-MCP push_files; Remote main = einzige Wahrheit fuer State UND Code. VORSICHT Mount-Dateisystem: Write/Edit-Tool kann Dateien nicht verlaengern/kuerzen (Null-Byte-Padding/Truncation!) - Dateien im Mount nur per bash-Redirect (cat > file) schreiben. Naechster Lauf: Tag 15 - Cross-Links liar-entertainer.com <-> pantomime-la-france.eu <-> zauberer-liar.de pruefen/staerken (Achtung: Aenderungen an den beiden anderen Domains = nur VORSCHLAG).",
+  "aktueller_plan_tag": 15,
+  "letzter_lauf": "2026-07-08",
+  "WICHTIG_naechster_lauf": "Tag 15 abgeschlossen (2026-07-08). Cross-Link-Audit: eigener Footer verlinkt beide Schwester-Domains follow (Anchors = nackte Domains, Verbesserung erst nach V5); liar-entertainer.com linkt 2x auf ALTE Subdomain pantomime.liar-entertainer.com (Redirect auf neue Domain funktioniert, Canonical ok); zauberer-liar.de hat KEINEN Link auf pantomime-la-france.eu -> alles in Vorschlag 7 (Freigabe noetig, fremde Domains). GSC unveraendert (Fenster weiter 14.06.-05.07.): 25 Impr., Pos 21,9; NEU Seiten-Tab: Clown 21 Impr., Start 5, ueber-mich 1 (erstmals). KEIN Code-Commit heute (V5 blockiert Rebuild weiterhin; Patch liegt lokal in .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch). VM-Lage unveraendert: lokaler Mount auf 88ca226 mit unloeschbaren .git-Locks -> Schreiben NUR via GitHub-MCP push_files; Mount-Dateien nur per bash cat>file schreiben. Naechster Lauf: Tag 16 - GSC-datengetrieben: schwaechste High-Impression-Seite fuer Pantomime/Walk-Act gezielt verbessern (Kandidat: Clown-Seite 21 Impr./0 Klicks — aber Title/Desc schon Tag 10 optimiert; pruefen ob Datenfenster vorgerueckt ist und ob neue Queries/Seiten da sind, sonst Technik-Audit-Alternative).",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -139,10 +139,19 @@
       "commits": [
         "SEO: State Tag 14 - Vorschlag 6 (Backlinks/Verzeichnisse) + GSC-Snapshot 2026-07-07 + V5-Patch verifiziert"
       ]
+    },
+    {
+      "tag": 15,
+      "datum": "2026-07-08",
+      "schritt": "Tag 15: Cross-Links liar-entertainer.com <-> pantomime-la-france.eu <-> zauberer-liar.de pruefen/staerken.",
+      "ergebnis": "Live-Audit via Chrome (JS-Link-Extraktion auf allen 3 Domains). (1) EIGENE SEITE: Footer verlinkt liar-entertainer.com + zauberer-liar.de, rel=noopener OHNE nofollow (follow, gut); Schwaeche: Anchors sind nackte Domainnamen statt descriptiv -> Fix erst nach V5 moeglich (build.py-Rebuild gesperrt). (2) liar-entertainer.com: verlinkt 2x 'Pantomime' auf ALTE Subdomain pantomime.liar-entertainer.com; Redirect auf www.pantomime-la-france.eu funktioniert (live geprueft, Canonical korrekt), aber Direktlink waere besser (kein Redirect-Hop). (3) zauberer-liar.de: KEIN Link auf pantomime-la-france.eu (nur mailto) = wertvollster fehlender eigener Backlink; GSC-Brand-Queries ('clown zauberer liar') zeigen, dass Google die Marken bereits verknuepft. Alles als VORSCHLAG 7 dokumentiert (A: Direktlinks auf liar-entertainer.com, B: neuer Link auf zauberer-liar.de, C: descriptive Footer-Anchors nach V5). KEIN Code-Commit (fremde Domains + V5-Sperre). GSC: unveraendert (Fenster weiter bis 05.07., 25 Impr., Pos 21,9); NEU: Seiten-Tab gelesen - Clown 21 Impr., Start 5, ueber-mich 1 (erstmals sichtbar).",
+      "commits": [
+        "SEO: State Tag 15 + Vorschlag 7 (Cross-Domain-Verlinkung) - Audit-Befunde + GSC-Snapshot 2026-07-08"
+      ]
     }
   ],
-  "naechster_plan_tag": 15,
-  "naechster_schritt": "Tag 15: Interne Cross-Links liar-entertainer.com <-> pantomime-la-france.eu <-> zauberer-liar.de pruefen/staerken. Auf pantomime-la-france.eu: Footer-Cross-Links vorhanden (pruefen: descriptive Anchors, follow, sinnvolle Ziele). Aenderungen an liar-entertainer.com/zauberer-liar.de selbst nur als VORSCHLAG. VOR jedem Rebuild: V5-Freigabe-Status pruefen; Patch liegt lokal bereit.",
+  "naechster_plan_tag": 16,
+  "naechster_schritt": "Tag 16: GSC-datengetrieben - schwaechste High-Impression-Seite fuer Pantomime/Walk-Act gezielt verbessern. Kandidat: Clown-Seite (21 Impr./0 Klicks, Pos ~21) - Title/Desc aber schon Tag 10 optimiert. Zuerst pruefen: Datenfenster vorgerueckt? Neue Queries/Seiten? Falls keine neuen Daten: Technik-Audit-Alternative (z.B. Snippet-Darstellung Clown-Seite in Google, Breadcrumb/FAQ-Rich-Results-Status in GSC). VOR jedem Rebuild: V5-Freigabe-Status pruefen.",
   "offene_vorschlaege": [
     {
       "nr": 3,
@@ -172,6 +181,13 @@
       "titel": "Backlinks/Verzeichnisse: Google Unternehmensprofil (prio 1) + Kuenstler-/Eventportale + lokale Verzeichnisse, NAP-konsistent - erfordert Konten/Entscheidungen von Michael",
       "status": "WARTET AUF FREIGABE von Michael",
       "typ": "Off-Page (externe Eintraege/Profile, keine Code-Aenderung)"
+    },
+    {
+      "nr": 7,
+      "datum_vorschlag": "2026-07-08",
+      "titel": "Cross-Domain-Verlinkung staerken: (A) liar-entertainer.com 2x Pantomime-Link direkt auf www.pantomime-la-france.eu statt alte Subdomain, (B) zauberer-liar.de descriptiven Link ergaenzen (fehlt komplett), (C) eigene Footer-Anchors descriptiv nach V5-Freigabe",
+      "status": "WARTET AUF FREIGABE von Michael (A/B = fremde Domains, C = V5-gesperrt)",
+      "typ": "Off-Page/Cross-Domain (A/B ausserhalb dieses Repos) + build.py-Minifix (C, nach V5)"
     }
   ],
   "erledigte_vorschlaege": [
@@ -306,6 +322,60 @@
         }
       ],
       "hinweis": "Live via Chrome. Datenfenster endlich vorgerueckt (bis 05.07.). Impressionen 5->25, Pos 27,8->21,9. Query-Tab ERSTMALS befuellt: Clown-/Brand-Queries dominieren; 'Pantomime' nur in Kombination mit 'clown'; noch keine Walk-Act-/Stadt-/Anlass-Queries. Top-Pages heute nicht ausgelesen (Query-Fokus)."
+    },
+    {
+      "datum": "2026-07-08",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "14.06.-05.07.26",
+      "klicks": 0,
+      "impressionen": 25,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 21.9,
+      "top_pages": [
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 21
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 5
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/ueber-mich/",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "top_queries": [
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "hinweis": "Live via Chrome. Datenfenster UNVERAENDERT (14.06.-05.07.), Kennzahlen identisch zu 07-07. NEU: Seiten-Tab gelesen - Clown 21 Impr. (dominiert klar), Startseite 5, /ueber-mich/ 1 (erstmals). Summe Seiten (27) > Gesamt (25) = normale GSC-Rundung/Anonymisierung."
     }
   ],
   "technische_hinweise": {
@@ -315,7 +385,7 @@
     "github_mcp_sha_hinweis": "create_or_update_file braucht VOLLE 40-Zeichen-blob-sha. push_files braucht KEINE sha.",
     "deploy": "GitHub Action rsynct committete HTML zu IONOS. build.py NICHT im CI -> generierte HTML immer mitcommitten.",
     "datenschutz_stand": "datenschutz/index.html hat auto 'Stand: {TODAY}'. Wird bei jedem Rebuild aktualisiert.",
-    "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de (Tag 15).",
+    "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de (Tag 15: follow/noopener ok, Anchors = nackte Domains -> descriptive Anchors nach V5, siehe Vorschlag 7C).",
     "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben.",
     "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner GEPRUEFT - verlinken bereits via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen.",
     "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, lastmod=2026-06-29 (echter Content-Change Clown-Desc). Tag 11+12: KEIN Rebuild (Proposal-Tage), lastmod bleibt 2026-06-29. build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
@@ -332,6 +402,7 @@
     "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen (+ Bild-Alt Walk-Act-Fest-Essen.jpg). Dichtestes Stadt-Cluster -> Basis fuer Vorschlag 4.",
     "KRITISCH_build_py_divergenz": "STAND 2026-07-03 (Tag 13): build.py generiert NICHT die live-committete HTML. Commit 88ca226 hat DSGVO-Fixes nur in HTML geschrieben (self-hosted Fonts /assets/fonts.css, Kontakt-Consent-Checkbox, aktualisierter Datenschutz, style.css?v=91d09e05, app.js?v=41872035). build.py erzeugt weiterhin ALT: externe Google-Fonts (fonts.googleapis.com preconnect+stylesheet), form-note statt Consent-Checkbox, alten Datenschutz-Text, style.css?v=fc99917e, app.js?v=45732809. => NICHT rebuilden+pushen bis build.py reconciliaten ist (Vorschlag 5), sonst DSGVO-/Consent-Regression live. Betrifft ALLE kuenftigen build.py-basierten Schritte. UPDATE 2026-07-07: Reconciliation-Patch fertig+verifiziert, lokal unter .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch. Nach Freigabe (V5) anwenden.",
     "cwv_stand": "Tag 13: LCP=Hero-bg-Bild. Startseite (build.py Zeile ~412) hat fetchpriority=high; subimg() (Zeile ~180) fuer 13 Unterseiten nur loading=eager. Ready-Fix: 'loading=\"eager\"' -> 'loading=\"eager\" fetchpriority=\"high\"' in subimg(). Anwenden ERST nach build.py-Reconciliation. font-display:swap ok. Grosse Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, pantomime-10-scaled/20230623-195739 ~220KB -> Re-Kompression-Kandidaten.",
-    "lokaler_mount_hinweis": "STAND 2026-07-07: Cowork-Mount (C:\\Users\\ben_m\\Claude\\projects\\Homepage Pantomime\\Pantomime) haengt auf Checkout 88ca226 (aelter als remote main). .git/HEAD.lock + .git/index.lock vom 02.07. sind nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Workarounds: GIT_INDEX_FILE=/tmp/... fuer read-only-Index-Ops; Dateien einzeln via 'git show HEAD:pfad > pfad' restaurieren; Schreiben in Repo NUR via GitHub-MCP push_files. Write/Edit-Tool im Mount kaputt fuer Groessenaenderung (Padding/Truncation) -> bash cat>file nutzen. State IMMER von remote main lesen, nie vom lokalen Mount."
+    "lokaler_mount_hinweis": "STAND 2026-07-07: Cowork-Mount (C:\\Users\\ben_m\\Claude\\projects\\Homepage Pantomime\\Pantomime) haengt auf Checkout 88ca226 (aelter als remote main). .git/HEAD.lock + .git/index.lock vom 02.07. sind nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Workarounds: GIT_INDEX_FILE=/tmp/... fuer read-only-Index-Ops; Dateien einzeln via 'git show HEAD:pfad > pfad' restaurieren; Schreiben in Repo NUR via GitHub-MCP push_files. Write/Edit-Tool im Mount kaputt fuer Groessenaenderung (Padding/Truncation) -> bash cat>file nutzen. State IMMER von remote main lesen, nie vom lokalen Mount.",
+    "cross_links_stand": "Tag 15 (2026-07-08): pantomime-Footer -> beide Schwester-Domains follow/noopener (Anchors = nackte Domains, Fix nach V5 = Vorschlag 7C). liar-entertainer.com -> 2x 'Pantomime' auf alte Subdomain (Redirect ok, Direktlink = Vorschlag 7A). zauberer-liar.de -> KEIN Link (Vorschlag 7B). Alte Subdomain pantomime.liar-entertainer.com leitet korrekt auf www.pantomime-la-france.eu weiter (Canonical ok)."
   }
 }

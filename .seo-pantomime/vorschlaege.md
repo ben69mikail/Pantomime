@@ -160,3 +160,23 @@ Datenfenster erstmals bis 05.07. vorgerueckt: 0 Klicks, **25 Impressionen** (von
 Qualitaet vor Menge (5 gute Eintraege > 50 Spam-Verzeichnisse), KEINE Linkkaeufe, NAP (Name/Adresse/Telefon) ueberall identisch zum Impressum, jede Beschreibung nur aus INHALTE-VERIFIZIERT.md. Erfolgskontrolle: GSC-Impressionen fuer "Pantomime <Stadt>"-Queries + Referral-Traffic in GA4.
 
 **Umfang bei Freigabe:** Michael legt Profile an (Konten noetig); der Worker kann Profiltexte (NAP-konsistent, belegt) vorbereiten und nach Livegang die Wirkung in GSC tracken. Kein Website-Commit noetig.
+
+---
+
+## Vorschlag 7 — 2026-07-08 (Tag 15): Cross-Domain-Verlinkung der drei LIAR-Domains staerken
+
+**Status:** WARTET AUF FREIGABE von Michael. NICHT committet.
+**Typ:** (A/B) Aenderungen an liar-entertainer.com und zauberer-liar.de — fremde Codebasen, liegen nicht in diesem Repo -> nur Vorschlag. (C) Footer-Anchor-Optimierung auf pantomime-la-france.eu — build.py-Aenderung, derzeit durch Vorschlag 5 (Reconciliation) blockiert.
+
+### Befunde (Tag-15-Audit, live geprueft am 2026-07-08)
+1. **pantomime-la-france.eu (eigene Seite):** Footer verlinkt beide Schwester-Domains — `rel="noopener"`, KEIN nofollow (gut, Linksignal fliesst). Schwaeche: Anchor-Texte sind nackte Domainnamen ("liar-entertainer.com", "zauberer-liar.de") statt descriptiver Anchors.
+2. **liar-entertainer.com:** verlinkt 2x mit Anchor "Pantomime" auf die ALTE Subdomain `https://pantomime.liar-entertainer.com/`. Die Weiterleitung auf `https://www.pantomime-la-france.eu/` FUNKTIONIERT (live geprueft, Canonical korrekt) — kein akuter Schaden, aber ein Redirect-Hop kostet Signalweitergabe und ist ein unnoetiges Risiko, falls die Subdomain irgendwann wegfaellt.
+3. **zauberer-liar.de:** KEIN Link auf pantomime-la-france.eu (einzige Referenz: mailto info@liar-entertainer.com). Verpasster thematisch naheliegender Backlink — GSC zeigt bereits kombinierte Brand-Queries ("clown zauberer liar", "zauberer liar"): Google verknuepft die Marken bereits, ein echter Link wuerde das Signal sauber buendeln.
+
+### Empfehlungen (bei Freigabe)
+- **A) liar-entertainer.com:** die 2 "Pantomime"-Links direkt auf `https://www.pantomime-la-france.eu/` umstellen (statt alte Subdomain), Anchor idealerweise "Pantomime & Walk Act". Aufwand: 2 href-Aenderungen auf der Hauptseite.
+- **B) zauberer-liar.de:** sichtbaren descriptiven Link ergaenzen (z.B. Footer oder "Weitere Shows"-Bereich): "Pantomime & Walk Act in NRW — pantomime-la-france.eu". Der wertvollste fehlende Backlink aus eigenem Bestand.
+- **C) pantomime-la-france.eu (nach V5-Freigabe, build.py):** Footer-Anchors descriptiv machen, z.B. "LIAR Entertainer — Comedy & Show" und "Zauberer LIAR — Zaubershows NRW". Nice-to-have, geringes Gewicht; kann mit dem V5-Rebuild in einem Commit mitfahren.
+
+### Hinweis
+Kein Auto-Commit heute: Die einzige Aenderung an der eigenen Seite (C) erfordert einen build.py-Rebuild, der bis zur V5-Freigabe gesperrt ist. A und B liegen ausserhalb dieses Repos (Michaels andere Websites).
