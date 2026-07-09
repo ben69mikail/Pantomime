@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 15,
-  "letzter_lauf": "2026-07-08",
-  "WICHTIG_naechster_lauf": "Tag 15 abgeschlossen (2026-07-08). Cross-Link-Audit: eigener Footer verlinkt beide Schwester-Domains follow (Anchors = nackte Domains, Verbesserung erst nach V5); liar-entertainer.com linkt 2x auf ALTE Subdomain pantomime.liar-entertainer.com (Redirect auf neue Domain funktioniert, Canonical ok); zauberer-liar.de hat KEINEN Link auf pantomime-la-france.eu -> alles in Vorschlag 7 (Freigabe noetig, fremde Domains). GSC unveraendert (Fenster weiter 14.06.-05.07.): 25 Impr., Pos 21,9; NEU Seiten-Tab: Clown 21 Impr., Start 5, ueber-mich 1 (erstmals). KEIN Code-Commit heute (V5 blockiert Rebuild weiterhin; Patch liegt lokal in .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch). VM-Lage unveraendert: lokaler Mount auf 88ca226 mit unloeschbaren .git-Locks -> Schreiben NUR via GitHub-MCP push_files; Mount-Dateien nur per bash cat>file schreiben. Naechster Lauf: Tag 16 - GSC-datengetrieben: schwaechste High-Impression-Seite fuer Pantomime/Walk-Act gezielt verbessern (Kandidat: Clown-Seite 21 Impr./0 Klicks — aber Title/Desc schon Tag 10 optimiert; pruefen ob Datenfenster vorgerueckt ist und ob neue Queries/Seiten da sind, sonst Technik-Audit-Alternative).",
+  "aktueller_plan_tag": 16,
+  "letzter_lauf": "2026-07-09",
+  "WICHTIG_naechster_lauf": "Tag 16 abgeschlossen (2026-07-09). KEIN Chrome verbunden (list_connected_browsers leer) -> Live-GSC uebersprungen (im Bericht vermerkt). Ersatz: read-only Technik-Audit der dominierenden Clown-Seite (21 von 25 Impr. laut 07-08) via GitHub-MCP = technisch SAUBER (Title 53 Z. Keyword vorn, Desc mit 'Comedy-Walk-Act', robots/canonical/3x JSON-LD valide, FAQPage deckungsgleich, 1 H1, WCAG-Hero-alt). Einzige datengetriebene Chance: GSC-Queries sind 'pantomime clown'/'clown pantomime', der Clown-Title enthaelt kein 'Pantomime' -> Einweben moeglich, aber Kannibalisierungsrisiko ggue. dedizierter Pantomime-Seite + V5-gesperrt (Rebuild) -> als V5-gekoppelte Micro-Notiz, niedrige Prio (siehe technische_hinweise.clown_title_chance). KEIN Code-Commit heute (V5 blockiert Rebuild weiter; Patch liegt lokal .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch). VM/Mount-Lage unveraendert (lokaler Mount 88ca226, unloeschbare .git-Locks -> Schreiben NUR via GitHub-MCP). Naechster Lauf Tag 17: Chrome erneut versuchen; bei frischen GSC-Daten schwaechste High-Impression-Seite fuer Pantomime/Walk-Act schaerfen, sonst Startseite-On-Page-Check bzw. offenen Vorschlag konkretisieren. V5-Freigabe-Status IMMER vor Rebuild pruefen.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -148,10 +148,19 @@
       "commits": [
         "SEO: State Tag 15 + Vorschlag 7 (Cross-Domain-Verlinkung) - Audit-Befunde + GSC-Snapshot 2026-07-08"
       ]
+    },
+    {
+      "tag": 16,
+      "datum": "2026-07-09",
+      "schritt": "Tag 16: GSC-datengetrieben - schwaechste High-Impression-Seite fuer Pantomime/Walk-Act schaerfen. Chrome nicht verfuegbar -> Ersatz-Technik-Audit der dominierenden Clown-Seite.",
+      "ergebnis": "GSC LIVE NICHT MOEGLICH: kein Chrome-Browser verbunden (list_connected_browsers = []) -> Live-Snapshot uebersprungen, im Bericht vermerkt (Guardrail). Ersatz-Technik-Audit (read-only via GitHub-MCP, KEIN Rebuild - V5 weiter gesperrt) der dominierenden High-Impression-Seite /figuren/der-clown/ (07-08: 21 von 25 Impr.). Befund: technisch SAUBER. Title 'Clown in NRW buchen – LIAR | Kinderfest & Firmenfeier' (~53 Z., Keyword vorn), Desc mit 'Comedy-Walk-Act' (Fokus-Keyword eingewoben, ~150 Z.), robots index,follow,max-image-preview:large, Canonical self-ref www/https, 3 JSON-LD (BreadcrumbList/FAQPage/Service) valide, FAQPage deckungsgleich mit sichtbarem faq_block (2 Q/A identisch), genau 1 H1, Hero-alt='' role=presentation loading=eager (WCAG ok; fetchpriority fehlt = bekannt, V5/Vorschlag 5). Content-Bild-Alts beschreibend. EINZIGE datengetriebene Chance: GSC-Queries sind 'clown pantomime'/'pantomime clown' - Clown-Title enthaelt KEIN 'Pantomime'. Einweben koennte Relevanz/CTR fuer diese realen Queries heben, BIRGT aber Kannibalisierungsrisiko ggue. dedizierter Pantomime-Seite -> als V5-gekoppelte Title-Micro-Notiz, niedrige Prio (technische_hinweise.clown_title_chance), NICHT als eigener Vorschlag (Nutzen unsicher). KEIN Code-Commit heute (V5 blockiert Rebuild).",
+      "commits": [
+        "SEO: State Tag 16 - Clown-Seite Technik-Audit (sauber, kein Rebuild wg. V5) + GSC uebersprungen (kein Chrome)"
+      ]
     }
   ],
-  "naechster_plan_tag": 16,
-  "naechster_schritt": "Tag 16: GSC-datengetrieben - schwaechste High-Impression-Seite fuer Pantomime/Walk-Act gezielt verbessern. Kandidat: Clown-Seite (21 Impr./0 Klicks, Pos ~21) - Title/Desc aber schon Tag 10 optimiert. Zuerst pruefen: Datenfenster vorgerueckt? Neue Queries/Seiten? Falls keine neuen Daten: Technik-Audit-Alternative (z.B. Snippet-Darstellung Clown-Seite in Google, Breadcrumb/FAQ-Rich-Results-Status in GSC). VOR jedem Rebuild: V5-Freigabe-Status pruefen.",
+  "naechster_plan_tag": 17,
+  "naechster_schritt": "Tag 17: GSC-datengetrieben fortsetzen - Chrome erneut versuchen (Michael ggf. eingeloggt). Bei frischen GSC-Daten / neuen Walk-Act-/Stadt-/Anlass-Queries: entsprechende Zielseite On-Page schaerfen. Falls keine neuen Daten oder kein Chrome: Technik-/Content-Alternation - zweitstaerkste Seite Startseite (5 Impr.) On-Page pruefen ODER offenen Vorschlag (3/4) konkretisieren. VOR jedem Rebuild: V5-Freigabe-Status pruefen (Rebuild bleibt gesperrt bis V5-Reconciliation freigegeben).",
   "offene_vorschlaege": [
     {
       "nr": 3,
@@ -173,7 +182,7 @@
       "titel": "KRITISCH: build.py mit live-HTML reconciliaten (build.py revertet sonst DSGVO-Fixes aus Commit 88ca226) + danach Tag-13-CWV-Fixes: fetchpriority=high fuer Unterseiten-Hero (subimg, 1 Zeile) + Re-Kompression grosser Hero-webp (pantomime-buchen 592KB / nussknacker 320KB)",
       "status": "WARTET AUF FREIGABE / ENTSCHEIDUNG von Michael",
       "typ": "Build-Infrastruktur (build.py-Reconciliation, blockierend) + Technik-Fix (fetchpriority) + Bild-Kompression (Neu-Encoding)",
-      "update_2026_07_07": "Reconciliation im heutigen Lauf unabhaengig durchgefuehrt + byte-verifiziert (Rebuild reproduziert live-HTML; einzige Deltas = korrekte Asset-Hash-Bumps 91d09e05->fc99917e / 41872035->45732809, da 88ca226 style.css/app.js ohne Hash-Update aenderte, + sitemap-lastmod). Fertiger Patch: .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch (lokal im Cowork-Ordner). Wartet weiter auf Freigabe."
+      "update_2026_07_07": "Reconciliation im Lauf vom 07-07 unabhaengig durchgefuehrt + byte-verifiziert (Rebuild reproduziert live-HTML; einzige Deltas = korrekte Asset-Hash-Bumps 91d09e05->fc99917e / 41872035->45732809, da 88ca226 style.css/app.js ohne Hash-Update aenderte, + sitemap-lastmod). Fertiger Patch: .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch (lokal im Cowork-Ordner). Wartet weiter auf Freigabe. HINWEIS Tag 16: solange V5 offen, bleiben ALLE build.py-basierten Micro-Fixes (Titles/Anchors/fetchpriority) blockiert - inkl. der Clown-Title-Chance (siehe technische_hinweise.clown_title_chance)."
     },
     {
       "nr": 6,
@@ -376,6 +385,18 @@
         }
       ],
       "hinweis": "Live via Chrome. Datenfenster UNVERAENDERT (14.06.-05.07.), Kennzahlen identisch zu 07-07. NEU: Seiten-Tab gelesen - Clown 21 Impr. (dominiert klar), Startseite 5, /ueber-mich/ 1 (erstmals). Summe Seiten (27) > Gesamt (25) = normale GSC-Rundung/Anonymisierung."
+    },
+    {
+      "datum": "2026-07-09",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "n/a",
+      "klicks": null,
+      "impressionen": null,
+      "ctr_prozent": null,
+      "durchschnitt_position": null,
+      "top_pages": [],
+      "top_queries": [],
+      "hinweis": "KEIN Live-Snapshot: kein Chrome-Browser verbunden (list_connected_browsers = []). GSC-Check uebersprungen (Guardrail: bei fehlendem Chrome ueberspringen + vermerken). Letzter valider Stand bleibt 2026-07-08 (25 Impr., Pos 21,9, Clown dominiert). Naechster Lauf: Chrome erneut versuchen."
     }
   ],
   "technische_hinweise": {
@@ -386,10 +407,10 @@
     "deploy": "GitHub Action rsynct committete HTML zu IONOS. build.py NICHT im CI -> generierte HTML immer mitcommitten.",
     "datenschutz_stand": "datenschutz/index.html hat auto 'Stand: {TODAY}'. Wird bei jedem Rebuild aktualisiert.",
     "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de (Tag 15: follow/noopener ok, Anchors = nackte Domains -> descriptive Anchors nach V5, siehe Vorschlag 7C).",
-    "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben.",
+    "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben. Tag 16 (Clown-Seite) bestaetigt: FAQPage 2 Q/A == sichtbarer faq_block, deckungsgleich.",
     "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner GEPRUEFT - verlinken bereits via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen.",
-    "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, lastmod=2026-06-29 (echter Content-Change Clown-Desc). Tag 11+12: KEIN Rebuild (Proposal-Tage), lastmod bleibt 2026-06-29. build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
-    "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Aktuell 91d09e05. Bei style.css-Aenderung alle HTML mitcommitten.",
+    "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, lastmod=2026-06-29 (echter Content-Change Clown-Desc). Seither KEIN Rebuild (Proposal-/Audit-Tage), lastmod bleibt 2026-06-29. build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
+    "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Live aktuell style.css?v=91d09e05, app.js?v=41872035 (aus Commit 88ca226). build.py wuerde OHNE V5-Reconciliation fc99917e/45732809 erzeugen (= DSGVO-Revert-Risiko). Bei style.css-Aenderung alle HTML mitcommitten.",
     "fokus_keywords": [
       "Pantomime",
       "Walk Act"
@@ -397,11 +418,12 @@
     "faq_stand": "faq_block(qa,title) rendert details/summary/faq-a. Selbe Q/A-Liste an faq_schema UND faq_block -> Deckungsgleichheit garantiert.",
     "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt.",
     "uv_cache_hinweis": "Frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es.",
-    "meta_desc_stand": "Tag 10: Clown-Desc fuehrt mit 'Clown & Comedy-Walk-Act' (Fokus-Keyword Walk Act eingewoben, 151 Z.). Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei).",
+    "meta_desc_stand": "Tag 10: Clown-Desc fuehrt mit 'Clown & Comedy-Walk-Act' (Fokus-Keyword Walk Act eingewoben, 151 Z.). Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei). Tag 16 verifiziert: alle drei live synchron.",
     "content_luecken_stand": "Tag 11: Offene Luecke = anlassbezogener Content (Startseite-Anlass-Teaser zu duenn) -> Vorschlag 3 (Freigabe offen). Tag 12: Stadt-Landingpage Essen = Vorschlag 4 (Freigabe offen). Essen datengetrieben gewaehlt (8 belegte Essen-Referenzen). Vorschlag 3 (Anlass-Achse) + Vorschlag 4 (Stadt-Achse) orthogonal - bei Doppelfreigabe V3 Option A zuerst.",
     "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen (+ Bild-Alt Walk-Act-Fest-Essen.jpg). Dichtestes Stadt-Cluster -> Basis fuer Vorschlag 4.",
     "KRITISCH_build_py_divergenz": "STAND 2026-07-03 (Tag 13): build.py generiert NICHT die live-committete HTML. Commit 88ca226 hat DSGVO-Fixes nur in HTML geschrieben (self-hosted Fonts /assets/fonts.css, Kontakt-Consent-Checkbox, aktualisierter Datenschutz, style.css?v=91d09e05, app.js?v=41872035). build.py erzeugt weiterhin ALT: externe Google-Fonts (fonts.googleapis.com preconnect+stylesheet), form-note statt Consent-Checkbox, alten Datenschutz-Text, style.css?v=fc99917e, app.js?v=45732809. => NICHT rebuilden+pushen bis build.py reconciliaten ist (Vorschlag 5), sonst DSGVO-/Consent-Regression live. Betrifft ALLE kuenftigen build.py-basierten Schritte. UPDATE 2026-07-07: Reconciliation-Patch fertig+verifiziert, lokal unter .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch. Nach Freigabe (V5) anwenden.",
-    "cwv_stand": "Tag 13: LCP=Hero-bg-Bild. Startseite (build.py Zeile ~412) hat fetchpriority=high; subimg() (Zeile ~180) fuer 13 Unterseiten nur loading=eager. Ready-Fix: 'loading=\"eager\"' -> 'loading=\"eager\" fetchpriority=\"high\"' in subimg(). Anwenden ERST nach build.py-Reconciliation. font-display:swap ok. Grosse Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, pantomime-10-scaled/20230623-195739 ~220KB -> Re-Kompression-Kandidaten.",
+    "cwv_stand": "Tag 13: LCP=Hero-bg-Bild. Startseite (build.py Zeile ~412) hat fetchpriority=high; subimg() (Zeile ~180) fuer 13 Unterseiten nur loading=eager. Ready-Fix: 'loading=eager' -> 'loading=eager fetchpriority=high' in subimg(). Anwenden ERST nach build.py-Reconciliation. font-display:swap ok. Grosse Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, pantomime-10-scaled/20230623-195739 ~220KB -> Re-Kompression-Kandidaten. Tag 16 bestaetigt an Clown-Seite: Hero-img loading=eager ohne fetchpriority.",
+    "clown_title_chance": "STAND 2026-07-09 (Tag 16): Clown-Seite dominiert GSC (21/25 Impr.) und rankt fuer 'clown pantomime'/'pantomime clown', aber Clown-Title enthaelt kein 'Pantomime'. POTENZIELLER Micro-Tweak: 'Pantomime' im Title/Desc der Clown-Seite einweben koennte Relevanz/CTR fuer diese realen Queries heben. RISIKO: Kannibalisierung ggue. dedizierter Pantomime-Seite (figuren/der-pantomime-in-nrw) - Nutzen unsicher. STATUS: NICHT umgesetzt (V5 blockiert build.py-Rebuild; kein eigener Vorschlag wg. unsicherem Nutzen). Bei V5-Freigabe erneut abwaegen; falls umgesetzt, Pantomime-Seite auf Positionsverlust monitoren.",
     "lokaler_mount_hinweis": "STAND 2026-07-07: Cowork-Mount (C:\\Users\\ben_m\\Claude\\projects\\Homepage Pantomime\\Pantomime) haengt auf Checkout 88ca226 (aelter als remote main). .git/HEAD.lock + .git/index.lock vom 02.07. sind nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Workarounds: GIT_INDEX_FILE=/tmp/... fuer read-only-Index-Ops; Dateien einzeln via 'git show HEAD:pfad > pfad' restaurieren; Schreiben in Repo NUR via GitHub-MCP push_files. Write/Edit-Tool im Mount kaputt fuer Groessenaenderung (Padding/Truncation) -> bash cat>file nutzen. State IMMER von remote main lesen, nie vom lokalen Mount.",
     "cross_links_stand": "Tag 15 (2026-07-08): pantomime-Footer -> beide Schwester-Domains follow/noopener (Anchors = nackte Domains, Fix nach V5 = Vorschlag 7C). liar-entertainer.com -> 2x 'Pantomime' auf alte Subdomain (Redirect ok, Direktlink = Vorschlag 7A). zauberer-liar.de -> KEIN Link (Vorschlag 7B). Alte Subdomain pantomime.liar-entertainer.com leitet korrekt auf www.pantomime-la-france.eu weiter (Canonical ok)."
   }
