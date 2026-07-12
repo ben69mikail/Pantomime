@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 18,
-  "letzter_lauf": "2026-07-11",
-  "WICHTIG_naechster_lauf": "Tag 18 abgeschlossen (2026-07-11). Chrome DIESMAL verbunden -> Live-GSC gelesen: Datenfenster 14.06.-08.07.26, 0 Klicks, 36 Impr. (von 25), Pos 23,4 (von 21,9 - mehr Impr., Position leicht verwaessert = normal bei mehr Queries). Queries: 'clown pantomime' (3), 'pantomime clown' (2), 'pantomime clowns' (1, NEU), 'clown liar' (1), 'clown zauberer liar' (1), 'zauberer liar' (1) - weiter Clown-/Brand-dominiert, KEINE Walk-Act-/Stadt-/Anlass-Queries. Seiten: Clown 30 Impr. (dominiert, ~83%), Startseite 7, /ueber-mich/ 1. Da keine neuen Query-Typen: planmaessige Alternation (Tag16 Technik Clown, Tag17 On-Page Startseite) fortgesetzt -> On-Page-Audit der naechsten ungeprueften Detail-Seite /ueber-mich/ (read-only via GitHub-MCP, KEIN Rebuild - V5 weiter gesperrt, kein Michael-Freigabe-Commit vorhanden). Befund /ueber-mich/: technisch SAUBER. Title 'Ueber mich - LIAR | Kuenstler & Pantomime aus Gladbeck' (~51 Z., 'Pantomime' enthalten), meta+og desc ~161 Z. (marginal ueber 160, descriptive, 'Pantomime'+'NRW' enthalten - kein Fix noetig/moeglich wg. V5+Rundungstoleranz), robots index,follow,max-image-preview:large, Canonical self-ref www/https, 2 JSON-LD (BreadcrumbList + Person valid: Michael Prescler/LIAR/1976/jobTitle Pantomime-Kuenstler/worksFor #liar/address Gladbeck-NRW), genau 1 H1 ('Kuenstler mit Takt und Humor'), Hero-img alt='' role=presentation loading=eager OHNE fetchpriority (bekannt, V5/Vorschlag 5), Content-img alt='Der Kuenstler LIAR als Pantomime' beschreibend, lokale fonts.css + style.css?v=91d09e05 (live-DSGVO-Stand), kein FAQ-Schema (korrekt, keine sichtbare FAQ). KEIN Code-Commit (V5 blockiert Rebuild; technisch nichts zu fixen). MEILENSTEIN: Clown (Tag16), Startseite (Tag17) und /ueber-mich/ (Tag18) = alle 3 GSC-Impression-Seiten on-page auditiert = alle sauber. Naechster Lauf Tag 19: Chrome erneut; bei neuen Walk-Act/Stadt/Anlass-Queries Zielseite schaerfen (erst nach V5), sonst offenen Vorschlag (3 Anlass-Content bzw. 4 Stadt-Landingpage Essen) weiter konkretisieren ODER Off-Page-Vorschlag 6 (Google Unternehmensprofil) an Michael erinnern. V5-Freigabe VOR jedem Rebuild pruefen.",
+  "aktueller_plan_tag": 19,
+  "letzter_lauf": "2026-07-12",
+  "WICHTIG_naechster_lauf": "Tag 19 abgeschlossen (2026-07-12). Chrome verbunden, GSC live: Datenfenster 14.06.-09.07.26, 0 Klicks, 36 Impr., CTR 0%, Pos 23,4 - Kennzahlen und Query-Set IDENTISCH zu Tag 18 (clown pantomime 3, pantomime clown 2, pantomime clowns 1, clown liar 1, clown zauberer liar 1, zauberer liar 1). Weiter KEINE Walk-Act-/Stadt-/Anlass-Queries. Kein V5-Freigabe-Commit im Repo -> build.py-Rebuild bleibt GESPERRT, kein Code-Commit. Da alle 3 GSC-Seiten bereits auditiert und sauber sind, wurde planmaessig Vorschlag 3 Option A KONKRETISIERT: fertiger, belegter Textentwurf fuer die 4 Anlass-Kacheln der Startseite (inkl. descriptiver interner Links) in vorschlaege.md angehaengt - Freigabe braucht nur noch ein Ja, Umsetzung setzt V5 voraus. Naechster Lauf Tag 20: GSC erneut; wenn weiter keine neuen Query-Typen, Vorschlag 4 (Stadt-Landingpage Essen) analog konkretisieren ODER Michael an V5 + Vorschlag 6 (Google Unternehmensprofil) erinnern - ohne V5-Freigabe ist auf der Seite selbst nichts mehr zu tun.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -175,10 +175,19 @@
       "commits": [
         "SEO: State Tag 18 - /ueber-mich/ On-Page-Audit (3. GSC-Seite, sauber, kein Rebuild wg. V5) + GSC live (36 Impr., Pos 23,4)"
       ]
+    },
+    {
+      "tag": 19,
+      "datum": "2026-07-12",
+      "schritt": "Tag 19: GSC-datengetrieben - Chrome verbunden, GSC live geprueft; keine neuen Query-Typen -> Vorschlag 3 Option A zu fertigem Textentwurf konkretisiert.",
+      "ergebnis": "GSC live via Chrome: Fenster 14.06.-09.07.26, 0 Klicks, 36 Impr., Pos 23,4 - IDENTISCH zu Tag 18 (Kennzahlen + alle 6 Queries unveraendert), weiter Clown-/Brand-dominiert, keine Walk-Act-/Stadt-/Anlass-Queries. Repo-Check: kein V5-Freigabe-Commit (letzter Commit = State Tag 18) -> build.py-Rebuild weiter gesperrt, KEIN Code-Commit (Guardrail: kein DSGVO-Revert). Da alle 3 rankenden Seiten (Clown/Startseite/ueber-mich) bereits auditiert+sauber sind, planmaessig Content-Achse vorbereitet: Vorschlag 3 Option A (Anlass-Section Startseite) zu einem FERTIGEN, vollstaendig aus INHALTE-VERIFIZIERT.md belegten Textentwurf ausgearbeitet - 4 Kacheln (Hochzeit->Crazy Kellner, Firmenfeier->Walk Act, Messe&Event->Pantomime, Stadtfest->Pantomime) je 2-3 Saetze + descriptiver interner Link. Anhang in vorschlaege.md. Freigabe = 1 Wort, Umsetzung setzt V5 voraus.",
+      "commits": [
+        "SEO: State Tag 19 + Vorschlag 3 Option A konkretisiert (fertiger Anlass-Textentwurf) + GSC-Snapshot 2026-07-12"
+      ]
     }
   ],
-  "naechster_plan_tag": 19,
-  "naechster_schritt": "Tag 19: GSC-datengetrieben - Chrome erneut versuchen. Alle 3 aktuellen GSC-Impression-Seiten (Clown/Startseite/ueber-mich) sind on-page auditiert + sauber. Bei neuen Query-Typen (Walk-Act/Stadt/Anlass) entsprechende Zielseite schaerfen (erst nach V5-Freigabe fuer build.py-Rebuild). Sonst: offenen Vorschlag konkretisieren (Vorschlag 3 Anlass-Content Option A = hoechste Prio, oder Vorschlag 4 Stadt-Landingpage Essen) ODER Off-Page-Vorschlag 6 (Google Unternehmensprofil, prio 1) als Reminder an Michael formulieren. VOR jedem Rebuild: V5-Freigabe-Status pruefen (Rebuild bleibt gesperrt bis V5-Reconciliation freigegeben).",
+  "naechster_plan_tag": 20,
+  "naechster_schritt": "Tag 20: GSC-datengetrieben. Blocker-Lage unveraendert: OHNE V5-Freigabe sind alle build.py-basierten Fixes (fetchpriority, Footer-Anchors V7C, Anlass-Content V3A, Stadtseite V4) gesperrt. Falls neue Query-Typen (Walk Act/Stadt/Anlass) auftauchen: Zielseite identifizieren + Massnahme vorbereiten (kein Rebuild ohne V5). Sonst: Vorschlag 4 konkretisieren (fertiger Seitenentwurf) und Reminder an Michael zu V5 + V6.",
   "offene_vorschlaege": [
     {
       "nr": 3,
@@ -186,7 +195,8 @@
       "titel": "Anlass-fokussierter Content ('Pantomime & Walk Act fuer Ihren Anlass') - Option A: Startseite-Section vertiefen; Option B: Anlass-Landingpages spaeter",
       "status": "WARTET AUF FREIGABE von Michael",
       "typ": "Content-Erweiterung (sichtbarer Fliesstext + interne Verlinkung)",
-      "update_2026_07_10": "Tag-17-Startseite-Audit bestaetigt die Luecke unabhaengig: anlass-Section hat nur 1-Satz-Teaser je Anlass (Hochzeit/Firmenfeier/Messe/Stadtfest). Bleibt hoechste-Prio Content-Chance."
+      "update_2026_07_10": "Tag-17-Startseite-Audit bestaetigt die Luecke unabhaengig: anlass-Section hat nur 1-Satz-Teaser je Anlass (Hochzeit/Firmenfeier/Messe/Stadtfest). Bleibt hoechste-Prio Content-Chance.",
+      "update_2026_07_12": "Option A liegt als fertiger, belegter Textentwurf in vorschlaege.md (Tag 19). Umsetzung blockiert durch V5 (build.py-Rebuild)."
     },
     {
       "nr": 4,
@@ -254,8 +264,16 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 40.3,
       "top_pages": [
-        {"url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "klicks": 0, "impressionen": 2},
-        {"url": "https://www.pantomime-la-france.eu/", "klicks": 0, "impressionen": 1}
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 1
+        }
       ],
       "top_queries": [],
       "hinweis": "Seiten-Tab erstmals befuellt. Position 58 -> 40,3."
@@ -269,8 +287,16 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 27.8,
       "top_pages": [
-        {"url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "klicks": 0, "impressionen": 4},
-        {"url": "https://www.pantomime-la-france.eu/", "klicks": 0, "impressionen": 1}
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 4
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 1
+        }
       ],
       "top_queries": [],
       "hinweis": "5 Impr. (von 3), Pos 27,8 (Trend 58->40,3->27,8). Query-Tab 'Keine Daten'."
@@ -284,8 +310,16 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 27.8,
       "top_pages": [
-        {"url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "klicks": 0, "impressionen": 4},
-        {"url": "https://www.pantomime-la-france.eu/", "klicks": 0, "impressionen": 1}
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 4
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 1
+        }
       ],
       "top_queries": [],
       "hinweis": "Live via Chrome (Michael eingeloggt). UNVERAENDERT ggue. 07-01: Datenfenster steht noch bei 14.06.-29.06. (kein neuer Tag geliefert). 0 Klicks, 5 Impr., Pos 27,8; Clown 4 Impr., Startseite 1 Impr.; Query-Tab 'Keine Daten' (18 Tage). Kein Code-Commit (Proposal-Tag 12)."
@@ -299,11 +333,31 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 21.9,
       "top_queries": [
-        {"query": "clown pantomime", "klicks": 0, "impressionen": 2},
-        {"query": "pantomime clown", "klicks": 0, "impressionen": 2},
-        {"query": "clown liar", "klicks": 0, "impressionen": 1},
-        {"query": "clown zauberer liar", "klicks": 0, "impressionen": 1},
-        {"query": "zauberer liar", "klicks": 0, "impressionen": 1}
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        }
       ],
       "hinweis": "Live via Chrome. Datenfenster endlich vorgerueckt (bis 05.07.). Impressionen 5->25, Pos 27,8->21,9. Query-Tab ERSTMALS befuellt: Clown-/Brand-Queries dominieren; 'Pantomime' nur in Kombination mit 'clown'; noch keine Walk-Act-/Stadt-/Anlass-Queries. Top-Pages heute nicht ausgelesen (Query-Fokus)."
     },
@@ -316,16 +370,48 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 21.9,
       "top_pages": [
-        {"url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "klicks": 0, "impressionen": 21},
-        {"url": "https://www.pantomime-la-france.eu/", "klicks": 0, "impressionen": 5},
-        {"url": "https://www.pantomime-la-france.eu/ueber-mich/", "klicks": 0, "impressionen": 1}
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 21
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 5
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/ueber-mich/",
+          "klicks": 0,
+          "impressionen": 1
+        }
       ],
       "top_queries": [
-        {"query": "clown pantomime", "klicks": 0, "impressionen": 2},
-        {"query": "pantomime clown", "klicks": 0, "impressionen": 2},
-        {"query": "clown liar", "klicks": 0, "impressionen": 1},
-        {"query": "clown zauberer liar", "klicks": 0, "impressionen": 1},
-        {"query": "zauberer liar", "klicks": 0, "impressionen": 1}
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        }
       ],
       "hinweis": "Live via Chrome. Datenfenster UNVERAENDERT (14.06.-05.07.), Kennzahlen identisch zu 07-07. NEU: Seiten-Tab gelesen - Clown 21 Impr. (dominiert klar), Startseite 5, /ueber-mich/ 1 (erstmals). Summe Seiten (27) > Gesamt (25) = normale GSC-Rundung/Anonymisierung."
     },
@@ -362,19 +448,98 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 23.4,
       "top_pages": [
-        {"url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "klicks": 0, "impressionen": 30},
-        {"url": "https://www.pantomime-la-france.eu/", "klicks": 0, "impressionen": 7},
-        {"url": "https://www.pantomime-la-france.eu/ueber-mich/", "klicks": 0, "impressionen": 1}
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 30
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 7
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/ueber-mich/",
+          "klicks": 0,
+          "impressionen": 1
+        }
       ],
       "top_queries": [
-        {"query": "clown pantomime", "klicks": 0, "impressionen": 3},
-        {"query": "pantomime clown", "klicks": 0, "impressionen": 2},
-        {"query": "pantomime clowns", "klicks": 0, "impressionen": 1},
-        {"query": "clown liar", "klicks": 0, "impressionen": 1},
-        {"query": "clown zauberer liar", "klicks": 0, "impressionen": 1},
-        {"query": "zauberer liar", "klicks": 0, "impressionen": 1}
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "query": "pantomime clowns",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        }
       ],
       "hinweis": "Live via Chrome (verbunden nach 2 Tagen ohne). Datenfenster vorgerueckt (bis 08.07.). Impr. 25->36, Pos 21,9->23,4 (mehr Impr., Pos leicht verwaessert = normal bei breiterem Query-Set). Clown dominiert (30/36 ~83%). NEU-Query 'pantomime clowns'. Weiter keine Walk-Act-/Stadt-/Anlass-Queries. /ueber-mich/ weiter 1 Impr. (on-page auditiert Tag 18 = sauber)."
+    },
+    {
+      "datum": "2026-07-12",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "14.06.-09.07.26",
+      "klicks": 0,
+      "impressionen": 36,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 23.4,
+      "top_pages": [],
+      "top_queries": [
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "query": "pantomime clowns",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "hinweis": "Live via Chrome. Datenfenster nominell bis 09.07. vorgerueckt, Kennzahlen + Query-Set aber IDENTISCH zu 2026-07-11 (36 Impr., Pos 23,4, 6 Queries unveraendert) - kein neuer Trend. Seiten-Tab nicht ausgelesen (Query-Fokus)."
     }
   ],
   "technische_hinweise": {
@@ -397,7 +562,7 @@
     "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt.",
     "uv_cache_hinweis": "Frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es.",
     "meta_desc_stand": "Tag 10: Clown-Desc fuehrt mit 'Clown & Comedy-Walk-Act' (Fokus-Keyword Walk Act eingewoben, 151 Z.). Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei). Tag 16 verifiziert Clown; Tag 17 verifiziert Startseite (~148 Z.); Tag 18 verifiziert /ueber-mich/ (~161 Z., marginal ueber 160 - kein Fix wg. V5, descriptive + Pantomime/NRW enthalten). meta + og:description live jeweils identisch.",
-    "content_luecken_stand": "Tag 11: Offene Luecke = anlassbezogener Content (Startseite-Anlass-Teaser zu duenn) -> Vorschlag 3 (Freigabe offen). Tag 17 unabhaengig bestaetigt: anlass-Section = 1-Satz-Teaser je Anlass. Tag 12: Stadt-Landingpage Essen = Vorschlag 4 (Freigabe offen). Essen datengetrieben gewaehlt (8 belegte Essen-Referenzen). Vorschlag 3 (Anlass-Achse) + Vorschlag 4 (Stadt-Achse) orthogonal - bei Doppelfreigabe V3 Option A zuerst.",
+    "content_luecken_stand": "Tag 11: Offene Luecke = anlassbezogener Content (Startseite-Anlass-Teaser zu duenn) -> Vorschlag 3 (Freigabe offen). Tag 17 unabhaengig bestaetigt: anlass-Section = 1-Satz-Teaser je Anlass. Tag 12: Stadt-Landingpage Essen = Vorschlag 4 (Freigabe offen). Essen datengetrieben gewaehlt (8 belegte Essen-Referenzen). Vorschlag 3 (Anlass-Achse) + Vorschlag 4 (Stadt-Achse) orthogonal - bei Doppelfreigabe V3 Option A zuerst. Tag 19 (2026-07-12): Vorschlag 3 Option A liegt jetzt als FERTIGER Textentwurf in vorschlaege.md (4 Anlass-Kacheln, belegt, mit internen Links) - nur noch Freigabe + V5 noetig.",
     "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen (+ Bild-Alt Walk-Act-Fest-Essen.jpg). Dichtestes Stadt-Cluster -> Basis fuer Vorschlag 4.",
     "KRITISCH_build_py_divergenz": "STAND 2026-07-03 (Tag 13): build.py generiert NICHT die live-committete HTML. Commit 88ca226 hat DSGVO-Fixes nur in HTML geschrieben (self-hosted Fonts /assets/fonts.css, Kontakt-Consent-Checkbox, aktualisierter Datenschutz, style.css?v=91d09e05, app.js?v=41872035). build.py erzeugt weiterhin ALT: externe Google-Fonts (fonts.googleapis.com preconnect+stylesheet), form-note statt Consent-Checkbox, alten Datenschutz-Text, style.css?v=fc99917e, app.js?v=45732809. => NICHT rebuilden+pushen bis build.py reconciliaten ist (Vorschlag 5), sonst DSGVO-/Consent-Regression live. Betrifft ALLE kuenftigen build.py-basierten Schritte. UPDATE 2026-07-07: Reconciliation-Patch fertig+verifiziert, lokal unter .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch. Nach Freigabe (V5) anwenden. STAND 2026-07-11 (Tag 18): kein Michael-Freigabe-Commit -> V5 weiter gesperrt.",
     "cwv_stand": "Tag 13: LCP=Hero-bg-Bild. Startseite (build.py Zeile ~412) hat fetchpriority=high; subimg() (Zeile ~180) fuer 13 Unterseiten nur loading=eager. Ready-Fix: 'loading=eager' -> 'loading=eager fetchpriority=high' in subimg(). Anwenden ERST nach build.py-Reconciliation. font-display:swap ok. Grosse Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, pantomime-10-scaled/20230623-195739 ~220KB -> Re-Kompression-Kandidaten. Tag 16 (Clown) + Tag 17 (Startseite) + Tag 18 (/ueber-mich/) bestaetigt: Startseite-Hero HAT fetchpriority=high, Unterseiten-Hero (inkl. /ueber-mich/ pantomime-3-scaled.webp) ohne.",
