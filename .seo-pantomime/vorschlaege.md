@@ -180,3 +180,35 @@ Qualitaet vor Menge (5 gute Eintraege > 50 Spam-Verzeichnisse), KEINE Linkkaeufe
 
 ### Hinweis
 Kein Auto-Commit heute: Die einzige Aenderung an der eigenen Seite (C) erfordert einen build.py-Rebuild, der bis zur V5-Freigabe gesperrt ist. A und B liegen ausserhalb dieses Repos (Michaels andere Websites).
+
+---
+
+## Vorschlag 3 — KONKRETISIERUNG 2026-07-12 (Tag 19): fertiger Textentwurf fuer Option A (Startseite-Anlass-Section)
+
+**Status:** WARTET AUF FREIGABE von Michael. NICHT committet. Umsetzung zusaetzlich durch **Vorschlag 5** blockiert (build.py-Rebuild gesperrt) — bei Doppelfreigabe: erst V5-Patch anwenden, dann dieser Text im selben oder direkt folgenden Rebuild.
+**Typ:** Content-Erweiterung auf Bestandsseite (Startseite), kein neuer URL, keine neuen Bilder.
+
+### Warum jetzt (GSC-Stand 2026-07-12)
+Datenfenster 14.06.–09.07.26: 0 Klicks, 36 Impressionen, Pos 23,4 — identisch zum Vortag. Queries weiterhin ausschliesslich Clown-/Brand-lastig (`clown pantomime` 3, `pantomime clown` 2, `pantomime clowns` 1, `clown liar`, `clown zauberer liar`, `zauberer liar`). Weiterhin KEINE Anlass-, Walk-Act- oder Stadt-Queries. Alle drei rankenden Seiten (Clown, Startseite, /ueber-mich/) sind on-page auditiert und sauber (Tage 16–18). Der naechste echte Hebel auf der eigenen Seite ist daher Content-Tiefe bei den Anlaessen — Vorschlag 3 Option A. Damit die Freigabe nur noch ein „Ja“ braucht, liegt hier der fertige Text.
+
+### Ist-Zustand (scripts/build.py, Startseite-Section „Fuer Ihren Anlass“ / „Wo LIAR begeistert“, ~Zeile 488–493)
+Vier Kacheln (WARUM_GRID -> `anlass-grid`), je 1 Satz, ohne interne Links:
+- Hochzeit — „Stilvolle Ueberraschung fuer den schoensten Tag.“
+- Firmenfeier — „Ein Highlight, das im Gedaechtnis bleibt.“
+- Messe & Event — „Walk Act, der Aufmerksamkeit an den Stand zieht.“
+- Stadtfest — „Strassentheater fuer Publikum jeden Alters.“
+
+### Fertiger Textentwurf (alle Aussagen belegt in INHALTE-VERIFIZIERT.md; HTML in `p` erlaubt, da WARUM_GRID die Werte roh rendert)
+- **Hochzeit** -> `/figuren/der-crazy-kellner/`
+  „Stilvolle Ueberraschung fuer den schoensten Tag: Als Crazy Kellner mische ich mich unter die Gaeste — falsche Bestellungen, balancierte Teller, eine Blume aus der Serviette. Unterhaltung direkt am Tisch, ganz ohne Buehne und Technik, kombinierbar mit Magie und Pantomime. Mehr zum <a href="/figuren/der-crazy-kellner/">Crazy Kellner fuer Ihre Hochzeit</a>.“
+- **Firmenfeier** -> `/walk-act/`
+  „Ein Highlight, das im Gedaechtnis bleibt: Als Walk Act brauche ich weder Buehne noch Technik — platzsparend, flexibel und mitten unter den Gaesten. Wortlos und damit auch fuer internationale Teams verstaendlich. Mehr zum <a href="/walk-act/">Walk Act fuer Ihre Firmenfeier</a>.“
+- **Messe & Event** -> `/figuren/der-pantomime-in-nrw/`
+  „Walk Act, der Aufmerksamkeit an den Stand zieht: Auf Messen, bei Autohaeusern und Geschaeftseroeffnungen trete ich als Hauptattraktion oder als Walking Act auf — schnelle Vorbereitung, keine Sprachbarriere. Mehr zum <a href="/figuren/der-pantomime-in-nrw/">Pantomime fuer Messe &amp; Event</a>.“
+- **Stadtfest** -> `/figuren/der-pantomime-in-nrw/`
+  „Strassentheater fuer Publikum jeden Alters: stiller Komiker, lebendige Statue oder interaktiv zwischen den Gaesten — auf Stadtfesten, der Gastromeile und bei Feiern in ganz NRW. Mehr zum <a href="/figuren/der-pantomime-in-nrw/">Pantomime beim Stadtfest</a>.“
+
+### Wirkung / Risiko
+Vertieft die bereits rankende Startseite (07-11: 7 Impressionen), bedient Anlass-Long-Tail („Pantomime Hochzeit“, „Walk Act Firmenfeier“, „Walking Act Messe“, „Strassentheater Stadtfest“) und setzt vier descriptive interne Links von der staerksten Seite auf Crazy-Kellner-, Walk-Act- und Pantomime-Seite. Kein neuer URL, kein Thin-Page-Risiko, keine erfundenen Fakten. Risiko: minimal (reiner Textzuwachs).
+
+**Umfang bei Freigabe:** 4 Strings in scripts/build.py (Anlass-Grid), Py3.12-Rebuild, byte-verifiziert, 1 Commit — SETZT V5-Reconciliation VORAUS.
