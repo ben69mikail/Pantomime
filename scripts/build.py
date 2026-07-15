@@ -123,9 +123,7 @@ def head(title, desc, path, schema, og_img="/assets/img/og-pantomime.jpg"):
 <meta name="theme-color" content="#0d0d0f" />
 <link rel="icon" href="/assets/img/favicon.png" type="image/png" />
 <link rel="apple-touch-icon" href="/assets/img/logo.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,500;1,6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/fonts.css" />
 <link rel="stylesheet" href="/assets/style.css?v={CSS_VER}" />
 {blocks}
 <script>
@@ -178,7 +176,7 @@ def subimg(name, pos="50% 28%"):
     """Durchscheinendes Hero-Hintergrundbild fuer Unterseiten (wie Startseite)."""
     return ('<div class="valance" aria-hidden="true"></div>'
             f'<div class="hero-bg" aria-hidden="true"><img src="/assets/img/{name}" alt="" '
-            f'role="presentation" loading="eager" decoding="async" style="object-position:{pos}" /></div>')
+            f'role="presentation" loading="eager" fetchpriority="high" decoding="async" style="object-position:{pos}" /></div>')
 
 FOOTER = f"""<footer class="site-footer">
   <div class="container footer-grid">
@@ -201,8 +199,8 @@ FOOTER = f"""<footer class="site-footer">
       <a href="mailto:{EMAIL}">{EMAIL}</a>
       <a href="/referenzen/">Referenzen</a>
       <a href="/kontakt/">Anfrage senden</a>
-      <a href="https://www.liar-entertainer.com" rel="noopener">liar-entertainer.com</a>
-      <a href="https://www.zauberer-liar.de" rel="noopener">zauberer-liar.de</a>
+      <a href="https://www.liar-entertainer.com" rel="noopener">LIAR Entertainer — Comedy &amp; Show</a>
+      <a href="https://www.zauberer-liar.de" rel="noopener">Zauberer LIAR — Zaubershows NRW</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -266,7 +264,8 @@ FIGUREN = {
     "feat": ["Vielfältig einsetzbar: Messen, Autohäuser, Geschäftseröffnungen, Gastromeile, Galas, Stadtfeste und Feiern",
              "Keine Bühne, keine Ton- oder Lichttechnik nötig — flexibel an nahezu jedem Ort",
              "Kein Sprachproblem: ideal für internationale und multikulturelle Veranstaltungen",
-             "Als Hauptattraktion oder als <a href=\"/walk-act/\">Walk Act</a> buchbar"],
+             "Als Hauptattraktion oder als <a href=\"/walk-act/\">Walk Act</a> buchbar",
+             "Gezielt vor Ort: <a href=\"/pantomime-essen/\">Pantomime in Essen buchen</a>"],
     "img2": "pantomime-12-scaled.webp", "img2_alt": "Pantomime LIAR vor Saalpublikum bei einer Feier",
     "warum_title": "Warum einen Pantomime in NRW buchen?",
     "warum": [("Universell verständlich", "Die Kunst basiert auf Körpersprache und funktioniert unabhängig von der Sprache des Publikums."),
@@ -489,10 +488,10 @@ home_body = f"""<main>
 <section class="section section--paper2" id="anlaesse"><div class="container">
   <div class="section-head center reveal" style="text-align:center;margin-inline:auto"><p class="kicker" style="justify-content:center">Für Ihren Anlass</p><h2>Wo LIAR begeistert</h2></div>
   """ + WARUM_GRID([
-      ("Hochzeit", "Stilvolle Überraschung für den schönsten Tag."),
-      ("Firmenfeier", "Ein Highlight, das im Gedächtnis bleibt."),
-      ("Messe &amp; Event", "Walk Act, der Aufmerksamkeit an den Stand zieht."),
-      ("Stadtfest", "Straßentheater für Publikum jeden Alters."),
+      ("Hochzeit", "Stilvolle Überraschung für den schönsten Tag: Als Crazy Kellner mische ich mich unter die Gäste — falsche Bestellungen, balancierte Teller, eine Blume aus der Serviette. Unterhaltung direkt am Tisch, ganz ohne Bühne und Technik, kombinierbar mit Magie und Pantomime. Mehr zum <a href=\"/figuren/der-crazy-kellner/\">Crazy Kellner für Ihre Hochzeit</a>."),
+      ("Firmenfeier", "Ein Highlight, das im Gedächtnis bleibt: Als Walk Act brauche ich weder Bühne noch Technik — platzsparend, flexibel und mitten unter den Gästen. Wortlos und damit auch für internationale Teams verständlich. Mehr zum <a href=\"/walk-act/\">Walk Act für Ihre Firmenfeier</a>."),
+      ("Messe &amp; Event", "Walk Act, der Aufmerksamkeit an den Stand zieht: Auf Messen, bei Autohäusern und Geschäftseröffnungen trete ich als Hauptattraktion oder als Walking Act auf — schnelle Vorbereitung, keine Sprachbarriere. Mehr zum <a href=\"/figuren/der-pantomime-in-nrw/\">Pantomime für Messe &amp; Event</a>."),
+      ("Stadtfest", "Straßentheater für Publikum jeden Alters: stiller Komiker, lebendige Statue oder interaktiv zwischen den Gästen — auf Stadtfesten, der Gastromeile und bei Feiern in ganz NRW. Mehr zum <a href=\"/figuren/der-pantomime-in-nrw/\">Pantomime beim Stadtfest</a>."),
   ]) + f"""
   <div class="chips reveal" style="margin-top:2rem;justify-content:center">{"".join(f'<span class="chip">{c}</span>' for c in CITIES)}</div>
 </div></section>
@@ -758,9 +757,14 @@ kontakt_body = f"""<main>
         <div class="row">
           <div><label for="nachricht">Ihre Nachricht</label><textarea id="nachricht" name="Nachricht" required placeholder="Erzählen Sie mir von Ihrem Anlass …"></textarea></div>
         </div>
+        <div class="row consent-row">
+          <label class="consent" for="consent">
+            <input id="consent" type="checkbox" name="consent" required />
+            <span>Ich willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Die Daten werden per E&#8209;Mail zugestellt (Dienstleister Web3Forms). Die Einwilligung kann jederzeit widerrufen werden. Details in der <a href="/datenschutz/">Datenschutzerkl&auml;rung</a>.</span>
+          </label>
+        </div>
         <button type="submit" class="btn btn-primary">Anfrage senden</button>
         <p class="form-status" role="status"></p>
-        <p class="form-note">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu (siehe <a href="/datenschutz/">Datenschutz</a>).</p>
       </form>
     </div>
   </div>
@@ -819,7 +823,7 @@ datenschutz_body = f"""<main>
   <p>Diese Website wird bei der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, gehostet. IONOS verarbeitet dabei Server-Logfiles (u. a. IP-Adresse, Datum/Uhrzeit, abgerufene Datei) zur Bereitstellung und Sicherheit des Angebots (Art. 6 Abs. 1 lit. f DSGVO). Es besteht ein Auftragsverarbeitungsvertrag.</p>
 
   <h3>5. Kontaktformular (Web3Forms)</h3>
-  <p>Für das Kontaktformular nutzen wir den Dienst Web3Forms. Ihre eingegebenen Daten (Name, E-Mail, Angaben zur Veranstaltung, Nachricht) werden zur Zustellung Ihrer Anfrage per E-Mail verarbeitet und nicht für andere Zwecke verwendet. Rechtsgrundlage ist Ihre Einwilligung bzw. die Bearbeitung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. a und b DSGVO). Alternativ erreichen Sie uns per Telefon oder E-Mail.</p>
+  <p>Für das Kontaktformular nutzen wir den Dienst Web3Forms. Ihre eingegebenen Daten (Name, E-Mail, Angaben zur Veranstaltung, Nachricht) werden ausschließlich zur Zustellung Ihrer Anfrage per E-Mail verarbeitet und nicht für andere Zwecke verwendet. Das Absenden ist erst nach Ihrer ausdrücklichen Einwilligung über die Checkbox im Formular möglich; diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Bei der Übermittlung können Daten auch auf Servern außerhalb der EU verarbeitet werden; in diesem Fall erfolgt die Übermittlung auf Grundlage geeigneter Garantien (EU-Standardvertragsklauseln). Rechtsgrundlage ist Ihre Einwilligung sowie die Bearbeitung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. a und b, Art. 49 Abs. 1 lit. a DSGVO). Alternativ erreichen Sie uns per Telefon oder E-Mail.</p>
 
   <h3>6. Cookies &amp; Einwilligung</h3>
   <p>Technisch notwendige Speicherung erfolgt ohne Einwilligung. Statistik-/Analyse-Cookies (Google Analytics) werden erst nach Ihrer aktiven Zustimmung über den Cookie-Hinweis gesetzt (Consent Mode v2). Ihre Auswahl wird lokal in Ihrem Browser gespeichert; standardmäßig ist das Tracking deaktiviert. Sie können Ihre Entscheidung jederzeit über die Browser-Einstellungen widerrufen.</p>
@@ -827,13 +831,16 @@ datenschutz_body = f"""<main>
   <h3>7. Google Analytics 4</h3>
   <p>Nach Einwilligung nutzen wir Google Analytics 4 (Google Ireland Ltd.) zur anonymen Reichweitenmessung. Die IP-Adresse wird anonymisiert (<code>anonymize_ip</code>); Werbe- und Personalisierungsfunktionen sind deaktiviert. Ohne Ihre Zustimmung wird Google Analytics nicht geladen.</p>
 
-  <h3>8. Google Fonts</h3>
-  <p>Diese Website lädt Schriftarten von Google Fonts. Dabei wird eine Verbindung zu Google-Servern aufgebaut und Ihre IP-Adresse übermittelt. Rechtsgrundlage ist unser berechtigtes Interesse an einer einheitlichen Darstellung (Art. 6 Abs. 1 lit. f DSGVO).</p>
+  <h3>8. Schriftarten (lokal gehostet)</h3>
+  <p>Die auf dieser Website verwendeten Schriftarten (Bodoni Moda, Hanken Grotesk) werden ausschließlich lokal von unserem eigenen Server geladen. Es besteht <strong>keine Verbindung zu Servern von Google</strong>, und es wird dabei keine IP-Adresse an Google oder andere Dritte übermittelt.</p>
 
-  <h3>9. Ihre Rechte</h3>
+  <h3>9. WhatsApp-Kontakt</h3>
+  <p>Auf der Website befindet sich ein Link zu WhatsApp (wa.me). Erst wenn Sie diesen Link aktiv anklicken, wird eine Verbindung zu WhatsApp Ireland Ltd. (Meta) hergestellt und Ihre IP-Adresse übermittelt. Beim bloßen Aufruf der Website werden keine Daten an WhatsApp gesendet. Für die Nutzung von WhatsApp gelten die Datenschutzbestimmungen von Meta. Rechtsgrundlage ist Ihre Einwilligung durch aktives Anklicken (Art. 6 Abs. 1 lit. a DSGVO).</p>
+
+  <h3>10. Ihre Rechte</h3>
   <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie ein Widerspruchsrecht. Zudem besteht ein Beschwerderecht bei einer Aufsichtsbehörde.</p>
 
-  <p style="margin-top:2rem;color:var(--muted)">Stand: {TODAY}</p>
+  <p style="margin-top:2rem;color:var(--muted)">Stand: 2026-07-02</p>
 </div></section>
 </main>"""
 built.append(page("/datenschutz/", "Datenschutzerklärung – LIAR Pantomime",
@@ -849,6 +856,64 @@ nf_body = """<main>
   <a href="/" class="btn btn-primary" style="margin-top:2rem">Zur Startseite</a>
 </div></section>
 </main>"""
+# ---- Stadt-Landingpage: Pantomime in Essen (Vorschlag 4) ----
+essen_desc = "Pantomime & Walk Act in Essen buchen — wortlose Kunst für Messe, Stadtfest & Firmenevent. Erfahrung u. a. für Messe Essen, Stadt Essen und Sparkasse Essen."
+essen_refs = ["Messe Essen", "Stadt Essen", "Sparkasse Essen", "AWO Essen",
+              "VKJ Essen", "Kinderschutzbund Essen", "St-Gobain Essen", "Feldschlösschen Essen"]
+essen_qa = [
+    ("Tritt LIAR als Pantomime auch in Essen auf?",
+     "Ja. Essen und das gesamte Ruhrgebiet gehören zum festen Einsatzgebiet — u. a. bereits für Messe Essen, Stadt Essen, Sparkasse Essen und AWO Essen im Einsatz gewesen."),
+    ("Braucht der Auftritt in Essen eine Bühne oder Technik?",
+     "Nein. Pantomime ist eine wortlose Kunstform und funktioniert ohne Bühne, Ton oder Technik — als Hauptattraktion oder als Walking Act direkt im Publikum."),
+    ("Für welche Anlässe in Essen ist LIAR buchbar?",
+     "Für Messen, Stadtfeste, Firmenevents, Geschäftseröffnungen, Galaveranstaltungen und Feiern jeder Art — für Gäste jeden Alters, da die Darbietung ganz ohne Sprache verständlich ist."),
+]
+essen_body = f"""<main>
+<section class="subhero subhero--img">
+  {subimg('walk-act-fest-essen.webp', '50% 30%')}
+  <div class="container">
+    <span class="kicker">Pantomime &amp; Walk Act &middot; Essen</span>
+    <h1>Pantomime in Essen buchen</h1>
+    <p class="intro">Pantomime und Walk Act für Ihre Veranstaltung in Essen — wortlos, charmant und für jedes Publikum verständlich.</p>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="split">
+    <div class="reveal">
+      <p class="lead">Als Pantomime erwecke ich Geschichten und Objekte zum Leben — ganz ohne Sprache, als stille Hauptattraktion oder als <a href="/walk-act/">Walk Act</a> mitten unter den Gästen.</p>
+      <div class="prose" style="margin-top:1.6rem">
+        <p>Pantomime ist eine wortlose Kunstform: universell verständlich, sie überwindet Sprachbarrieren und Kulturen und funktioniert ohne Bühne, Ton oder Technik. In Essen buchbar für Messen (etwa auf dem Gelände der Messe Essen), Stadtfeste, Firmenevents, Geschäftseröffnungen und Galaveranstaltungen — für Gäste jeden Alters.</p>
+        <p>Seit 2021 mit erweitertem Programm und verschiedenen Figuren, individuell auf Ihren Anlass abgestimmt. Mehr zur Hauptfigur: <a href="/figuren/der-pantomime-in-nrw/">Der Pantomime in NRW</a>.</p>
+      </div>
+      <ul class="feature-list">
+        <li>Keine Bühne, keine Ton- oder Lichttechnik nötig — flexibel an nahezu jedem Ort in Essen</li>
+        <li>Kein Sprachproblem: ideal für internationale und multikulturelle Veranstaltungen</li>
+        <li>Als Hauptattraktion oder als <a href="/walk-act/">Walk Act</a> buchbar</li>
+      </ul>
+    </div>
+    <div class="split-media reveal">{img('walk-act-fest-essen.webp', 'Walk Act LIAR bei einem Fest in Essen')}</div>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="section-head reveal"><span class="kicker">Vertrauen &amp; Erfahrung</span><h2>In Essen bereits im Einsatz gewesen</h2></div>
+  <p class="prose reveal">Über die Jahre war LIAR in Essen für Marken, Stadt und Institutionen im Einsatz:</p>
+  <ul class="feature-list reveal">{"".join(f"<li>{r}</li>" for r in essen_refs)}</ul>
+  <div class="reveal" style="margin-top:2rem"><a href="/kontakt/" class="btn btn-primary">Pantomime in Essen anfragen</a></div>
+</section>
+{faq_block(essen_qa, "Häufige Fragen – Pantomime in Essen")}
+</main>
+""" + cta_band()
+essen_schema = [
+    breadcrumb([("Start", "/"), ("Pantomime in Essen", "/pantomime-essen/")]),
+    faq_schema(essen_qa),
+    {"@context": "https://schema.org", "@type": "Service",
+     "serviceType": "Pantomime & Walk Act", "provider": {"@id": DOMAIN + "/#liar"},
+     "areaServed": "Essen", "description": essen_desc}]
+built.append(page("/pantomime-essen/", "Pantomime in Essen buchen – Walk Act | LIAR",
+     essen_desc, essen_body, essen_schema, active="/pantomime-essen/"))
+
 built.append(page("/404", "Seite nicht gefunden – LIAR Pantomime",
      "Diese Seite wurde nicht gefunden.", nf_body, [], active="/"))
 
@@ -858,7 +923,7 @@ for p in built:
 
 # ---------------------------------------------------------------- sitemap + robots
 PAGES_FOR_SITEMAP = ["/", "/figuren/"] + [f"/figuren/{s}/" for s in FIG_ORDER] + \
-    ["/walk-act/", "/ueber-mich/", "/referenzen/", "/kontakt/", "/impressum/", "/datenschutz/"]
+    ["/walk-act/", "/pantomime-essen/", "/ueber-mich/", "/referenzen/", "/kontakt/", "/impressum/", "/datenschutz/"]
 urls = "\n".join(
     f"  <url><loc>{DOMAIN}{p}</loc><lastmod>{TODAY}</lastmod>"
     f"<changefreq>{'weekly' if p=='/' else 'monthly'}</changefreq>"
