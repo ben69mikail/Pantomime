@@ -212,3 +212,46 @@ Vier Kacheln (WARUM_GRID -> `anlass-grid`), je 1 Satz, ohne interne Links:
 Vertieft die bereits rankende Startseite (07-11: 7 Impressionen), bedient Anlass-Long-Tail („Pantomime Hochzeit“, „Walk Act Firmenfeier“, „Walking Act Messe“, „Strassentheater Stadtfest“) und setzt vier descriptive interne Links von der staerksten Seite auf Crazy-Kellner-, Walk-Act- und Pantomime-Seite. Kein neuer URL, kein Thin-Page-Risiko, keine erfundenen Fakten. Risiko: minimal (reiner Textzuwachs).
 
 **Umfang bei Freigabe:** 4 Strings in scripts/build.py (Anlass-Grid), Py3.12-Rebuild, byte-verifiziert, 1 Commit — SETZT V5-Reconciliation VORAUS.
+
+## Vorschlag 4 — KONKRETISIERUNG 2026-07-15 (Tag 20): fertiger Seitenentwurf /pantomime-essen/
+
+**Status:** WARTET AUF FREIGABE von Michael. NICHT committet. Umsetzung zusaetzlich durch **Vorschlag 5** blockiert (build.py-Rebuild gesperrt) — bei Doppelfreigabe: erst V5-Patch anwenden, dann diese Seite im selben oder direkt folgenden Rebuild anlegen.
+**Typ:** Neue Unterseite (neuer URL `/pantomime-essen/`, sichtbarer Fliesstext + interne Verlinkung + Service/Breadcrumb-Schema). Kein neues Bild noetig (vorhandenes `walk-act-fest-essen.webp`, 68 KB, belegtes Essen-Motiv).
+
+### Warum jetzt (GSC-Stand 2026-07-15)
+Datenfenster 14.06.–13.07.26: 0 Klicks, 40 Impressionen (von 36), CTR 0 %, Pos 22 (von 23,4 — leicht verbessert). Query-Set weiterhin ausschliesslich Clown-/Brand-lastig (`clown pantomime` 3, `pantomime clown` 3, `pantomime clowns` 1, `clown liar` 1, `clown zauberer liar` 1, `zauberer liar` 1). Weiterhin KEINE Walk-Act-, Anlass- oder Stadt-Queries. Da alle rankenden Seiten sauber auditiert sind und Vorschlag 3 bereits als fertiger Text vorliegt, wird planmaessig (Plan-Tag 20) die zweite Content-Achse — die Stadt-Landingpage Essen — konkretisiert, damit auch hier die Freigabe nur noch ein „Ja“ braucht.
+
+### Fertiger Seitenentwurf (alle Aussagen belegt in INHALTE-VERIFIZIERT.md; nichts erfunden)
+
+**URL:** `/pantomime-essen/`  ·  **Ziel-Keyword:** „Pantomime Essen“ / „Walk Act Essen“ (Ort im Keyword vorn)
+
+- **Meta-Title (~50 Z.):** „Pantomime in Essen buchen – Walk Act | LIAR“
+- **Meta-Description (~150 Z.):** „Pantomime & Walk Act in Essen buchen — wortlose Kunst fuer Messe, Stadtfest & Firmenevent. Erfahrung u. a. fuer Messe Essen, Stadt Essen und Sparkasse Essen.“
+- **H1:** „Pantomime in Essen buchen“
+- **Hero-Lead:** „Pantomime und Walk Act fuer Ihre Veranstaltung in Essen — wortlos, charmant und fuer jedes Publikum verstaendlich. Als Pantomime erwecke ich Geschichten und Objekte zum Leben, ganz ohne Sprache — als Hauptattraktion oder als Walking Act mitten unter den Gaesten.“
+
+- **H2 „In Essen bereits im Einsatz gewesen“ (lokaler E-E-A-T-Block, Alleinstellung):** sichtbare Liste der acht belegten Essen-Referenzen — Messe Essen · Stadt Essen · Sparkasse Essen · AWO Essen · VKJ Essen · Kinderschutzbund Essen · St-Gobain Essen · Feldschloesschen Essen. Einleitungssatz: „Ueber die Jahre war LIAR in Essen fuer Marken, Stadt und Institutionen im Einsatz:“ (echtes, einzigartiges lokales Vertrauenssignal — so gebuendelt auf keiner Figurenseite vorhanden).
+
+- **H2 „Pantomime & Walk Act in Essen“ (Leistungs-Body, belegt):** „Pantomime ist eine wortlose Kunstform — universell verstaendlich, sie ueberwindet Sprachbarrieren und Kulturen und funktioniert ohne Buehne, Ton oder Technik. In Essen buchbar als stille Hauptattraktion oder als <a href=\"/walk-act/\">Walk Act</a> mitten im Publikum: ideal fuer Messen (etwa auf dem Gelaende der Messe Essen), Stadtfeste, Firmenevents, Geschaeftseroeffnungen und Galaveranstaltungen — fuer Gaeste jeden Alters. Seit 2021 mit erweitertem Programm und verschiedenen Figuren, individuell auf den Anlass abgestimmt. Mehr zur Hauptfigur: <a href=\"/figuren/der-pantomime-in-nrw/\">Der Pantomime in NRW</a>.“
+
+- **Descriptive interne Links:** im Body auf `/walk-act/` und `/figuren/der-pantomime-in-nrw/` (siehe oben). Gegenrichtung bei Umsetzung: Staedtelisten-Eintrag „Essen“ auf `/figuren/der-pantomime-in-nrw/` descriptiv auf `/pantomime-essen/` verlinken.
+
+- **FAQ (faq_block-Muster, 3 belegte Q/A; faq_schema == faq_block, Deckungsgleichheit):**
+  1. „Tritt LIAR als Pantomime auch in Essen auf?“ — „Ja. Essen und das gesamte Ruhrgebiet gehoeren zum festen Einsatzgebiet — u. a. bereits fuer Messe Essen, Stadt Essen, Sparkasse Essen und AWO Essen im Einsatz gewesen.“
+  2. „Braucht der Auftritt in Essen eine Buehne oder Technik?“ — „Nein. Pantomime ist eine wortlose Kunstform und funktioniert ohne Buehne, Ton oder Technik — als Hauptattraktion oder als Walking Act direkt im Publikum.“
+  3. „Fuer welche Anlaesse in Essen ist LIAR buchbar?“ — „Fuer Messen, Stadtfeste, Firmenevents, Geschaeftseroeffnungen, Galaveranstaltungen und Feiern jeder Art — fuer Gaeste jeden Alters, da die Darbietung ganz ohne Sprache verstaendlich ist.“
+
+- **Schema:** `Service` (serviceType „Pantomime / Walk Act“, `areaServed` „Essen“) mit Bezug auf die bestehende `PerformingGroup`/`LocalBusiness`-Entity + `BreadcrumbList` (Start › Pantomime in Essen) + `FAQPage` (deckungsgleich mit dem sichtbaren FAQ-Block) — analog Struktur der Figurenseiten.
+
+- **Hero-Bild:** vorhandenes `walk-act-fest-essen.webp` (68 KB, belegtes Essen-Motiv) via `subimg()` — kein neues Bild, keine Neu-Encoding-Kosten.
+
+### Abgrenzung / Cannibalization-Vermeidung
+- Figurenseiten behalten ihre allgemeine NRW-Staedteliste (Essen bleibt EIN Listeneintrag). Die Essen-Seite bedient die lokale Intention „Pantomime Essen“ und traegt den einzigartigen belegten Referenz-Cluster als Unterscheidungsmerkmal — kein generischer NRW-Text dupliziert, damit keine Keyword-Kannibalisierung.
+- **Wechselwirkung Vorschlag 3:** V3 = Anlass-Achse, V4 = Stadt-Achse — orthogonal. Bei Doppelfreigabe zuerst V3 Option A (Bestandsseite, sicher), dann V4 (neuer URL).
+
+### Wirkung / Risiko / Empfehlung
+- **Wirkung:** einziger Stadt-Cluster mit echtem, belegtem E-E-A-T (8 Essen-Kunden) — vermeidet das klassische Thin-Page-Problem von Stadt-Landingpages; bedient lokalen Long-Tail „Pantomime Essen“ / „Walk Act Essen“.
+- **Risiko:** neuer URL auf junger Domain = etwas Index-Ballast; abgemildert durch echten, einzigartigen Content.
+- **Empfehlung:** Essen als EINZELNEN Piloten freigeben, Wirkung 4–6 Wochen in GSC messen; weitere Staedte NUR mit eigener belegter Referenzbasis. Alternativ konservativ zurueckstellen, bis GSC ueberhaupt lokale „Pantomime <Stadt>“-Queries zeigt. Entscheidung bei Michael.
+
+**Umfang bei Freigabe:** neue `pantomime-essen/index.html` via build.py-Generator (nicht HTML direkt), Aufnahme in sitemap.xml + interne Verlinkung (Hin- und Gegenrichtung), Py3.12-Rebuild, byte-verifiziert, 1 Commit (generierte HTML mitcommitten wegen CI-Deploy). **SETZT V5-Reconciliation VORAUS** (Rebuild sonst DSGVO-Revert).
