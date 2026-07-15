@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 19,
-  "letzter_lauf": "2026-07-12",
-  "WICHTIG_naechster_lauf": "Tag 19 abgeschlossen (2026-07-12). Chrome verbunden, GSC live: Datenfenster 14.06.-09.07.26, 0 Klicks, 36 Impr., CTR 0%, Pos 23,4 - Kennzahlen und Query-Set IDENTISCH zu Tag 18 (clown pantomime 3, pantomime clown 2, pantomime clowns 1, clown liar 1, clown zauberer liar 1, zauberer liar 1). Weiter KEINE Walk-Act-/Stadt-/Anlass-Queries. Kein V5-Freigabe-Commit im Repo -> build.py-Rebuild bleibt GESPERRT, kein Code-Commit. Da alle 3 GSC-Seiten bereits auditiert und sauber sind, wurde planmaessig Vorschlag 3 Option A KONKRETISIERT: fertiger, belegter Textentwurf fuer die 4 Anlass-Kacheln der Startseite (inkl. descriptiver interner Links) in vorschlaege.md angehaengt - Freigabe braucht nur noch ein Ja, Umsetzung setzt V5 voraus. Naechster Lauf Tag 20: GSC erneut; wenn weiter keine neuen Query-Typen, Vorschlag 4 (Stadt-Landingpage Essen) analog konkretisieren ODER Michael an V5 + Vorschlag 6 (Google Unternehmensprofil) erinnern - ohne V5-Freigabe ist auf der Seite selbst nichts mehr zu tun.",
+  "aktueller_plan_tag": 20,
+  "letzter_lauf": "2026-07-15",
+  "WICHTIG_naechster_lauf": "Tag 20 abgeschlossen (2026-07-15). Chrome verbunden, GSC live: Datenfenster 14.06.-13.07.26, 0 Klicks, 40 Impressionen (von 36), CTR 0%, Pos 22 (leicht verbessert von 23,4). Query-Set weiter ausschliesslich Clown-/Brand-lastig (clown pantomime 3, pantomime clown 3, pantomime clowns 1, clown liar 1, clown zauberer liar 1, zauberer liar 1) - KEINE Walk-Act-/Anlass-/Stadt-Queries, kein neuer Query-Typ ggue. Tag 18/19. Kein V5-Freigabe-Commit im Repo -> build.py-Rebuild bleibt GESPERRT, kein Code-Commit (die Tag-13-CWV-Fixes inkl. fetchpriority=high bleiben in Vorschlag 5(b) aufgeschoben). Planmaessig (Plan-Tag 20) wurde Vorschlag 4 (Stadt-Landingpage /pantomime-essen/) KONKRETISIERT: fertiger, belegter Seitenentwurf (Meta/H1/Hero/E-E-A-T-Referenzblock 8 Essen-Kunden/Leistungs-Body/3 FAQ/Schema/interne Links) in vorschlaege.md angehaengt - Freigabe braucht nur noch ein Ja, Umsetzung setzt V5 voraus. Damit liegen jetzt BEIDE Content-Achsen (V3 Anlass + V4 Essen) als fertige Textentwuerfe bereit. Naechster Lauf Tag 21: GSC erneut; wenn weiter keine neuen Query-Typen und weiter keine V5-Freigabe, Michael gebuendelt an die 4 offenen Entscheidungen erinnern (V5 Reconciliation=Voraussetzung fuer alles, V3+V4 fertige Texte, V6 Google Unternehmensprofil) - auf der Seite selbst ist ohne V5 nichts mehr zu tun.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -184,10 +184,20 @@
       "commits": [
         "SEO: State Tag 19 + Vorschlag 3 Option A konkretisiert (fertiger Anlass-Textentwurf) + GSC-Snapshot 2026-07-12"
       ]
+    },
+    {
+      "tag": 20,
+      "datum": "2026-07-15",
+      "schritt": "Tag 20: GSC-datengetrieben - da weiter keine neuen Query-Typen und Site-Rebuild V5-gesperrt: Vorschlag 4 (Stadt-Landingpage Essen) konkretisieren (Freigabe noetig, NICHT committen).",
+      "ergebnis": "GSC live via Chrome: 0 Klicks, 40 Impr. (von 36), CTR 0%, Pos 22 (von 23,4). 6 Queries unveraendert Clown-/Brand-lastig, KEINE Walk-Act-/Anlass-/Stadt-Queries. build.py-Rebuild bleibt wegen Vorschlag 5 (DSGVO-Reconciliation offen) GESPERRT - kein Code-Commit. Planmaessig Vorschlag 4 KONKRETISIERT (analog V3-Konkretisierung Tag 19): fertiger belegter Seitenentwurf /pantomime-essen/ in vorschlaege.md angehaengt (Meta-Title/Desc, H1, Hero-Lead, sichtbarer E-E-A-T-Referenzblock mit 8 belegten Essen-Kunden, Leistungs-Body, 3 belegte FAQ mit faq_schema-Deckungsgleichheit, Service/Breadcrumb/FAQPage-Schema, descriptive interne Links auf /walk-act/ + /figuren/der-pantomime-in-nrw/, Hero = vorhandenes walk-act-fest-essen.webp). Nur belegte Fakten aus INHALTE-VERIFIZIERT.md. Umsetzung setzt V5-Freigabe voraus. GSC-Snapshot 2026-07-15 gespeichert.",
+      "commits": [
+        "SEO: Tag 20 - Vorschlag 4 (Stadt-Landingpage Pantomime Essen) konkretisiert - fertiger Seitenentwurf, wartet auf Freigabe",
+        "SEO: State Tag 20 + GSC-Snapshot 2026-07-15 (40 Impr., Pos 22)"
+      ]
     }
   ],
-  "naechster_plan_tag": 20,
-  "naechster_schritt": "Tag 20: GSC-datengetrieben. Blocker-Lage unveraendert: OHNE V5-Freigabe sind alle build.py-basierten Fixes (fetchpriority, Footer-Anchors V7C, Anlass-Content V3A, Stadtseite V4) gesperrt. Falls neue Query-Typen (Walk Act/Stadt/Anlass) auftauchen: Zielseite identifizieren + Massnahme vorbereiten (kein Rebuild ohne V5). Sonst: Vorschlag 4 konkretisieren (fertiger Seitenentwurf) und Reminder an Michael zu V5 + V6.",
+  "naechster_plan_tag": 21,
+  "naechster_schritt": "Tag 21: GSC erneut live pruefen (Chrome). Wenn weiter keine neuen Query-Typen und keine V5-Freigabe: Michael gebuendelt an die offenen Entscheidungen erinnern - V5 (build.py/HTML-Reconciliation = Voraussetzung fuer JEDEN Rebuild), V3 (Anlass-Text fertig), V4 (Essen-Seite fertig), V6 (Google Unternehmensprofil). Ohne V5-Freigabe ist auf der Seite selbst kein Code-Schritt moeglich; reine On-Page-Audits sind abgeschlossen. Alternativ Off-Page (V6) vorbereiten.",
   "offene_vorschlaege": [
     {
       "nr": 3,
@@ -202,7 +212,7 @@
       "nr": 4,
       "datum_vorschlag": "2026-07-02",
       "titel": "Stadt-Landingpage /pantomime-essen/ ('Pantomime in Essen buchen') - Essen als Pilot wegen dichtestem belegtem Referenz-Cluster (8 Essen-Kunden), einzigartiges lokales E-E-A-T",
-      "status": "WARTET AUF FREIGABE von Michael",
+      "status": "WARTET AUF FREIGABE von Michael (KONKRETISIERT 2026-07-15, Tag 20 - fertiger Seitenentwurf in vorschlaege.md)",
       "typ": "Neue Unterseite (neuer URL + Schema + interne Verlinkung)"
     },
     {
@@ -540,6 +550,49 @@
         }
       ],
       "hinweis": "Live via Chrome. Datenfenster nominell bis 09.07. vorgerueckt, Kennzahlen + Query-Set aber IDENTISCH zu 2026-07-11 (36 Impr., Pos 23,4, 6 Queries unveraendert) - kein neuer Trend. Seiten-Tab nicht ausgelesen (Query-Fokus)."
+    },
+    {
+      "datum": "2026-07-15",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "14.06.-13.07.26",
+      "klicks": 0,
+      "impressionen": 40,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 22,
+      "top_pages": [],
+      "top_queries": [
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clowns",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "hinweis": "Live via Chrome (Browser 1 verbunden). Datenfenster bis 13.07. vorgerueckt; Impressionen 36->40, Pos 23,4->22 (leicht besser), weiterhin 0 Klicks. Query-Set identisch zu Tag 18/19 - kein neuer Query-Typ. Seiten-Tab nicht ausgelesen (Query-Fokus wie Tag 19)."
     }
   ],
   "technische_hinweise": {
