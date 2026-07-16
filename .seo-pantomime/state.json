@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 20,
-  "letzter_lauf": "2026-07-15",
-  "WICHTIG_naechster_lauf": "Tag 20 abgeschlossen (2026-07-15). Chrome verbunden, GSC live: Datenfenster 14.06.-13.07.26, 0 Klicks, 40 Impressionen (von 36), CTR 0%, Pos 22 (leicht verbessert von 23,4). Query-Set weiter ausschliesslich Clown-/Brand-lastig (clown pantomime 3, pantomime clown 3, pantomime clowns 1, clown liar 1, clown zauberer liar 1, zauberer liar 1) - KEINE Walk-Act-/Anlass-/Stadt-Queries, kein neuer Query-Typ ggue. Tag 18/19. Kein V5-Freigabe-Commit im Repo -> build.py-Rebuild bleibt GESPERRT, kein Code-Commit (die Tag-13-CWV-Fixes inkl. fetchpriority=high bleiben in Vorschlag 5(b) aufgeschoben). Planmaessig (Plan-Tag 20) wurde Vorschlag 4 (Stadt-Landingpage /pantomime-essen/) KONKRETISIERT: fertiger, belegter Seitenentwurf (Meta/H1/Hero/E-E-A-T-Referenzblock 8 Essen-Kunden/Leistungs-Body/3 FAQ/Schema/interne Links) in vorschlaege.md angehaengt - Freigabe braucht nur noch ein Ja, Umsetzung setzt V5 voraus. Damit liegen jetzt BEIDE Content-Achsen (V3 Anlass + V4 Essen) als fertige Textentwuerfe bereit. Naechster Lauf Tag 21: GSC erneut; wenn weiter keine neuen Query-Typen und weiter keine V5-Freigabe, Michael gebuendelt an die 4 offenen Entscheidungen erinnern (V5 Reconciliation=Voraussetzung fuer alles, V3+V4 fertige Texte, V6 Google Unternehmensprofil) - auf der Seite selbst ist ohne V5 nichts mehr zu tun.",
+  "aktueller_plan_tag": 21,
+  "letzter_lauf": "2026-07-16",
+  "WICHTIG_naechster_lauf": "Tag 21 abgeschlossen (2026-07-16). GSC live: 0 Klicks, 40 Impr., Pos 22 - UNVERAENDERT ggue. Tag 20; 6 Queries weiter rein Clown-/Brand-lastig, keine Walk-Act-/Anlass-/Stadt-Queries; Seiten: Clown 33 / Start 7 / ueber-mich 2. Kein V5-Freigabe-Commit -> build.py-Rebuild GESPERRT, kein Code-Commit. PLATEAU: alle On-Page-Audits sauber+abgeschlossen, alle 4 offenen Entscheidungen liegen bei Michael (V5 build.py-Reconciliation=Voraussetzung fuer jeden Rebuild; V3 Anlass-Text fertig; V4 Essen-Seite fertig; V6 Google Unternehmensprofil). Gebuendelter Entscheidungs-Reminder ausgegeben. Naechster Lauf Tag 22: GSC erneut; wenn weiter nichts freigegeben, Off-Page V6 vorbereiten oder erneut buendeln - auf der Seite selbst ist ohne V5 nichts zu tun.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -194,10 +194,19 @@
         "SEO: Tag 20 - Vorschlag 4 (Stadt-Landingpage Pantomime Essen) konkretisiert - fertiger Seitenentwurf, wartet auf Freigabe",
         "SEO: State Tag 20 + GSC-Snapshot 2026-07-15 (40 Impr., Pos 22)"
       ]
+    },
+    {
+      "tag": 21,
+      "datum": "2026-07-16",
+      "schritt": "Tag 21: GSC erneut live pruefen; da weiter keine neuen Query-Typen und keine V5-Freigabe -> Michael gebuendelt an die 4 offenen Entscheidungen erinnern.",
+      "ergebnis": "GSC live via Chrome (Browser 1 verbunden): Datenfenster bis ~13.07.26, 0 Klicks, 40 Impr., CTR 0%, Pos 22 - IDENTISCH zu Tag 20 (keine Bewegung). 6 Queries unveraendert Clown-/Brand-lastig (clown pantomime 3, pantomime clown 3, pantomime clowns 1, clown liar 1, clown zauberer liar 1, zauberer liar 1) - weiter KEINE Walk-Act-/Anlass-/Stadt-Queries. Seiten-Tab: /figuren/der-clown/ 33 Impr. (dominiert ~83%), Startseite 7, /ueber-mich/ 2 (von 1). Repo-Check: kein V5-Freigabe-Commit (letzter Commit weiter 'State Tag 20') -> build.py-Rebuild GESPERRT, KEIN Code-Commit (Guardrail: kein DSGVO-Revert). On-Page-Audits (Clown/Start/ueber-mich) abgeschlossen+sauber; ohne V5 kein Code-Schritt auf der Seite moeglich. Planmaessig: Michael gebuendelt an die 4 offenen Entscheidungen erinnert (V5 Reconciliation=Voraussetzung fuer JEDEN Rebuild inkl. CWV-fetchpriority; V3 Anlass-Text fertig; V4 Essen-Seite fertig; V6 Google Unternehmensprofil = staerkster Off-Page-Hebel).",
+      "commits": [
+        "SEO: State Tag 21 + GSC-Snapshot 2026-07-16 (40 Impr., Pos 22, unveraendert) + gebuendelter Entscheidungs-Reminder"
+      ]
     }
   ],
-  "naechster_plan_tag": 21,
-  "naechster_schritt": "Tag 21: GSC erneut live pruefen (Chrome). Wenn weiter keine neuen Query-Typen und keine V5-Freigabe: Michael gebuendelt an die offenen Entscheidungen erinnern - V5 (build.py/HTML-Reconciliation = Voraussetzung fuer JEDEN Rebuild), V3 (Anlass-Text fertig), V4 (Essen-Seite fertig), V6 (Google Unternehmensprofil). Ohne V5-Freigabe ist auf der Seite selbst kein Code-Schritt moeglich; reine On-Page-Audits sind abgeschlossen. Alternativ Off-Page (V6) vorbereiten.",
+  "naechster_plan_tag": 22,
+  "naechster_schritt": "Tag 22: GSC erneut live pruefen (Chrome). Zustand ist ein Plateau (40 Impr., Pos 22, ausschliesslich Clown-/Brand-Queries, 0 Klicks); ohne V5-Freigabe ist auf der Seite kein Code-Schritt moeglich (On-Page-Audits abgeschlossen). Solange keine V5-Freigabe und keine neuen Query-Typen: Off-Page V6 (Google Unternehmensprofil) konkret vorbereiten ODER weiter gebuendelt an die 4 Entscheidungen erinnern. Kein Rebuild ohne V5.",
   "offene_vorschlaege": [
     {
       "nr": 3,
@@ -593,6 +602,65 @@
         }
       ],
       "hinweis": "Live via Chrome (Browser 1 verbunden). Datenfenster bis 13.07. vorgerueckt; Impressionen 36->40, Pos 23,4->22 (leicht besser), weiterhin 0 Klicks. Query-Set identisch zu Tag 18/19 - kein neuer Query-Typ. Seiten-Tab nicht ausgelesen (Query-Fokus wie Tag 19)."
+    },
+    {
+      "datum": "2026-07-16",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "14.06.-13.07.26",
+      "klicks": 0,
+      "impressionen": 40,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 22,
+      "top_pages": [
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 33
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 7
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/ueber-mich/",
+          "klicks": 0,
+          "impressionen": 2
+        }
+      ],
+      "top_queries": [
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clowns",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "hinweis": "Live via Chrome (Browser 1). Datenfenster bis 13.07.; Kennzahlen IDENTISCH zu Tag 20 (40 Impr., Pos 22, 0 Klicks) - kein neuer Trend. Query-Set unveraendert (6 Clown-/Brand-Queries). Seiten: Clown 33 (von 30), Startseite 7, /ueber-mich/ 2 (von 1). Weiter keine Walk-Act-/Stadt-/Anlass-Queries."
     }
   ],
   "technische_hinweise": {
