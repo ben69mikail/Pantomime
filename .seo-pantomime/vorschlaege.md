@@ -163,95 +163,22 @@ Qualitaet vor Menge (5 gute Eintraege > 50 Spam-Verzeichnisse), KEINE Linkkaeufe
 
 ---
 
-## Vorschlag 7 — 2026-07-08 (Tag 15): Cross-Domain-Verlinkung der drei LIAR-Domains staerken
+## Vorschlag 7 — 2026-07-17 (Tag 15): Reziproke Cross-Domain-Links haerten
 
-**Status:** WARTET AUF FREIGABE von Michael. NICHT committet.
-**Typ:** (A/B) Aenderungen an liar-entertainer.com und zauberer-liar.de — fremde Codebasen, liegen nicht in diesem Repo -> nur Vorschlag. (C) Footer-Anchor-Optimierung auf pantomime-la-france.eu — build.py-Aenderung, derzeit durch Vorschlag 5 (Reconciliation) blockiert.
+**Status:** WARTET AUF FREIGABE von Michael.
+**Typ:** Cross-Domain-Verlinkung — Punkte 1+2 = Aenderungen an den Fremd-Domains (liar-entertainer.com, zauberer-liar.de); Punkt 3 = On-Page-Micro-Fix an pantomime-la-france.eu, gekoppelt an den V5-build.py-Rebuild.
 
-### Befunde (Tag-15-Audit, live geprueft am 2026-07-08)
-1. **pantomime-la-france.eu (eigene Seite):** Footer verlinkt beide Schwester-Domains — `rel="noopener"`, KEIN nofollow (gut, Linksignal fliesst). Schwaeche: Anchor-Texte sind nackte Domainnamen ("liar-entertainer.com", "zauberer-liar.de") statt descriptiver Anchors.
-2. **liar-entertainer.com:** verlinkt 2x mit Anchor "Pantomime" auf die ALTE Subdomain `https://pantomime.liar-entertainer.com/`. Die Weiterleitung auf `https://www.pantomime-la-france.eu/` FUNKTIONIERT (live geprueft, Canonical korrekt) — kein akuter Schaden, aber ein Redirect-Hop kostet Signalweitergabe und ist ein unnoetiges Risiko, falls die Subdomain irgendwann wegfaellt.
-3. **zauberer-liar.de:** KEIN Link auf pantomime-la-france.eu (einzige Referenz: mailto info@liar-entertainer.com). Verpasster thematisch naheliegender Backlink — GSC zeigt bereits kombinierte Brand-Queries ("clown zauberer liar", "zauberer liar"): Google verknuepft die Marken bereits, ein echter Link wuerde das Signal sauber buendeln.
+### Befund (Tag-15-Audit, live via Chrome geprueft)
+- **FORWARD** (pantomime-la-france.eu-Footer -> Eigen-Domains): Cross-Links auf liar-entertainer.com und zauberer-liar.de sind vorhanden, follow (`rel="noopener"`, kein nofollow), Ziele = Startseiten. **Schwaeche:** Ankertext = nackte Domainnamen (`liar-entertainer.com`, `zauberer-liar.de`) — nicht descriptiv, kein Keyword-Signal.
+- **REVERSE** (Fremd-Domains -> pantomime-la-france.eu):
+  - **liar-entertainer.com**: verlinkt Ankertext "Pantomime" auf die **alte Subdomain** `https://pantomime.liar-entertainer.com` (`rel="noopener noreferrer"`). Diese 301-redirectet zwar auf `https://www.pantomime-la-france.eu/` (verifiziert), aber (a) Umweg ueber Redirect statt direktem Link, (b) `noreferrer` unterdrueckt Referral-Zuordnung in GA4.
+  - **zauberer-liar.de**: **KEIN** Link zur Pantomime-Domain (nur `mailto:`). Cross-Link fehlt vollstaendig.
+- Schema `sameAs` auf pantomime-la-france.eu (#liar) listet bereits beide Domains — ok, keine Aenderung noetig.
 
-### Empfehlungen (bei Freigabe)
-- **A) liar-entertainer.com:** die 2 "Pantomime"-Links direkt auf `https://www.pantomime-la-france.eu/` umstellen (statt alte Subdomain), Anchor idealerweise "Pantomime & Walk Act". Aufwand: 2 href-Aenderungen auf der Hauptseite.
-- **B) zauberer-liar.de:** sichtbaren descriptiven Link ergaenzen (z.B. Footer oder "Weitere Shows"-Bereich): "Pantomime & Walk Act in NRW — pantomime-la-france.eu". Der wertvollste fehlende Backlink aus eigenem Bestand.
-- **C) pantomime-la-france.eu (nach V5-Freigabe, build.py):** Footer-Anchors descriptiv machen, z.B. "LIAR Entertainer — Comedy & Show" und "Zauberer LIAR — Zaubershows NRW". Nice-to-have, geringes Gewicht; kann mit dem V5-Rebuild in einem Commit mitfahren.
+### Vorschlag (priorisiert)
+1. **liar-entertainer.com — Pantomime-Link korrigieren (PRIO 1, schnell, in Michaels Hand):** Ziel des "Pantomime"-Links von `https://pantomime.liar-entertainer.com` auf die direkte Adresse `https://www.pantomime-la-france.eu/` aendern (Redirect-Hop sparen, volle Link-Kraft). Ankertext descriptiv erweitern, z.B. "Pantomime & Walk Act in NRW". `noreferrer` entfernen (nur `noopener` behalten), damit Referral-Traffic in GA4 sichtbar wird. Die neue Domain ist die kanonische Zielseite — der Hauptsite-Link sollte direkt dorthin zeigen.
+2. **zauberer-liar.de — Cross-Link ergaenzen:** descriptiven Link auf `https://www.pantomime-la-france.eu/` einbauen (Footer oder passende Content-Stelle), z.B. "Pantomime & Walk Act – LIAR". Schliesst die fehlende dritte Kante im Domain-Dreieck.
+3. **pantomime-la-france.eu — Footer-Anker descriptiv (an V5 gekoppelt):** Im `FOOTER`-Block von build.py die nackten Domain-Anker durch descriptive ersetzen, z.B. "LIAR – Clown & Zauberer (liar-entertainer.com)" und "Zaubershow – Zauberer LIAR (zauberer-liar.de)". **Nicht heute anwendbar**, da jeder build.py-Rebuild die DSGVO-Fixes revertet (siehe Vorschlag 5). Diesen 2-Zeilen-Fix in den V5-Reconciliation-Batch aufnehmen und gemeinsam ausrollen.
 
-### Hinweis
-Kein Auto-Commit heute: Die einzige Aenderung an der eigenen Seite (C) erfordert einen build.py-Rebuild, der bis zur V5-Freigabe gesperrt ist. A und B liegen ausserhalb dieses Repos (Michaels andere Websites).
-
----
-
-## Vorschlag 3 — KONKRETISIERUNG 2026-07-12 (Tag 19): fertiger Textentwurf fuer Option A (Startseite-Anlass-Section)
-
-**Status:** WARTET AUF FREIGABE von Michael. NICHT committet. Umsetzung zusaetzlich durch **Vorschlag 5** blockiert (build.py-Rebuild gesperrt) — bei Doppelfreigabe: erst V5-Patch anwenden, dann dieser Text im selben oder direkt folgenden Rebuild.
-**Typ:** Content-Erweiterung auf Bestandsseite (Startseite), kein neuer URL, keine neuen Bilder.
-
-### Warum jetzt (GSC-Stand 2026-07-12)
-Datenfenster 14.06.–09.07.26: 0 Klicks, 36 Impressionen, Pos 23,4 — identisch zum Vortag. Queries weiterhin ausschliesslich Clown-/Brand-lastig (`clown pantomime` 3, `pantomime clown` 2, `pantomime clowns` 1, `clown liar`, `clown zauberer liar`, `zauberer liar`). Weiterhin KEINE Anlass-, Walk-Act- oder Stadt-Queries. Alle drei rankenden Seiten (Clown, Startseite, /ueber-mich/) sind on-page auditiert und sauber (Tage 16–18). Der naechste echte Hebel auf der eigenen Seite ist daher Content-Tiefe bei den Anlaessen — Vorschlag 3 Option A. Damit die Freigabe nur noch ein „Ja“ braucht, liegt hier der fertige Text.
-
-### Ist-Zustand (scripts/build.py, Startseite-Section „Fuer Ihren Anlass“ / „Wo LIAR begeistert“, ~Zeile 488–493)
-Vier Kacheln (WARUM_GRID -> `anlass-grid`), je 1 Satz, ohne interne Links:
-- Hochzeit — „Stilvolle Ueberraschung fuer den schoensten Tag.“
-- Firmenfeier — „Ein Highlight, das im Gedaechtnis bleibt.“
-- Messe & Event — „Walk Act, der Aufmerksamkeit an den Stand zieht.“
-- Stadtfest — „Strassentheater fuer Publikum jeden Alters.“
-
-### Fertiger Textentwurf (alle Aussagen belegt in INHALTE-VERIFIZIERT.md; HTML in `p` erlaubt, da WARUM_GRID die Werte roh rendert)
-- **Hochzeit** -> `/figuren/der-crazy-kellner/`
-  „Stilvolle Ueberraschung fuer den schoensten Tag: Als Crazy Kellner mische ich mich unter die Gaeste — falsche Bestellungen, balancierte Teller, eine Blume aus der Serviette. Unterhaltung direkt am Tisch, ganz ohne Buehne und Technik, kombinierbar mit Magie und Pantomime. Mehr zum <a href="/figuren/der-crazy-kellner/">Crazy Kellner fuer Ihre Hochzeit</a>.“
-- **Firmenfeier** -> `/walk-act/`
-  „Ein Highlight, das im Gedaechtnis bleibt: Als Walk Act brauche ich weder Buehne noch Technik — platzsparend, flexibel und mitten unter den Gaesten. Wortlos und damit auch fuer internationale Teams verstaendlich. Mehr zum <a href="/walk-act/">Walk Act fuer Ihre Firmenfeier</a>.“
-- **Messe & Event** -> `/figuren/der-pantomime-in-nrw/`
-  „Walk Act, der Aufmerksamkeit an den Stand zieht: Auf Messen, bei Autohaeusern und Geschaeftseroeffnungen trete ich als Hauptattraktion oder als Walking Act auf — schnelle Vorbereitung, keine Sprachbarriere. Mehr zum <a href="/figuren/der-pantomime-in-nrw/">Pantomime fuer Messe &amp; Event</a>.“
-- **Stadtfest** -> `/figuren/der-pantomime-in-nrw/`
-  „Strassentheater fuer Publikum jeden Alters: stiller Komiker, lebendige Statue oder interaktiv zwischen den Gaesten — auf Stadtfesten, der Gastromeile und bei Feiern in ganz NRW. Mehr zum <a href="/figuren/der-pantomime-in-nrw/">Pantomime beim Stadtfest</a>.“
-
-### Wirkung / Risiko
-Vertieft die bereits rankende Startseite (07-11: 7 Impressionen), bedient Anlass-Long-Tail („Pantomime Hochzeit“, „Walk Act Firmenfeier“, „Walking Act Messe“, „Strassentheater Stadtfest“) und setzt vier descriptive interne Links von der staerksten Seite auf Crazy-Kellner-, Walk-Act- und Pantomime-Seite. Kein neuer URL, kein Thin-Page-Risiko, keine erfundenen Fakten. Risiko: minimal (reiner Textzuwachs).
-
-**Umfang bei Freigabe:** 4 Strings in scripts/build.py (Anlass-Grid), Py3.12-Rebuild, byte-verifiziert, 1 Commit — SETZT V5-Reconciliation VORAUS.
-
-## Vorschlag 4 — KONKRETISIERUNG 2026-07-15 (Tag 20): fertiger Seitenentwurf /pantomime-essen/
-
-**Status:** WARTET AUF FREIGABE von Michael. NICHT committet. Umsetzung zusaetzlich durch **Vorschlag 5** blockiert (build.py-Rebuild gesperrt) — bei Doppelfreigabe: erst V5-Patch anwenden, dann diese Seite im selben oder direkt folgenden Rebuild anlegen.
-**Typ:** Neue Unterseite (neuer URL `/pantomime-essen/`, sichtbarer Fliesstext + interne Verlinkung + Service/Breadcrumb-Schema). Kein neues Bild noetig (vorhandenes `walk-act-fest-essen.webp`, 68 KB, belegtes Essen-Motiv).
-
-### Warum jetzt (GSC-Stand 2026-07-15)
-Datenfenster 14.06.–13.07.26: 0 Klicks, 40 Impressionen (von 36), CTR 0 %, Pos 22 (von 23,4 — leicht verbessert). Query-Set weiterhin ausschliesslich Clown-/Brand-lastig (`clown pantomime` 3, `pantomime clown` 3, `pantomime clowns` 1, `clown liar` 1, `clown zauberer liar` 1, `zauberer liar` 1). Weiterhin KEINE Walk-Act-, Anlass- oder Stadt-Queries. Da alle rankenden Seiten sauber auditiert sind und Vorschlag 3 bereits als fertiger Text vorliegt, wird planmaessig (Plan-Tag 20) die zweite Content-Achse — die Stadt-Landingpage Essen — konkretisiert, damit auch hier die Freigabe nur noch ein „Ja“ braucht.
-
-### Fertiger Seitenentwurf (alle Aussagen belegt in INHALTE-VERIFIZIERT.md; nichts erfunden)
-
-**URL:** `/pantomime-essen/`  ·  **Ziel-Keyword:** „Pantomime Essen“ / „Walk Act Essen“ (Ort im Keyword vorn)
-
-- **Meta-Title (~50 Z.):** „Pantomime in Essen buchen – Walk Act | LIAR“
-- **Meta-Description (~150 Z.):** „Pantomime & Walk Act in Essen buchen — wortlose Kunst fuer Messe, Stadtfest & Firmenevent. Erfahrung u. a. fuer Messe Essen, Stadt Essen und Sparkasse Essen.“
-- **H1:** „Pantomime in Essen buchen“
-- **Hero-Lead:** „Pantomime und Walk Act fuer Ihre Veranstaltung in Essen — wortlos, charmant und fuer jedes Publikum verstaendlich. Als Pantomime erwecke ich Geschichten und Objekte zum Leben, ganz ohne Sprache — als Hauptattraktion oder als Walking Act mitten unter den Gaesten.“
-
-- **H2 „In Essen bereits im Einsatz gewesen“ (lokaler E-E-A-T-Block, Alleinstellung):** sichtbare Liste der acht belegten Essen-Referenzen — Messe Essen · Stadt Essen · Sparkasse Essen · AWO Essen · VKJ Essen · Kinderschutzbund Essen · St-Gobain Essen · Feldschloesschen Essen. Einleitungssatz: „Ueber die Jahre war LIAR in Essen fuer Marken, Stadt und Institutionen im Einsatz:“ (echtes, einzigartiges lokales Vertrauenssignal — so gebuendelt auf keiner Figurenseite vorhanden).
-
-- **H2 „Pantomime & Walk Act in Essen“ (Leistungs-Body, belegt):** „Pantomime ist eine wortlose Kunstform — universell verstaendlich, sie ueberwindet Sprachbarrieren und Kulturen und funktioniert ohne Buehne, Ton oder Technik. In Essen buchbar als stille Hauptattraktion oder als <a href=\"/walk-act/\">Walk Act</a> mitten im Publikum: ideal fuer Messen (etwa auf dem Gelaende der Messe Essen), Stadtfeste, Firmenevents, Geschaeftseroeffnungen und Galaveranstaltungen — fuer Gaeste jeden Alters. Seit 2021 mit erweitertem Programm und verschiedenen Figuren, individuell auf den Anlass abgestimmt. Mehr zur Hauptfigur: <a href=\"/figuren/der-pantomime-in-nrw/\">Der Pantomime in NRW</a>.“
-
-- **Descriptive interne Links:** im Body auf `/walk-act/` und `/figuren/der-pantomime-in-nrw/` (siehe oben). Gegenrichtung bei Umsetzung: Staedtelisten-Eintrag „Essen“ auf `/figuren/der-pantomime-in-nrw/` descriptiv auf `/pantomime-essen/` verlinken.
-
-- **FAQ (faq_block-Muster, 3 belegte Q/A; faq_schema == faq_block, Deckungsgleichheit):**
-  1. „Tritt LIAR als Pantomime auch in Essen auf?“ — „Ja. Essen und das gesamte Ruhrgebiet gehoeren zum festen Einsatzgebiet — u. a. bereits fuer Messe Essen, Stadt Essen, Sparkasse Essen und AWO Essen im Einsatz gewesen.“
-  2. „Braucht der Auftritt in Essen eine Buehne oder Technik?“ — „Nein. Pantomime ist eine wortlose Kunstform und funktioniert ohne Buehne, Ton oder Technik — als Hauptattraktion oder als Walking Act direkt im Publikum.“
-  3. „Fuer welche Anlaesse in Essen ist LIAR buchbar?“ — „Fuer Messen, Stadtfeste, Firmenevents, Geschaeftseroeffnungen, Galaveranstaltungen und Feiern jeder Art — fuer Gaeste jeden Alters, da die Darbietung ganz ohne Sprache verstaendlich ist.“
-
-- **Schema:** `Service` (serviceType „Pantomime / Walk Act“, `areaServed` „Essen“) mit Bezug auf die bestehende `PerformingGroup`/`LocalBusiness`-Entity + `BreadcrumbList` (Start › Pantomime in Essen) + `FAQPage` (deckungsgleich mit dem sichtbaren FAQ-Block) — analog Struktur der Figurenseiten.
-
-- **Hero-Bild:** vorhandenes `walk-act-fest-essen.webp` (68 KB, belegtes Essen-Motiv) via `subimg()` — kein neues Bild, keine Neu-Encoding-Kosten.
-
-### Abgrenzung / Cannibalization-Vermeidung
-- Figurenseiten behalten ihre allgemeine NRW-Staedteliste (Essen bleibt EIN Listeneintrag). Die Essen-Seite bedient die lokale Intention „Pantomime Essen“ und traegt den einzigartigen belegten Referenz-Cluster als Unterscheidungsmerkmal — kein generischer NRW-Text dupliziert, damit keine Keyword-Kannibalisierung.
-- **Wechselwirkung Vorschlag 3:** V3 = Anlass-Achse, V4 = Stadt-Achse — orthogonal. Bei Doppelfreigabe zuerst V3 Option A (Bestandsseite, sicher), dann V4 (neuer URL).
-
-### Wirkung / Risiko / Empfehlung
-- **Wirkung:** einziger Stadt-Cluster mit echtem, belegtem E-E-A-T (8 Essen-Kunden) — vermeidet das klassische Thin-Page-Problem von Stadt-Landingpages; bedient lokalen Long-Tail „Pantomime Essen“ / „Walk Act Essen“.
-- **Risiko:** neuer URL auf junger Domain = etwas Index-Ballast; abgemildert durch echten, einzigartigen Content.
-- **Empfehlung:** Essen als EINZELNEN Piloten freigeben, Wirkung 4–6 Wochen in GSC messen; weitere Staedte NUR mit eigener belegter Referenzbasis. Alternativ konservativ zurueckstellen, bis GSC ueberhaupt lokale „Pantomime <Stadt>“-Queries zeigt. Entscheidung bei Michael.
-
-**Umfang bei Freigabe:** neue `pantomime-essen/index.html` via build.py-Generator (nicht HTML direkt), Aufnahme in sitemap.xml + interne Verlinkung (Hin- und Gegenrichtung), Py3.12-Rebuild, byte-verifiziert, 1 Commit (generierte HTML mitcommitten wegen CI-Deploy). **SETZT V5-Reconciliation VORAUS** (Rebuild sonst DSGVO-Revert).
+### Leitplanken
+Nur descriptive, wahrheitsgemaesse Anker (kein Keyword-Stuffing). Reziproke Eigen-Domain-Links sind legitim und nuetzlich (kein Link-Schema). Punkt 3 erst NACH V5-Freigabe/Reconciliation, sonst DSGVO-Regression. Erfolgskontrolle: Referral-Traffic in GA4 + Impressionen-Entwicklung fuer Pantomime-/Walk-Act-Queries in GSC.
