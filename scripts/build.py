@@ -123,9 +123,7 @@ def head(title, desc, path, schema, og_img="/assets/img/og-pantomime.jpg"):
 <meta name="theme-color" content="#0d0d0f" />
 <link rel="icon" href="/assets/img/favicon.png" type="image/png" />
 <link rel="apple-touch-icon" href="/assets/img/logo.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,500;1,6..96,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/fonts.css" />
 <link rel="stylesheet" href="/assets/style.css?v={CSS_VER}" />
 {blocks}
 <script>
@@ -178,7 +176,7 @@ def subimg(name, pos="50% 28%"):
     """Durchscheinendes Hero-Hintergrundbild fuer Unterseiten (wie Startseite)."""
     return ('<div class="valance" aria-hidden="true"></div>'
             f'<div class="hero-bg" aria-hidden="true"><img src="/assets/img/{name}" alt="" '
-            f'role="presentation" loading="eager" decoding="async" style="object-position:{pos}" /></div>')
+            f'role="presentation" loading="eager" decoding="async" fetchpriority="high" style="object-position:{pos}" /></div>')
 
 FOOTER = f"""<footer class="site-footer">
   <div class="container footer-grid">
@@ -201,8 +199,8 @@ FOOTER = f"""<footer class="site-footer">
       <a href="mailto:{EMAIL}">{EMAIL}</a>
       <a href="/referenzen/">Referenzen</a>
       <a href="/kontakt/">Anfrage senden</a>
-      <a href="https://www.liar-entertainer.com" rel="noopener">liar-entertainer.com</a>
-      <a href="https://www.zauberer-liar.de" rel="noopener">zauberer-liar.de</a>
+      <a href="https://www.liar-entertainer.com" rel="noopener">LIAR – Clown &amp; Zauberer (liar-entertainer.com)</a>
+      <a href="https://www.zauberer-liar.de" rel="noopener">Zaubershow – Zauberer LIAR (zauberer-liar.de)</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -302,8 +300,8 @@ FIGUREN = {
   },
   "der-clown": {
     "name": "Der Clown", "menu": "Clown",
-    "title": "Clown in NRW buchen – LIAR | Kinderfest & Firmenfeier",
-    "desc": "Clown & Comedy-Walk-Act in NRW buchen: LIAR bringt mit Mimik, Slapstick und Improvisation alle zum Lachen – für Kinderfeste, Stadtfeste & Firmenfeiern.",
+    "title": "Clown & Pantomime in NRW buchen – LIAR | Walk Act",
+    "desc": "Pantomime-Clown & Comedy-Walk-Act in NRW buchen: LIAR bringt mit Mimik und Slapstick alle zum Lachen – für Kinderfeste, Stadtfeste & Firmenfeiern.",
     "card": "geburtstag.webp", "card_alt": "Clown LIAR bei einem Kinderfest in NRW",
     "hero_alt": "Clown LIAR bringt Menschen zum Lachen",
     "intro": "Der Clown bringt Menschen jeden Alters zum Lachen, Staunen und Nachdenken.",
@@ -758,9 +756,14 @@ kontakt_body = f"""<main>
         <div class="row">
           <div><label for="nachricht">Ihre Nachricht</label><textarea id="nachricht" name="Nachricht" required placeholder="Erzählen Sie mir von Ihrem Anlass …"></textarea></div>
         </div>
+        <div class="row consent-row">
+          <label class="consent" for="consent">
+            <input id="consent" type="checkbox" name="consent" required />
+            <span>Ich willige ein, dass meine Angaben zur Bearbeitung meiner Anfrage verarbeitet werden. Die Daten werden per E&#8209;Mail zugestellt (Dienstleister Web3Forms). Die Einwilligung kann jederzeit widerrufen werden. Details in der <a href="/datenschutz/">Datenschutzerkl&auml;rung</a>.</span>
+          </label>
+        </div>
         <button type="submit" class="btn btn-primary">Anfrage senden</button>
         <p class="form-status" role="status"></p>
-        <p class="form-note">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben zur Bearbeitung der Anfrage zu (siehe <a href="/datenschutz/">Datenschutz</a>).</p>
       </form>
     </div>
   </div>
@@ -819,7 +822,7 @@ datenschutz_body = f"""<main>
   <p>Diese Website wird bei der IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, gehostet. IONOS verarbeitet dabei Server-Logfiles (u. a. IP-Adresse, Datum/Uhrzeit, abgerufene Datei) zur Bereitstellung und Sicherheit des Angebots (Art. 6 Abs. 1 lit. f DSGVO). Es besteht ein Auftragsverarbeitungsvertrag.</p>
 
   <h3>5. Kontaktformular (Web3Forms)</h3>
-  <p>Für das Kontaktformular nutzen wir den Dienst Web3Forms. Ihre eingegebenen Daten (Name, E-Mail, Angaben zur Veranstaltung, Nachricht) werden zur Zustellung Ihrer Anfrage per E-Mail verarbeitet und nicht für andere Zwecke verwendet. Rechtsgrundlage ist Ihre Einwilligung bzw. die Bearbeitung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. a und b DSGVO). Alternativ erreichen Sie uns per Telefon oder E-Mail.</p>
+  <p>Für das Kontaktformular nutzen wir den Dienst Web3Forms. Ihre eingegebenen Daten (Name, E-Mail, Angaben zur Veranstaltung, Nachricht) werden ausschließlich zur Zustellung Ihrer Anfrage per E-Mail verarbeitet und nicht für andere Zwecke verwendet. Das Absenden ist erst nach Ihrer ausdrücklichen Einwilligung über die Checkbox im Formular möglich; diese Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen. Bei der Übermittlung können Daten auch auf Servern außerhalb der EU verarbeitet werden; in diesem Fall erfolgt die Übermittlung auf Grundlage geeigneter Garantien (EU-Standardvertragsklauseln). Rechtsgrundlage ist Ihre Einwilligung sowie die Bearbeitung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. a und b, Art. 49 Abs. 1 lit. a DSGVO). Alternativ erreichen Sie uns per Telefon oder E-Mail.</p>
 
   <h3>6. Cookies &amp; Einwilligung</h3>
   <p>Technisch notwendige Speicherung erfolgt ohne Einwilligung. Statistik-/Analyse-Cookies (Google Analytics) werden erst nach Ihrer aktiven Zustimmung über den Cookie-Hinweis gesetzt (Consent Mode v2). Ihre Auswahl wird lokal in Ihrem Browser gespeichert; standardmäßig ist das Tracking deaktiviert. Sie können Ihre Entscheidung jederzeit über die Browser-Einstellungen widerrufen.</p>
@@ -827,13 +830,16 @@ datenschutz_body = f"""<main>
   <h3>7. Google Analytics 4</h3>
   <p>Nach Einwilligung nutzen wir Google Analytics 4 (Google Ireland Ltd.) zur anonymen Reichweitenmessung. Die IP-Adresse wird anonymisiert (<code>anonymize_ip</code>); Werbe- und Personalisierungsfunktionen sind deaktiviert. Ohne Ihre Zustimmung wird Google Analytics nicht geladen.</p>
 
-  <h3>8. Google Fonts</h3>
-  <p>Diese Website lädt Schriftarten von Google Fonts. Dabei wird eine Verbindung zu Google-Servern aufgebaut und Ihre IP-Adresse übermittelt. Rechtsgrundlage ist unser berechtigtes Interesse an einer einheitlichen Darstellung (Art. 6 Abs. 1 lit. f DSGVO).</p>
+  <h3>8. Schriftarten (lokal gehostet)</h3>
+  <p>Die auf dieser Website verwendeten Schriftarten (Bodoni Moda, Hanken Grotesk) werden ausschließlich lokal von unserem eigenen Server geladen. Es besteht <strong>keine Verbindung zu Servern von Google</strong>, und es wird dabei keine IP-Adresse an Google oder andere Dritte übermittelt.</p>
 
-  <h3>9. Ihre Rechte</h3>
+  <h3>9. WhatsApp-Kontakt</h3>
+  <p>Auf der Website befindet sich ein Link zu WhatsApp (wa.me). Erst wenn Sie diesen Link aktiv anklicken, wird eine Verbindung zu WhatsApp Ireland Ltd. (Meta) hergestellt und Ihre IP-Adresse übermittelt. Beim bloßen Aufruf der Website werden keine Daten an WhatsApp gesendet. Für die Nutzung von WhatsApp gelten die Datenschutzbestimmungen von Meta. Rechtsgrundlage ist Ihre Einwilligung durch aktives Anklicken (Art. 6 Abs. 1 lit. a DSGVO).</p>
+
+  <h3>10. Ihre Rechte</h3>
   <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie ein Widerspruchsrecht. Zudem besteht ein Beschwerderecht bei einer Aufsichtsbehörde.</p>
 
-  <p style="margin-top:2rem;color:var(--muted)">Stand: {TODAY}</p>
+  <p style="margin-top:2rem;color:var(--muted)">Stand: 2026-07-02</p>
 </div></section>
 </main>"""
 built.append(page("/datenschutz/", "Datenschutzerklärung – LIAR Pantomime",

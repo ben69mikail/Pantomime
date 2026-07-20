@@ -2,7 +2,7 @@
   "plan_zyklus_start": "2026-06-18",
   "aktueller_plan_tag": 16,
   "letzter_lauf": "2026-07-20",
-  "WICHTIG_naechster_lauf": "Tag 16 abgeschlossen (2026-07-20). ANALYSE-Tag, kein Code-Commit (Rebuild bleibt durch V5-DSGVO-Divergenz gesperrt - heute erneut verifiziert: build.py origin/main hat noch externe Google-Fonts). GSC live via Chrome: Fenster 14.06.-18.07., 0 Klicks, 45 Impr. (von 40), Pos 20,3 (von 22). Seiten: der-clown 35 Impr. (dominant), Start 10 (waechst, vorher 1), ueber-mich 2 (neu). Queries: pantomime clown 4, clown pantomime 3, pantomime clowns 1, clown liar 1, clown zauberer liar 1, zauberer liar 1 - Kombi Pantomime+Clown = 8 Impr. TAG-16-BEFUND: Clown-Seite (dominante Seite) hat KEIN 'Pantomime' in Title/Desc, obwohl das Top-Query-Cluster genau diese Kombi sucht. Exakter Fix (Title 49 Z. / Desc 146 Z.) als VORSCHLAG 8 ausgearbeitet = V5-Batch-Item (inhaltlich Auto-Fix-Kategorie, nur technisch durch V5 blockiert). V5-Batch enthaelt jetzt: Reconciliation-Patch + fetchpriority + Footer-Anker (V7.3) + Clown-Title/Desc (V8). Naechster Lauf: Tag 17 Technik-Audit (kein Rebuild). VOR jedem Rebuild V5-Freigabe pruefen.",
+  "WICHTIG_naechster_lauf": "V5-BATCH AM 2026-07-20 NACH FREIGABE AUSGEROLLT - build.py ist jetzt mit live-HTML reconciled, die REBUILD-SPERRE IST AUFGEHOBEN. Normale Auto-Fix-Regeln gelten wieder (build.py aendern -> Py3.12-Rebuild -> byte-verifizieren -> committen). Naechster Lauf: Tag 17 Technik-Audit (z.B. GSC-Indexierungsstatus + HTML-Stichprobe) ODER GSC-getrieben. Beobachten: Wirkung Clown-Title/Desc auf CTR/Position des pantomime+clown-Clusters (Pos ~11-13); Startseiten-Impressionen (1->10) weiter verfolgen. Offen: V3 (Anlass-Content), V4 (/pantomime-essen/), V6 (Off-Page/Unternehmensprofil), V7.1+7.2 (Links auf Fremd-Domains, Michael), V5-Rest (Bild-Re-Kompression 592KB/320KB Heroes).",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -157,10 +157,19 @@
       "commits": [
         "SEO: State Tag 16 + Vorschlag 8 (Clown-Title/Desc 'Pantomime', V5-Batch) + GSC-Snapshot 2026-07-20"
       ]
+    },
+    {
+      "tag": "16b (V5-Batch-Rollout)",
+      "datum": "2026-07-20",
+      "schritt": "V5-FREIGABE durch Michael -> Batch-Rollout: build.py-Reconciliation + fetchpriority (Tag 13) + Footer-Anker descriptiv (V7.3) + Clown-Title/Desc (V8).",
+      "ergebnis": "Reconciliation-Patch (2026-07-07) sauber angewendet (git apply --check ok). 3 Batch-Edits in build.py: (1) subimg() fetchpriority=high -> 13 Unterseiten-Heroes; (2) Footer-Anker descriptiv auf allen 15 Seiten; (3) Clown Title 49 Z. / Desc 146 Z. mit Pantomime-Keyword, og:title/og:description/Service-Schema synchron. Rebuild mit Py3.12 (uv). Byte-Verifikation gegen live: NUR beabsichtigte Deltas (15x Asset-Hash-Bumps fc99917e/45732809 wie im Patch vorgesehen, 15x Footer-Anker, 13x fetchpriority, 4x Clown-Meta, sitemap-lastmod 2026-07-20). Negativ-Checks: 0x fonts.googleapis, keine Consent-/Datenschutz-Diffs (DSGVO-Stand bleibt), alle 15 Seiten schliessen mit </html>, 0 JSON-LD-Fehler, Clown-FAQ Schema==sichtbar. REBUILD-SPERRE DAMIT AUFGEHOBEN.",
+      "commits": [
+        "SEO: V5-Batch nach Freigabe - build.py-Reconciliation + fetchpriority + Footer-Anker + Clown-Title/Desc (verifiziert)"
+      ]
     }
   ],
   "naechster_plan_tag": 17,
-  "naechster_schritt": "Tag 17: Technik-Audit (alternierend nach Plan) - z.B. Indexierungsstatus/Abdeckung in GSC pruefen + HTML-Stichprobe; build.py-Rebuild weiter durch V5 gesperrt, vor jedem Rebuild V5-Freigabe pruefen.",
+  "naechster_schritt": "Tag 17: Technik-Audit - GSC-Indexierungsstatus/Abdeckung pruefen + HTML-Stichprobe; danach GSC-datengetrieben weiter. Rebuild wieder erlaubt (V5 erledigt).",
   "offene_vorschlaege": [
     {
       "nr": 3,
@@ -177,14 +186,6 @@
       "typ": "Neue Unterseite (neuer URL + Schema + interne Verlinkung)"
     },
     {
-      "nr": 5,
-      "datum_vorschlag": "2026-07-03",
-      "titel": "KRITISCH: build.py mit live-HTML reconciliaten (build.py revertet sonst DSGVO-Fixes aus Commit 88ca226) + danach Tag-13-CWV-Fixes: fetchpriority=high fuer Unterseiten-Hero (subimg, 1 Zeile) + Re-Kompression grosser Hero-webp (pantomime-buchen 592KB / nussknacker 320KB)",
-      "status": "WARTET AUF FREIGABE / ENTSCHEIDUNG von Michael",
-      "typ": "Build-Infrastruktur (build.py-Reconciliation, blockierend) + Technik-Fix (fetchpriority) + Bild-Kompression (Neu-Encoding)",
-      "update_2026_07_07": "Reconciliation im heutigen Lauf unabhaengig durchgefuehrt + byte-verifiziert (Rebuild reproduziert live-HTML; einzige Deltas = korrekte Asset-Hash-Bumps 91d09e05->fc99917e / 41872035->45732809, da 88ca226 style.css/app.js ohne Hash-Update aenderte, + sitemap-lastmod). Fertiger Patch: .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch (lokal im Cowork-Ordner). Wartet weiter auf Freigabe."
-    },
-    {
       "nr": 6,
       "datum_vorschlag": "2026-07-07",
       "titel": "Backlinks/Verzeichnisse: Google Unternehmensprofil (prio 1) + Kuenstler-/Eventportale + lokale Verzeichnisse, NAP-konsistent - erfordert Konten/Entscheidungen von Michael",
@@ -194,16 +195,9 @@
     {
       "nr": 7,
       "datum_vorschlag": "2026-07-17",
-      "titel": "Reziproke Cross-Domain-Links haerten: (1) liar-entertainer.com 'Pantomime'-Link direkt auf https://www.pantomime-la-france.eu (statt alte Subdomain via 301) + descriptiv; (2) zauberer-liar.de Cross-Link zur Pantomime-Domain ergaenzen (fehlt ganz); (3) Footer-Anker auf pantomime-la-france.eu von nackter Domain -> descriptiv (im V5-build.py-Batch).",
+      "titel": "Reziproke Cross-Domain-Links haerten: (1) liar-entertainer.com 'Pantomime'-Link direkt auf https://www.pantomime-la-france.eu (statt alte Subdomain via 301) + descriptiv; (2) zauberer-liar.de Cross-Link zur Pantomime-Domain ergaenzen (fehlt ganz); (3) Footer-Anker auf pantomime-la-france.eu von nackter Domain -> descriptiv (im V5-build.py-Batch). [Punkt 3 (Footer-Anker descriptiv) am 2026-07-20 im V5-Batch ERLEDIGT; offen bleiben Punkt 1+2 auf den Fremd-Domains]",
       "status": "WARTET AUF FREIGABE von Michael (Punkte 1+2 = Fremd-Domains; Punkt 3 = mit V5-Rebuild gekoppelt)",
       "typ": "Cross-Domain-Verlinkung (2 Eigen-Domains) + gekoppelter On-Page-Micro-Fix (V5)"
-    },
-    {
-      "nr": 8,
-      "datum_vorschlag": "2026-07-20",
-      "titel": "Clown-Seite Title/Desc um 'Pantomime' ergaenzen (exakte Strings fertig, Title 49 Z./Desc 146 Z.) - V5-Batch-Item, inhaltlich Auto-Fix-Kategorie",
-      "status": "FERTIG AUSGEARBEITET - blockiert nur durch V5-Reconciliation-Freigabe",
-      "typ": "On-Page Title/Meta-Description via build.py (gekoppelt an V5-Rebuild)"
     }
   ],
   "erledigte_vorschlaege": [
@@ -220,6 +214,23 @@
       "datum_umgesetzt": "2026-06-25",
       "titel": "FAQ-Inhalte sichtbar rendern (FAQPage-Schema deckt jetzt sichtbaren Inhalt, 8 Seiten)",
       "status": "ERLEDIGT & verifiziert & gepusht (von Michael freigegeben)"
+    },
+    {
+      "nr": 5,
+      "datum_vorschlag": "2026-07-03",
+      "titel": "KRITISCH: build.py mit live-HTML reconciliaten (build.py revertet sonst DSGVO-Fixes aus Commit 88ca226) + danach Tag-13-CWV-Fixes: fetchpriority=high fuer Unterseiten-Hero (subimg, 1 Zeile) + Re-Kompression grosser Hero-webp (pantomime-buchen 592KB / nussknacker 320KB)",
+      "status": "ERLEDIGT: von Michael freigegeben (2026-07-20), Reconciliation-Patch angewendet, byte-verifizierter Rebuild (nur beabsichtigte Deltas), gepusht. fetchpriority=high auf 13 Unterseiten-Heroes umgesetzt. OFFEN bleibt nur die Bild-Re-Kompression (pantomime-buchen 592KB / nussknacker 320KB) - separater Schritt, Neu-Encoding noetig.",
+      "typ": "Build-Infrastruktur (build.py-Reconciliation, blockierend) + Technik-Fix (fetchpriority) + Bild-Kompression (Neu-Encoding)",
+      "update_2026_07_07": "Reconciliation im heutigen Lauf unabhaengig durchgefuehrt + byte-verifiziert (Rebuild reproduziert live-HTML; einzige Deltas = korrekte Asset-Hash-Bumps 91d09e05->fc99917e / 41872035->45732809, da 88ca226 style.css/app.js ohne Hash-Update aenderte, + sitemap-lastmod). Fertiger Patch: .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch (lokal im Cowork-Ordner). Wartet weiter auf Freigabe.",
+      "datum_umgesetzt": "2026-07-20"
+    },
+    {
+      "nr": 8,
+      "datum_vorschlag": "2026-07-20",
+      "titel": "Clown-Seite Title/Desc um 'Pantomime' ergaenzen (exakte Strings fertig, Title 49 Z./Desc 146 Z.) - V5-Batch-Item, inhaltlich Auto-Fix-Kategorie",
+      "status": "ERLEDIGT: im V5-Batch umgesetzt (Title 49 Z. / Desc 146 Z., og+Service-Schema synchron), byte-verifiziert, gepusht.",
+      "typ": "On-Page Title/Meta-Description via build.py (gekoppelt an V5-Rebuild)",
+      "datum_umgesetzt": "2026-07-20"
     }
   ],
   "gsc_snapshots": [

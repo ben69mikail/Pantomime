@@ -202,3 +202,11 @@ Nur descriptive, wahrheitsgemaesse Anker (kein Keyword-Stuffing). Reziproke Eige
 
 ### Warum jetzt nicht committet
 Jeder build.py-Rebuild revertet weiterhin die DSGVO-Fixes aus 88ca226 (heute erneut verifiziert: build.py auf origin/main enthaelt noch externe Google-Fonts-Links). Fix daher in den V5-Batch aufgenommen (zusammen mit Vorschlag-7-Punkt-3 Footer-Anker + fetchpriority). Nach V5-Freigabe kann der Worker alle Batch-Items in EINEM verifizierten Rebuild ausrollen.
+
+---
+
+## Update 2026-07-20: V5 FREIGEGEBEN und ausgerollt
+
+Michael hat V5 freigegeben. Umgesetzt im heutigen Batch (byte-verifiziert, 1 Commit): build.py-Reconciliation (Patch 2026-07-07), fetchpriority=high fuer 13 Unterseiten-Heroes (Tag 13), descriptive Footer-Anker auf allen 15 Seiten (Vorschlag 7 Punkt 3), Clown-Title/Desc mit Pantomime-Keyword (Vorschlag 8). Die Rebuild-Sperre ist aufgehoben.
+
+**Weiter offen:** Vorschlag 3 (Anlass-Content), Vorschlag 4 (/pantomime-essen/), Vorschlag 6 (Off-Page), Vorschlag 7 Punkte 1+2 (Links auf liar-entertainer.com/zauberer-liar.de - liegt bei Michael), V5-Rest: Re-Kompression der grossen Hero-Bilder (pantomime-buchen 592KB, nussknacker 320KB).
