@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 15,
-  "letzter_lauf": "2026-07-17",
-  "WICHTIG_naechster_lauf": "Tag 15 abgeschlossen (2026-07-17). AUDIT-Tag, kein Code-Commit (Rebuild bleibt durch V5 gesperrt). GSC live via Chrome: Fenster 14.06.-14.07., 0 Klicks, 40 Impr. (von 25), Pos ~22. Query-Tab: 'clown pantomime' (3, Pos 11), 'pantomime clown' (3, Pos 13,3), 'pantomime clowns' (1, Pos 12), 'clown liar'/'clown zauberer liar' (Pos 27), 'zauberer liar' (Pos 33) - Clown-/Brand-lastig, 'Pantomime' nur mit 'clown' kombiniert, weiter KEINE Walk-Act-/Stadt-/Anlass-Queries; Clown+Pantomime-Positionen aber auf ~11-13 verbessert. TAG-15-BEFUND Cross-Links: (a) FORWARD - Footer verlinkt liar-entertainer.com + zauberer-liar.de, follow (rel=noopener), sinnvolle Ziele, ABER Anker=nackte Domainnamen (nicht descriptiv). Fix ready, aber build.py-Rebuild noetig -> in V5-Batch buendeln, HEUTE NICHT angewendet (DSGVO-Divergenz). (b) REVERSE (Fremd-Domains = nur VORSCHLAG) - liar-entertainer.com verlinkt 'Pantomime' auf ALTE Subdomain https://pantomime.liar-entertainer.com (301 -> pantomime-la-france.eu); zauberer-liar.de hat GAR KEINEN Link. Schema sameAs enthaelt bereits beide Domains. VORSCHLAG 7 angefuegt. Naechster Lauf: Tag 16 - GSC-datengetrieben schwaechste High-Impression-Seite verbessern (build.py-Rebuild weiter durch V5 gesperrt). VOR jedem Rebuild V5-Freigabe pruefen.",
+  "aktueller_plan_tag": 16,
+  "letzter_lauf": "2026-07-20",
+  "WICHTIG_naechster_lauf": "Tag 16 abgeschlossen (2026-07-20). ANALYSE-Tag, kein Code-Commit (Rebuild bleibt durch V5-DSGVO-Divergenz gesperrt - heute erneut verifiziert: build.py origin/main hat noch externe Google-Fonts). GSC live via Chrome: Fenster 14.06.-18.07., 0 Klicks, 45 Impr. (von 40), Pos 20,3 (von 22). Seiten: der-clown 35 Impr. (dominant), Start 10 (waechst, vorher 1), ueber-mich 2 (neu). Queries: pantomime clown 4, clown pantomime 3, pantomime clowns 1, clown liar 1, clown zauberer liar 1, zauberer liar 1 - Kombi Pantomime+Clown = 8 Impr. TAG-16-BEFUND: Clown-Seite (dominante Seite) hat KEIN 'Pantomime' in Title/Desc, obwohl das Top-Query-Cluster genau diese Kombi sucht. Exakter Fix (Title 49 Z. / Desc 146 Z.) als VORSCHLAG 8 ausgearbeitet = V5-Batch-Item (inhaltlich Auto-Fix-Kategorie, nur technisch durch V5 blockiert). V5-Batch enthaelt jetzt: Reconciliation-Patch + fetchpriority + Footer-Anker (V7.3) + Clown-Title/Desc (V8). Naechster Lauf: Tag 17 Technik-Audit (kein Rebuild). VOR jedem Rebuild V5-Freigabe pruefen.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -148,10 +148,19 @@
       "commits": [
         "SEO: State Tag 15 - Cross-Link-Audit + Vorschlag 7 (reziproke Cross-Domain-Links) + GSC-Snapshot 2026-07-17"
       ]
+    },
+    {
+      "tag": 16,
+      "datum": "2026-07-20",
+      "schritt": "Tag 16: GSC-datengetrieben schwaechste High-Impression-Seite verbessern (Analyse; Fix als V5-Batch-Item, da Rebuild gesperrt).",
+      "ergebnis": "GSC live: 45 Impr. (von 40), 0 Klicks, Pos 20,3 (von 22). der-clown dominiert mit 35 Impr.; Startseite waechst auf 10; ueber-mich erstmals 2. Query-Cluster 'pantomime+clown' (8 Impr., Pos ~11-13) trifft auf Clown-Seite OHNE 'Pantomime' in Title/Desc -> Relevanz-/CTR-Luecke identifiziert. Exakte neue Strings ausgearbeitet und laengen-verifiziert (Title 49 Z. mit 'Clown & Pantomime ... Walk Act', Desc 146 Z. mit 'Pantomime-Clown'). NICHT committet: V5-Sperre erneut verifiziert (build.py origin/main enthaelt weiter externe Google-Fonts -> Rebuild wuerde DSGVO-Fixes revertieren). Fix als Vorschlag 8 in vorschlaege.md dokumentiert und dem V5-Batch zugeordnet. Kein HTML/build.py-Commit, nur State+Vorschlag.",
+      "commits": [
+        "SEO: State Tag 16 + Vorschlag 8 (Clown-Title/Desc 'Pantomime', V5-Batch) + GSC-Snapshot 2026-07-20"
+      ]
     }
   ],
-  "naechster_plan_tag": 16,
-  "naechster_schritt": "Tag 16: GSC-datengetrieben - schwaechste High-Impression-Seite fuer Pantomime/Walk-Act gezielt verbessern. Da build.py-Rebuild weiter durch V5 gesperrt ist: primaer Audit + ggf. Vorschlag; reiner Technik-Auto-Fix nur wenn ohne build.py-Rebuild moeglich (aktuell nicht - HTML nie direkt editieren). VOR jedem Rebuild V5-Freigabe pruefen.",
+  "naechster_plan_tag": 17,
+  "naechster_schritt": "Tag 17: Technik-Audit (alternierend nach Plan) - z.B. Indexierungsstatus/Abdeckung in GSC pruefen + HTML-Stichprobe; build.py-Rebuild weiter durch V5 gesperrt, vor jedem Rebuild V5-Freigabe pruefen.",
   "offene_vorschlaege": [
     {
       "nr": 3,
@@ -188,6 +197,13 @@
       "titel": "Reziproke Cross-Domain-Links haerten: (1) liar-entertainer.com 'Pantomime'-Link direkt auf https://www.pantomime-la-france.eu (statt alte Subdomain via 301) + descriptiv; (2) zauberer-liar.de Cross-Link zur Pantomime-Domain ergaenzen (fehlt ganz); (3) Footer-Anker auf pantomime-la-france.eu von nackter Domain -> descriptiv (im V5-build.py-Batch).",
       "status": "WARTET AUF FREIGABE von Michael (Punkte 1+2 = Fremd-Domains; Punkt 3 = mit V5-Rebuild gekoppelt)",
       "typ": "Cross-Domain-Verlinkung (2 Eigen-Domains) + gekoppelter On-Page-Micro-Fix (V5)"
+    },
+    {
+      "nr": 8,
+      "datum_vorschlag": "2026-07-20",
+      "titel": "Clown-Seite Title/Desc um 'Pantomime' ergaenzen (exakte Strings fertig, Title 49 Z./Desc 146 Z.) - V5-Batch-Item, inhaltlich Auto-Fix-Kategorie",
+      "status": "FERTIG AUSGEARBEITET - blockiert nur durch V5-Reconciliation-Freigabe",
+      "typ": "On-Page Title/Meta-Description via build.py (gekoppelt an V5-Rebuild)"
     }
   ],
   "erledigte_vorschlaege": [
@@ -370,6 +386,65 @@
         }
       ],
       "hinweis": "Live via Chrome. Impr. 25->40, Pos ~22 stabil. Clown+Pantomime-Kombi-Queries jetzt Pos ~11-13. Weiter Clown-/Brand-lastig; keine Walk-Act-/Stadt-/Anlass-Queries."
+    },
+    {
+      "datum": "2026-07-20",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "14.06.-18.07.26",
+      "klicks": 0,
+      "impressionen": 45,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 20.3,
+      "top_pages": [
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "klicks": 0,
+          "impressionen": 35
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "klicks": 0,
+          "impressionen": 10
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/ueber-mich/",
+          "klicks": 0,
+          "impressionen": 2
+        }
+      ],
+      "top_queries": [
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 4
+        },
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clowns",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "hinweis": "Trend: Impressionen 25->40->45, Pos 21,9->22->20,3. Startseite 1->10 Impr. = neues Wachstum. Weiter keine Walk-Act-/Stadt-/Anlass-Queries."
     }
   ],
   "technische_hinweise": {

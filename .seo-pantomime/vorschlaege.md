@@ -182,3 +182,23 @@ Qualitaet vor Menge (5 gute Eintraege > 50 Spam-Verzeichnisse), KEINE Linkkaeufe
 
 ### Leitplanken
 Nur descriptive, wahrheitsgemaesse Anker (kein Keyword-Stuffing). Reziproke Eigen-Domain-Links sind legitim und nuetzlich (kein Link-Schema). Punkt 3 erst NACH V5-Freigabe/Reconciliation, sonst DSGVO-Regression. Erfolgskontrolle: Referral-Traffic in GA4 + Impressionen-Entwicklung fuer Pantomime-/Walk-Act-Queries in GSC.
+
+---
+
+## Vorschlag 8 — 2026-07-20 (Tag 16): Clown-Seite Title/Description um "Pantomime" ergaenzen (V5-Batch-Item)
+
+**Status:** Technisch fertig ausgearbeitet — anwendbar erst NACH V5-Freigabe/Reconciliation (build.py-Rebuild noetig). Inhaltlich ein regulaerer On-Page-Auto-Fix (Title/Desc-Kategorie), KEINE neue Content-Erweiterung.
+**Typ:** On-Page Title/Meta-Description via build.py, gekoppelt an den V5-Rebuild-Batch.
+
+### Befund (GSC live 2026-07-20, Fenster 14.06.-18.07.26)
+45 Impressionen, 0 Klicks, Pos 20,3. /figuren/der-clown/ ist mit **35 von 45 Impressionen** die dominante Seite. Top-Query-Cluster: `pantomime clown` (4), `clown pantomime` (3), `pantomime clowns` (1) — d.h. **8 der 45 Impressionen kombinieren "Pantomime"+"Clown"** (Pos ~11-13, Seite 2). ABER: Title und Meta-Description der Clown-Seite enthalten das Wort "Pantomime" NICHT (nur der Fliesstext, 16x). Fuer die real gesuchte Kombination fehlt das Relevanz-/CTR-Signal genau dort, wo Google es im Snippet zeigt.
+
+### Fix (exakte Strings, Laengen verifiziert)
+- Title alt (53 Z.): `Clown in NRW buchen – LIAR | Kinderfest & Firmenfeier`
+- **Title neu (49 Z.):** `Clown & Pantomime in NRW buchen – LIAR | Walk Act` — Query-Kombi vorn, beide Fokus-Keywords enthalten, wahrheitsgemaess (LIAR ist Pantomime, Clown ist Comedy-Walk-Act ohne Worte).
+- Desc alt (151 Z.): `Clown & Comedy-Walk-Act in NRW buchen: LIAR bringt mit Mimik, Slapstick und Improvisation alle zum Lachen – für Kinderfeste, Stadtfeste & Firmenfeiern.`
+- **Desc neu (146 Z.):** `Pantomime-Clown & Comedy-Walk-Act in NRW buchen: LIAR bringt mit Mimik und Slapstick alle zum Lachen – für Kinderfeste, Stadtfeste & Firmenfeiern.`
+- Anwendung wie Tag 10: meta description + og:description + og:title + Service-Schema-description synchron in build.py aendern (Deckungsgleichheit Schema/Sichtbares wahren), Py3.12-Rebuild, byte-verifizieren.
+
+### Warum jetzt nicht committet
+Jeder build.py-Rebuild revertet weiterhin die DSGVO-Fixes aus 88ca226 (heute erneut verifiziert: build.py auf origin/main enthaelt noch externe Google-Fonts-Links). Fix daher in den V5-Batch aufgenommen (zusammen mit Vorschlag-7-Punkt-3 Footer-Anker + fetchpriority). Nach V5-Freigabe kann der Worker alle Batch-Items in EINEM verifizierten Rebuild ausrollen.
