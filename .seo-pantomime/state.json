@@ -2,7 +2,7 @@
   "plan_zyklus_start": "2026-06-18",
   "aktueller_plan_tag": 17,
   "letzter_lauf": "2026-07-21",
-  "WICHTIG_naechster_lauf": "Tag 17 abgeschlossen (2026-07-21). WICHTIGSTER OFFENER PUNKT: Sitemap-Verarbeitung nachhalten! In GSC->Sitemaps pruefen, ob Status von 'Konnte nicht abgerufen werden' auf Erfolgreich wechselt und 'Erkannte Seiten'=14 (Neueinreichung 21.07. nach Root-Cause-Fund: Sitemap seit 18.06. nie gelesen -> 11 von 14 Seiten inkl. /walk-act/ Google unbekannt). Ebenso nachhalten: 403-Validierung http://pantomime-la-france.eu/ (gestartet 21.07.) und Indexierungsantrag /walk-act/ (21.07., bevorzugte Crawling-Warteschlange); Zahl indexierter Seiten sollte von 3 steigen. FALLS Sitemap-Fetch erneut fehlschlaegt: tieferes Server-/IONOS-Problem (evtl. Googlebot-Block) als PRIO-1-Vorschlag an Michael eskalieren. Performance-Fenster heute unveraendert 14.06.-18.07. (45 Impr., Pos 20,3). V5-Deploy live byte-verifiziert (Clown-Meta neu, 0 Google-Fonts, fetchpriority, Footer-Anker descriptiv). Naechster Lauf: Tag 18 GSC-datengetrieben - Indexierungs-Follow-up ZUERST, dann schwaechste High-Impression-Seite. Offen: V3 (Anlass-Content), V4 (/pantomime-essen/), V6 (Off-Page/Unternehmensprofil), V7.1+7.2 (Fremd-Domain-Links, Michael), Bild-Re-Kompression (592KB/320KB Heroes).",
+  "WICHTIG_naechster_lauf": "GROSSER FREIGABE-ROLLOUT am 2026-07-21 (Nachmittags-Session, Michael anwesend): V3+V4+V5-Rest umgesetzt und gepusht. NEU LIVE: (1) Startseiten-Anlass-Section vertieft mit descriptiven Links (V3 Option A); (2) neue Landingpage /pantomime-essen/ mit 8 belegten Essen-Referenzen, FAQ, Service-Schema areaServed Essen, in sitemap (15 URLs), Reverse-Link von Pantomime-NRW-Staedteliste (V4); (3) 4 Hero-webp re-komprimiert 1,3MB->838KB via GitHub-Web-Upload in Michaels Chrome (Binaer-Push via MCP UNMOEGLICH - speichert nur Text, verifiziert per bintest; Workaround github.com/<repo>/upload/<branch>/<pfad> + file_upload-Tool). V6 freigegeben: Profiltexte in .seo-pantomime/v6-v7-texte.md vorbereitet - Kontoanlage (Google Unternehmensprofil etc.) macht MICHAEL. V7.1+7.2 freigegeben: Link-Snippets ebenfalls in v6-v7-texte.md - Einbau auf liar-entertainer.com/zauberer-liar.de macht MICHAEL. NAECHSTER LAUF (Tag 18): (a) Sitemap-Status pruefen (Resubmit 21.07. - Erkannte Seiten=15?); (b) 403-Validierung + /walk-act/-Indexierung nachhalten; (c) /pantomime-essen/ Indexierung beantragen (war zum Antragszeitpunkt noch nicht live); (d) GSC-Statistiken-Frage Michaels beantwortet: Insights zeigt erst ab ersten KLICKS Daten. GSC-Fenster heute unveraendert (45 Impr., Pos 20,3, bis 18.07.).",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -175,37 +175,34 @@
       "commits": [
         "SEO: State Tag 17 - Indexierungs-Audit: Sitemap neu eingereicht, 403-Validierung gestartet, /walk-act/-Indexierung beantragt"
       ]
+    },
+    {
+      "tag": "17b (Freigabe-Rollout)",
+      "datum": "2026-07-21",
+      "schritt": "MICHAEL GIBT ALLES FREI -> Rollout V3 + V4 + V5-Rest (Bilder); V6/V7-Texte vorbereitet.",
+      "ergebnis": "V3 (Anlass-Content): 4 Startseiten-Teaser zu je 2-3 belegten Saetzen mit descriptiven Links vertieft (Crazy Kellner/Walk Act/Pantomime) - nur Fakten aus INHALTE-VERIFIZIERT.md. V4 (/pantomime-essen/): neue Seite via build.py - Title 51 Z., Desc 153 Z., H1 'Pantomime in Essen buchen', Hero walk-act-fest-essen.webp, 8 belegte Essen-Referenzen als Chips, 3er-FAQ (Schema==sichtbar), Service-Schema areaServed Essen, Breadcrumb; sitemap 15 URLs; Reverse-Link Essen in Pantomime-NRW-Staedteliste. Py3.12-Rebuild (16 Seiten), Verifikation: 0 fonts.googleapis, Consent intakt, datenschutz unveraendert, 0 JSON-LD-Fehler, alle </html> ok. Push via Subagent, 5/5 Blob-SHA-Vergleich PASS (Commit 4c6efe2). V5-REST (Bilder): pantomime-buchen 578->313KB (1280w q70), nussknacker 312->200KB (1440w q72), pantomime-10 220->177KB (q75), 20230623-195739 211->145KB (q75) - Pillow/LANCZOS, via GitHub-Web-Upload committed (4466b2a), da Binaer-Push via MCP unmoeglich (bintest bewiesen: speichert Text statt Bytes; Testdatei wieder geloescht). V6/V7: Profiltexte + Link-Snippets in .seo-pantomime/v6-v7-texte.md und in Michaels Cowork-Ordner abgelegt - Umsetzung auf Fremd-Domains/Konten durch Michael. AUSSERDEM beantwortet: GSC 'Statistiken' leer weil Search Console Insights erst ab ersten Klicks Daten zeigt (live geprueft: 'Keine Klicks fuer diesen Zeitraum').",
+      "commits": [
+        "SEO: V3+V4 nach Freigabe - Anlass-Content Startseite vertieft + neue Landingpage /pantomime-essen/ (verifiziert) (4c6efe2)",
+        "SEO: V5-Rest - 4 Hero-webp re-komprimiert (838KB statt 1,3MB, LCP/CWV) (4466b2a, via Web-Upload)",
+        "SEO: State/Vorschlaege/v6-v7-texte Update"
+      ]
     }
   ],
   "naechster_plan_tag": 18,
-  "naechster_schritt": "Tag 18: Indexierungs-Follow-up ZUERST (Sitemap-Status 'Erfolgreich'? Erkannte Seiten=14? 403-Validierung? /walk-act/ indexiert?), dann GSC-datengetrieben schwaechste High-Impression-Seite. Falls Sitemap-Fetch erneut fehlgeschlagen -> PRIO-1-Eskalation (Server/IONOS) als Vorschlag.",
+  "naechster_schritt": "Tag 18: Indexierungs-Follow-up (Sitemap-Status, 403-Validierung, /walk-act/) + Indexierung fuer /pantomime-essen/ beantragen + GSC-datengetrieben. Danach Wirkung V3/V4 beobachten (Anlass-/Essen-Queries).",
   "offene_vorschlaege": [
-    {
-      "nr": 3,
-      "datum_vorschlag": "2026-07-01",
-      "titel": "Anlass-fokussierter Content ('Pantomime & Walk Act fuer Ihren Anlass') - Option A: Startseite-Section vertiefen; Option B: Anlass-Landingpages spaeter",
-      "status": "WARTET AUF FREIGABE von Michael",
-      "typ": "Content-Erweiterung (sichtbarer Fliesstext + interne Verlinkung)"
-    },
-    {
-      "nr": 4,
-      "datum_vorschlag": "2026-07-02",
-      "titel": "Stadt-Landingpage /pantomime-essen/ ('Pantomime in Essen buchen') - Essen als Pilot wegen dichtestem belegtem Referenz-Cluster (8 Essen-Kunden), einzigartiges lokales E-E-A-T",
-      "status": "WARTET AUF FREIGABE von Michael",
-      "typ": "Neue Unterseite (neuer URL + Schema + interne Verlinkung)"
-    },
     {
       "nr": 6,
       "datum_vorschlag": "2026-07-07",
       "titel": "Backlinks/Verzeichnisse: Google Unternehmensprofil (prio 1) + Kuenstler-/Eventportale + lokale Verzeichnisse, NAP-konsistent - erfordert Konten/Entscheidungen von Michael",
-      "status": "WARTET AUF FREIGABE von Michael",
+      "status": "FREIGEGEBEN 2026-07-21. Profiltexte vorbereitet (.seo-pantomime/v6-v7-texte.md). OFFEN: Kontoanlage/Eintraege durch Michael (Google Unternehmensprofil prio 1).",
       "typ": "Off-Page (externe Eintraege/Profile, keine Code-Aenderung)"
     },
     {
       "nr": 7,
       "datum_vorschlag": "2026-07-17",
       "titel": "Reziproke Cross-Domain-Links haerten: (1) liar-entertainer.com 'Pantomime'-Link direkt auf https://www.pantomime-la-france.eu (statt alte Subdomain via 301) + descriptiv; (2) zauberer-liar.de Cross-Link zur Pantomime-Domain ergaenzen (fehlt ganz); (3) Footer-Anker auf pantomime-la-france.eu von nackter Domain -> descriptiv (im V5-build.py-Batch). [Punkt 3 (Footer-Anker descriptiv) am 2026-07-20 im V5-Batch ERLEDIGT; offen bleiben Punkt 1+2 auf den Fremd-Domains]",
-      "status": "WARTET AUF FREIGABE von Michael (Punkte 1+2 = Fremd-Domains; Punkt 3 = mit V5-Rebuild gekoppelt)",
+      "status": "FREIGEGEBEN 2026-07-21 (Punkte 1+2). Link-Snippets vorbereitet (.seo-pantomime/v6-v7-texte.md). OFFEN: Einbau durch Michael auf liar-entertainer.com + zauberer-liar.de. Punkt 3 seit 2026-07-20 erledigt (V5-Batch).",
       "typ": "Cross-Domain-Verlinkung (2 Eigen-Domains) + gekoppelter On-Page-Micro-Fix (V5)"
     }
   ],
@@ -228,7 +225,7 @@
       "nr": 5,
       "datum_vorschlag": "2026-07-03",
       "titel": "KRITISCH: build.py mit live-HTML reconciliaten (build.py revertet sonst DSGVO-Fixes aus Commit 88ca226) + danach Tag-13-CWV-Fixes: fetchpriority=high fuer Unterseiten-Hero (subimg, 1 Zeile) + Re-Kompression grosser Hero-webp (pantomime-buchen 592KB / nussknacker 320KB)",
-      "status": "ERLEDIGT: von Michael freigegeben (2026-07-20), Reconciliation-Patch angewendet, byte-verifizierter Rebuild (nur beabsichtigte Deltas), gepusht. fetchpriority=high auf 13 Unterseiten-Heroes umgesetzt. OFFEN bleibt nur die Bild-Re-Kompression (pantomime-buchen 592KB / nussknacker 320KB) - separater Schritt, Neu-Encoding noetig.",
+      "status": "ERLEDIGT: von Michael freigegeben (2026-07-20), Reconciliation-Patch angewendet, byte-verifizierter Rebuild (nur beabsichtigte Deltas), gepusht. fetchpriority=high auf 13 Unterseiten-Heroes umgesetzt. OFFEN bleibt nur die Bild-Re-Kompression (pantomime-buchen 592KB / nussknacker 320KB) - separater Schritt, Neu-Encoding noetig. NACHTRAG 2026-07-21: Bild-Re-Kompression ERLEDIGT (4 Heroes 1,3MB->838KB, via GitHub-Web-Upload).",
       "typ": "Build-Infrastruktur (build.py-Reconciliation, blockierend) + Technik-Fix (fetchpriority) + Bild-Kompression (Neu-Encoding)",
       "update_2026_07_07": "Reconciliation im heutigen Lauf unabhaengig durchgefuehrt + byte-verifiziert (Rebuild reproduziert live-HTML; einzige Deltas = korrekte Asset-Hash-Bumps 91d09e05->fc99917e / 41872035->45732809, da 88ca226 style.css/app.js ohne Hash-Update aenderte, + sitemap-lastmod). Fertiger Patch: .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch (lokal im Cowork-Ordner). Wartet weiter auf Freigabe.",
       "datum_umgesetzt": "2026-07-20"
@@ -240,6 +237,22 @@
       "status": "ERLEDIGT: im V5-Batch umgesetzt (Title 49 Z. / Desc 146 Z., og+Service-Schema synchron), byte-verifiziert, gepusht.",
       "typ": "On-Page Title/Meta-Description via build.py (gekoppelt an V5-Rebuild)",
       "datum_umgesetzt": "2026-07-20"
+    },
+    {
+      "nr": 3,
+      "datum_vorschlag": "2026-07-01",
+      "titel": "Anlass-fokussierter Content ('Pantomime & Walk Act fuer Ihren Anlass') - Option A: Startseite-Section vertiefen; Option B: Anlass-Landingpages spaeter",
+      "status": "ERLEDIGT: freigegeben + umgesetzt 2026-07-21 (Freigabe-Rollout), byte-verifiziert, gepusht.",
+      "typ": "Content-Erweiterung (sichtbarer Fliesstext + interne Verlinkung)",
+      "datum_umgesetzt": "2026-07-21"
+    },
+    {
+      "nr": 4,
+      "datum_vorschlag": "2026-07-02",
+      "titel": "Stadt-Landingpage /pantomime-essen/ ('Pantomime in Essen buchen') - Essen als Pilot wegen dichtestem belegtem Referenz-Cluster (8 Essen-Kunden), einzigartiges lokales E-E-A-T",
+      "status": "ERLEDIGT: freigegeben + umgesetzt 2026-07-21 (Freigabe-Rollout), byte-verifiziert, gepusht.",
+      "typ": "Neue Unterseite (neuer URL + Schema + interne Verlinkung)",
+      "datum_umgesetzt": "2026-07-21"
     }
   ],
   "gsc_snapshots": [
@@ -530,7 +543,7 @@
     "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de, seit V5 (2026-07-20) mit descriptiven Ankern.",
     "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben.",
     "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner GEPRUEFT - verlinken bereits via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen.",
-    "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, 404.html bewusst nicht in sitemap. UPDATE Tag 17 (2026-07-21): lastmod=2026-07-20 (V5-Rebuild), live verifiziert; robots.txt sauber (Encoding-Artefakt nur im Kommentar, irrelevant).",
+    "sitemap_robots_stand": "2026-07-21: 15 URLs (neu /pantomime-essen/ mit prio 0.8), lastmod=2026-07-21, 404.html bewusst nicht in sitemap. robots.txt sauber.",
     "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Seit V5-Batch (2026-07-20): style.css?v=fc99917e, app.js?v=45732809 (Hash-Bump war faelliger Cache-Bust aus 88ca226). Bei style.css-Aenderung alle HTML mitcommitten.",
     "fokus_keywords": [
       "Pantomime",
@@ -543,9 +556,11 @@
     "content_luecken_stand": "Tag 11: Offene Luecke = anlassbezogener Content (Startseite-Anlass-Teaser zu duenn) -> Vorschlag 3 (Freigabe offen). Tag 12: Stadt-Landingpage Essen = Vorschlag 4 (Freigabe offen). Essen datengetrieben gewaehlt (8 belegte Essen-Referenzen). Vorschlag 3 (Anlass-Achse) + Vorschlag 4 (Stadt-Achse) orthogonal - bei Doppelfreigabe V3 Option A zuerst.",
     "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen (+ Bild-Alt Walk-Act-Fest-Essen.jpg). Dichtestes Stadt-Cluster -> Basis fuer Vorschlag 4.",
     "buildpy_reconciliation_stand": "ERLEDIGT 2026-07-20 (V5-Batch): build.py reconciled mit live-HTML (self-hosted fonts.css, Consent-Checkbox, aktueller Datenschutz-Text, Stand hart 2026-07-02). REBUILD-SPERRE AUFGEHOBEN - normale Auto-Fix-Regeln gelten (build.py aendern -> Py3.12-Rebuild -> byte-verifizieren -> push). Historie in erledigte_vorschlaege Nr. 5.",
-    "cwv_stand": "Tag 13 + V5: fetchpriority=high jetzt auf Startseite UND 13 Unterseiten-Heroes (seit 2026-07-20). font-display:swap ok. OFFEN: Re-Kompression grosser Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, pantomime-10-scaled/20230623-195739 ~220KB (Neu-Encoding, Freigabe noetig).",
+    "cwv_stand": "Tag 13 + V5 + 2026-07-21: fetchpriority=high auf Startseite + 13 Unterseiten-Heroes. Bild-Re-Kompression ERLEDIGT: pantomime-buchen 313KB/1280w, nussknacker 200KB/1440w, pantomime-10 177KB, 20230623-195739 145KB. ACHTUNG: Original-Aufloesungen reduziert (1600->1280/1440w) - bei kuenftigem Bildtausch Originale von Michael anfordern.",
     "lokaler_mount_hinweis": "STAND 2026-07-07 (unveraendert 21.07.): Cowork-Mount (C:\\Users\\ben_m\\Claude\\projects\\Homepage Pantomime\\Pantomime) haengt auf Checkout 88ca226 (aelter als remote main). .git/HEAD.lock + .git/index.lock vom 02.07. sind nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Workarounds: GIT_INDEX_FILE=/tmp/... fuer read-only-Index-Ops; Dateien einzeln via 'git show HEAD:pfad > pfad' restaurieren; Schreiben in Repo NUR via GitHub-MCP push_files. Write/Edit-Tool im Mount kaputt fuer Groessenaenderung (Padding/Truncation) -> bash cat>file nutzen. State IMMER von remote main lesen, nie vom lokalen Mount.",
     "cross_link_stand": "Tag 15 (2026-07-17): FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener); seit V5 (2026-07-20) mit descriptiven Ankern (live verifiziert 21.07.). REVERSE: liar-entertainer.com -> Anker 'Pantomime' auf https://pantomime.liar-entertainer.com (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 Punkt 1+2 (Fremd-Domains, Freigabe noetig). Schema sameAs listet beide Domains bereits.",
-    "indexierung_stand": "Tag 17 (2026-07-21): Nur 3/14 Seiten indexiert (/, der-clown, ueber-mich; gecrawlt 20.-26.06.). ROOT CAUSE: sitemap.xml in GSC seit 18.06. 'Konnte nicht abgerufen werden' (nie gelesen) -> 11 Seiten inkl. /walk-act/ Google unbekannt. Live-Sitemap einwandfrei (14 URLs, lastmod 2026-07-20). 403 auf http://pantomime-la-france.eu/ (15.06., Migrationsphase); http->https/www-301 funktioniert heute. MASSNAHMEN 21.07.: Sitemap-Resubmit, 403-Validierung gestartet, /walk-act/-Indexierung beantragt. FOLLOW-UP Tag 18: Sitemap-Status + Erkannte Seiten + Indexierungszahl pruefen; bei erneutem Sitemap-Fehlschlag PRIO-1-Eskalation (Server/IONOS blockt evtl. Googlebot)."
+    "indexierung_stand": "Tag 17 (2026-07-21): Nur 3/14 Seiten indexiert (/, der-clown, ueber-mich; gecrawlt 20.-26.06.). ROOT CAUSE: sitemap.xml in GSC seit 18.06. 'Konnte nicht abgerufen werden' (nie gelesen) -> 11 Seiten inkl. /walk-act/ Google unbekannt. Live-Sitemap einwandfrei (14 URLs, lastmod 2026-07-20). 403 auf http://pantomime-la-france.eu/ (15.06., Migrationsphase); http->https/www-301 funktioniert heute. MASSNAHMEN 21.07.: Sitemap-Resubmit, 403-Validierung gestartet, /walk-act/-Indexierung beantragt. FOLLOW-UP Tag 18: Sitemap-Status + Erkannte Seiten + Indexierungszahl pruefen; bei erneutem Sitemap-Fehlschlag PRIO-1-Eskalation (Server/IONOS blockt evtl. Googlebot).",
+    "binaer_push_hinweis": "GitHub-MCP (push_files/create_or_update_file) speichert Content NUR als Text - Binaerdateien (Bilder) UNMOEGLICH (verifiziert 2026-07-21 per bintest: base64-String wurde als Literal-Text gespeichert). Workaround: GitHub-Web-Upload in Michaels Chrome - Dateien in Cowork-Mount kopieren, github.com/ben69mikail/Pantomime/upload/main/<pfad> oeffnen, find 'file input' + file_upload-Tool, Commit-Message-Feld per find ref klicken (NICHT Koordinaten - Suchoverlay-Falle!), Commit direkt zu main.",
+    "stadtseiten_stand": "/pantomime-essen/ seit 2026-07-21 live (Pilot). 4-6 Wochen GSC-Wirkung messen ('Pantomime Essen'-Queries), erst danach ggf. weitere Staedte - NUR mit eigener belegter Referenzbasis (Thin-Page-Guardrail). Reverse-Link von /figuren/der-pantomime-in-nrw/ (Staedteliste) vorhanden."
   }
 }

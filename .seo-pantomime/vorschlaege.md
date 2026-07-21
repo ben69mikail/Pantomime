@@ -210,3 +210,14 @@ Jeder build.py-Rebuild revertet weiterhin die DSGVO-Fixes aus 88ca226 (heute ern
 Michael hat V5 freigegeben. Umgesetzt im heutigen Batch (byte-verifiziert, 1 Commit): build.py-Reconciliation (Patch 2026-07-07), fetchpriority=high fuer 13 Unterseiten-Heroes (Tag 13), descriptive Footer-Anker auf allen 15 Seiten (Vorschlag 7 Punkt 3), Clown-Title/Desc mit Pantomime-Keyword (Vorschlag 8). Die Rebuild-Sperre ist aufgehoben.
 
 **Weiter offen:** Vorschlag 3 (Anlass-Content), Vorschlag 4 (/pantomime-essen/), Vorschlag 6 (Off-Page), Vorschlag 7 Punkte 1+2 (Links auf liar-entertainer.com/zauberer-liar.de - liegt bei Michael), V5-Rest: Re-Kompression der grossen Hero-Bilder (pantomime-buchen 592KB, nussknacker 320KB).
+
+
+---
+
+## FREIGABE-ROLLOUT — 2026-07-21 (Michael: „ich gebe alles frei")
+
+- **Vorschlag 3 (Anlass-Content, Option A): ERLEDIGT.** Startseiten-Anlass-Teaser (Hochzeit/Firmenfeier/Messe/Stadtfest) auf je 2-3 belegte Saetze mit descriptiven internen Links vertieft. Commit 4c6efe2.
+- **Vorschlag 4 (/pantomime-essen/): ERLEDIGT.** Neue Landingpage live: 8 belegte Essen-Referenzen, FAQ (Schema==sichtbar), Service-Schema areaServed Essen, sitemap (15 URLs), Reverse-Link aus Pantomime-NRW-Staedteliste. Commit 4c6efe2. Pilot — Wirkung 4-6 Wochen in GSC messen, erst dann weitere Staedte.
+- **Vorschlag 5 Rest (Bild-Re-Kompression): ERLEDIGT.** 4 Hero-webp 1,3MB -> 838KB (Pillow, moderate Resize 1280/1440w). Commit 4466b2a (GitHub-Web-Upload; Binaer-Push via MCP nicht moeglich).
+- **Vorschlag 6 (Off-Page): FREIGEGEBEN — naechster Schritt bei Michael.** Fertige Profiltexte (NAP-konsistent, nur belegte Fakten): siehe `.seo-pantomime/v6-v7-texte.md`. Prio 1: Google Unternehmensprofil anlegen.
+- **Vorschlag 7.1+7.2 (Fremd-Domain-Links): FREIGEGEBEN — naechster Schritt bei Michael.** Fertige Copy-Paste-Link-Snippets fuer liar-entertainer.com und zauberer-liar.de: siehe `.seo-pantomime/v6-v7-texte.md`.
