@@ -487,10 +487,10 @@ home_body = f"""<main>
 <section class="section section--paper2" id="anlaesse"><div class="container">
   <div class="section-head center reveal" style="text-align:center;margin-inline:auto"><p class="kicker" style="justify-content:center">Für Ihren Anlass</p><h2>Wo LIAR begeistert</h2></div>
   """ + WARUM_GRID([
-      ("Hochzeit", "Stilvolle Überraschung für den schönsten Tag."),
-      ("Firmenfeier", "Ein Highlight, das im Gedächtnis bleibt."),
-      ("Messe &amp; Event", "Walk Act, der Aufmerksamkeit an den Stand zieht."),
-      ("Stadtfest", "Straßentheater für Publikum jeden Alters."),
+      ("Hochzeit", 'Stilvolle Überraschung für den schönsten Tag: Als <a href="/figuren/der-crazy-kellner/">Crazy Kellner</a> unterhalte ich Ihre Gäste direkt am Tisch und lockere die Stimmung — kombinierbar mit Magie und Pantomime.'),
+      ("Firmenfeier", 'Ein Highlight, das im Gedächtnis bleibt: Pantomime und <a href="/walk-act/">Walk Act</a> brauchen weder Bühne noch Technik — platzsparend, flexibel und schnell vorbereitet.'),
+      ("Messe &amp; Event", 'Als <a href="/walk-act/">Walk Act</a> zieht der Pantomime die Aufmerksamkeit an Ihren Stand — auf Messen, in Autohäusern und bei Geschäftseröffnungen, ganz ohne Sprachbarrieren.'),
+      ("Stadtfest", 'Straßentheater für Publikum jeden Alters: wortlose Situationskomik, die jede Sprache versteht — als Hauptattraktion oder <a href="/figuren/der-pantomime-in-nrw/">Pantomime</a> auf Stadtfesten in ganz NRW.'),
   ]) + f"""
   <div class="chips reveal" style="margin-top:2rem;justify-content:center">{"".join(f'<span class="chip">{c}</span>' for c in CITIES)}</div>
 </div></section>
@@ -541,6 +541,9 @@ HEROIMG = {
 }
 for slug in FIG_ORDER:
     f = FIGUREN[slug]
+    cities_txt = ", ".join(CITIES[:7])
+    if slug == "der-pantomime-in-nrw":
+        cities_txt = cities_txt.replace("Essen", '<a href="/pantomime-essen/">Essen</a>')
     body = f"""<main>
 <section class="subhero subhero--img">
   {subimg(*HEROIMG[slug])}
@@ -569,7 +572,7 @@ for slug in FIG_ORDER:
     <div class="split-media wide reveal">{img(f['img2'], f['img2_alt'])}</div>
     <div class="reveal">
       <h2>Buchbar in ganz NRW</h2>
-      <p class="prose" style="margin-top:1rem">{f['name']} ist u. a. in {", ".join(CITIES[:7])} und im gesamten Ruhrgebiet buchbar. Erzählen Sie mir von Ihrem Anlass — ich entwickle das passende Programm.</p>
+      <p class="prose" style="margin-top:1rem">{f['name']} ist u. a. in {cities_txt} und im gesamten Ruhrgebiet buchbar. Erzählen Sie mir von Ihrem Anlass — ich entwickle das passende Programm.</p>
       <a href="/kontakt/" class="btn btn-primary" style="margin-top:1.5rem">Jetzt anfragen</a>
     </div>
   </div>
@@ -670,6 +673,53 @@ built.append(page("/ueber-mich/", "Über mich – LIAR | Künstler & Pantomime a
                    "jobTitle": "Pantomime-Künstler", "worksFor": {"@id": DOMAIN + "/#liar"},
                    "address": {"@type": "PostalAddress", "addressLocality": CITY, "addressRegion": "NRW", "addressCountry": "DE"}}],
      active="/ueber-mich/"))
+
+# ---- Pantomime in Essen (Stadt-Landingpage, Pilot — Vorschlag 4, freigegeben 2026-07-21)
+essen_faq = [("Tritt LIAR als Pantomime auch in Essen auf?", "Ja. Essen gehört zum Kerngebiet: Zu den Referenzen zählen u. a. Messe Essen, Stadt Essen, Sparkasse Essen und AWO Essen."),
+             ("Braucht der Auftritt in Essen eine Bühne oder Technik?", "Nein. Pantomime und Walk Act kommen ohne Bühne und ohne Ton- oder Lichttechnik aus — platzsparend und schnell vorbereitet."),
+             ("Für welche Anlässe in Essen ist der Pantomime buchbar?", "Für Messen, Stadtfeste, Firmenevents und Geschäftseröffnungen — als Hauptattraktion oder Walking Act, für Publikum jeden Alters.")]
+ESSEN_REFS = ["Messe Essen", "Stadt Essen", "Sparkasse Essen", "AWO Essen",
+              "VKJ Essen", "Kinderschutzbund Essen", "St-Gobain Essen", "Feldschlösschen Essen"]
+essen_body = f"""<main>
+<section class="subhero subhero--img">
+  {subimg('walk-act-fest-essen.webp', '50% 30%')}
+  <div class="container">
+    <span class="kicker">Pantomime &amp; Walk Act in Essen</span>
+    <h1>Pantomime in Essen buchen</h1>
+    <p class="intro">Wortlose Kunst aus Körpersprache, Mimik und Gestik — für Messen, Stadtfeste, Firmenevents und Geschäftseröffnungen in Essen.</p>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="split">
+    <div class="reveal">
+      <p class="lead">Als Pantomime erzähle ich Geschichten ganz ohne Worte — universell verständlich, über alle Sprachbarrieren hinweg. Das macht die Kunstform ideal für internationales Messepublikum und gemischte Gäste.</p>
+      <div class="prose" style="margin-top:1.6rem">
+        <p>Der Auftritt braucht keine Bühne und keine Technik: Als <a href="/walk-act/">Walk Act</a> mische ich mich unter die Gäste oder trete als Hauptattraktion auf — platzsparend, schnell vorbereitet und für alle Altersgruppen geeignet. Mehr über die Figur erfahren Sie auf der Seite <a href="/figuren/der-pantomime-in-nrw/">Der Pantomime in NRW</a>.</p>
+        <p>Ob humorvoll, poetisch oder interaktiv: Ich entwickle individuelle Darbietungen, abgestimmt auf Ihre Veranstaltung in Essen und Umgebung.</p>
+      </div>
+    </div>
+    <div class="split-media reveal">{img('walk-act-fest-essen.webp', 'LIAR als Walk Act bei einem Fest in Essen')}</div>
+  </div>
+</section>
+
+<section class="section section--paper2"><div class="container">
+  <div class="section-head reveal"><span class="kicker">Vor Ort bewährt</span><h2>Referenzen aus Essen</h2>
+  <p>Diese Auftraggeber aus Essen haben LIAR bereits gebucht:</p></div>
+  <div class="chips reveal">{"".join(f'<span class="chip">{r}</span>' for r in ESSEN_REFS)}</div>
+</div></section>
+{faq_block(essen_faq, "Häufige Fragen – Pantomime in Essen")}
+</main>
+""" + cta_band()
+essen_schema = [breadcrumb([("Start", "/"), ("Pantomime in Essen", "/pantomime-essen/")]),
+                faq_schema(essen_faq),
+                {"@context": "https://schema.org", "@type": "Service",
+                 "serviceType": "Pantomime & Walk Act", "provider": {"@id": DOMAIN + "/#liar"},
+                 "areaServed": "Essen",
+                 "description": "Pantomime in Essen buchen: LIAR begeistert wortlos auf Messen, Stadtfesten und Firmenevents – als Hauptattraktion oder Walk Act."}]
+built.append(page("/pantomime-essen/", "Pantomime in Essen buchen – LIAR | Walk Act & Messe",
+     "Pantomime in Essen buchen: LIAR begeistert wortlos auf Messen, Stadtfesten und Firmenevents – Referenzen u. a. Messe Essen, Stadt Essen, Sparkasse Essen.",
+     essen_body, essen_schema, active="/pantomime-essen/"))
 
 # ---- Referenzen
 REFS = ["OPEL", "IKEA", "Metro", "Champions League UEFA", "Messe Essen", "Extraschicht",
@@ -864,11 +914,11 @@ for p in built:
 
 # ---------------------------------------------------------------- sitemap + robots
 PAGES_FOR_SITEMAP = ["/", "/figuren/"] + [f"/figuren/{s}/" for s in FIG_ORDER] + \
-    ["/walk-act/", "/ueber-mich/", "/referenzen/", "/kontakt/", "/impressum/", "/datenschutz/"]
+    ["/walk-act/", "/pantomime-essen/", "/ueber-mich/", "/referenzen/", "/kontakt/", "/impressum/", "/datenschutz/"]
 urls = "\n".join(
     f"  <url><loc>{DOMAIN}{p}</loc><lastmod>{TODAY}</lastmod>"
     f"<changefreq>{'weekly' if p=='/' else 'monthly'}</changefreq>"
-    f"<priority>{'1.0' if p=='/' else ('0.8' if p.startswith('/figuren/') or p=='/walk-act/' else '0.6')}</priority></url>"
+    f"<priority>{'1.0' if p=='/' else ('0.8' if p.startswith('/figuren/') or p=='/walk-act/' or p=='/pantomime-essen/' else '0.6')}</priority></url>"
     for p in PAGES_FOR_SITEMAP)
 (ROOT / "sitemap.xml").write_text(
     '<?xml version="1.0" encoding="UTF-8"?>\n'
