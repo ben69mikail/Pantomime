@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 16,
-  "letzter_lauf": "2026-07-20",
-  "WICHTIG_naechster_lauf": "V5-BATCH AM 2026-07-20 NACH FREIGABE AUSGEROLLT - build.py ist jetzt mit live-HTML reconciled, die REBUILD-SPERRE IST AUFGEHOBEN. Normale Auto-Fix-Regeln gelten wieder (build.py aendern -> Py3.12-Rebuild -> byte-verifizieren -> committen). Naechster Lauf: Tag 17 Technik-Audit (z.B. GSC-Indexierungsstatus + HTML-Stichprobe) ODER GSC-getrieben. Beobachten: Wirkung Clown-Title/Desc auf CTR/Position des pantomime+clown-Clusters (Pos ~11-13); Startseiten-Impressionen (1->10) weiter verfolgen. Offen: V3 (Anlass-Content), V4 (/pantomime-essen/), V6 (Off-Page/Unternehmensprofil), V7.1+7.2 (Links auf Fremd-Domains, Michael), V5-Rest (Bild-Re-Kompression 592KB/320KB Heroes).",
+  "aktueller_plan_tag": 17,
+  "letzter_lauf": "2026-07-21",
+  "WICHTIG_naechster_lauf": "Tag 17 abgeschlossen (2026-07-21). WICHTIGSTER OFFENER PUNKT: Sitemap-Verarbeitung nachhalten! In GSC->Sitemaps pruefen, ob Status von 'Konnte nicht abgerufen werden' auf Erfolgreich wechselt und 'Erkannte Seiten'=14 (Neueinreichung 21.07. nach Root-Cause-Fund: Sitemap seit 18.06. nie gelesen -> 11 von 14 Seiten inkl. /walk-act/ Google unbekannt). Ebenso nachhalten: 403-Validierung http://pantomime-la-france.eu/ (gestartet 21.07.) und Indexierungsantrag /walk-act/ (21.07., bevorzugte Crawling-Warteschlange); Zahl indexierter Seiten sollte von 3 steigen. FALLS Sitemap-Fetch erneut fehlschlaegt: tieferes Server-/IONOS-Problem (evtl. Googlebot-Block) als PRIO-1-Vorschlag an Michael eskalieren. Performance-Fenster heute unveraendert 14.06.-18.07. (45 Impr., Pos 20,3). V5-Deploy live byte-verifiziert (Clown-Meta neu, 0 Google-Fonts, fetchpriority, Footer-Anker descriptiv). Naechster Lauf: Tag 18 GSC-datengetrieben - Indexierungs-Follow-up ZUERST, dann schwaechste High-Impression-Seite. Offen: V3 (Anlass-Content), V4 (/pantomime-essen/), V6 (Off-Page/Unternehmensprofil), V7.1+7.2 (Fremd-Domain-Links, Michael), Bild-Re-Kompression (592KB/320KB Heroes).",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -166,10 +166,19 @@
       "commits": [
         "SEO: V5-Batch nach Freigabe - build.py-Reconciliation + fetchpriority + Footer-Anker + Clown-Title/Desc (verifiziert)"
       ]
+    },
+    {
+      "tag": 17,
+      "datum": "2026-07-21",
+      "schritt": "Tag 17: Technik-Audit - GSC-Indexierungsstatus/Abdeckung + Live-HTML-Stichprobe (V5-Deploy-Verifikation).",
+      "ergebnis": "KERNBEFUND INDEXIERUNG: Nur 3 von 14 Seiten indexiert (/, /figuren/der-clown/, /ueber-mich/; zuletzt gecrawlt 20.-26.06.). ROOT CAUSE GEFUNDEN: sitemap.xml in GSC seit Einreichung 18.06. 'Konnte nicht abgerufen werden' (nie gelesen, 0 erkannte Seiten) -> 11 Seiten inkl. /walk-act/ und /figuren/der-pantomime-in-nrw/ sind Google schlicht NICHT BEKANNT (URL-Pruefung /walk-act/: 'URL ist Google nicht bekannt', keine verweisende Sitemap, nie gecrawlt). Zweitbefund: http://pantomime-la-france.eu/ (HTTP ohne www) 'Wegen Zugriffsverbot (403) blockiert' (zuletzt gecrawlt 15.06. = Migrationsphase). LIVE-GEGENPROBE: sitemap.xml heute einwandfrei abrufbar (14 URLs, lastmod 2026-07-20 = V5-Deploy live bestaetigt), robots.txt sauber inkl. Sitemap-Verweis, http->https/www-301 funktioniert im Browser -> beide GSC-Fehler sind veraltete Zustaende aus der Migrationsphase. DURCHGEFUEHRTE GSC-MASSNAHMEN (idempotent, nicht-destruktiv, im Bericht dokumentiert): (1) Sitemap neu eingereicht -> Bestaetigung 'Sitemap wurde eingereicht'; (2) 403-Fehlerbehebungs-Validierung gestartet (Startdatum 21.07.26); (3) Indexierung /walk-act/ beantragt -> 'Indexierung wurde beantragt' (bevorzugte Crawling-Warteschlange). HTML-STICHPROBE live Clown-Seite: Title 49 Z. 'Clown & Pantomime in NRW buchen - LIAR | Walk Act', Desc 146 Z. 'Pantomime-Clown...', og synchron, 0 fonts.googleapis, fonts.css self-hosted, fetchpriority=high, Footer-Anker descriptiv, </html> ok, 3/3 JSON-LD valide -> V5-Batch korrekt deployed. KEIN Code-Commit noetig (Site technisch sauber, Problem lag in GSC-Verarbeitung). Micro-Notiz: robots.txt-Kommentar mit Encoding-Artefakt 'ausdrÃ¼cklich' (nur Kommentar, parsing-/SEO-irrelevant, kein Fix-Bedarf).",
+      "commits": [
+        "SEO: State Tag 17 - Indexierungs-Audit: Sitemap neu eingereicht, 403-Validierung gestartet, /walk-act/-Indexierung beantragt"
+      ]
     }
   ],
-  "naechster_plan_tag": 17,
-  "naechster_schritt": "Tag 17: Technik-Audit - GSC-Indexierungsstatus/Abdeckung pruefen + HTML-Stichprobe; danach GSC-datengetrieben weiter. Rebuild wieder erlaubt (V5 erledigt).",
+  "naechster_plan_tag": 18,
+  "naechster_schritt": "Tag 18: Indexierungs-Follow-up ZUERST (Sitemap-Status 'Erfolgreich'? Erkannte Seiten=14? 403-Validierung? /walk-act/ indexiert?), dann GSC-datengetrieben schwaechste High-Impression-Seite. Falls Sitemap-Fetch erneut fehlgeschlagen -> PRIO-1-Eskalation (Server/IONOS) als Vorschlag.",
   "offene_vorschlaege": [
     {
       "nr": 3,
@@ -456,6 +465,59 @@
         }
       ],
       "hinweis": "Trend: Impressionen 25->40->45, Pos 21,9->22->20,3. Startseite 1->10 Impr. = neues Wachstum. Weiter keine Walk-Act-/Stadt-/Anlass-Queries."
+    },
+    {
+      "datum": "2026-07-21",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "14.06.-18.07.26",
+      "klicks": 0,
+      "impressionen": 45,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 20.3,
+      "top_queries": [
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 4
+        },
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clowns",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "indexierung": {
+        "indexierte_seiten": 3,
+        "indexierte_urls": [
+          "https://www.pantomime-la-france.eu/figuren/der-clown/ (gecrawlt 26.06.)",
+          "https://www.pantomime-la-france.eu/ueber-mich/ (gecrawlt 22.06.)",
+          "https://www.pantomime-la-france.eu/ (gecrawlt 20.06.)"
+        ],
+        "nicht_indexiert": "http://pantomime-la-france.eu/ - 403 (gecrawlt 15.06.); Validierung gestartet 21.07.",
+        "sitemap_status": "'Konnte nicht abgerufen werden' seit 18.06., 0 erkannte Seiten -> am 21.07. NEU EINGEREICHT ('Sitemap wurde eingereicht')",
+        "massnahmen_21_07": "Sitemap-Resubmit + 403-Validierung gestartet + Indexierung /walk-act/ beantragt"
+      },
+      "hinweis": "Performance-Fenster unveraendert ggue. 20.07. (noch bis 18.07., 45 Impr., Pos 20,3). Fokus heute: Indexierungs-Audit - nur 3/14 Seiten im Index, Root Cause = nie gelesene Sitemap; Gegenmassnahmen ausgefuehrt."
     }
   ],
   "technische_hinweise": {
@@ -464,12 +526,12 @@
     "gateguard_hinweis": "Local-agent Write/Edit/Bash via GateGuard blockiert. Workaround: Dateien im VM via bash schreiben + ueber GitHub-MCP pushen; GSC via Chrome-MCP. Grosse Dateien (build.py ~60KB) -> Push via Subagent.",
     "github_mcp_sha_hinweis": "create_or_update_file braucht VOLLE 40-Zeichen-blob-sha. push_files braucht KEINE sha.",
     "deploy": "GitHub Action rsynct committete HTML zu IONOS. build.py NICHT im CI -> generierte HTML immer mitcommitten.",
-    "datenschutz_stand": "datenschutz/index.html hat auto 'Stand: {TODAY}'. Wird bei jedem Rebuild aktualisiert.",
-    "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de (Tag 15).",
+    "datenschutz_stand": "datenschutz/index.html hat seit V5-Reconciliation hart 'Stand: 2026-07-02' (kein Auto-Bump; bei echten Datenschutz-Aenderungen manuell bumpen).",
+    "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de, seit V5 (2026-07-20) mit descriptiven Ankern.",
     "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben.",
     "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner GEPRUEFT - verlinken bereits via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen.",
-    "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, lastmod=2026-06-29 (echter Content-Change Clown-Desc). Tag 11+12: KEIN Rebuild (Proposal-Tage), lastmod bleibt 2026-06-29. build.py setzt lastmod=TODAY. 404.html bewusst nicht in sitemap.",
-    "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Aktuell 91d09e05. Bei style.css-Aenderung alle HTML mitcommitten.",
+    "sitemap_robots_stand": "Tag 10 (2026-06-29): 14 URLs, 404.html bewusst nicht in sitemap. UPDATE Tag 17 (2026-07-21): lastmod=2026-07-20 (V5-Rebuild), live verifiziert; robots.txt sauber (Encoding-Artefakt nur im Kommentar, irrelevant).",
+    "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Seit V5-Batch (2026-07-20): style.css?v=fc99917e, app.js?v=45732809 (Hash-Bump war faelliger Cache-Bust aus 88ca226). Bei style.css-Aenderung alle HTML mitcommitten.",
     "fokus_keywords": [
       "Pantomime",
       "Walk Act"
@@ -477,12 +539,13 @@
     "faq_stand": "faq_block(qa,title) rendert details/summary/faq-a. Selbe Q/A-Liste an faq_schema UND faq_block -> Deckungsgleichheit garantiert.",
     "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt.",
     "uv_cache_hinweis": "Frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es.",
-    "meta_desc_stand": "Tag 10: Clown-Desc fuehrt mit 'Clown & Comedy-Walk-Act' (Fokus-Keyword Walk Act eingewoben, 151 Z.). Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei).",
+    "meta_desc_stand": "Seit V5 (2026-07-20): Clown Title 49 Z. 'Clown & Pantomime in NRW buchen - LIAR | Walk Act', Desc 146 Z. mit 'Pantomime-Clown & Comedy-Walk-Act'. Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei).",
     "content_luecken_stand": "Tag 11: Offene Luecke = anlassbezogener Content (Startseite-Anlass-Teaser zu duenn) -> Vorschlag 3 (Freigabe offen). Tag 12: Stadt-Landingpage Essen = Vorschlag 4 (Freigabe offen). Essen datengetrieben gewaehlt (8 belegte Essen-Referenzen). Vorschlag 3 (Anlass-Achse) + Vorschlag 4 (Stadt-Achse) orthogonal - bei Doppelfreigabe V3 Option A zuerst.",
     "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen (+ Bild-Alt Walk-Act-Fest-Essen.jpg). Dichtestes Stadt-Cluster -> Basis fuer Vorschlag 4.",
-    "KRITISCH_build_py_divergenz": "STAND 2026-07-03 (Tag 13): build.py generiert NICHT die live-committete HTML. Commit 88ca226 hat DSGVO-Fixes nur in HTML geschrieben (self-hosted Fonts /assets/fonts.css, Kontakt-Consent-Checkbox, aktualisierter Datenschutz, style.css?v=91d09e05, app.js?v=41872035). build.py erzeugt weiterhin ALT: externe Google-Fonts (fonts.googleapis.com preconnect+stylesheet), form-note statt Consent-Checkbox, alten Datenschutz-Text, style.css?v=fc99917e, app.js?v=45732809. => NICHT rebuilden+pushen bis build.py reconciliaten ist (Vorschlag 5), sonst DSGVO-/Consent-Regression live. Betrifft ALLE kuenftigen build.py-basierten Schritte. UPDATE 2026-07-07: Reconciliation-Patch fertig+verifiziert, lokal unter .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch. Nach Freigabe (V5) anwenden.",
-    "cwv_stand": "Tag 13: LCP=Hero-bg-Bild. Startseite (build.py Zeile ~412) hat fetchpriority=high; subimg() (Zeile ~180) fuer 13 Unterseiten nur loading=eager. Ready-Fix: 'loading=\"eager\"' -> 'loading=\"eager\" fetchpriority=\"high\"' in subimg(). Anwenden ERST nach build.py-Reconciliation. font-display:swap ok. Grosse Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, pantomime-10-scaled/20230623-195739 ~220KB -> Re-Kompression-Kandidaten.",
-    "lokaler_mount_hinweis": "STAND 2026-07-07: Cowork-Mount (C:\\Users\\ben_m\\Claude\\projects\\Homepage Pantomime\\Pantomime) haengt auf Checkout 88ca226 (aelter als remote main). .git/HEAD.lock + .git/index.lock vom 02.07. sind nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Workarounds: GIT_INDEX_FILE=/tmp/... fuer read-only-Index-Ops; Dateien einzeln via 'git show HEAD:pfad > pfad' restaurieren; Schreiben in Repo NUR via GitHub-MCP push_files. Write/Edit-Tool im Mount kaputt fuer Groessenaenderung (Padding/Truncation) -> bash cat>file nutzen. State IMMER von remote main lesen, nie vom lokalen Mount.",
-    "cross_link_stand": "Tag 15 (2026-07-17): FORWARD-Footer (build.py FOOTER, Z.202-203) verlinkt beide Eigen-Domains, follow (rel=noopener), nackte-Domain-Anker (Fix an V5-Rebuild gekoppelt). REVERSE: liar-entertainer.com -> Anker 'Pantomime' auf https://pantomime.liar-entertainer.com (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 (Fremd-Domains, Freigabe noetig). Schema sameAs listet beide Domains bereits."
+    "buildpy_reconciliation_stand": "ERLEDIGT 2026-07-20 (V5-Batch): build.py reconciled mit live-HTML (self-hosted fonts.css, Consent-Checkbox, aktueller Datenschutz-Text, Stand hart 2026-07-02). REBUILD-SPERRE AUFGEHOBEN - normale Auto-Fix-Regeln gelten (build.py aendern -> Py3.12-Rebuild -> byte-verifizieren -> push). Historie in erledigte_vorschlaege Nr. 5.",
+    "cwv_stand": "Tag 13 + V5: fetchpriority=high jetzt auf Startseite UND 13 Unterseiten-Heroes (seit 2026-07-20). font-display:swap ok. OFFEN: Re-Kompression grosser Hero-webp: pantomime-buchen-scaled.webp 592KB, nussknacker-scaled.webp 320KB, pantomime-10-scaled/20230623-195739 ~220KB (Neu-Encoding, Freigabe noetig).",
+    "lokaler_mount_hinweis": "STAND 2026-07-07 (unveraendert 21.07.): Cowork-Mount (C:\\Users\\ben_m\\Claude\\projects\\Homepage Pantomime\\Pantomime) haengt auf Checkout 88ca226 (aelter als remote main). .git/HEAD.lock + .git/index.lock vom 02.07. sind nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Workarounds: GIT_INDEX_FILE=/tmp/... fuer read-only-Index-Ops; Dateien einzeln via 'git show HEAD:pfad > pfad' restaurieren; Schreiben in Repo NUR via GitHub-MCP push_files. Write/Edit-Tool im Mount kaputt fuer Groessenaenderung (Padding/Truncation) -> bash cat>file nutzen. State IMMER von remote main lesen, nie vom lokalen Mount.",
+    "cross_link_stand": "Tag 15 (2026-07-17): FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener); seit V5 (2026-07-20) mit descriptiven Ankern (live verifiziert 21.07.). REVERSE: liar-entertainer.com -> Anker 'Pantomime' auf https://pantomime.liar-entertainer.com (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 Punkt 1+2 (Fremd-Domains, Freigabe noetig). Schema sameAs listet beide Domains bereits.",
+    "indexierung_stand": "Tag 17 (2026-07-21): Nur 3/14 Seiten indexiert (/, der-clown, ueber-mich; gecrawlt 20.-26.06.). ROOT CAUSE: sitemap.xml in GSC seit 18.06. 'Konnte nicht abgerufen werden' (nie gelesen) -> 11 Seiten inkl. /walk-act/ Google unbekannt. Live-Sitemap einwandfrei (14 URLs, lastmod 2026-07-20). 403 auf http://pantomime-la-france.eu/ (15.06., Migrationsphase); http->https/www-301 funktioniert heute. MASSNAHMEN 21.07.: Sitemap-Resubmit, 403-Validierung gestartet, /walk-act/-Indexierung beantragt. FOLLOW-UP Tag 18: Sitemap-Status + Erkannte Seiten + Indexierungszahl pruefen; bei erneutem Sitemap-Fehlschlag PRIO-1-Eskalation (Server/IONOS blockt evtl. Googlebot)."
   }
 }
