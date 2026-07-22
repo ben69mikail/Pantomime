@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 17,
-  "letzter_lauf": "2026-07-21",
-  "WICHTIG_naechster_lauf": "GROSSER FREIGABE-ROLLOUT am 2026-07-21 (Nachmittags-Session, Michael anwesend): V3+V4+V5-Rest umgesetzt und gepusht. NEU LIVE: (1) Startseiten-Anlass-Section vertieft mit descriptiven Links (V3 Option A); (2) neue Landingpage /pantomime-essen/ mit 8 belegten Essen-Referenzen, FAQ, Service-Schema areaServed Essen, in sitemap (15 URLs), Reverse-Link von Pantomime-NRW-Staedteliste (V4); (3) 4 Hero-webp re-komprimiert 1,3MB->838KB via GitHub-Web-Upload in Michaels Chrome (Binaer-Push via MCP UNMOEGLICH - speichert nur Text, verifiziert per bintest; Workaround github.com/<repo>/upload/<branch>/<pfad> + file_upload-Tool). V6 freigegeben: Profiltexte in .seo-pantomime/v6-v7-texte.md vorbereitet - Kontoanlage (Google Unternehmensprofil etc.) macht MICHAEL. V7.1+7.2 freigegeben: Link-Snippets ebenfalls in v6-v7-texte.md - Einbau auf liar-entertainer.com/zauberer-liar.de macht MICHAEL. NAECHSTER LAUF (Tag 18): (a) Sitemap-Status pruefen (Resubmit 21.07. - Erkannte Seiten=15?); (b) 403-Validierung + /walk-act/-Indexierung nachhalten; (c) /pantomime-essen/ Indexierung beantragen (war zum Antragszeitpunkt noch nicht live); (d) GSC-Statistiken-Frage Michaels beantwortet: Insights zeigt erst ab ersten KLICKS Daten. GSC-Fenster heute unveraendert (45 Impr., Pos 20,3, bis 18.07.).",
+  "aktueller_plan_tag": 18,
+  "letzter_lauf": "2026-07-22",
+  "WICHTIG_naechster_lauf": "TAG 18 (22.07., autonom): Indexierungs-Follow-up durchgefuehrt. KERNBEFUNDE: (1) Sitemap-Resubmit vom 21.07. FEHLGESCHLAGEN ('Konnte nicht abgerufen werden', 0 erkannte Seiten, zuletzt gelesen 21.07.) -> HEUTE erneut eingereicht (Bestaetigung 'Sitemap wurde eingereicht'). (2) ABER: Googlebot crawlt Seiten-URLs erfolgreich! /walk-act/ gecrawlt 21.07. 07:15, /pantomime-essen/ gecrawlt 21.07. 08:09 (beide 'Gecrawlt - zurzeit nicht indexiert', Seitenabruf 'Erfolgreich', Googlebot Smartphone). 403 betrifft also NUR noch den Sitemap-Abruf (anderer Google-Fetcher!) - .htaccess+robots.txt im Repo sind sauber (gecheckt), Ursache vermutlich IONOS-seitig. (3) /pantomime-essen/ Indexierung HEUTE beantragt ('Indexierung wurde beantragt'). (4) Seiten-Bericht (Stand 10.07.): 3 indexiert, 1 wegen 403 blockiert, Validierung 'Gestartet'. (5) GSC-Performance unveraendert: 45 Impr., 0 Klicks, Pos 20,3, Fenster bis 18.07., gleiche 6 Clown-/Brand-Queries. V3/V4-Wirkung noch nicht messbar (erst 21.07. live). KEIN Code-Commit noetig (reiner GSC-Ops-Tag). OFFEN bei Michael: V6-Profiltexte eintragen (Google Unternehmensprofil prio 1), V7-Snippets auf liar-entertainer.com/zauberer-liar.de einbauen.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -186,10 +186,19 @@
         "SEO: V5-Rest - 4 Hero-webp re-komprimiert (838KB statt 1,3MB, LCP/CWV) (4466b2a, via Web-Upload)",
         "SEO: State/Vorschlaege/v6-v7-texte Update"
       ]
+    },
+    {
+      "tag": 18,
+      "datum": "2026-07-22",
+      "schritt": "Tag 18: Indexierungs-Follow-up (Sitemap-Status, 403-Validierung, /walk-act/, /pantomime-essen/ Indexierung beantragen)",
+      "ergebnis": "GSC live via Chrome (autonom). Sitemap-Resubmit 21.07. fehlgeschlagen ('Konnte nicht abgerufen werden') -> heute NEU eingereicht. Googlebot crawlt Seiten-URLs jedoch ERFOLGREICH: /walk-act/ 21.07. 07:15, /pantomime-essen/ 21.07. 08:09, beide 'Gecrawlt - zurzeit nicht indexiert' -> 403 betrifft nur noch Sitemap-Fetcher. /pantomime-essen/ Indexierung beantragt (bestaetigt). Seiten-Bericht (Stand 10.07.): 3 indexiert, 1x 403, Validierung 'Gestartet'. .htaccess+robots.txt auditiert: kein Bot-Blocking im Repo, 403-Ursache IONOS-seitig. Performance unveraendert (45 Impr., Pos 20,3, bis 18.07.). Kein Code-Commit (GSC-Ops-Tag).",
+      "commits": [
+        "SEO: State Tag 18 - Indexierungs-Follow-up (Sitemap neu eingereicht, /pantomime-essen/ Indexierung beantragt)"
+      ]
     }
   ],
-  "naechster_plan_tag": 18,
-  "naechster_schritt": "Tag 18: Indexierungs-Follow-up (Sitemap-Status, 403-Validierung, /walk-act/) + Indexierung fuer /pantomime-essen/ beantragen + GSC-datengetrieben. Danach Wirkung V3/V4 beobachten (Anlass-/Essen-Queries).",
+  "naechster_plan_tag": 19,
+  "naechster_schritt": "Tag 19 (GSC-datengetrieben): (a) Sitemap-Status pruefen - heute 22.07. NEU eingereicht nach Fehlschlag 21.07. ('Konnte nicht abgerufen werden'); Erwartung: Erfolgreich + 15 erkannte Seiten. Falls WIEDER Fehlschlag obwohl Googlebot Seiten-URLs crawlen kann -> IONOS-Serverkonfig-Problem, Michael informieren. (b) Indexierungsstatus /pantomime-essen/ + /walk-act/ nachpruefen (beide 'Gecrawlt - zurzeit nicht indexiert', Indexierung beantragt). (c) 403-Validierung im Seiten-Bericht (steht auf 'Gestartet', Berichtstand 10.07.). (d) Sobald erste Klicks: CTR-Optimierung.",
   "offene_vorschlaege": [
     {
       "nr": 6,
@@ -531,6 +540,57 @@
         "massnahmen_21_07": "Sitemap-Resubmit + 403-Validierung gestartet + Indexierung /walk-act/ beantragt"
       },
       "hinweis": "Performance-Fenster unveraendert ggue. 20.07. (noch bis 18.07., 45 Impr., Pos 20,3). Fokus heute: Indexierungs-Audit - nur 3/14 Seiten im Index, Root Cause = nie gelesene Sitemap; Gegenmassnahmen ausgefuehrt."
+    },
+    {
+      "datum": "2026-07-22",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "14.06.-18.07.26",
+      "klicks": 0,
+      "impressionen": 45,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 20.3,
+      "top_queries": [
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 4
+        },
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clowns",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "indexierung": {
+        "seiten_bericht_stand": "10.07.26",
+        "indexiert": 3,
+        "nicht_indexiert": 1,
+        "grund": "Wegen Zugriffsverbot (403) blockiert, Validierung 'Gestartet'",
+        "sitemap": "Abruf 21.07. fehlgeschlagen -> 22.07. neu eingereicht",
+        "walk_act": "Gecrawlt 21.07. 07:15, zurzeit nicht indexiert",
+        "pantomime_essen": "Gecrawlt 21.07. 08:09, zurzeit nicht indexiert, Indexierung 22.07. beantragt"
+      },
+      "hinweis": "Performance-Fenster unveraendert ggue. 21.07. (bis 18.07.). Wichtig: Googlebot crawlt Seiten-URLs erfolgreich - 403 nur noch beim Sitemap-Abruf."
     }
   ],
   "technische_hinweise": {
@@ -559,7 +619,7 @@
     "cwv_stand": "Tag 13 + V5 + 2026-07-21: fetchpriority=high auf Startseite + 13 Unterseiten-Heroes. Bild-Re-Kompression ERLEDIGT: pantomime-buchen 313KB/1280w, nussknacker 200KB/1440w, pantomime-10 177KB, 20230623-195739 145KB. ACHTUNG: Original-Aufloesungen reduziert (1600->1280/1440w) - bei kuenftigem Bildtausch Originale von Michael anfordern.",
     "lokaler_mount_hinweis": "STAND 2026-07-07 (unveraendert 21.07.): Cowork-Mount (C:\\Users\\ben_m\\Claude\\projects\\Homepage Pantomime\\Pantomime) haengt auf Checkout 88ca226 (aelter als remote main). .git/HEAD.lock + .git/index.lock vom 02.07. sind nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Workarounds: GIT_INDEX_FILE=/tmp/... fuer read-only-Index-Ops; Dateien einzeln via 'git show HEAD:pfad > pfad' restaurieren; Schreiben in Repo NUR via GitHub-MCP push_files. Write/Edit-Tool im Mount kaputt fuer Groessenaenderung (Padding/Truncation) -> bash cat>file nutzen. State IMMER von remote main lesen, nie vom lokalen Mount.",
     "cross_link_stand": "Tag 15 (2026-07-17): FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener); seit V5 (2026-07-20) mit descriptiven Ankern (live verifiziert 21.07.). REVERSE: liar-entertainer.com -> Anker 'Pantomime' auf https://pantomime.liar-entertainer.com (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 Punkt 1+2 (Fremd-Domains, Freigabe noetig). Schema sameAs listet beide Domains bereits.",
-    "indexierung_stand": "Tag 17 (2026-07-21): Nur 3/14 Seiten indexiert (/, der-clown, ueber-mich; gecrawlt 20.-26.06.). ROOT CAUSE: sitemap.xml in GSC seit 18.06. 'Konnte nicht abgerufen werden' (nie gelesen) -> 11 Seiten inkl. /walk-act/ Google unbekannt. Live-Sitemap einwandfrei (14 URLs, lastmod 2026-07-20). 403 auf http://pantomime-la-france.eu/ (15.06., Migrationsphase); http->https/www-301 funktioniert heute. MASSNAHMEN 21.07.: Sitemap-Resubmit, 403-Validierung gestartet, /walk-act/-Indexierung beantragt. FOLLOW-UP Tag 18: Sitemap-Status + Erkannte Seiten + Indexierungszahl pruefen; bei erneutem Sitemap-Fehlschlag PRIO-1-Eskalation (Server/IONOS blockt evtl. Googlebot).",
+    "indexierung_stand": "Tag 18 (22.07.): 3 Seiten indexiert. 403 nur noch beim Sitemap-Fetcher (Seiten-Crawls erfolgreich seit mind. 21.07.). Sitemap 22.07. neu eingereicht. /pantomime-essen/ + /walk-act/ gecrawlt, warten auf Indexierung (beide beantragt). Falls Sitemap-Abruf erneut scheitert: IONOS-Konfig pruefen lassen (Michael), nicht Repo-Problem.",
     "binaer_push_hinweis": "GitHub-MCP (push_files/create_or_update_file) speichert Content NUR als Text - Binaerdateien (Bilder) UNMOEGLICH (verifiziert 2026-07-21 per bintest: base64-String wurde als Literal-Text gespeichert). Workaround: GitHub-Web-Upload in Michaels Chrome - Dateien in Cowork-Mount kopieren, github.com/ben69mikail/Pantomime/upload/main/<pfad> oeffnen, find 'file input' + file_upload-Tool, Commit-Message-Feld per find ref klicken (NICHT Koordinaten - Suchoverlay-Falle!), Commit direkt zu main.",
     "stadtseiten_stand": "/pantomime-essen/ seit 2026-07-21 live (Pilot). 4-6 Wochen GSC-Wirkung messen ('Pantomime Essen'-Queries), erst danach ggf. weitere Staedte - NUR mit eigener belegter Referenzbasis (Thin-Page-Guardrail). Reverse-Link von /figuren/der-pantomime-in-nrw/ (Staedteliste) vorhanden."
   }
