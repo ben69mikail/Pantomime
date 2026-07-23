@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 18,
-  "letzter_lauf": "2026-07-22",
-  "WICHTIG_naechster_lauf": "TAG 18 (22.07., autonom): Indexierungs-Follow-up durchgefuehrt. KERNBEFUNDE: (1) Sitemap-Resubmit vom 21.07. FEHLGESCHLAGEN ('Konnte nicht abgerufen werden', 0 erkannte Seiten, zuletzt gelesen 21.07.) -> HEUTE erneut eingereicht (Bestaetigung 'Sitemap wurde eingereicht'). (2) ABER: Googlebot crawlt Seiten-URLs erfolgreich! /walk-act/ gecrawlt 21.07. 07:15, /pantomime-essen/ gecrawlt 21.07. 08:09 (beide 'Gecrawlt - zurzeit nicht indexiert', Seitenabruf 'Erfolgreich', Googlebot Smartphone). 403 betrifft also NUR noch den Sitemap-Abruf (anderer Google-Fetcher!) - .htaccess+robots.txt im Repo sind sauber (gecheckt), Ursache vermutlich IONOS-seitig. (3) /pantomime-essen/ Indexierung HEUTE beantragt ('Indexierung wurde beantragt'). (4) Seiten-Bericht (Stand 10.07.): 3 indexiert, 1 wegen 403 blockiert, Validierung 'Gestartet'. (5) GSC-Performance unveraendert: 45 Impr., 0 Klicks, Pos 20,3, Fenster bis 18.07., gleiche 6 Clown-/Brand-Queries. V3/V4-Wirkung noch nicht messbar (erst 21.07. live). KEIN Code-Commit noetig (reiner GSC-Ops-Tag). OFFEN bei Michael: V6-Profiltexte eintragen (Google Unternehmensprofil prio 1), V7-Snippets auf liar-entertainer.com/zauberer-liar.de einbauen.",
+  "aktueller_plan_tag": 19,
+  "letzter_lauf": "2026-07-23",
+  "WICHTIG_naechster_lauf": "TAG 19 (23.07., autonom): Indexierungs-Follow-up. KERNBEFUNDE: (1) SITEMAP-FETCH ZUM 3. MAL FEHLGESCHLAGEN - Resubmit 22.07. steht weiter auf 'Konnte nicht abgerufen werden', 0 erkannte Seiten, 'Zuletzt gelesen' leer. Live-Gegenprobe: https://www.pantomime-la-france.eu/sitemap.xml einwandfrei erreichbar, valides XML, 15 URLs, lastmod 2026-07-21. .htaccess im Repo erneut auditiert - KEIN User-Agent-/Pfad-/Bot-Block, nichts das einen Sitemap-Fetch 403en wuerde. FAZIT: serverseitiges IONOS-Problem beim Google-Sitemap-Fetcher (Seiten-Crawl + robots.txt gehen durch, nur Sitemap-Abruf 403). ESKALATION AN MICHAEL noetig (seit 18.06. offen, >1 Monat) - IONOS-Support kontaktieren / WAF-/Bot-Schutz fuer sitemap.xml pruefen lassen. Das ist aktuell der GROESSTE Indexierungs-Blocker (11 Seiten Google nicht via Sitemap bekannt). (2) /walk-act/ + /pantomime-essen/ beide weiter 'Gecrawlt - zurzeit nicht indexiert', letztes Crawl UNVERAENDERT 21.07. 07:15, Seitenabruf 'Erfolgreich', 'Keine verweisenden Sitemaps gefunden' (Folge des Sitemap-403). Indexierung fuer beide bereits 21./22.07. beantragt -> HEUTE NICHT erneut beantragt (waere redundant/Spam-Signal, beide sind in Warteschlange; 'gecrawlt-nicht-indexiert' ist Qualitaets-/Prio-Signal, kein Technik-Block). (3) Seiten-Bericht: 3 indexiert / 1 nicht (http-non-www 403). (4) GSC-Performance: 46 Impr. (von 45), 0 Klicks, Pos 19,9 (von 20,3), Fenster bis ~20.07., gleiche 6 Clown-/Brand-Queries ('pantomime clown' 4 Impr. top). KEIN Code-Commit (Site technisch sauber, Blocker ist IONOS-serverseitig). OFFEN bei Michael: (A) NEU/PRIO: IONOS wg. Sitemap-403 kontaktieren; (B) V6-Profiltexte eintragen (Google Unternehmensprofil prio 1); (C) V7-Snippets auf liar-entertainer.com/zauberer-liar.de einbauen.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -171,7 +171,7 @@
       "tag": 17,
       "datum": "2026-07-21",
       "schritt": "Tag 17: Technik-Audit - GSC-Indexierungsstatus/Abdeckung + Live-HTML-Stichprobe (V5-Deploy-Verifikation).",
-      "ergebnis": "KERNBEFUND INDEXIERUNG: Nur 3 von 14 Seiten indexiert (/, /figuren/der-clown/, /ueber-mich/; zuletzt gecrawlt 20.-26.06.). ROOT CAUSE GEFUNDEN: sitemap.xml in GSC seit Einreichung 18.06. 'Konnte nicht abgerufen werden' (nie gelesen, 0 erkannte Seiten) -> 11 Seiten inkl. /walk-act/ und /figuren/der-pantomime-in-nrw/ sind Google schlicht NICHT BEKANNT (URL-Pruefung /walk-act/: 'URL ist Google nicht bekannt', keine verweisende Sitemap, nie gecrawlt). Zweitbefund: http://pantomime-la-france.eu/ (HTTP ohne www) 'Wegen Zugriffsverbot (403) blockiert' (zuletzt gecrawlt 15.06. = Migrationsphase). LIVE-GEGENPROBE: sitemap.xml heute einwandfrei abrufbar (14 URLs, lastmod 2026-07-20 = V5-Deploy live bestaetigt), robots.txt sauber inkl. Sitemap-Verweis, http->https/www-301 funktioniert im Browser -> beide GSC-Fehler sind veraltete Zustaende aus der Migrationsphase. DURCHGEFUEHRTE GSC-MASSNAHMEN (idempotent, nicht-destruktiv, im Bericht dokumentiert): (1) Sitemap neu eingereicht -> Bestaetigung 'Sitemap wurde eingereicht'; (2) 403-Fehlerbehebungs-Validierung gestartet (Startdatum 21.07.26); (3) Indexierung /walk-act/ beantragt -> 'Indexierung wurde beantragt' (bevorzugte Crawling-Warteschlange). HTML-STICHPROBE live Clown-Seite: Title 49 Z. 'Clown & Pantomime in NRW buchen - LIAR | Walk Act', Desc 146 Z. 'Pantomime-Clown...', og synchron, 0 fonts.googleapis, fonts.css self-hosted, fetchpriority=high, Footer-Anker descriptiv, </html> ok, 3/3 JSON-LD valide -> V5-Batch korrekt deployed. KEIN Code-Commit noetig (Site technisch sauber, Problem lag in GSC-Verarbeitung). Micro-Notiz: robots.txt-Kommentar mit Encoding-Artefakt 'ausdrÃ¼cklich' (nur Kommentar, parsing-/SEO-irrelevant, kein Fix-Bedarf).",
+      "ergebnis": "KERNBEFUND INDEXIERUNG: Nur 3 von 14 Seiten indexiert (/, /figuren/der-clown/, /ueber-mich/; zuletzt gecrawlt 20.-26.06.). ROOT CAUSE GEFUNDEN: sitemap.xml in GSC seit Einreichung 18.06. 'Konnte nicht abgerufen werden' (nie gelesen, 0 erkannte Seiten) -> 11 Seiten inkl. /walk-act/ und /figuren/der-pantomime-in-nrw/ sind Google schlicht NICHT BEKANNT. Zweitbefund: http://pantomime-la-france.eu/ (HTTP ohne www) 'Wegen Zugriffsverbot (403) blockiert'. LIVE-GEGENPROBE: sitemap.xml heute einwandfrei abrufbar (14 URLs, lastmod 2026-07-20 = V5-Deploy live), robots.txt sauber, http->https/www-301 funktioniert -> beide GSC-Fehler sind veraltete Migrationszustaende. GSC-MASSNAHMEN: Sitemap neu eingereicht, 403-Validierung gestartet, Indexierung /walk-act/ beantragt. HTML-Stichprobe Clown-Seite: V5-Batch korrekt deployed. KEIN Code-Commit noetig.",
       "commits": [
         "SEO: State Tag 17 - Indexierungs-Audit: Sitemap neu eingereicht, 403-Validierung gestartet, /walk-act/-Indexierung beantragt"
       ]
@@ -180,7 +180,7 @@
       "tag": "17b (Freigabe-Rollout)",
       "datum": "2026-07-21",
       "schritt": "MICHAEL GIBT ALLES FREI -> Rollout V3 + V4 + V5-Rest (Bilder); V6/V7-Texte vorbereitet.",
-      "ergebnis": "V3 (Anlass-Content): 4 Startseiten-Teaser zu je 2-3 belegten Saetzen mit descriptiven Links vertieft (Crazy Kellner/Walk Act/Pantomime) - nur Fakten aus INHALTE-VERIFIZIERT.md. V4 (/pantomime-essen/): neue Seite via build.py - Title 51 Z., Desc 153 Z., H1 'Pantomime in Essen buchen', Hero walk-act-fest-essen.webp, 8 belegte Essen-Referenzen als Chips, 3er-FAQ (Schema==sichtbar), Service-Schema areaServed Essen, Breadcrumb; sitemap 15 URLs; Reverse-Link Essen in Pantomime-NRW-Staedteliste. Py3.12-Rebuild (16 Seiten), Verifikation: 0 fonts.googleapis, Consent intakt, datenschutz unveraendert, 0 JSON-LD-Fehler, alle </html> ok. Push via Subagent, 5/5 Blob-SHA-Vergleich PASS (Commit 4c6efe2). V5-REST (Bilder): pantomime-buchen 578->313KB (1280w q70), nussknacker 312->200KB (1440w q72), pantomime-10 220->177KB (q75), 20230623-195739 211->145KB (q75) - Pillow/LANCZOS, via GitHub-Web-Upload committed (4466b2a), da Binaer-Push via MCP unmoeglich (bintest bewiesen: speichert Text statt Bytes; Testdatei wieder geloescht). V6/V7: Profiltexte + Link-Snippets in .seo-pantomime/v6-v7-texte.md und in Michaels Cowork-Ordner abgelegt - Umsetzung auf Fremd-Domains/Konten durch Michael. AUSSERDEM beantwortet: GSC 'Statistiken' leer weil Search Console Insights erst ab ersten Klicks Daten zeigt (live geprueft: 'Keine Klicks fuer diesen Zeitraum').",
+      "ergebnis": "V3 (Anlass-Content): 4 Startseiten-Teaser vertieft (belegte Fakten). V4 (/pantomime-essen/): neue Seite via build.py - Title 51 Z., Desc 153 Z., H1 'Pantomime in Essen buchen', 8 belegte Essen-Referenzen, 3er-FAQ (Schema==sichtbar), Service-Schema areaServed Essen, Breadcrumb; sitemap 15 URLs; Reverse-Link in Pantomime-NRW-Staedteliste. Py3.12-Rebuild (16 Seiten), verifiziert, Push via Subagent, 5/5 Blob-SHA PASS (4c6efe2). V5-REST (Bilder): 4 Hero-webp re-komprimiert (1,3MB->838KB) via GitHub-Web-Upload (4466b2a). V6/V7: Profiltexte + Link-Snippets in .seo-pantomime/v6-v7-texte.md abgelegt - Umsetzung durch Michael.",
       "commits": [
         "SEO: V3+V4 nach Freigabe - Anlass-Content Startseite vertieft + neue Landingpage /pantomime-essen/ (verifiziert) (4c6efe2)",
         "SEO: V5-Rest - 4 Hero-webp re-komprimiert (838KB statt 1,3MB, LCP/CWV) (4466b2a, via Web-Upload)",
@@ -191,15 +191,31 @@
       "tag": 18,
       "datum": "2026-07-22",
       "schritt": "Tag 18: Indexierungs-Follow-up (Sitemap-Status, 403-Validierung, /walk-act/, /pantomime-essen/ Indexierung beantragen)",
-      "ergebnis": "GSC live via Chrome (autonom). Sitemap-Resubmit 21.07. fehlgeschlagen ('Konnte nicht abgerufen werden') -> heute NEU eingereicht. Googlebot crawlt Seiten-URLs jedoch ERFOLGREICH: /walk-act/ 21.07. 07:15, /pantomime-essen/ 21.07. 08:09, beide 'Gecrawlt - zurzeit nicht indexiert' -> 403 betrifft nur noch Sitemap-Fetcher. /pantomime-essen/ Indexierung beantragt (bestaetigt). Seiten-Bericht (Stand 10.07.): 3 indexiert, 1x 403, Validierung 'Gestartet'. .htaccess+robots.txt auditiert: kein Bot-Blocking im Repo, 403-Ursache IONOS-seitig. Performance unveraendert (45 Impr., Pos 20,3, bis 18.07.). Kein Code-Commit (GSC-Ops-Tag).",
+      "ergebnis": "GSC live via Chrome (autonom). Sitemap-Resubmit 21.07. fehlgeschlagen ('Konnte nicht abgerufen werden') -> heute NEU eingereicht. Googlebot crawlt Seiten-URLs jedoch ERFOLGREICH: /walk-act/ 21.07. 07:15, /pantomime-essen/ 21.07. 08:09, beide 'Gecrawlt - zurzeit nicht indexiert' -> 403 betrifft nur noch Sitemap-Fetcher. /pantomime-essen/ Indexierung beantragt. Seiten-Bericht (Stand 10.07.): 3 indexiert, 1x 403, Validierung 'Gestartet'. .htaccess+robots.txt auditiert: kein Bot-Blocking im Repo, 403-Ursache IONOS-seitig. Performance unveraendert (45 Impr., Pos 20,3, bis 18.07.). Kein Code-Commit (GSC-Ops-Tag).",
       "commits": [
         "SEO: State Tag 18 - Indexierungs-Follow-up (Sitemap neu eingereicht, /pantomime-essen/ Indexierung beantragt)"
       ]
+    },
+    {
+      "tag": 19,
+      "datum": "2026-07-23",
+      "schritt": "Tag 19: Indexierungs-Follow-up (Sitemap-Erfolg nach Resubmit 22.07. verifizieren, Indexstatus /walk-act/ + /pantomime-essen/, 403-Validierung).",
+      "ergebnis": "GSC live via Chrome (autonom). (1) SITEMAP ZUM 3. MAL FEHLGESCHLAGEN: Eintrag vom 22.07. steht weiter auf 'Konnte nicht abgerufen werden', 0 erkannte Seiten, 'Zuletzt gelesen' leer. Live-Gegenprobe sitemap.xml: einwandfrei erreichbar, valides XML, 15 URLs, lastmod 2026-07-21. .htaccess im Repo erneut auditiert (sha 7bc9531): KEIN User-Agent-/Pfad-/Bot-Block - nur https+www-301, Security-Header, Compression, Caching. FAZIT (bestaetigt die Tag-18-Prognose): serverseitiges IONOS-Problem beim Google-Sitemap-Fetcher - Seiten-Crawl + robots.txt gehen durch, nur der Sitemap-Abruf 403t. -> ESKALATION AN MICHAEL: IONOS-Support kontaktieren / WAF-/Bot-Schutz fuer /sitemap.xml pruefen lassen. Seit 18.06. offen (>1 Monat), groesster Indexierungs-Blocker (11 Seiten nicht via Sitemap bekannt). (2) /walk-act/ + /pantomime-essen/: beide weiter 'Gecrawlt - zurzeit nicht indexiert', letztes Crawl UNVERAENDERT 21.07. 07:15, Seitenabruf 'Erfolgreich', 'Keine verweisenden Sitemaps' (Folge des Sitemap-403). Indexierung bereits 21./22.07. beantragt -> HEUTE NICHT erneut beantragt (redundant, beide in Warteschlange; 'gecrawlt-nicht-indexiert' ist Prio-/Qualitaetssignal, kein Technik-Block). (3) Seiten-Bericht: 3 indexiert / 1 nicht (http-non-www 403). (4) Performance: 46 Impr. (von 45), 0 Klicks, Pos 19,9 (von 20,3), gleiche 6 Clown-/Brand-Queries. KEIN Code-Commit (Site technisch sauber, Blocker IONOS-serverseitig).",
+      "commits": [
+        "SEO: State Tag 19 - Indexierungs-Follow-up: Sitemap-Fetch 3. Mal fehlgeschlagen (IONOS-Eskalation), Seiten weiter nicht indexiert, GSC-Snapshot 2026-07-23"
+      ]
     }
   ],
-  "naechster_plan_tag": 19,
-  "naechster_schritt": "Tag 19 (GSC-datengetrieben): (a) Sitemap-Status pruefen - heute 22.07. NEU eingereicht nach Fehlschlag 21.07. ('Konnte nicht abgerufen werden'); Erwartung: Erfolgreich + 15 erkannte Seiten. Falls WIEDER Fehlschlag obwohl Googlebot Seiten-URLs crawlen kann -> IONOS-Serverkonfig-Problem, Michael informieren. (b) Indexierungsstatus /pantomime-essen/ + /walk-act/ nachpruefen (beide 'Gecrawlt - zurzeit nicht indexiert', Indexierung beantragt). (c) 403-Validierung im Seiten-Bericht (steht auf 'Gestartet', Berichtstand 10.07.). (d) Sobald erste Klicks: CTR-Optimierung.",
+  "naechster_plan_tag": 20,
+  "naechster_schritt": "Tag 20 (GSC-datengetrieben): (a) PRIO - Sitemap-Status pruefen: Hat Michael IONOS kontaktiert? Wird der Sitemap-Abruf jetzt erfolgreich (Status 'Erfolgreich' + 15 erkannte Seiten)? Falls weiter 'Konnte nicht abgerufen werden' -> erneut an Michael eskalieren (IONOS ist der Blocker, nicht das Repo). (b) Indexierungsstatus /walk-act/ + /pantomime-essen/ nachpruefen (Ziel: 'Indexiert'; aktuell 'gecrawlt-nicht-indexiert' seit 21.07.). (c) 403-Validierung (http-non-www) im Seiten-Bericht. (d) Sobald erste Klicks: CTR-Optimierung der Clown-/Startseite. (e) Falls alles unveraendert: Technik-Audit-Rotation (z.B. Core Web Vitals live via PageSpeed, oder On-Page-Feinschliff einer schwachen High-Impression-Seite).",
   "offene_vorschlaege": [
+    {
+      "nr": "IONOS-ESKALATION (kein klassischer Vorschlag, sondern Server-Ops)",
+      "datum_vorschlag": "2026-07-23",
+      "titel": "KRITISCH/PRIO: Google-Sitemap-Fetcher erhaelt 403 von IONOS (3x in Folge fehlgeschlagen: 18.06./21.07./22.07.). sitemap.xml ist live einwandfrei erreichbar + valide, robots.txt + Seiten-Crawl durch Googlebot funktionieren, .htaccess im Repo sauber (kein Bot-/UA-/Pfad-Block). -> Ursache serverseitig bei IONOS (vermutl. WAF/Bot-Schutz blockiert den Sitemap-Abruf-User-Agent). MICHAEL: IONOS-Support kontaktieren, 403 auf /sitemap.xml fuer Google-Sitemap-Fetcher entsperren lassen. Ohne das bleiben 11 Seiten Google nur ueber interne Links/Einzel-Anfragen bekannt (langsame Indexierung).",
+      "status": "OFFEN - erfordert Aktion von Michael (Kontakt zu IONOS-Hosting-Support). Kein Repo-Fix moeglich.",
+      "typ": "Server-/Hosting-Konfiguration (IONOS), nicht Code"
+    },
     {
       "nr": 6,
       "datum_vorschlag": "2026-07-07",
@@ -210,7 +226,7 @@
     {
       "nr": 7,
       "datum_vorschlag": "2026-07-17",
-      "titel": "Reziproke Cross-Domain-Links haerten: (1) liar-entertainer.com 'Pantomime'-Link direkt auf https://www.pantomime-la-france.eu (statt alte Subdomain via 301) + descriptiv; (2) zauberer-liar.de Cross-Link zur Pantomime-Domain ergaenzen (fehlt ganz); (3) Footer-Anker auf pantomime-la-france.eu von nackter Domain -> descriptiv (im V5-build.py-Batch). [Punkt 3 (Footer-Anker descriptiv) am 2026-07-20 im V5-Batch ERLEDIGT; offen bleiben Punkt 1+2 auf den Fremd-Domains]",
+      "titel": "Reziproke Cross-Domain-Links haerten: (1) liar-entertainer.com 'Pantomime'-Link direkt auf https://www.pantomime-la-france.eu (statt alte Subdomain via 301) + descriptiv; (2) zauberer-liar.de Cross-Link zur Pantomime-Domain ergaenzen (fehlt ganz); (3) Footer-Anker auf pantomime-la-france.eu von nackter Domain -> descriptiv (im V5-build.py-Batch). [Punkt 3 am 2026-07-20 im V5-Batch ERLEDIGT; offen bleiben Punkt 1+2 auf den Fremd-Domains]",
       "status": "FREIGEGEBEN 2026-07-21 (Punkte 1+2). Link-Snippets vorbereitet (.seo-pantomime/v6-v7-texte.md). OFFEN: Einbau durch Michael auf liar-entertainer.com + zauberer-liar.de. Punkt 3 seit 2026-07-20 erledigt (V5-Batch).",
       "typ": "Cross-Domain-Verlinkung (2 Eigen-Domains) + gekoppelter On-Page-Micro-Fix (V5)"
     }
@@ -234,9 +250,8 @@
       "nr": 5,
       "datum_vorschlag": "2026-07-03",
       "titel": "KRITISCH: build.py mit live-HTML reconciliaten (build.py revertet sonst DSGVO-Fixes aus Commit 88ca226) + danach Tag-13-CWV-Fixes: fetchpriority=high fuer Unterseiten-Hero (subimg, 1 Zeile) + Re-Kompression grosser Hero-webp (pantomime-buchen 592KB / nussknacker 320KB)",
-      "status": "ERLEDIGT: von Michael freigegeben (2026-07-20), Reconciliation-Patch angewendet, byte-verifizierter Rebuild (nur beabsichtigte Deltas), gepusht. fetchpriority=high auf 13 Unterseiten-Heroes umgesetzt. OFFEN bleibt nur die Bild-Re-Kompression (pantomime-buchen 592KB / nussknacker 320KB) - separater Schritt, Neu-Encoding noetig. NACHTRAG 2026-07-21: Bild-Re-Kompression ERLEDIGT (4 Heroes 1,3MB->838KB, via GitHub-Web-Upload).",
+      "status": "ERLEDIGT: von Michael freigegeben (2026-07-20), Reconciliation-Patch angewendet, byte-verifizierter Rebuild, gepusht. fetchpriority=high auf 13 Unterseiten-Heroes. NACHTRAG 2026-07-21: Bild-Re-Kompression ERLEDIGT (4 Heroes 1,3MB->838KB, via GitHub-Web-Upload).",
       "typ": "Build-Infrastruktur (build.py-Reconciliation, blockierend) + Technik-Fix (fetchpriority) + Bild-Kompression (Neu-Encoding)",
-      "update_2026_07_07": "Reconciliation im heutigen Lauf unabhaengig durchgefuehrt + byte-verifiziert (Rebuild reproduziert live-HTML; einzige Deltas = korrekte Asset-Hash-Bumps 91d09e05->fc99917e / 41872035->45732809, da 88ca226 style.css/app.js ohne Hash-Update aenderte, + sitemap-lastmod). Fertiger Patch: .seo-pantomime/patches/2026-07-07-buildpy-reconciliation.patch (lokal im Cowork-Ordner). Wartet weiter auf Freigabe.",
       "datum_umgesetzt": "2026-07-20"
     },
     {
@@ -276,75 +291,6 @@
       "hinweis": "Domain frisch migriert. Baseline."
     },
     {
-      "datum": "2026-06-29",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "14.06.-27.06.26",
-      "klicks": 0,
-      "impressionen": 3,
-      "ctr_prozent": 0,
-      "durchschnitt_position": 40.3,
-      "top_pages": [
-        {
-          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
-          "klicks": 0,
-          "impressionen": 2
-        },
-        {
-          "url": "https://www.pantomime-la-france.eu/",
-          "klicks": 0,
-          "impressionen": 1
-        }
-      ],
-      "top_queries": [],
-      "hinweis": "Seiten-Tab erstmals befuellt. Position 58 -> 40,3."
-    },
-    {
-      "datum": "2026-07-01",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "14.06.-29.06.26",
-      "klicks": 0,
-      "impressionen": 5,
-      "ctr_prozent": 0,
-      "durchschnitt_position": 27.8,
-      "top_pages": [
-        {
-          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
-          "klicks": 0,
-          "impressionen": 4
-        },
-        {
-          "url": "https://www.pantomime-la-france.eu/",
-          "klicks": 0,
-          "impressionen": 1
-        }
-      ],
-      "top_queries": [],
-      "hinweis": "5 Impr. (von 3), Pos 27,8 (Trend 58->40,3->27,8). Query-Tab 'Keine Daten'."
-    },
-    {
-      "datum": "2026-07-02",
-      "property": "sc-domain:pantomime-la-france.eu",
-      "zeitraum": "14.06.-29.06.26",
-      "klicks": 0,
-      "impressionen": 5,
-      "ctr_prozent": 0,
-      "durchschnitt_position": 27.8,
-      "top_pages": [
-        {
-          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
-          "klicks": 0,
-          "impressionen": 4
-        },
-        {
-          "url": "https://www.pantomime-la-france.eu/",
-          "klicks": 0,
-          "impressionen": 1
-        }
-      ],
-      "top_queries": [],
-      "hinweis": "Live via Chrome (Michael eingeloggt). UNVERAENDERT ggue. 07-01: Datenfenster steht noch bei 14.06.-29.06. (kein neuer Tag geliefert). 0 Klicks, 5 Impr., Pos 27,8; Clown 4 Impr., Startseite 1 Impr.; Query-Tab 'Keine Daten' (18 Tage). Kein Code-Commit (Proposal-Tag 12)."
-    },
-    {
       "datum": "2026-07-07",
       "property": "sc-domain:pantomime-la-france.eu",
       "zeitraum": "14.06.-05.07.26",
@@ -353,33 +299,13 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 21.9,
       "top_queries": [
-        {
-          "query": "clown pantomime",
-          "klicks": 0,
-          "impressionen": 2
-        },
-        {
-          "query": "pantomime clown",
-          "klicks": 0,
-          "impressionen": 2
-        },
-        {
-          "query": "clown liar",
-          "klicks": 0,
-          "impressionen": 1
-        },
-        {
-          "query": "clown zauberer liar",
-          "klicks": 0,
-          "impressionen": 1
-        },
-        {
-          "query": "zauberer liar",
-          "klicks": 0,
-          "impressionen": 1
-        }
+        {"query": "clown pantomime", "impressionen": 2},
+        {"query": "pantomime clown", "impressionen": 2},
+        {"query": "clown liar", "impressionen": 1},
+        {"query": "clown zauberer liar", "impressionen": 1},
+        {"query": "zauberer liar", "impressionen": 1}
       ],
-      "hinweis": "Live via Chrome. Datenfenster endlich vorgerueckt (bis 05.07.). Impressionen 5->25, Pos 27,8->21,9. Query-Tab ERSTMALS befuellt: Clown-/Brand-Queries dominieren; 'Pantomime' nur in Kombination mit 'clown'; noch keine Walk-Act-/Stadt-/Anlass-Queries. Top-Pages heute nicht ausgelesen (Query-Fokus)."
+      "hinweis": "Query-Tab erstmals befuellt: Clown-/Brand-Queries. Impr. 5->25, Pos 27,8->21,9."
     },
     {
       "datum": "2026-07-17",
@@ -390,44 +316,11 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 22,
       "top_queries": [
-        {
-          "query": "clown pantomime",
-          "klicks": 0,
-          "impressionen": 3,
-          "position": 11.0
-        },
-        {
-          "query": "pantomime clown",
-          "klicks": 0,
-          "impressionen": 3,
-          "position": 13.3
-        },
-        {
-          "query": "pantomime clowns",
-          "klicks": 0,
-          "impressionen": 1,
-          "position": 12.0
-        },
-        {
-          "query": "clown liar",
-          "klicks": 0,
-          "impressionen": 1,
-          "position": 27.0
-        },
-        {
-          "query": "clown zauberer liar",
-          "klicks": 0,
-          "impressionen": 1,
-          "position": 27.0
-        },
-        {
-          "query": "zauberer liar",
-          "klicks": 0,
-          "impressionen": 1,
-          "position": 33.0
-        }
+        {"query": "clown pantomime", "impressionen": 3, "position": 11.0},
+        {"query": "pantomime clown", "impressionen": 3, "position": 13.3},
+        {"query": "pantomime clowns", "impressionen": 1, "position": 12.0}
       ],
-      "hinweis": "Live via Chrome. Impr. 25->40, Pos ~22 stabil. Clown+Pantomime-Kombi-Queries jetzt Pos ~11-13. Weiter Clown-/Brand-lastig; keine Walk-Act-/Stadt-/Anlass-Queries."
+      "hinweis": "Impr. 25->40. Clown+Pantomime-Kombi Pos ~11-13. Keine Walk-Act-/Stadt-Queries."
     },
     {
       "datum": "2026-07-20",
@@ -438,55 +331,11 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 20.3,
       "top_pages": [
-        {
-          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
-          "klicks": 0,
-          "impressionen": 35
-        },
-        {
-          "url": "https://www.pantomime-la-france.eu/",
-          "klicks": 0,
-          "impressionen": 10
-        },
-        {
-          "url": "https://www.pantomime-la-france.eu/ueber-mich/",
-          "klicks": 0,
-          "impressionen": 2
-        }
+        {"url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "impressionen": 35},
+        {"url": "https://www.pantomime-la-france.eu/", "impressionen": 10},
+        {"url": "https://www.pantomime-la-france.eu/ueber-mich/", "impressionen": 2}
       ],
-      "top_queries": [
-        {
-          "query": "pantomime clown",
-          "klicks": 0,
-          "impressionen": 4
-        },
-        {
-          "query": "clown pantomime",
-          "klicks": 0,
-          "impressionen": 3
-        },
-        {
-          "query": "pantomime clowns",
-          "klicks": 0,
-          "impressionen": 1
-        },
-        {
-          "query": "clown liar",
-          "klicks": 0,
-          "impressionen": 1
-        },
-        {
-          "query": "clown zauberer liar",
-          "klicks": 0,
-          "impressionen": 1
-        },
-        {
-          "query": "zauberer liar",
-          "klicks": 0,
-          "impressionen": 1
-        }
-      ],
-      "hinweis": "Trend: Impressionen 25->40->45, Pos 21,9->22->20,3. Startseite 1->10 Impr. = neues Wachstum. Weiter keine Walk-Act-/Stadt-/Anlass-Queries."
+      "hinweis": "Impr. 40->45, Pos 20,3. Startseite waechst auf 10. Weiter keine Walk-Act-/Stadt-Queries."
     },
     {
       "datum": "2026-07-21",
@@ -496,50 +345,12 @@
       "impressionen": 45,
       "ctr_prozent": 0,
       "durchschnitt_position": 20.3,
-      "top_queries": [
-        {
-          "query": "pantomime clown",
-          "klicks": 0,
-          "impressionen": 4
-        },
-        {
-          "query": "clown pantomime",
-          "klicks": 0,
-          "impressionen": 3
-        },
-        {
-          "query": "pantomime clowns",
-          "klicks": 0,
-          "impressionen": 1
-        },
-        {
-          "query": "clown liar",
-          "klicks": 0,
-          "impressionen": 1
-        },
-        {
-          "query": "clown zauberer liar",
-          "klicks": 0,
-          "impressionen": 1
-        },
-        {
-          "query": "zauberer liar",
-          "klicks": 0,
-          "impressionen": 1
-        }
-      ],
       "indexierung": {
         "indexierte_seiten": 3,
-        "indexierte_urls": [
-          "https://www.pantomime-la-france.eu/figuren/der-clown/ (gecrawlt 26.06.)",
-          "https://www.pantomime-la-france.eu/ueber-mich/ (gecrawlt 22.06.)",
-          "https://www.pantomime-la-france.eu/ (gecrawlt 20.06.)"
-        ],
-        "nicht_indexiert": "http://pantomime-la-france.eu/ - 403 (gecrawlt 15.06.); Validierung gestartet 21.07.",
-        "sitemap_status": "'Konnte nicht abgerufen werden' seit 18.06., 0 erkannte Seiten -> am 21.07. NEU EINGEREICHT ('Sitemap wurde eingereicht')",
-        "massnahmen_21_07": "Sitemap-Resubmit + 403-Validierung gestartet + Indexierung /walk-act/ beantragt"
+        "sitemap_status": "'Konnte nicht abgerufen werden' seit 18.06. -> am 21.07. NEU EINGEREICHT",
+        "massnahmen": "Sitemap-Resubmit + 403-Validierung gestartet + Indexierung /walk-act/ beantragt"
       },
-      "hinweis": "Performance-Fenster unveraendert ggue. 20.07. (noch bis 18.07., 45 Impr., Pos 20,3). Fokus heute: Indexierungs-Audit - nur 3/14 Seiten im Index, Root Cause = nie gelesene Sitemap; Gegenmassnahmen ausgefuehrt."
+      "hinweis": "Indexierungs-Audit: nur 3/14 Seiten im Index, Root Cause = nie gelesene Sitemap."
     },
     {
       "datum": "2026-07-22",
@@ -549,48 +360,33 @@
       "impressionen": 45,
       "ctr_prozent": 0,
       "durchschnitt_position": 20.3,
-      "top_queries": [
-        {
-          "query": "pantomime clown",
-          "klicks": 0,
-          "impressionen": 4
-        },
-        {
-          "query": "clown pantomime",
-          "klicks": 0,
-          "impressionen": 3
-        },
-        {
-          "query": "pantomime clowns",
-          "klicks": 0,
-          "impressionen": 1
-        },
-        {
-          "query": "clown liar",
-          "klicks": 0,
-          "impressionen": 1
-        },
-        {
-          "query": "clown zauberer liar",
-          "klicks": 0,
-          "impressionen": 1
-        },
-        {
-          "query": "zauberer liar",
-          "klicks": 0,
-          "impressionen": 1
-        }
-      ],
       "indexierung": {
-        "seiten_bericht_stand": "10.07.26",
         "indexiert": 3,
         "nicht_indexiert": 1,
-        "grund": "Wegen Zugriffsverbot (403) blockiert, Validierung 'Gestartet'",
         "sitemap": "Abruf 21.07. fehlgeschlagen -> 22.07. neu eingereicht",
         "walk_act": "Gecrawlt 21.07. 07:15, zurzeit nicht indexiert",
         "pantomime_essen": "Gecrawlt 21.07. 08:09, zurzeit nicht indexiert, Indexierung 22.07. beantragt"
       },
-      "hinweis": "Performance-Fenster unveraendert ggue. 21.07. (bis 18.07.). Wichtig: Googlebot crawlt Seiten-URLs erfolgreich - 403 nur noch beim Sitemap-Abruf."
+      "hinweis": "Googlebot crawlt Seiten-URLs erfolgreich - 403 nur noch beim Sitemap-Abruf."
+    },
+    {
+      "datum": "2026-07-23",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "14.06.-20.07.26",
+      "klicks": 0,
+      "impressionen": 46,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 19.9,
+      "top_queries": [
+        {"query": "pantomime clown", "impressionen": 4}
+      ],
+      "indexierung": {
+        "seiten_bericht": "3 indexiert / 1 nicht indexiert (http-non-www 403)",
+        "sitemap": "22.07.-Resubmit steht weiter auf 'Konnte nicht abgerufen werden', 0 erkannte Seiten, 'Zuletzt gelesen' leer -> 3. Fehlschlag in Folge. Live-Gegenprobe: sitemap.xml erreichbar + valide (15 URLs, lastmod 2026-07-21). .htaccess sauber. Ursache IONOS-serverseitig -> Eskalation an Michael.",
+        "walk_act": "Gecrawlt (unveraendert 21.07. 07:15), 'zurzeit nicht indexiert', keine verweisende Sitemap, Indexierung bereits beantragt.",
+        "pantomime_essen": "Gecrawlt (unveraendert 21.07. 07:15), 'zurzeit nicht indexiert', keine verweisende Sitemap, Indexierung bereits beantragt."
+      },
+      "hinweis": "Performance leicht besser (45->46 Impr., Pos 20,3->19,9), Fenster jetzt bis 20.07. Query-Cluster unveraendert Clown-/Brand-lastig. Kein Code-Commit (Ops-Tag). Sitemap-403 (IONOS) ist der zentrale Blocker."
     }
   ],
   "technische_hinweise": {
@@ -602,25 +398,22 @@
     "datenschutz_stand": "datenschutz/index.html hat seit V5-Reconciliation hart 'Stand: 2026-07-02' (kein Auto-Bump; bei echten Datenschutz-Aenderungen manuell bumpen).",
     "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de, seit V5 (2026-07-20) mit descriptiven Ankern.",
     "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben.",
-    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner GEPRUEFT - verlinken bereits via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen.",
-    "sitemap_robots_stand": "2026-07-21: 15 URLs (neu /pantomime-essen/ mit prio 0.8), lastmod=2026-07-21, 404.html bewusst nicht in sitemap. robots.txt sauber.",
-    "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Seit V5-Batch (2026-07-20): style.css?v=fc99917e, app.js?v=45732809 (Hash-Bump war faelliger Cache-Bust aus 88ca226). Bei style.css-Aenderung alle HTML mitcommitten.",
-    "fokus_keywords": [
-      "Pantomime",
-      "Walk Act"
-    ],
+    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner verlinken via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen. /pantomime-essen/ von /figuren/der-pantomime-in-nrw/-Staedteliste verlinkt.",
+    "sitemap_robots_stand": "Seit 2026-07-21: 15 URLs (neu /pantomime-essen/ prio 0.8), lastmod=2026-07-21, 404.html bewusst nicht in sitemap. robots.txt sauber. WICHTIG: GSC-Sitemap-Fetcher erhaelt 403 (IONOS-serverseitig) - Datei selbst ist live valide + erreichbar; siehe indexierung_stand.",
+    "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Seit V5-Batch (2026-07-20): style.css?v=fc99917e, app.js?v=45732809. Bei style.css-Aenderung alle HTML mitcommitten.",
+    "fokus_keywords": ["Pantomime", "Walk Act"],
     "faq_stand": "faq_block(qa,title) rendert details/summary/faq-a. Selbe Q/A-Liste an faq_schema UND faq_block -> Deckungsgleichheit garantiert.",
     "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt.",
     "uv_cache_hinweis": "Frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es.",
     "meta_desc_stand": "Seit V5 (2026-07-20): Clown Title 49 Z. 'Clown & Pantomime in NRW buchen - LIAR | Walk Act', Desc 146 Z. mit 'Pantomime-Clown & Comedy-Walk-Act'. Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei).",
-    "content_luecken_stand": "Tag 11: Offene Luecke = anlassbezogener Content (Startseite-Anlass-Teaser zu duenn) -> Vorschlag 3 (Freigabe offen). Tag 12: Stadt-Landingpage Essen = Vorschlag 4 (Freigabe offen). Essen datengetrieben gewaehlt (8 belegte Essen-Referenzen). Vorschlag 3 (Anlass-Achse) + Vorschlag 4 (Stadt-Achse) orthogonal - bei Doppelfreigabe V3 Option A zuerst.",
-    "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen (+ Bild-Alt Walk-Act-Fest-Essen.jpg). Dichtestes Stadt-Cluster -> Basis fuer Vorschlag 4.",
-    "buildpy_reconciliation_stand": "ERLEDIGT 2026-07-20 (V5-Batch): build.py reconciled mit live-HTML (self-hosted fonts.css, Consent-Checkbox, aktueller Datenschutz-Text, Stand hart 2026-07-02). REBUILD-SPERRE AUFGEHOBEN - normale Auto-Fix-Regeln gelten (build.py aendern -> Py3.12-Rebuild -> byte-verifizieren -> push). Historie in erledigte_vorschlaege Nr. 5.",
-    "cwv_stand": "Tag 13 + V5 + 2026-07-21: fetchpriority=high auf Startseite + 13 Unterseiten-Heroes. Bild-Re-Kompression ERLEDIGT: pantomime-buchen 313KB/1280w, nussknacker 200KB/1440w, pantomime-10 177KB, 20230623-195739 145KB. ACHTUNG: Original-Aufloesungen reduziert (1600->1280/1440w) - bei kuenftigem Bildtausch Originale von Michael anfordern.",
-    "lokaler_mount_hinweis": "STAND 2026-07-07 (unveraendert 21.07.): Cowork-Mount (C:\\Users\\ben_m\\Claude\\projects\\Homepage Pantomime\\Pantomime) haengt auf Checkout 88ca226 (aelter als remote main). .git/HEAD.lock + .git/index.lock vom 02.07. sind nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Workarounds: GIT_INDEX_FILE=/tmp/... fuer read-only-Index-Ops; Dateien einzeln via 'git show HEAD:pfad > pfad' restaurieren; Schreiben in Repo NUR via GitHub-MCP push_files. Write/Edit-Tool im Mount kaputt fuer Groessenaenderung (Padding/Truncation) -> bash cat>file nutzen. State IMMER von remote main lesen, nie vom lokalen Mount.",
-    "cross_link_stand": "Tag 15 (2026-07-17): FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener); seit V5 (2026-07-20) mit descriptiven Ankern (live verifiziert 21.07.). REVERSE: liar-entertainer.com -> Anker 'Pantomime' auf https://pantomime.liar-entertainer.com (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 Punkt 1+2 (Fremd-Domains, Freigabe noetig). Schema sameAs listet beide Domains bereits.",
-    "indexierung_stand": "Tag 18 (22.07.): 3 Seiten indexiert. 403 nur noch beim Sitemap-Fetcher (Seiten-Crawls erfolgreich seit mind. 21.07.). Sitemap 22.07. neu eingereicht. /pantomime-essen/ + /walk-act/ gecrawlt, warten auf Indexierung (beide beantragt). Falls Sitemap-Abruf erneut scheitert: IONOS-Konfig pruefen lassen (Michael), nicht Repo-Problem.",
-    "binaer_push_hinweis": "GitHub-MCP (push_files/create_or_update_file) speichert Content NUR als Text - Binaerdateien (Bilder) UNMOEGLICH (verifiziert 2026-07-21 per bintest: base64-String wurde als Literal-Text gespeichert). Workaround: GitHub-Web-Upload in Michaels Chrome - Dateien in Cowork-Mount kopieren, github.com/ben69mikail/Pantomime/upload/main/<pfad> oeffnen, find 'file input' + file_upload-Tool, Commit-Message-Feld per find ref klicken (NICHT Koordinaten - Suchoverlay-Falle!), Commit direkt zu main.",
-    "stadtseiten_stand": "/pantomime-essen/ seit 2026-07-21 live (Pilot). 4-6 Wochen GSC-Wirkung messen ('Pantomime Essen'-Queries), erst danach ggf. weitere Staedte - NUR mit eigener belegter Referenzbasis (Thin-Page-Guardrail). Reverse-Link von /figuren/der-pantomime-in-nrw/ (Staedteliste) vorhanden."
+    "content_luecken_stand": "V3 (Anlass-Content Startseite) + V4 (/pantomime-essen/) seit 2026-07-21 umgesetzt. Naechste Stadtseiten erst nach 4-6 Wochen GSC-Messung + nur mit eigener Referenzbasis.",
+    "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen. Dichtestes Stadt-Cluster -> Basis /pantomime-essen/.",
+    "buildpy_reconciliation_stand": "ERLEDIGT 2026-07-20 (V5-Batch): build.py reconciled mit live-HTML (self-hosted fonts.css, Consent-Checkbox, aktueller Datenschutz-Text, Stand hart 2026-07-02). REBUILD-SPERRE AUFGEHOBEN - normale Auto-Fix-Regeln gelten.",
+    "cwv_stand": "fetchpriority=high auf Startseite + 13 Unterseiten-Heroes. Bild-Re-Kompression ERLEDIGT: pantomime-buchen 313KB/1280w, nussknacker 200KB/1440w, pantomime-10 177KB, 20230623-195739 145KB. ACHTUNG: Original-Aufloesungen reduziert (1600->1280/1440w) - bei kuenftigem Bildtausch Originale von Michael anfordern.",
+    "lokaler_mount_hinweis": "Cowork-Mount haengt auf altem Checkout 88ca226. .git/HEAD.lock + .git/index.lock nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Schreiben in Repo NUR via GitHub-MCP. State IMMER von remote main lesen.",
+    "cross_link_stand": "FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener), seit V5 descriptiv. REVERSE: liar-entertainer.com -> 'Pantomime' auf alte Subdomain (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 (Fremd-Domains, freigegeben, Umsetzung durch Michael offen).",
+    "indexierung_stand": "Tag 19 (23.07.): 3/14 Seiten indexiert. SITEMAP-ABRUF 3x in Folge fehlgeschlagen (18.06./21.07./22.07., Status 'Konnte nicht abgerufen werden', 0 erkannte Seiten). Datei live valide + erreichbar (15 URLs), robots.txt + Seiten-Crawl gehen durch, .htaccess sauber -> URSACHE SERVERSEITIG BEI IONOS (403 nur auf Sitemap-Fetcher, vermutl. WAF/Bot-Schutz). ESKALATION AN MICHAEL: IONOS-Support kontaktieren. /walk-act/ + /pantomime-essen/ weiter 'gecrawlt-nicht-indexiert' (Crawl 21.07., Indexierung beantragt, keine verweisende Sitemap). NICHT taeglich Indexierung neu beantragen (Spam-Signal). Groesster aktueller Blocker = Sitemap-403.",
+    "binaer_push_hinweis": "GitHub-MCP (push_files/create_or_update_file) speichert Content NUR als Text - Binaerdateien (Bilder) UNMOEGLICH. Workaround: GitHub-Web-Upload in Michaels Chrome (github.com/ben69mikail/Pantomime/upload/main/<pfad>).",
+    "stadtseiten_stand": "/pantomime-essen/ seit 2026-07-21 live (Pilot), aber noch nicht indexiert (Sitemap-403). 4-6 Wochen GSC-Wirkung messen ('Pantomime Essen'-Queries), erst danach ggf. weitere Staedte - NUR mit eigener belegter Referenzbasis."
   }
 }
