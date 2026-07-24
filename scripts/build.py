@@ -929,5 +929,9 @@ urls = "\n".join(
     "# KI-Crawler ausdrücklich erlaubt\n"
     "User-agent: GPTBot\nAllow: /\nUser-agent: ClaudeBot\nAllow: /\n"
     "User-agent: PerplexityBot\nAllow: /\nUser-agent: Google-Extended\nAllow: /\n\n"
-    f"Sitemap: {DOMAIN}/sitemap.xml\n", encoding="utf-8")
-print("sitemap.xml + robots.txt geschrieben.")
+    f"Sitemap: {DOMAIN}/sitemap.xml\n"
+    f"Sitemap: {DOMAIN}/sitemap.txt\n", encoding="utf-8")
+(ROOT / "sitemap.txt").write_text(
+    "\n".join(f"{DOMAIN}{p}" for p in PAGES_FOR_SITEMAP) + "\n",
+    encoding="utf-8")
+print("sitemap.xml + sitemap.txt + robots.txt geschrieben.")

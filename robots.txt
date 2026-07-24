@@ -12,3 +12,4 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://www.pantomime-la-france.eu/sitemap.xml
+Sitemap: https://www.pantomime-la-france.eu/sitemap.txt
