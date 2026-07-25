@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 19,
-  "letzter_lauf": "2026-07-23",
-  "WICHTIG_naechster_lauf": "TAG 19 (23.07., autonom): Indexierungs-Follow-up. KERNBEFUNDE: (1) SITEMAP-FETCH ZUM 3. MAL FEHLGESCHLAGEN - Resubmit 22.07. steht weiter auf 'Konnte nicht abgerufen werden', 0 erkannte Seiten, 'Zuletzt gelesen' leer. Live-Gegenprobe: https://www.pantomime-la-france.eu/sitemap.xml einwandfrei erreichbar, valides XML, 15 URLs, lastmod 2026-07-21. .htaccess im Repo erneut auditiert - KEIN User-Agent-/Pfad-/Bot-Block, nichts das einen Sitemap-Fetch 403en wuerde. FAZIT: serverseitiges IONOS-Problem beim Google-Sitemap-Fetcher (Seiten-Crawl + robots.txt gehen durch, nur Sitemap-Abruf 403). ESKALATION AN MICHAEL noetig (seit 18.06. offen, >1 Monat) - IONOS-Support kontaktieren / WAF-/Bot-Schutz fuer sitemap.xml pruefen lassen. Das ist aktuell der GROESSTE Indexierungs-Blocker (11 Seiten Google nicht via Sitemap bekannt). (2) /walk-act/ + /pantomime-essen/ beide weiter 'Gecrawlt - zurzeit nicht indexiert', letztes Crawl UNVERAENDERT 21.07. 07:15, Seitenabruf 'Erfolgreich', 'Keine verweisenden Sitemaps gefunden' (Folge des Sitemap-403). Indexierung fuer beide bereits 21./22.07. beantragt -> HEUTE NICHT erneut beantragt (waere redundant/Spam-Signal, beide sind in Warteschlange; 'gecrawlt-nicht-indexiert' ist Qualitaets-/Prio-Signal, kein Technik-Block). (3) Seiten-Bericht: 3 indexiert / 1 nicht (http-non-www 403). (4) GSC-Performance: 46 Impr. (von 45), 0 Klicks, Pos 19,9 (von 20,3), Fenster bis ~20.07., gleiche 6 Clown-/Brand-Queries ('pantomime clown' 4 Impr. top). KEIN Code-Commit (Site technisch sauber, Blocker ist IONOS-serverseitig). OFFEN bei Michael: (A) NEU/PRIO: IONOS wg. Sitemap-403 kontaktieren; (B) V6-Profiltexte eintragen (Google Unternehmensprofil prio 1); (C) V7-Snippets auf liar-entertainer.com/zauberer-liar.de einbauen.",
+  "aktueller_plan_tag": 20,
+  "letzter_lauf": "2026-07-25",
+  "WICHTIG_naechster_lauf": "TAG 20 (25.07., autonom): (1) SITEMAP: xml-Eintrag weiter 'Konnte nicht abgerufen werden' (4. Fehlschlag, seit 22.07. unveraendert, 'Zuletzt gelesen' leer). Der am 24.07. committete WAF-Workaround sitemap.txt (edaab12, live verifiziert: 15 URLs, robots.txt-Eintrag vorhanden) wurde HEUTE in GSC eingereicht -> ERGEBNIS: ebenfalls sofort 'Konnte nicht abgerufen werden'. FAZIT verschaerft: IONOS blockiert den Google-Sitemap-Fetcher unabhaengig vom Dateityp/Pfad - Workaround auf Repo-Ebene wirkungslos, IONOS-ESKALATION durch Michael bleibt DER Blocker (seit 18.06. offen). (2) /walk-act/ + /pantomime-essen/ unveraendert 'Gecrawlt - zurzeit nicht indexiert' (Crawl weiterhin 21.07. 07:15, Indexierung beantragt, nicht erneut beantragt). (3) Seiten-Bericht: 3 indexiert / 1x 403 (http-non-www), Validierung 'Gestartet'. (4) Performance: 50 Impr. (von 46), 0 Klicks, Pos 19,6 (von 19,9), Fenster bis 22.07., gleiche 6 Clown-/Brand-Queries ('pantomime clown' 4). (5) CWV-ROTATION (Plan e): PageSpeed live - Clown mobil Perf 97 (FCP 1,1s/LCP 2,0s/TBT 0ms/CLS 0/SI 4,2s orange), Start mobil Perf 99 (LCP 2,1s), A11y 100, SEO 100, BP 92. V5-Optimierungen (fetchpriority+Bildkompression) live wirksam - kein Code-Fix noetig. KEIN Code-Commit ausser State. OFFEN bei Michael: (A) PRIO IONOS-Support wg. Sitemap-403 (jetzt fuer xml UND txt belegt); (B) V6-Profiltexte (Google Unternehmensprofil); (C) V7-Snippets auf liar-entertainer.com/zauberer-liar.de. NAECHSTER LAUF: Tag 21 - Sitemap-Status (xml+txt) pruefen; falls weiter 403 -> erneut eskalieren. Indexstatus beider Seiten. Sobald erste Klicks: CTR-Optimierung. Sonst Rotation: On-Page-Feinschliff /ueber-mich/ (2 Impr.) oder Desktop-CWV.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -204,15 +204,24 @@
       "commits": [
         "SEO: State Tag 19 - Indexierungs-Follow-up: Sitemap-Fetch 3. Mal fehlgeschlagen (IONOS-Eskalation), Seiten weiter nicht indexiert, GSC-Snapshot 2026-07-23"
       ]
+    },
+    {
+      "tag": 20,
+      "datum": "2026-07-25",
+      "schritt": "Tag 20: Indexierungs-Follow-up + sitemap.txt (WAF-Workaround vom 24.07.) in GSC eingereicht + CWV-Rotation via PageSpeed live.",
+      "ergebnis": "GSC live via Chrome (autonom). (1) sitemap.xml: 4. Fehlschlag in Folge ('Konnte nicht abgerufen werden', 0 erkannte Seiten). (2) Der von Michael/Session am 24.07. gepushte WAF-Workaround sitemap.txt (edaab12) live verifiziert (15 URLs, robots.txt 2. Sitemap-Zeile) und HEUTE in GSC eingereicht -> ebenfalls SOFORT 'Konnte nicht abgerufen werden'. Beweis verschaerft: IONOS-403 trifft den Sitemap-Fetcher dateityp-unabhaengig; Repo-seitige Workarounds wirkungslos -> IONOS-Eskalation durch Michael bleibt einziger Weg. (3) /walk-act/ + /pantomime-essen/ unveraendert 'Gecrawlt - zurzeit nicht indexiert' (Crawl 21.07. 07:15, Indexierung bereits beantragt, heute NICHT erneut). (4) Seiten-Bericht 3 indexiert / 1x 403 (http-non-www, Validierung 'Gestartet'). (5) Performance: 50 Impr. (46->50), 0 Klicks, Pos 19,6 (19,9->19,6), gleiche 6 Clown-/Brand-Queries. (6) CWV-Rotation (Plan-Schritt e): PageSpeed live mobil - der-clown Perf 97 (FCP 1,1s, LCP 2,0s, TBT 0ms, CLS 0, SI 4,2s einziger Orange-Wert, kein CWV), Startseite Perf 99 (LCP 2,1s); A11y 100, SEO 100, BP 92 beide. V5-Fixes (fetchpriority + Bild-Rekompression) live bestaetigt wirksam. KEIN Code-Commit noetig (nur State). Hinweis: Lauf auf Claude Fable 5 (Opus 4.8 nicht verfuegbar, kein kleineres Modell).",
+      "commits": [
+        "SEO: State Tag 20 - sitemap.txt in GSC eingereicht (auch 403), CWV-Audit gruen, GSC-Snapshot 2026-07-25"
+      ]
     }
   ],
-  "naechster_plan_tag": 20,
+  "naechster_plan_tag": 21,
   "naechster_schritt": "Tag 20 (GSC-datengetrieben): (a) PRIO - Sitemap-Status pruefen: Hat Michael IONOS kontaktiert? Wird der Sitemap-Abruf jetzt erfolgreich (Status 'Erfolgreich' + 15 erkannte Seiten)? Falls weiter 'Konnte nicht abgerufen werden' -> erneut an Michael eskalieren (IONOS ist der Blocker, nicht das Repo). (b) Indexierungsstatus /walk-act/ + /pantomime-essen/ nachpruefen (Ziel: 'Indexiert'; aktuell 'gecrawlt-nicht-indexiert' seit 21.07.). (c) 403-Validierung (http-non-www) im Seiten-Bericht. (d) Sobald erste Klicks: CTR-Optimierung der Clown-/Startseite. (e) Falls alles unveraendert: Technik-Audit-Rotation (z.B. Core Web Vitals live via PageSpeed, oder On-Page-Feinschliff einer schwachen High-Impression-Seite).",
   "offene_vorschlaege": [
     {
       "nr": "IONOS-ESKALATION (kein klassischer Vorschlag, sondern Server-Ops)",
       "datum_vorschlag": "2026-07-23",
-      "titel": "KRITISCH/PRIO: Google-Sitemap-Fetcher erhaelt 403 von IONOS (3x in Folge fehlgeschlagen: 18.06./21.07./22.07.). sitemap.xml ist live einwandfrei erreichbar + valide, robots.txt + Seiten-Crawl durch Googlebot funktionieren, .htaccess im Repo sauber (kein Bot-/UA-/Pfad-Block). -> Ursache serverseitig bei IONOS (vermutl. WAF/Bot-Schutz blockiert den Sitemap-Abruf-User-Agent). MICHAEL: IONOS-Support kontaktieren, 403 auf /sitemap.xml fuer Google-Sitemap-Fetcher entsperren lassen. Ohne das bleiben 11 Seiten Google nur ueber interne Links/Einzel-Anfragen bekannt (langsame Indexierung).",
+      "titel": "KRITISCH/PRIO: Google-Sitemap-Fetcher erhaelt 403 von IONOS (3x in Folge fehlgeschlagen: 18.06./21.07./22.07.). sitemap.xml ist live einwandfrei erreichbar + valide, robots.txt + Seiten-Crawl durch Googlebot funktionieren, .htaccess im Repo sauber (kein Bot-/UA-/Pfad-Block). -> Ursache serverseitig bei IONOS (vermutl. WAF/Bot-Schutz blockiert den Sitemap-Abruf-User-Agent). MICHAEL: IONOS-Support kontaktieren, 403 auf /sitemap.xml fuer Google-Sitemap-Fetcher entsperren lassen. Ohne das bleiben 11 Seiten Google nur ueber interne Links/Einzel-Anfragen bekannt (langsame Indexierung). UPDATE 25.07.: Auch sitemap.txt (WAF-Workaround vom 24.07.) wird sofort mit 'Konnte nicht abgerufen werden' abgelehnt -> Block ist dateityp-unabhaengig, Repo-seitig nicht loesbar. IONOS-Kontakt weiterhin einzige Loesung.",
       "status": "OFFEN - erfordert Aktion von Michael (Kontakt zu IONOS-Hosting-Support). Kein Repo-Fix moeglich.",
       "typ": "Server-/Hosting-Konfiguration (IONOS), nicht Code"
     },
@@ -299,11 +308,26 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 21.9,
       "top_queries": [
-        {"query": "clown pantomime", "impressionen": 2},
-        {"query": "pantomime clown", "impressionen": 2},
-        {"query": "clown liar", "impressionen": 1},
-        {"query": "clown zauberer liar", "impressionen": 1},
-        {"query": "zauberer liar", "impressionen": 1}
+        {
+          "query": "clown pantomime",
+          "impressionen": 2
+        },
+        {
+          "query": "pantomime clown",
+          "impressionen": 2
+        },
+        {
+          "query": "clown liar",
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "impressionen": 1
+        }
       ],
       "hinweis": "Query-Tab erstmals befuellt: Clown-/Brand-Queries. Impr. 5->25, Pos 27,8->21,9."
     },
@@ -316,9 +340,21 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 22,
       "top_queries": [
-        {"query": "clown pantomime", "impressionen": 3, "position": 11.0},
-        {"query": "pantomime clown", "impressionen": 3, "position": 13.3},
-        {"query": "pantomime clowns", "impressionen": 1, "position": 12.0}
+        {
+          "query": "clown pantomime",
+          "impressionen": 3,
+          "position": 11.0
+        },
+        {
+          "query": "pantomime clown",
+          "impressionen": 3,
+          "position": 13.3
+        },
+        {
+          "query": "pantomime clowns",
+          "impressionen": 1,
+          "position": 12.0
+        }
       ],
       "hinweis": "Impr. 25->40. Clown+Pantomime-Kombi Pos ~11-13. Keine Walk-Act-/Stadt-Queries."
     },
@@ -331,9 +367,18 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 20.3,
       "top_pages": [
-        {"url": "https://www.pantomime-la-france.eu/figuren/der-clown/", "impressionen": 35},
-        {"url": "https://www.pantomime-la-france.eu/", "impressionen": 10},
-        {"url": "https://www.pantomime-la-france.eu/ueber-mich/", "impressionen": 2}
+        {
+          "url": "https://www.pantomime-la-france.eu/figuren/der-clown/",
+          "impressionen": 35
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/",
+          "impressionen": 10
+        },
+        {
+          "url": "https://www.pantomime-la-france.eu/ueber-mich/",
+          "impressionen": 2
+        }
       ],
       "hinweis": "Impr. 40->45, Pos 20,3. Startseite waechst auf 10. Weiter keine Walk-Act-/Stadt-Queries."
     },
@@ -378,7 +423,10 @@
       "ctr_prozent": 0,
       "durchschnitt_position": 19.9,
       "top_queries": [
-        {"query": "pantomime clown", "impressionen": 4}
+        {
+          "query": "pantomime clown",
+          "impressionen": 4
+        }
       ],
       "indexierung": {
         "seiten_bericht": "3 indexiert / 1 nicht indexiert (http-non-www 403)",
@@ -387,6 +435,64 @@
         "pantomime_essen": "Gecrawlt (unveraendert 21.07. 07:15), 'zurzeit nicht indexiert', keine verweisende Sitemap, Indexierung bereits beantragt."
       },
       "hinweis": "Performance leicht besser (45->46 Impr., Pos 20,3->19,9), Fenster jetzt bis 20.07. Query-Cluster unveraendert Clown-/Brand-lastig. Kein Code-Commit (Ops-Tag). Sitemap-403 (IONOS) ist der zentrale Blocker."
+    },
+    {
+      "datum": "2026-07-25",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "14.06.-22.07.26",
+      "klicks": 0,
+      "impressionen": 50,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 19.6,
+      "top_queries": [
+        {
+          "query": "pantomime clown",
+          "impressionen": 4
+        },
+        {
+          "query": "clown pantomime",
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clowns",
+          "impressionen": 1
+        },
+        {
+          "query": "clown liar",
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "impressionen": 1
+        }
+      ],
+      "indexierung": {
+        "seiten_bericht": "3 indexiert / 1 nicht (http-non-www 403, Validierung 'Gestartet')",
+        "sitemap_xml": "weiter 'Konnte nicht abgerufen werden' (4. Fehlschlag, Eintrag 22.07., nie gelesen)",
+        "sitemap_txt": "HEUTE 25.07. eingereicht (WAF-Workaround edaab12) -> sofort ebenfalls 'Konnte nicht abgerufen werden'",
+        "walk_act": "unveraendert gecrawlt 21.07. 07:15, nicht indexiert",
+        "pantomime_essen": "unveraendert gecrawlt 21.07. 07:15, nicht indexiert, Indexierung beantragt"
+      },
+      "cwv_psi": {
+        "der_clown_mobil": {
+          "performance": 97,
+          "fcp_s": 1.1,
+          "lcp_s": 2.0,
+          "tbt_ms": 0,
+          "cls": 0,
+          "speed_index_s": 4.2
+        },
+        "startseite_mobil": {
+          "performance": 99,
+          "lcp_s": 2.1
+        },
+        "hinweis": "Feld-Daten (CrUX) 'Keine Daten' (zu wenig Traffic). Lab-Werte gruen, nur SI orange (kein CWV)."
+      },
+      "hinweis": "Impr. 46->50, Pos 19,9->19,6, Fenster bis 22.07. sitemap.txt-Workaround greift NICHT -> IONOS-Eskalation bleibt PRIO."
     }
   ],
   "technische_hinweise": {
@@ -399,9 +505,12 @@
     "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de, seit V5 (2026-07-20) mit descriptiven Ankern.",
     "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben.",
     "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner verlinken via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen. /pantomime-essen/ von /figuren/der-pantomime-in-nrw/-Staedteliste verlinkt.",
-    "sitemap_robots_stand": "Seit 2026-07-21: 15 URLs (neu /pantomime-essen/ prio 0.8), lastmod=2026-07-21, 404.html bewusst nicht in sitemap. robots.txt sauber. WICHTIG: GSC-Sitemap-Fetcher erhaelt 403 (IONOS-serverseitig) - Datei selbst ist live valide + erreichbar; siehe indexierung_stand.",
+    "sitemap_robots_stand": "Seit 24.07. (edaab12): sitemap.xml (15 URLs, lastmod 2026-07-24) + sitemap.txt (15 URLs, plain text) via build.py; robots.txt mit 2 Sitemap-Zeilen. Beide in GSC eingereicht (xml 22.07., txt 25.07.), beide 'Konnte nicht abgerufen werden' (IONOS-403). 404.html nicht in sitemap.",
     "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Seit V5-Batch (2026-07-20): style.css?v=fc99917e, app.js?v=45732809. Bei style.css-Aenderung alle HTML mitcommitten.",
-    "fokus_keywords": ["Pantomime", "Walk Act"],
+    "fokus_keywords": [
+      "Pantomime",
+      "Walk Act"
+    ],
     "faq_stand": "faq_block(qa,title) rendert details/summary/faq-a. Selbe Q/A-Liste an faq_schema UND faq_block -> Deckungsgleichheit garantiert.",
     "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt.",
     "uv_cache_hinweis": "Frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es.",
@@ -409,10 +518,10 @@
     "content_luecken_stand": "V3 (Anlass-Content Startseite) + V4 (/pantomime-essen/) seit 2026-07-21 umgesetzt. Naechste Stadtseiten erst nach 4-6 Wochen GSC-Messung + nur mit eigener Referenzbasis.",
     "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen. Dichtestes Stadt-Cluster -> Basis /pantomime-essen/.",
     "buildpy_reconciliation_stand": "ERLEDIGT 2026-07-20 (V5-Batch): build.py reconciled mit live-HTML (self-hosted fonts.css, Consent-Checkbox, aktueller Datenschutz-Text, Stand hart 2026-07-02). REBUILD-SPERRE AUFGEHOBEN - normale Auto-Fix-Regeln gelten.",
-    "cwv_stand": "fetchpriority=high auf Startseite + 13 Unterseiten-Heroes. Bild-Re-Kompression ERLEDIGT: pantomime-buchen 313KB/1280w, nussknacker 200KB/1440w, pantomime-10 177KB, 20230623-195739 145KB. ACHTUNG: Original-Aufloesungen reduziert (1600->1280/1440w) - bei kuenftigem Bildtausch Originale von Michael anfordern.",
+    "cwv_stand": "Tag 20 (25.07., PSI live mobil): der-clown Perf 97 (FCP 1,1/LCP 2,0/TBT 0/CLS 0/SI 4,2 orange), Startseite Perf 99 (LCP 2,1). A11y 100, SEO 100, BP 92. V5-Fixes (fetchpriority + Rekompression) live wirksam bestaetigt. Kein Handlungsbedarf; SI-Orange = Hero-bg auf 4G-Drossel, kein CWV. CrUX-Felddaten noch 'Keine Daten'. Original-Aufloesungen der 4 rekomprimierten Heroes reduziert (1600->1280/1440w) - bei Bildtausch Originale von Michael anfordern.",
     "lokaler_mount_hinweis": "Cowork-Mount haengt auf altem Checkout 88ca226. .git/HEAD.lock + .git/index.lock nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Schreiben in Repo NUR via GitHub-MCP. State IMMER von remote main lesen.",
     "cross_link_stand": "FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener), seit V5 descriptiv. REVERSE: liar-entertainer.com -> 'Pantomime' auf alte Subdomain (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 (Fremd-Domains, freigegeben, Umsetzung durch Michael offen).",
-    "indexierung_stand": "Tag 19 (23.07.): 3/14 Seiten indexiert. SITEMAP-ABRUF 3x in Folge fehlgeschlagen (18.06./21.07./22.07., Status 'Konnte nicht abgerufen werden', 0 erkannte Seiten). Datei live valide + erreichbar (15 URLs), robots.txt + Seiten-Crawl gehen durch, .htaccess sauber -> URSACHE SERVERSEITIG BEI IONOS (403 nur auf Sitemap-Fetcher, vermutl. WAF/Bot-Schutz). ESKALATION AN MICHAEL: IONOS-Support kontaktieren. /walk-act/ + /pantomime-essen/ weiter 'gecrawlt-nicht-indexiert' (Crawl 21.07., Indexierung beantragt, keine verweisende Sitemap). NICHT taeglich Indexierung neu beantragen (Spam-Signal). Groesster aktueller Blocker = Sitemap-403.",
+    "indexierung_stand": "Tag 20 (25.07.): 3/15 Seiten indexiert. sitemap.xml 4x in Folge nicht abrufbar; sitemap.txt (WAF-Workaround, 24.07. deployed) am 25.07. eingereicht -> ebenfalls sofort 'Konnte nicht abgerufen werden'. BEWEIS: IONOS-403 blockiert Google-Sitemap-Fetcher dateityp-/pfadunabhaengig; Repo-Workarounds wirkungslos. EINZIGER WEG: Michael kontaktiert IONOS (WAF/Bot-Schutz fuer Sitemap-Fetcher-UA entsperren). /walk-act/ + /pantomime-essen/ 'gecrawlt-nicht-indexiert' (Crawl 21.07.), Indexierung beantragt - NICHT taeglich neu beantragen.",
     "binaer_push_hinweis": "GitHub-MCP (push_files/create_or_update_file) speichert Content NUR als Text - Binaerdateien (Bilder) UNMOEGLICH. Workaround: GitHub-Web-Upload in Michaels Chrome (github.com/ben69mikail/Pantomime/upload/main/<pfad>).",
     "stadtseiten_stand": "/pantomime-essen/ seit 2026-07-21 live (Pilot), aber noch nicht indexiert (Sitemap-403). 4-6 Wochen GSC-Wirkung messen ('Pantomime Essen'-Queries), erst danach ggf. weitere Staedte - NUR mit eigener belegter Referenzbasis."
   }
