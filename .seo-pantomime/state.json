@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 21,
-  "letzter_lauf": "2026-07-26",
-  "WICHTIG_naechster_lauf": "TAG 21 (26.07., autonom) - ZWEI DURCHBRUECHE: (1) SITEMAP: sitemap.txt (25.07. eingereicht) Status 'Erfolgreich', Zuletzt gelesen 25.07.2026, 15 erkannte Seiten -> WAF-Workaround edaab12 GREIFT, alle 15 URLs sind Google jetzt bekannt. sitemap.xml bleibt 'Konnte nicht abgerufen werden' (nur noch kosmetisch - txt uebernimmt). IONOS-Eskalation dadurch DEPRIORISIERT (optional nur fuer xml). (2) /pantomime-essen/ ist INDEXIERT ('URL ist auf Google') - erste neu indexierte Seite seit Migration, jetzt 4 indexierte Seiten. (3) /walk-act/ weiter 'Gecrawlt - zurzeit nicht indexiert' (Crawl 21.07.), Sitemaps-Feld 'Voruebergehender Verarbeitungsfehler' -> Indexierung HEUTE ERNEUT beantragt (bestaetigt). (4) Seiten-Bericht 3/1 (Stand 10.07., laeuft nach), 403-Validierung 'Gestartet'. (5) Performance identisch 25.07.: 50 Impr., 0 Klicks, Pos 19,6, Fenster bis 23.07., 6 Clown-/Brand-Queries. KEIN Code-Commit. NAECHSTER LAUF (Tag 22): (a) /walk-act/-Indexstatus nach erneutem Antrag; (b) Seiten-Bericht auf Anstieg indexierter Seiten pruefen (Sitemap-Effekt, Berichts-Lag beachten); (c) sobald erste Klicks: CTR-Optimierung; (d) sonst Rotation: On-Page-Feinschliff /ueber-mich/ (2 Impr.) oder Desktop-CWV.",
+  "aktueller_plan_tag": 22,
+  "letzter_lauf": "2026-07-27",
+  "WICHTIG_naechster_lauf": "TAG 22 (27.07., autonom) - DURCHBRUCH FORTGESETZT: (1) /walk-act/ ist INDEXIERT ('URL ist auf Google', Crawl 26.07. 07:11, Auffindbarkeit via sitemap.txt) - der erneute Antrag vom 26.07. hat binnen eines Tages gegriffen. Damit 5 bestaetigt indexierte Seiten (/, der-clown, ueber-mich, pantomime-essen, walk-act). (2) sitemap.txt STABIL 'Erfolgreich' (gelesen 25.07., 15 Seiten, 2. Lauf in Folge); xml-Eintrag weiter tot (kosmetisch). (3) Fokus-Seite /figuren/der-pantomime-in-nrw/ 'Gefunden - zurzeit nicht indexiert' (nie gecrawlt), aber via sitemap.txt + Verweis /pantomime-essen/ entdeckt -> Indexierung HEUTE beantragt (bestaetigt, bevorzugte Warteschlange). (4) Seiten-Bericht unveraendert 3/1 (Stand 10.07., laeuft nach), 403-Validierung 'Gestartet'. (5) Performance 28-Tage-Fenster (27.06.-24.07.): 51 Impr., 0 Klicks, Pos 17,5, gleiche 6 Clown-/Brand-Queries. KEIN Code-Commit. NAECHSTER LAUF (Tag 23): (a) NRW-Seite Indexstatus nach Antrag 27.07.; (b) weitere Stichproben (/kontakt/, /referenzen/, /figuren/) auf Gefunden/Gecrawlt-Fortschritt; (c) Seiten-Bericht+403; (d) erste Klicks -> CTR-Optimierung; (e) sonst Rotation /ueber-mich/ oder Desktop-CWV. Optional: toten sitemap.xml-Eintrag entfernen, wenn txt 3. Lauf stabil.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -222,10 +222,19 @@
       "commits": [
         "SEO: State Tag 21 - DURCHBRUCH: sitemap.txt erfolgreich gelesen (15 Seiten), /pantomime-essen/ indexiert, /walk-act/ Indexierung erneut beantragt"
       ]
+    },
+    {
+      "tag": 22,
+      "datum": "2026-07-27",
+      "schritt": "Tag 22: Indexierungs-Follow-up - /walk-act/-Indexstatus nach erneutem Antrag, Seiten-Bericht, 403-Validierung, sitemap.txt-Stabilitaet.",
+      "ergebnis": "GSC live via Chrome (autonom). DURCHBRUCH FORTGESETZT: (1) /walk-act/ ist INDEXIERT - 'URL ist auf Google', Seite ist indexiert, letztes Crawling 26.07.2026 07:11 (Googlebot Smartphone), Auffindbarkeit via sitemap.txt, Canonical korrekt - der erneute Antrag vom 26.07. hat binnen eines Tages gegriffen. Damit 5 bestaetigt indexierte Seiten (/, /figuren/der-clown/, /ueber-mich/, /pantomime-essen/, /walk-act/) - beide Fokus-Landingpages (Walk Act + Stadt-Pilot Essen) sind im Index. (2) sitemap.txt STABIL 'Erfolgreich' (zuletzt gelesen 25.07., 15 erkannte Seiten, 2. Lauf in Folge); sitemap.xml-Eintrag weiter 'Konnte nicht abgerufen werden' (nur kosmetisch). (3) Stichprobe Fokus-Seite /figuren/der-pantomime-in-nrw/: 'Gefunden - zurzeit nicht indexiert', noch nie gecrawlt, aber jetzt via sitemap.txt UND verweisende Seite /pantomime-essen/ entdeckt (Sitemap-Effekt laeuft) -> Indexierung beantragt, GSC-Bestaetigung 'Indexierung wurde beantragt' (bevorzugte Crawling-Warteschlange). (4) Seiten-Bericht unveraendert 3 indexiert / 1x 403 (http-non-www), Stand 10.07. (laeuft dem realen Stand deutlich nach), 403-Validierung 'Gestartet'. (5) Performance (28-Tage-Fenster 27.06.-24.07.): 51 Impr., 0 Klicks, Pos 17,5; gleiche 6 Clown-/Brand-Queries ('pantomime clown' 4). Noch keine Klicks -> CTR-Schritt (d) nicht anwendbar; Rotation (e) zugunsten des NRW-Indexierungsantrags zurueckgestellt. KEIN Code-Commit noetig (nur State). Hinweis: Lauf auf Claude Fable 5 (Opus 4.8 nicht verfuegbar, kein kleineres Modell).",
+      "commits": [
+        "SEO: State Tag 22 - /walk-act/ INDEXIERT, Indexierung /figuren/der-pantomime-in-nrw/ beantragt, sitemap.txt stabil"
+      ]
     }
   ],
-  "naechster_plan_tag": 22,
-  "naechster_schritt": "Tag 22 (GSC-datengetrieben): (a) /walk-act/-Indexstatus nach erneutem Antrag vom 26.07. pruefen (Ziel: 'Indexiert' oder zumindest frisches Crawl-Datum). (b) Seiten-Bericht auf Anstieg indexierter Seiten pruefen - nach Sitemap-Erfolg (25.07.) sollten die uebrigen 11 Seiten nach und nach in den Index kommen (Berichts-Lag von ~1-2 Wochen beachten; Einzel-URL-Pruefung ist aktueller als der Bericht). (c) 403-Validierung (http-non-www) im Seiten-Bericht. (d) Sobald erste Klicks: CTR-Optimierung der Clown-/Startseite. (e) Falls alles unveraendert: Rotation - On-Page-Feinschliff /ueber-mich/ (2 Impr.) oder Desktop-CWV via PageSpeed. OPTIONAL (nur Vorschlag, kein Muss): fehlgeschlagenen sitemap.xml-Eintrag in GSC entfernen, sobald txt stabil 'Erfolgreich' bleibt - vorher 1-2 weitere Laeufe beobachten.",
+  "naechster_plan_tag": 23,
+  "naechster_schritt": "Tag 23 (GSC-datengetrieben): (a) Indexstatus /figuren/der-pantomime-in-nrw/ nach Antrag vom 27.07. pruefen. (b) Weitere Nicht-indexiert-Stichproben (/kontakt/, /referenzen/, /figuren/) auf 'Gefunden/Gecrawlt'-Fortschritt pruefen (Sitemap-Effekt; Einzel-URL-Pruefung aktueller als Seiten-Bericht). (c) Seiten-Bericht + 403-Validierung (http-non-www). (d) Sobald erste Klicks: CTR-Optimierung Clown-/Startseite. (e) Falls unveraendert: Rotation - On-Page-Feinschliff /ueber-mich/ (2 Impr.) oder Desktop-CWV via PageSpeed. OPTIONAL: toten sitemap.xml-Eintrag in GSC entfernen, wenn sitemap.txt im 3. Lauf in Folge 'Erfolgreich' bleibt.",
   "offene_vorschlaege": [
     {
       "nr": "IONOS-ESKALATION (kein klassischer Vorschlag, sondern Server-Ops)",
@@ -545,6 +554,50 @@
         "pantomime_essen": "INDEXIERT - 'URL ist auf Google', HTTPS ok, Navigationspfade ok"
       },
       "hinweis": "DURCHBRUCH: sitemap.txt erfolgreich gelesen (15 Seiten bekannt) + /pantomime-essen/ indexiert. Performance identisch 25.07. (Fenster +1 Tag). IONOS-Eskalation deprioritisiert."
+    },
+    {
+      "datum": "2026-07-27",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "27.06.-24.07.26 (28-Tage-Fenster, NICHT Seit-Migration - Vergleich zu aelteren Snapshots nur eingeschraenkt)",
+      "klicks": 0,
+      "impressionen": 51,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 17.5,
+      "top_queries": [
+        {
+          "query": "pantomime clown",
+          "impressionen": 4
+        },
+        {
+          "query": "clown pantomime",
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clowns",
+          "impressionen": 1
+        },
+        {
+          "query": "clown liar",
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "impressionen": 1
+        }
+      ],
+      "indexierung": {
+        "seiten_bericht": "3 indexiert / 1 nicht (http-non-www 403, Validierung Gestartet; Bericht Stand 10.07., laeuft nach)",
+        "sitemap_xml": "weiter 'Konnte nicht abgerufen werden' (Eintrag 22.07.) - kosmetisch",
+        "sitemap_txt": "STABIL 'Erfolgreich' - gelesen 25.07., 15 erkannte Seiten (2. Lauf in Folge)",
+        "walk_act": "INDEXIERT - 'URL ist auf Google', Crawl 26.07. 07:11, via sitemap.txt",
+        "pantomime_essen": "INDEXIERT (seit 26.07.)",
+        "pantomime_in_nrw": "'Gefunden - zurzeit nicht indexiert' (nie gecrawlt); entdeckt via sitemap.txt + Verweis /pantomime-essen/; Indexierung 27.07. beantragt (bestaetigt)"
+      },
+      "hinweis": "/walk-act/ indexiert (Antrag 26.07. griff binnen 1 Tag). 5 bestaetigt indexierte Seiten. Sitemap-Effekt sichtbar (NRW-Seite entdeckt). Keine Klicks, Queries unveraendert Clown-/Brand-lastig."
     }
   ],
   "technische_hinweise": {
@@ -557,7 +610,7 @@
     "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de, seit V5 (2026-07-20) mit descriptiven Ankern.",
     "schema_stand": "Tag 6/7: alle Schema-Typen sauber. FAQPage hat seit 2026-06-25 sichtbaren Gegenpart (faq_block) auf 8 Seiten - Text MUSS identisch zu faq_schema bleiben.",
     "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner verlinken via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen. /pantomime-essen/ von /figuren/der-pantomime-in-nrw/-Staedteliste verlinkt.",
-    "sitemap_robots_stand": "Seit 24.07. (edaab12): sitemap.xml (15 URLs) + sitemap.txt (15 URLs, plain text) via build.py; robots.txt mit 2 Sitemap-Zeilen. STATUS 26.07.: sitemap.txt in GSC 'Erfolgreich' (gelesen 25.07., 15 erkannte Seiten) - FUNKTIONIERT. sitemap.xml-Eintrag (22.07.) weiter 'Konnte nicht abgerufen werden' - kosmetisch, txt uebernimmt; Eintrag kann spaeter entfernt werden, wenn txt stabil bleibt. 404.html nicht in sitemap.",
+    "sitemap_robots_stand": "Seit 24.07. (edaab12): sitemap.xml (15 URLs) + sitemap.txt (15 URLs, plain text) via build.py; robots.txt mit 2 Sitemap-Zeilen. STATUS 27.07.: sitemap.txt in GSC 'Erfolgreich' (gelesen 25.07., 15 erkannte Seiten, 2. Lauf in Folge stabil) - FUNKTIONIERT. sitemap.xml-Eintrag (22.07.) weiter 'Konnte nicht abgerufen werden' - kosmetisch, txt uebernimmt; Eintrag kann spaeter entfernt werden, wenn txt stabil bleibt. 404.html nicht in sitemap.",
     "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Seit V5-Batch (2026-07-20): style.css?v=fc99917e, app.js?v=45732809. Bei style.css-Aenderung alle HTML mitcommitten.",
     "fokus_keywords": [
       "Pantomime",
@@ -573,7 +626,7 @@
     "cwv_stand": "Tag 20 (25.07., PSI live mobil): der-clown Perf 97 (FCP 1,1/LCP 2,0/TBT 0/CLS 0/SI 4,2 orange), Startseite Perf 99 (LCP 2,1). A11y 100, SEO 100, BP 92. V5-Fixes (fetchpriority + Rekompression) live wirksam bestaetigt. Kein Handlungsbedarf; SI-Orange = Hero-bg auf 4G-Drossel, kein CWV. CrUX-Felddaten noch 'Keine Daten'. Original-Aufloesungen der 4 rekomprimierten Heroes reduziert (1600->1280/1440w) - bei Bildtausch Originale von Michael anfordern.",
     "lokaler_mount_hinweis": "Cowork-Mount haengt auf altem Checkout 88ca226. .git/HEAD.lock + .git/index.lock nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Schreiben in Repo NUR via GitHub-MCP. State IMMER von remote main lesen.",
     "cross_link_stand": "FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener), seit V5 descriptiv. REVERSE: liar-entertainer.com -> 'Pantomime' auf alte Subdomain (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 (Fremd-Domains, freigegeben, Umsetzung durch Michael offen).",
-    "indexierung_stand": "Tag 21 (26.07.): DURCHBRUCH - sitemap.txt am 25.07. erfolgreich gelesen (15 erkannte Seiten), alle URLs Google bekannt. /pantomime-essen/ INDEXIERT (4. Seite; Seiten-Bericht Stand 10.07. zeigt noch 3, laeuft nach). /walk-act/ weiter 'gecrawlt-nicht-indexiert' (Crawl 21.07.), Indexierung 26.07. erneut beantragt. sitemap.xml-Eintrag weiter fehlgeschlagen (kosmetisch). Erwartung: uebrige 10 Seiten sollten nach Sitemap-Erfolg sukzessive gecrawlt/indexiert werden - Einzel-URL-Pruefung ist aktueller als der Seiten-Bericht.",
+    "indexierung_stand": "Tag 22 (27.07.): /walk-act/ INDEXIERT (Crawl 26.07. 07:11, via sitemap.txt) - 5 bestaetigt indexierte Seiten (/, der-clown, ueber-mich, pantomime-essen, walk-act), beide Fokus-Landingpages im Index. /figuren/der-pantomime-in-nrw/ 'Gefunden - zurzeit nicht indexiert' (nie gecrawlt), via sitemap.txt + /pantomime-essen/ entdeckt, Indexierung 27.07. beantragt. Seiten-Bericht laeuft nach (Stand 10.07., zeigt 3/1-403). sitemap.txt stabil erfolgreich (2 Laeufe); xml-Eintrag tot (kosmetisch, ggf. nach 3. stabilem Lauf entfernen). Uebrige ~9 Seiten sukzessive erwartet - Einzel-URL-Pruefung ist aktueller als der Bericht.",
     "binaer_push_hinweis": "GitHub-MCP (push_files/create_or_update_file) speichert Content NUR als Text - Binaerdateien (Bilder) UNMOEGLICH. Workaround: GitHub-Web-Upload in Michaels Chrome (github.com/ben69mikail/Pantomime/upload/main/<pfad>).",
     "stadtseiten_stand": "/pantomime-essen/ seit 2026-07-21 live (Pilot), seit spaetestens 26.07. INDEXIERT. Jetzt 4-6 Wochen GSC-Wirkung messen ('Pantomime Essen'-Queries), erst danach ggf. weitere Staedte - NUR mit eigener belegter Referenzbasis."
   }
