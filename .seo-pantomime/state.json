@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 22,
-  "letzter_lauf": "2026-07-27",
-  "WICHTIG_naechster_lauf": "TAG 22 (27.07., autonom) - DURCHBRUCH FORTGESETZT: (1) /walk-act/ ist INDEXIERT ('URL ist auf Google', Crawl 26.07. 07:11, Auffindbarkeit via sitemap.txt) - der erneute Antrag vom 26.07. hat binnen eines Tages gegriffen. Damit 5 bestaetigt indexierte Seiten (/, der-clown, ueber-mich, pantomime-essen, walk-act). (2) sitemap.txt STABIL 'Erfolgreich' (gelesen 25.07., 15 Seiten, 2. Lauf in Folge); xml-Eintrag weiter tot (kosmetisch). (3) Fokus-Seite /figuren/der-pantomime-in-nrw/ 'Gefunden - zurzeit nicht indexiert' (nie gecrawlt), aber via sitemap.txt + Verweis /pantomime-essen/ entdeckt -> Indexierung HEUTE beantragt (bestaetigt, bevorzugte Warteschlange). (4) Seiten-Bericht unveraendert 3/1 (Stand 10.07., laeuft nach), 403-Validierung 'Gestartet'. (5) Performance 28-Tage-Fenster (27.06.-24.07.): 51 Impr., 0 Klicks, Pos 17,5, gleiche 6 Clown-/Brand-Queries. KEIN Code-Commit. NAECHSTER LAUF (Tag 23): (a) NRW-Seite Indexstatus nach Antrag 27.07.; (b) weitere Stichproben (/kontakt/, /referenzen/, /figuren/) auf Gefunden/Gecrawlt-Fortschritt; (c) Seiten-Bericht+403; (d) erste Klicks -> CTR-Optimierung; (e) sonst Rotation /ueber-mich/ oder Desktop-CWV. Optional: toten sitemap.xml-Eintrag entfernen, wenn txt 3. Lauf stabil.",
+  "aktueller_plan_tag": 23,
+  "letzter_lauf": "2026-07-30",
+  "WICHTIG_naechster_lauf": "TAG 23 (30.07., autonom) - INDEXIERUNGS-FOLLOW-UP: (1) /figuren/der-pantomime-in-nrw/ ist INDEXIERT (Antrag 27.07. griff binnen 3 Tagen) - damit 6 bestaetigt indexierte Seiten (/, der-clown, ueber-mich, pantomime-essen, walk-act, pantomime-in-nrw). (2) Stichprobe /figuren/: 'Gefunden - zurzeit nicht indexiert' (via sitemap.txt + verweisende Seite Startseite erkannt) -> Indexierungsantrag 30.07. gestellt. (3) /kontakt/ und /referenzen/ 'URL ist Google nicht bekannt', GSC meldet 'keine verweisenden Sitemaps', obwohl beide in sitemap.txt stehen (sitemap.txt zuletzt offenbar nicht neu verarbeitet). (4) GSC-Uebersichtschart zeigte noch '4 indexiert / 2 nicht indexiert' (nachlaufend). (5) Performance 28-Tage-Fenster (30.06.-27.07., Datenstand 'vor 7 Stunden'): 57 Impr., 0 Klicks, Pos 16,8 (verbessert von 17,5); Queries weiter Clown-/Brand-dominiert, keine Pantomime-/Walk-Act-Queries. KEIN Code-Commit noetig (kein build.py-Fix, reiner GSC-Tag). NAECHSTER LAUF (Tag 24): (a) Indexstatus /figuren/ pruefen (Antrag 30.07.); (b) /kontakt/ und /referenzen/ per Live-URL-Test pruefen und ggf. Indexierung beantragen; (c) danach GSC-datengetrieben schwaechste Seite verbessern.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -231,10 +231,19 @@
       "commits": [
         "SEO: State Tag 22 - /walk-act/ INDEXIERT, Indexierung /figuren/der-pantomime-in-nrw/ beantragt, sitemap.txt stabil"
       ]
+    },
+    {
+      "tag": 23,
+      "datum": "2026-07-30",
+      "schritt": "Tag 23: Indexierungs-Follow-up - NRW-Seite Indexstatus nach Antrag 27.07., Stichproben /figuren/, /kontakt/, /referenzen/, GSC-Snapshot.",
+      "ergebnis": "Indexierungs-Follow-up: /figuren/der-pantomime-in-nrw/ ist INDEXIERT (Antrag 27.07. griff binnen 3 Tagen, 6. indexierte Seite). Stichproben: /figuren/ 'Gefunden – zurzeit nicht indexiert' (sitemap.txt + verweisende Seite Startseite erkannt) → Indexierungsantrag 30.07. gestellt. /kontakt/ und /referenzen/ 'URL ist Google nicht bekannt', GSC meldet 'keine verweisenden Sitemaps', obwohl beide in sitemap.txt stehen (sitemap.txt zuletzt offenbar nicht neu verarbeitet). Kein build.py-Fix nötig, reiner GSC-Tag.",
+      "commits": [
+        "SEO: State Tag 23 – NRW-Seite indexiert, Antrag /figuren/, GSC-Snapshot 30.07."
+      ]
     }
   ],
-  "naechster_plan_tag": 23,
-  "naechster_schritt": "Tag 23 (GSC-datengetrieben): (a) Indexstatus /figuren/der-pantomime-in-nrw/ nach Antrag vom 27.07. pruefen. (b) Weitere Nicht-indexiert-Stichproben (/kontakt/, /referenzen/, /figuren/) auf 'Gefunden/Gecrawlt'-Fortschritt pruefen (Sitemap-Effekt; Einzel-URL-Pruefung aktueller als Seiten-Bericht). (c) Seiten-Bericht + 403-Validierung (http-non-www). (d) Sobald erste Klicks: CTR-Optimierung Clown-/Startseite. (e) Falls unveraendert: Rotation - On-Page-Feinschliff /ueber-mich/ (2 Impr.) oder Desktop-CWV via PageSpeed. OPTIONAL: toten sitemap.xml-Eintrag in GSC entfernen, wenn sitemap.txt im 3. Lauf in Folge 'Erfolgreich' bleibt.",
+  "naechster_plan_tag": 24,
+  "naechster_schritt": "Tag 24: Indexstatus /figuren/ prüfen (Antrag 30.07. gestellt). /kontakt/ und /referenzen/ per Live-URL-Test prüfen und ggf. Indexierung beantragen — beide 'URL ist Google nicht bekannt' trotz Eintrag in sitemap.txt. Danach GSC-datengetrieben schwächste Seite verbessern.",
   "offene_vorschlaege": [
     {
       "nr": "IONOS-ESKALATION (kein klassischer Vorschlag, sondern Server-Ops)",
@@ -598,6 +607,43 @@
         "pantomime_in_nrw": "'Gefunden - zurzeit nicht indexiert' (nie gecrawlt); entdeckt via sitemap.txt + Verweis /pantomime-essen/; Indexierung 27.07. beantragt (bestaetigt)"
       },
       "hinweis": "/walk-act/ indexiert (Antrag 26.07. griff binnen 1 Tag). 5 bestaetigt indexierte Seiten. Sitemap-Effekt sichtbar (NRW-Seite entdeckt). Keine Klicks, Queries unveraendert Clown-/Brand-lastig."
+    },
+    {
+      "datum": "2026-07-30",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "30.06.–27.07.2026 (28 Tage, Datenstand 'vor 7 Stunden')",
+      "klicks": 0,
+      "impressionen": 57,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 16.8,
+      "top_queries": [
+        {
+          "query": "pantomime clown",
+          "impressionen": 4
+        },
+        {
+          "query": "clown pantomime",
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clowns",
+          "impressionen": 1
+        },
+        {
+          "query": "clown liar",
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "impressionen": 1
+        },
+        {
+          "query": "zauberer liar",
+          "impressionen": 1
+        }
+      ],
+      "indexierung": "6 Seiten indexiert (inkl. NRW-Seite seit ~30.07.); /figuren/ Antrag 30.07.; /kontakt/ + /referenzen/ Google nicht bekannt; GSC-Übersichtschart zeigte noch '4 indexiert / 2 nicht indexiert' (nachlaufend)",
+      "hinweis": "Position verbessert 17,5 → 16,8; Impressionen 51 → 57; weiterhin 0 Klicks; keine Pantomime-/Walk-Act-Queries in Top-Queries, weiterhin Clown-/Brand-dominiert. Alle Top-Queries 0 Klicks; Rest der 57 Impressionen anonymisierte Queries."
     }
   ],
   "technische_hinweise": {
