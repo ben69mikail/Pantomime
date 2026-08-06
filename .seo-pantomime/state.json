@@ -1,7 +1,7 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 23,
-  "letzter_lauf": "2026-07-30",
+  "aktueller_plan_tag": 24,
+  "letzter_lauf": "2026-08-06",
   "WICHTIG_naechster_lauf": "TAG 23 (30.07., autonom) - INDEXIERUNGS-FOLLOW-UP: (1) /figuren/der-pantomime-in-nrw/ ist INDEXIERT (Antrag 27.07. griff binnen 3 Tagen) - damit 6 bestaetigt indexierte Seiten (/, der-clown, ueber-mich, pantomime-essen, walk-act, pantomime-in-nrw). (2) Stichprobe /figuren/: 'Gefunden - zurzeit nicht indexiert' (via sitemap.txt + verweisende Seite Startseite erkannt) -> Indexierungsantrag 30.07. gestellt. (3) /kontakt/ und /referenzen/ 'URL ist Google nicht bekannt', GSC meldet 'keine verweisenden Sitemaps', obwohl beide in sitemap.txt stehen (sitemap.txt zuletzt offenbar nicht neu verarbeitet). (4) GSC-Uebersichtschart zeigte noch '4 indexiert / 2 nicht indexiert' (nachlaufend). (5) Performance 28-Tage-Fenster (30.06.-27.07., Datenstand 'vor 7 Stunden'): 57 Impr., 0 Klicks, Pos 16,8 (verbessert von 17,5); Queries weiter Clown-/Brand-dominiert, keine Pantomime-/Walk-Act-Queries. KEIN Code-Commit noetig (kein build.py-Fix, reiner GSC-Tag). NAECHSTER LAUF (Tag 24): (a) Indexstatus /figuren/ pruefen (Antrag 30.07.); (b) /kontakt/ und /referenzen/ per Live-URL-Test pruefen und ggf. Indexierung beantragen; (c) danach GSC-datengetrieben schwaechste Seite verbessern.",
   "erledigte_schritte": [
     {
@@ -240,10 +240,19 @@
       "commits": [
         "SEO: State Tag 23 – NRW-Seite indexiert, Antrag /figuren/, GSC-Snapshot 30.07."
       ]
+    },
+    {
+      "tag": 24,
+      "datum": "2026-08-06",
+      "schritt": "Tag 24: Indexstatus /figuren/ (Antrag 30.07.), Live-URL-Tests + Indexierungsantraege /kontakt/ und /referenzen/, GSC-Snapshot",
+      "ergebnis": "GSC live via Chrome (autonom). (1) /figuren/ ist INDEXIERT ('URL ist auf Google') - Antrag vom 30.07. griff, damit 7 bestaetigt indexierte Seiten. (2) /kontakt/ weiterhin 'URL ist Google nicht bekannt' -> Live-URL-Test durchgefuehrt: 'URL ist fuer Google verfuegbar' (Seite kann indexiert werden) -> Indexierung beantragt 06.08. (3) /referenzen/ FORTSCHRITT: jetzt 'Gefunden - zurzeit nicht indexiert', Auffindbarkeit via sitemap.txt (vorher 'nicht bekannt') -> Indexierung beantragt 06.08. (4) Sitemap-Gegenprobe: repo==live, beide URLs in sitemap.txt+xml enthalten - GSC-Meldung 'keine verweisenden Sitemaps' bei /kontakt/ = reines Anzeige-Lag. (5) Datengetriebene Pruefung staerkste Seite: der-clown 25 Impr./0 Klicks, 'pantomime clown' Pos 13,5 / 'clown pantomime' Pos 11,0 (kurz vor Seite 1); Title (49 Z.) + Desc (151 Z., Fokus-Keyword vorn) bereits seit Tag 10 optimal -> KEIN Code-Commit (Guardrail: nichts kaputtoptimieren, CTR-Basis 25 Impr. zu duenn). NEUE QUERIES: 'zauberer gladbeck' (3 Impr., Pos 21,7 - erste Lokal-Query) und 'pantomime buchen' (1 Impr., Pos 37 - erste transaktionale Nicht-Brand-Query). Essen-Pilot: /pantomime-essen/ 18 Impr. (2.-staerkste Seite), aber noch keine 'pantomime essen'-Query im Query-Tab.",
+      "commits": [
+        "SEO: State Tag 24 - /figuren/ indexiert (7. Seite), Antraege /kontakt/ + /referenzen/, GSC-Snapshot 06.08."
+      ]
     }
   ],
-  "naechster_plan_tag": 24,
-  "naechster_schritt": "Tag 24: Indexstatus /figuren/ prüfen (Antrag 30.07. gestellt). /kontakt/ und /referenzen/ per Live-URL-Test prüfen und ggf. Indexierung beantragen — beide 'URL ist Google nicht bekannt' trotz Eintrag in sitemap.txt. Danach GSC-datengetrieben schwächste Seite verbessern.",
+  "naechster_plan_tag": 25,
+  "naechster_schritt": "Tag 25: Indexstatus /kontakt/ + /referenzen/ pruefen (Antraege 06.08.). Danach GSC-datengetrieben: /walk-act/ ist schwaechste Fokus-Seite (6 Impr., KEINE Walk-Act-Queries im Query-Tab) - On-Page/Title-CTR-Analyse; alternativ Clown-CTR beobachten (Pos 11-13,5, 0 Klicks). Falls 'zauberer gladbeck'-Impressionen weiter steigen: Cross-Link-Chance zauberer-liar.de notieren (nur VORSCHLAG).",
   "offene_vorschlaege": [
     {
       "nr": "IONOS-ESKALATION (kein klassischer Vorschlag, sondern Server-Ops)",
@@ -644,6 +653,75 @@
       ],
       "indexierung": "6 Seiten indexiert (inkl. NRW-Seite seit ~30.07.); /figuren/ Antrag 30.07.; /kontakt/ + /referenzen/ Google nicht bekannt; GSC-Übersichtschart zeigte noch '4 indexiert / 2 nicht indexiert' (nachlaufend)",
       "hinweis": "Position verbessert 17,5 → 16,8; Impressionen 51 → 57; weiterhin 0 Klicks; keine Pantomime-/Walk-Act-Queries in Top-Queries, weiterhin Clown-/Brand-dominiert. Alle Top-Queries 0 Klicks; Rest der 57 Impressionen anonymisierte Queries."
+    },
+    {
+      "datum": "2026-08-06",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "08.07.-04.08.26 (28 Tage, Datenstand 'vor 5 Stunden')",
+      "klicks": 0,
+      "impressionen": 82,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 25.1,
+      "hinweis_3monate": "3-Monats-Fenster 14.06.-04.08.: 116 Impr., Pos 24,7. Impressions-Spike 29./30.07. (~17/Tag) nach Indexierungswelle.",
+      "top_queries": [
+        {
+          "query": "zauberer gladbeck",
+          "impressionen": 3,
+          "position_3m": 21.7
+        },
+        {
+          "query": "pantomime clown",
+          "impressionen": 2,
+          "position_3m": 13.5
+        },
+        {
+          "query": "liar clown",
+          "impressionen": 1,
+          "position_3m": 6.0
+        },
+        {
+          "query": "pantomime clowns",
+          "impressionen": 1,
+          "position_3m": 12.0
+        },
+        {
+          "query": "pantomime buchen",
+          "impressionen": 1,
+          "position_3m": 37.0
+        }
+      ],
+      "top_pages": [
+        {
+          "url": "/figuren/der-clown/",
+          "impressionen": 25
+        },
+        {
+          "url": "/pantomime-essen/",
+          "impressionen": 18
+        },
+        {
+          "url": "/",
+          "impressionen": 16
+        },
+        {
+          "url": "/figuren/der-pantomime-in-nrw/",
+          "impressionen": 16
+        },
+        {
+          "url": "/ueber-mich/",
+          "impressionen": 9
+        },
+        {
+          "url": "/walk-act/",
+          "impressionen": 6
+        },
+        {
+          "url": "/figuren/",
+          "impressionen": 5
+        }
+      ],
+      "indexierung": "7 Seiten indexiert (+/figuren/ seit ~06.08.). /kontakt/ + /referenzen/ Indexierung beantragt 06.08. /referenzen/ jetzt via sitemap.txt gefunden.",
+      "hinweis": "Trend 28T: 57 (30.07.) -> 82 Impr. Position 16,8 -> 25,1 (mehr Long-Tail-Sichtbarkeit durch neue indexierte Seiten, normal). Erste Lokal-Query 'zauberer gladbeck' + erste transaktionale Query 'pantomime buchen'. Weiter 0 Klicks."
     }
   ],
   "technische_hinweise": {
@@ -672,7 +750,7 @@
     "cwv_stand": "Tag 20 (25.07., PSI live mobil): der-clown Perf 97 (FCP 1,1/LCP 2,0/TBT 0/CLS 0/SI 4,2 orange), Startseite Perf 99 (LCP 2,1). A11y 100, SEO 100, BP 92. V5-Fixes (fetchpriority + Rekompression) live wirksam bestaetigt. Kein Handlungsbedarf; SI-Orange = Hero-bg auf 4G-Drossel, kein CWV. CrUX-Felddaten noch 'Keine Daten'. Original-Aufloesungen der 4 rekomprimierten Heroes reduziert (1600->1280/1440w) - bei Bildtausch Originale von Michael anfordern.",
     "lokaler_mount_hinweis": "Cowork-Mount haengt auf altem Checkout 88ca226. .git/HEAD.lock + .git/index.lock nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Schreiben in Repo NUR via GitHub-MCP. State IMMER von remote main lesen.",
     "cross_link_stand": "FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener), seit V5 descriptiv. REVERSE: liar-entertainer.com -> 'Pantomime' auf alte Subdomain (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 (Fremd-Domains, freigegeben, Umsetzung durch Michael offen).",
-    "indexierung_stand": "Tag 22 (27.07.): /walk-act/ INDEXIERT (Crawl 26.07. 07:11, via sitemap.txt) - 5 bestaetigt indexierte Seiten (/, der-clown, ueber-mich, pantomime-essen, walk-act), beide Fokus-Landingpages im Index. /figuren/der-pantomime-in-nrw/ 'Gefunden - zurzeit nicht indexiert' (nie gecrawlt), via sitemap.txt + /pantomime-essen/ entdeckt, Indexierung 27.07. beantragt. Seiten-Bericht laeuft nach (Stand 10.07., zeigt 3/1-403). sitemap.txt stabil erfolgreich (2 Laeufe); xml-Eintrag tot (kosmetisch, ggf. nach 3. stabilem Lauf entfernen). Uebrige ~9 Seiten sukzessive erwartet - Einzel-URL-Pruefung ist aktueller als der Bericht.",
+    "indexierung_stand": "Tag 24 (06.08.): 7 bestaetigt indexierte Seiten (/, der-clown, ueber-mich, pantomime-essen, walk-act, der-pantomime-in-nrw, figuren). /kontakt/ + /referenzen/ Antraege 06.08. (kontakt: Live-Test 'verfuegbar', nie gecrawlt; referenzen: 'Gefunden' via sitemap.txt). sitemap.txt stabil; GSC-'keine verweisenden Sitemaps'-Anzeige bei nie gecrawlten URLs = Lag, kein Fehler.",
     "binaer_push_hinweis": "GitHub-MCP (push_files/create_or_update_file) speichert Content NUR als Text - Binaerdateien (Bilder) UNMOEGLICH. Workaround: GitHub-Web-Upload in Michaels Chrome (github.com/ben69mikail/Pantomime/upload/main/<pfad>).",
     "stadtseiten_stand": "/pantomime-essen/ seit 2026-07-21 live (Pilot), seit spaetestens 26.07. INDEXIERT. Jetzt 4-6 Wochen GSC-Wirkung messen ('Pantomime Essen'-Queries), erst danach ggf. weitere Staedte - NUR mit eigener belegter Referenzbasis."
   }
