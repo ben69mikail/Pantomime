@@ -633,7 +633,7 @@ walk_body = f"""<main>
 </main>
 """ + cta_band("Walk Act für Ihr Event?", "Sagen Sie mir Datum, Ort und Art der Veranstaltung — ich entwickle den passenden Walk Act.")
 built.append(page("/walk-act/", "Walk Act in NRW buchen – LIAR | Mobile Unterhaltung",
-     "Walk Act in NRW buchen: LIAR kommt als Pantomime, Nussknacker oder Weihnachtsmann mitten ins Publikum — ohne Bühne, ohne Technik, für Messe, Stadtfest & Firmenfeier.",
+     "Walk Act in NRW buchen: Pantomime, Nussknacker oder Weihnachtsmann mitten im Publikum – ohne Bühne, ohne Technik. Walking Act für Messe, Stadtfest &amp; Feier.",
      walk_body, [breadcrumb([("Start", "/"), ("Walk Act", "/walk-act/")]),
                  faq_schema(walk_faq)],
      active="/walk-act/"))
@@ -666,7 +666,7 @@ ueber_body = f"""<main>
 </main>
 """ + cta_band()
 built.append(page("/ueber-mich/", "Über mich – LIAR | Künstler & Pantomime aus Gladbeck",
-     "Über LIAR (Michael Prescler): Jahrgang 1976, geboren in Frankreich, seit 2009 hauptberuflich Künstler in NRW und seit 2021 Pantomime. Vom Mathe-Studium zur Bühne.",
+     "Über LIAR (Michael Prescler): Jahrgang 1976, geboren in Frankreich, seit 2009 hauptberuflich Künstler in NRW, seit 2021 Pantomime. Vom Mathe-Studium zur Bühne.",
      ueber_body, [breadcrumb([("Start", "/"), ("Über mich", "/ueber-mich/")]),
                   {"@context": "https://schema.org", "@type": "Person", "name": "Michael Prescler",
                    "alternateName": "LIAR", "birthDate": "1976", "nationality": "Französisch",
@@ -760,7 +760,7 @@ ref_body = f"""<main>
 </main>
 """ + cta_band()
 built.append(page("/referenzen/", "Referenzen – LIAR Pantomime | OPEL, IKEA, Messe Essen & mehr",
-     "Referenzen von LIAR: u. a. OPEL, IKEA, Metro, Champions League UEFA, Messe Essen, Schalke 04, Sparkassen und Städte im Ruhrgebiet. Erfahrung, die für sich spricht.",
+     "Referenzen von LIAR: u. a. OPEL, IKEA, Metro, Champions League UEFA, Messe Essen, Schalke 04, Sparkassen und Städte im Ruhrgebiet. Erfahrung, die zählt.",
      ref_body, [breadcrumb([("Start", "/"), ("Referenzen", "/referenzen/")])], active="/referenzen/"))
 
 # ---- Kontakt
@@ -893,7 +893,7 @@ datenschutz_body = f"""<main>
 </div></section>
 </main>"""
 built.append(page("/datenschutz/", "Datenschutzerklärung – LIAR Pantomime",
-     "Datenschutzerklärung von LIAR Pantomime: Hosting (IONOS), Kontaktformular (Web3Forms), Cookie-Einwilligung, Google Analytics 4 (Consent Mode v2) und Ihre Rechte.",
+     "Datenschutzerklärung von LIAR Pantomime: Hosting (IONOS), Kontaktformular (Web3Forms), Cookie-Einwilligung, Google Analytics 4 und Ihre Rechte.",
      datenschutz_body, [breadcrumb([("Start", "/"), ("Datenschutz", "/datenschutz/")])], active="/"))
 
 # ---- 404
