@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 24,
-  "letzter_lauf": "2026-08-06",
-  "WICHTIG_naechster_lauf": "TAG 23 (30.07., autonom) - INDEXIERUNGS-FOLLOW-UP: (1) /figuren/der-pantomime-in-nrw/ ist INDEXIERT (Antrag 27.07. griff binnen 3 Tagen) - damit 6 bestaetigt indexierte Seiten (/, der-clown, ueber-mich, pantomime-essen, walk-act, pantomime-in-nrw). (2) Stichprobe /figuren/: 'Gefunden - zurzeit nicht indexiert' (via sitemap.txt + verweisende Seite Startseite erkannt) -> Indexierungsantrag 30.07. gestellt. (3) /kontakt/ und /referenzen/ 'URL ist Google nicht bekannt', GSC meldet 'keine verweisenden Sitemaps', obwohl beide in sitemap.txt stehen (sitemap.txt zuletzt offenbar nicht neu verarbeitet). (4) GSC-Uebersichtschart zeigte noch '4 indexiert / 2 nicht indexiert' (nachlaufend). (5) Performance 28-Tage-Fenster (30.06.-27.07., Datenstand 'vor 7 Stunden'): 57 Impr., 0 Klicks, Pos 16,8 (verbessert von 17,5); Queries weiter Clown-/Brand-dominiert, keine Pantomime-/Walk-Act-Queries. KEIN Code-Commit noetig (kein build.py-Fix, reiner GSC-Tag). NAECHSTER LAUF (Tag 24): (a) Indexstatus /figuren/ pruefen (Antrag 30.07.); (b) /kontakt/ und /referenzen/ per Live-URL-Test pruefen und ggf. Indexierung beantragen; (c) danach GSC-datengetrieben schwaechste Seite verbessern.",
+  "aktueller_plan_tag": 25,
+  "letzter_lauf": "2026-08-07",
+  "WICHTIG_naechster_lauf": "TAG 25 (07.08., autonom) ABGESCHLOSSEN. (1) /kontakt/ + /referenzen/ sind INDEXIERT (Antraege 06.08. griffen binnen 1 Tag) -> 9 bestaetigt indexierte Seiten. (2) GSC-Zahlen unveraendert ggue. 06.08. (kein neuer Datentag): 28T 82 Impr./Pos 25,1; 3M 116 Impr./Pos 24,7; 0 Klicks. NEU: Query 'pantomime buchen' (Pos 37) - erste reine Fokus-Keyword-Query. Weiterhin KEINE Walk-Act-Query. (3) /walk-act/ Query-Filter = 'Keine Daten' -> kein Query-Signal zum Nachschaerfen; Problem ist Nachfrage/Sichtbarkeit, nicht Ranking. (4) AUTO-COMMIT: 4 Meta-Descriptions >160 Zeichen gekuerzt (walk-act 165->155 inkl. Variante 'Walking Act', referenzen 163->152, ueber-mich 162->159, datenschutz 161->143), Rebuild-Diff sauber (nur meta+og-description je Seite + sitemap lastmod). (5) build.py-Reconciliation (V5) ist erledigt - Rebuilds sind wieder gefahrlos, keine DSGVO-Regression im Diff. NAECHSTER LAUF (Tag 26): restliche 6 unbestaetigte Seiten per URL-Pruefung durchgehen + Indexierung beantragen; CTR-Effekt der neuen Descriptions ab 10.08. beobachten.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -249,10 +249,20 @@
       "commits": [
         "SEO: State Tag 24 - /figuren/ indexiert (7. Seite), Antraege /kontakt/ + /referenzen/, GSC-Snapshot 06.08."
       ]
+    },
+    {
+      "tag": 25,
+      "datum": "2026-08-07",
+      "schritt": "Tag 25: Indexstatus /kontakt/ + /referenzen/ (Antraege 06.08.), GSC-Snapshot, danach GSC-datengetrieben schwaechste Fokus-Seite /walk-act/ - Meta-Description-/CTR-Analyse + Auto-Fix.",
+      "ergebnis": "GSC live via Chrome (autonom). (1) INDEXIERUNGS-DURCHBRUCH: /kontakt/ UND /referenzen/ sind beide INDEXIERT ('URL ist auf Google', 'Seite ist indexiert') - die Antraege vom 06.08. griffen binnen eines Tages. Damit 9 bestaetigt indexierte Seiten (/, /figuren/, /figuren/der-clown/, /figuren/der-pantomime-in-nrw/, /walk-act/, /pantomime-essen/, /ueber-mich/, /kontakt/, /referenzen/). Aggregierter Seitenindexierungs-Bericht laeuft nach (Stand 24.07.: 4 indexiert/2 nicht) - URL-Pruefung ist die belastbare Quelle. (2) GSC-Performance unveraendert ggue. 06.08. (kein neuer Datentag, Datenstand 'vor 5,5 Stunden'): 28 Tage 82 Impr., 0 Klicks, Pos 25,1; 3 Monate 116 Impr., Pos 24,7. (3) NEU im Query-Tab: 'pantomime buchen' (1 Impr., Pos 37) - erstmals eine reine Fokus-Keyword-Query ohne Brand/Clown-Bezug; ausserdem 'pantomime clowns' (Pos 12). Weiterhin KEINE Walk-Act-Query. (4) Diagnose /walk-act/: Query-Filter ueber 3 Monate liefert 'Keine Daten' - die 6 Impressionen sind komplett anonymisiert/unter Schwelle, es gibt also keine attribuierbare Walk-Act-Nachfrage, an der man On-Page nachschaerfen koennte. Ursache ist Nachfrage-/Sichtbarkeitsmangel, nicht ein Ranking-Problem einzelner Queries. (5) Deshalb datengetriebener Auto-Fix auf SERP-Darstellung umgelenkt: Meta-Description-Audit ueber alle 16 Seiten (entity-dekodierte Laenge) ergab 4 echte Ueberlaengen >160 Zeichen (walk-act 165, referenzen 163, ueber-mich 162, datenschutz 161) - diese werden in der SERP abgeschnitten und kosten CTR. Alle vier ueber build.py gekuerzt und rebuilt; bei /walk-act/ zusaetzlich die Schreibvariante 'Walking Act' natuerlich eingewoben. Rebuild-Diff sauber: nur je 2 Zeilen (meta description + og:description) auf 4 Seiten + sitemap lastmod, keine Asset-Hash-Bumps, keine DSGVO-Regression, alle Seiten valide (</html> vorhanden).",
+      "commits": [
+        "SEO: Meta-Descriptions auf <=160 Zeichen gekuerzt (walk-act, referenzen, ueber-mich, datenschutz)",
+        "SEO: State Tag 25 - /kontakt/ + /referenzen/ indexiert (9 Seiten), Meta-Desc-Fix, GSC-Snapshot 07.08."
+      ]
     }
   ],
-  "naechster_plan_tag": 25,
-  "naechster_schritt": "Tag 25: Indexstatus /kontakt/ + /referenzen/ pruefen (Antraege 06.08.). Danach GSC-datengetrieben: /walk-act/ ist schwaechste Fokus-Seite (6 Impr., KEINE Walk-Act-Queries im Query-Tab) - On-Page/Title-CTR-Analyse; alternativ Clown-CTR beobachten (Pos 11-13,5, 0 Klicks). Falls 'zauberer gladbeck'-Impressionen weiter steigen: Cross-Link-Chance zauberer-liar.de notieren (nur VORSCHLAG).",
+  "naechster_plan_tag": 26,
+  "naechster_schritt": "Tag 26: (a) Indexstatus der noch unbestaetigten Seiten per URL-Pruefung durchgehen: /figuren/der-nussknacker/, /figuren/der-weihnachtsmann/, /figuren/der-zauberer/, /figuren/der-crazy-kellner/, /impressum/, /datenschutz/ - bei 'nicht bekannt'/'gefunden - nicht indexiert' Indexierung beantragen (Antraege greifen aktuell binnen 1-3 Tagen). (b) CTR-Wirkung der neuen Meta-Descriptions ab ca. 10.08. beobachten (walk-act, referenzen, ueber-mich). (c) 'pantomime buchen' (Pos 37) und 'pantomime clowns' (Pos 12) als erste Nicht-Brand-Fokus-Queries weiterverfolgen - bei steigenden Impressionen die rankende Seite pruefen und On-Page schaerfen. (d) 'zauberer gladbeck' bleibt staerkste Query (3 Impr.) auf einer Pantomime-Domain -> Cross-Link-Chance zauberer-liar.de (Vorschlag 7, wartet auf Freigabe).",
   "offene_vorschlaege": [
     {
       "nr": "IONOS-ESKALATION (kein klassischer Vorschlag, sondern Server-Ops)",
@@ -722,6 +732,118 @@
       ],
       "indexierung": "7 Seiten indexiert (+/figuren/ seit ~06.08.). /kontakt/ + /referenzen/ Indexierung beantragt 06.08. /referenzen/ jetzt via sitemap.txt gefunden.",
       "hinweis": "Trend 28T: 57 (30.07.) -> 82 Impr. Position 16,8 -> 25,1 (mehr Long-Tail-Sichtbarkeit durch neue indexierte Seiten, normal). Erste Lokal-Query 'zauberer gladbeck' + erste transaktionale Query 'pantomime buchen'. Weiter 0 Klicks."
+    },
+    {
+      "datum": "2026-08-07",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "08.07.-04.08.26 (28 Tage, Datenstand 'vor 5,5 Stunden')",
+      "klicks": 0,
+      "impressionen": 82,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 25.1,
+      "hinweis": "Identisch zu Snapshot 06.08. - kein neuer Datentag verarbeitet.",
+      "hinweis_3monate": "3-Monats-Fenster 14.06.-04.08.: 116 Impr., 0 Klicks, Pos 24,7.",
+      "top_queries_28t": [
+        {
+          "query": "zauberer gladbeck",
+          "impressionen": 3
+        },
+        {
+          "query": "pantomime clown",
+          "impressionen": 2
+        },
+        {
+          "query": "liar clown",
+          "impressionen": 1
+        },
+        {
+          "query": "pantomime clowns",
+          "impressionen": 1
+        },
+        {
+          "query": "pantomime buchen",
+          "impressionen": 1
+        }
+      ],
+      "top_queries_3m": [
+        {
+          "query": "pantomime clown",
+          "impressionen": 4,
+          "position": 13.5
+        },
+        {
+          "query": "clown pantomime",
+          "impressionen": 3,
+          "position": 11.0
+        },
+        {
+          "query": "zauberer gladbeck",
+          "impressionen": 3,
+          "position": 21.7
+        },
+        {
+          "query": "liar clown",
+          "impressionen": 1,
+          "position": 6.0
+        },
+        {
+          "query": "pantomime clowns",
+          "impressionen": 1,
+          "position": 12.0
+        },
+        {
+          "query": "clown liar",
+          "impressionen": 1,
+          "position": 27.0
+        },
+        {
+          "query": "clown zauberer liar",
+          "impressionen": 1,
+          "position": 27.0
+        },
+        {
+          "query": "zauberer liar",
+          "impressionen": 1,
+          "position": 33.0
+        },
+        {
+          "query": "pantomime buchen",
+          "impressionen": 1,
+          "position": 37.0
+        }
+      ],
+      "top_seiten_28t": [
+        {
+          "url": "/figuren/der-clown/",
+          "impressionen": 25
+        },
+        {
+          "url": "/pantomime-essen/",
+          "impressionen": 18
+        },
+        {
+          "url": "/",
+          "impressionen": 16
+        },
+        {
+          "url": "/figuren/der-pantomime-in-nrw/",
+          "impressionen": 16
+        },
+        {
+          "url": "/ueber-mich/",
+          "impressionen": 9
+        },
+        {
+          "url": "/walk-act/",
+          "impressionen": 6
+        },
+        {
+          "url": "/figuren/",
+          "impressionen": 5
+        }
+      ],
+      "indexstatus": "9 bestaetigt indexiert (URL-Pruefung): /, /figuren/, /figuren/der-clown/, /figuren/der-pantomime-in-nrw/, /walk-act/, /pantomime-essen/, /ueber-mich/, /kontakt/ (neu 07.08.), /referenzen/ (neu 07.08.)",
+      "walk_act_diagnose": "Query-Filter Seite=/walk-act/, 3 Monate: 'Keine Daten' - 6 Impressionen ohne attribuierte Query."
     }
   ],
   "technische_hinweise": {
@@ -743,14 +865,14 @@
     "faq_stand": "faq_block(qa,title) rendert details/summary/faq-a. Selbe Q/A-Liste an faq_schema UND faq_block -> Deckungsgleichheit garantiert.",
     "feat_html_hinweis": "feat-Items werden in build.py via f'<li>{x}</li>' RAW gerendert (nicht escaped) -> HTML/Anchors in feat-Strings erlaubt.",
     "uv_cache_hinweis": "Frisches eindeutiges Dir (rm -rf + mkdir) fuer UV_CACHE_DIR und UV_PYTHON_INSTALL_DIR. python3.12 ggf. schon in /tmp/.local/bin -> 'uv run --python 3.12' nutzt es.",
-    "meta_desc_stand": "Seit V5 (2026-07-20): Clown Title 49 Z. 'Clown & Pantomime in NRW buchen - LIAR | Walk Act', Desc 146 Z. mit 'Pantomime-Clown & Comedy-Walk-Act'. Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei).",
+    "meta_desc_stand": "Stand 2026-08-07 (Tag 25): Alle Meta-Descriptions <=160 Zeichen (entity-dekodiert gemessen!). Gekuerzt wurden walk-act (155, enthaelt jetzt auch die Variante 'Walking Act'), referenzen (152), ueber-mich (159), datenschutz (143). ACHTUNG beim Messen: '&amp;' zaehlt in der Quelle 5 Zeichen, in der SERP 1 -> immer html.unescape vor der Laengenmessung, sonst Fehlalarm (Startseite scheinbar 161, real 149). Bei Desc-Aenderung MUSS meta description + og:description + Service-Schema-description synchron bleiben (build.py 'desc'-Key rendert alle drei).",
     "content_luecken_stand": "V3 (Anlass-Content Startseite) + V4 (/pantomime-essen/) seit 2026-07-21 umgesetzt. Naechste Stadtseiten erst nach 4-6 Wochen GSC-Messung + nur mit eigener Referenzbasis.",
     "referenz_cluster_essen": "INHALTE-VERIFIZIERT.md Essen-Kunden (belegt): Messe Essen, AWO Essen, Sparkasse Essen, Stadt Essen, VKJ Essen, Kinderschutzbund Essen, St-Gobain Essen, Feldschloesschen Essen. Dichtestes Stadt-Cluster -> Basis /pantomime-essen/.",
-    "buildpy_reconciliation_stand": "ERLEDIGT 2026-07-20 (V5-Batch): build.py reconciled mit live-HTML (self-hosted fonts.css, Consent-Checkbox, aktueller Datenschutz-Text, Stand hart 2026-07-02). REBUILD-SPERRE AUFGEHOBEN - normale Auto-Fix-Regeln gelten.",
+    "buildpy_reconciliation_stand": "ERLEDIGT 2026-07-20 (V5-Batch): build.py reconciled mit live-HTML (self-hosted fonts.css, Consent-Checkbox, aktueller Datenschutz-Text, Stand hart 2026-07-02). REBUILD-SPERRE AUFGEHOBEN - normale Auto-Fix-Regeln gelten. | 2026-08-07 verifiziert: Rebuild-Diff enthielt NUR die beabsichtigten Description-Zeilen + sitemap lastmod, keine Font-/Consent-/Asset-Hash-Regression. Reconciliation ist final.",
     "cwv_stand": "Tag 20 (25.07., PSI live mobil): der-clown Perf 97 (FCP 1,1/LCP 2,0/TBT 0/CLS 0/SI 4,2 orange), Startseite Perf 99 (LCP 2,1). A11y 100, SEO 100, BP 92. V5-Fixes (fetchpriority + Rekompression) live wirksam bestaetigt. Kein Handlungsbedarf; SI-Orange = Hero-bg auf 4G-Drossel, kein CWV. CrUX-Felddaten noch 'Keine Daten'. Original-Aufloesungen der 4 rekomprimierten Heroes reduziert (1600->1280/1440w) - bei Bildtausch Originale von Michael anfordern.",
     "lokaler_mount_hinweis": "Cowork-Mount haengt auf altem Checkout 88ca226. .git/HEAD.lock + .git/index.lock nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Schreiben in Repo NUR via GitHub-MCP. State IMMER von remote main lesen.",
     "cross_link_stand": "FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener), seit V5 descriptiv. REVERSE: liar-entertainer.com -> 'Pantomime' auf alte Subdomain (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 (Fremd-Domains, freigegeben, Umsetzung durch Michael offen).",
-    "indexierung_stand": "Tag 24 (06.08.): 7 bestaetigt indexierte Seiten (/, der-clown, ueber-mich, pantomime-essen, walk-act, der-pantomime-in-nrw, figuren). /kontakt/ + /referenzen/ Antraege 06.08. (kontakt: Live-Test 'verfuegbar', nie gecrawlt; referenzen: 'Gefunden' via sitemap.txt). sitemap.txt stabil; GSC-'keine verweisenden Sitemaps'-Anzeige bei nie gecrawlten URLs = Lag, kein Fehler.",
+    "indexierung_stand": "Stand 2026-08-07: 9 bestaetigt indexierte Seiten per URL-Pruefung (/, /figuren/, /figuren/der-clown/, /figuren/der-pantomime-in-nrw/, /walk-act/, /pantomime-essen/, /ueber-mich/, /kontakt/, /referenzen/). Noch unbestaetigt: /figuren/der-nussknacker/, /figuren/der-weihnachtsmann/, /figuren/der-zauberer/, /figuren/der-crazy-kellner/, /impressum/, /datenschutz/. Der aggregierte 'Seitenindexierung'-Bericht laeuft mehrere Wochen nach (07.08. zeigte noch Stand 24.07.: 4/2) - URL-Pruefung ist die belastbare Quelle. Manuelle Indexierungsantraege greifen aktuell binnen 1-3 Tagen.",
     "binaer_push_hinweis": "GitHub-MCP (push_files/create_or_update_file) speichert Content NUR als Text - Binaerdateien (Bilder) UNMOEGLICH. Workaround: GitHub-Web-Upload in Michaels Chrome (github.com/ben69mikail/Pantomime/upload/main/<pfad>).",
     "stadtseiten_stand": "/pantomime-essen/ seit 2026-07-21 live (Pilot), seit spaetestens 26.07. INDEXIERT. Jetzt 4-6 Wochen GSC-Wirkung messen ('Pantomime Essen'-Queries), erst danach ggf. weitere Staedte - NUR mit eigener belegter Referenzbasis."
   }
