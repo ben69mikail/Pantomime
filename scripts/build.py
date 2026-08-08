@@ -849,8 +849,8 @@ impressum_body = f"""<main>
   <p style="margin-top:2rem;color:var(--muted)">© Michael Prescler – 2020</p>
 </div></section>
 </main>"""
-built.append(page("/impressum/", "Impressum – LIAR Pantomime",
-     "Impressum von LIAR Pantomime — Michael Prescler, Beethovenstr. 15, 45966 Gladbeck.",
+built.append(page("/impressum/", "Impressum – LIAR Pantomime & Walk Act aus Gladbeck",
+     "Impressum von LIAR Pantomime & Walk Act: Michael Prescler, Beethovenstr. 15, 45966 Gladbeck – Kontakt, Finanzamt Marl, Urheberrecht und Haftungsausschluss.",
      impressum_body, [breadcrumb([("Start", "/"), ("Impressum", "/impressum/")])], active="/"))
 
 # ---- Datenschutz
@@ -892,7 +892,7 @@ datenschutz_body = f"""<main>
   <p style="margin-top:2rem;color:var(--muted)">Stand: 2026-07-02</p>
 </div></section>
 </main>"""
-built.append(page("/datenschutz/", "Datenschutzerklärung – LIAR Pantomime",
+built.append(page("/datenschutz/", "Datenschutzerklärung – LIAR Pantomime aus Gladbeck",
      "Datenschutzerklärung von LIAR Pantomime: Hosting (IONOS), Kontaktformular (Web3Forms), Cookie-Einwilligung, Google Analytics 4 und Ihre Rechte.",
      datenschutz_body, [breadcrumb([("Start", "/"), ("Datenschutz", "/datenschutz/")])], active="/"))
 
