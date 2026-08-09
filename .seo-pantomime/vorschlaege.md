@@ -221,3 +221,16 @@ Michael hat V5 freigegeben. Umgesetzt im heutigen Batch (byte-verifiziert, 1 Com
 - **Vorschlag 5 Rest (Bild-Re-Kompression): ERLEDIGT.** 4 Hero-webp 1,3MB -> 838KB (Pillow, moderate Resize 1280/1440w). Commit 4466b2a (GitHub-Web-Upload; Binaer-Push via MCP nicht moeglich).
 - **Vorschlag 6 (Off-Page): FREIGEGEBEN — naechster Schritt bei Michael.** Fertige Profiltexte (NAP-konsistent, nur belegte Fakten): siehe `.seo-pantomime/v6-v7-texte.md`. Prio 1: Google Unternehmensprofil anlegen.
 - **Vorschlag 7.1+7.2 (Fremd-Domain-Links): FREIGEGEBEN — naechster Schritt bei Michael.** Fertige Copy-Paste-Link-Snippets fuer liar-entertainer.com und zauberer-liar.de: siehe `.seo-pantomime/v6-v7-texte.md`.
+
+---
+
+## Tag 27 — 2026-08-09 (Beobachtung, kein neuer Freigabe-Vorschlag)
+
+**Meilenstein:** Alle 15 Seiten sind jetzt indexiert (URL-Pruefung). Die 6 Antraege vom 08.08. (Nussknacker, Weihnachtsmann, Zauberer, Crazy Kellner, Impressum, Datenschutz) sind durch. Damit ist die Indexierungs-Baustelle geschlossen; der Hebel liegt ab jetzt bei Position und CTR, nicht mehr bei Sichtbarkeit ueberhaupt.
+
+**Zwei Punkte fuer Tag 28 (noch kein Freigabe-Bedarf, erst Datenpruefung):**
+
+1. `/pantomime-essen/` hat mit **Pos 41,9** die schlechteste Durchschnittsposition aller Seiten bei immerhin 19 Impressionen (28 Tage). Die Stadt-Pilotseite zieht Impressionen, rankt aber tief. Vor einer Ausweitung auf weitere Staedte (Vorschlag 12er-Reihe) sollte geklaert werden, ob die Seite On-Page nachgeschaerft werden muss — sonst wird ein schwaches Muster vervielfacht.
+2. `zauberer gladbeck` ist mit 7 Impressionen (Pos 18,3) die **staerkste Query der Domain** — staerker als jede Pantomime-Query. Das ist ein weiteres Argument fuer **Vorschlag 7.2** (Cross-Link von zauberer-liar.de auf pantomime-la-france.eu): die Zauberer-Nachfrage in Gladbeck existiert messbar und laeuft bisher ungebuendelt.
+
+**Weiterhin offen bei Michael:** Vorschlag 6 (Google Unternehmensprofil, Prio 1), Vorschlag 7.1 + 7.2 (Links auf liar-entertainer.com / zauberer-liar.de), Vorschlag 8 (H1 der Startseite mit Fokus-Keyword).
