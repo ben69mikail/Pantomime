@@ -635,7 +635,11 @@ walk_body = f"""<main>
 built.append(page("/walk-act/", "Walk Act in NRW buchen – LIAR | Mobile Unterhaltung",
      "Walk Act in NRW buchen: Pantomime, Nussknacker oder Weihnachtsmann mitten im Publikum – ohne Bühne, ohne Technik. Walking Act für Messe, Stadtfest &amp; Feier.",
      walk_body, [breadcrumb([("Start", "/"), ("Walk Act", "/walk-act/")]),
-                 faq_schema(walk_faq)],
+                 faq_schema(walk_faq),
+                 {"@context": "https://schema.org", "@type": "Service",
+                  "serviceType": "Walk Act", "provider": {"@id": DOMAIN + "/#liar"},
+                  "areaServed": "Nordrhein-Westfalen",
+                  "description": "Walk Act in NRW buchen: Pantomime, Nussknacker oder Weihnachtsmann mitten im Publikum \u2013 ohne B\u00fchne, ohne Technik, f\u00fcr Messe, Stadtfest und Feier."}],
      active="/walk-act/"))
 
 # ---- Über mich
