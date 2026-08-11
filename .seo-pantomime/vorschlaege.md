@@ -234,3 +234,31 @@ Michael hat V5 freigegeben. Umgesetzt im heutigen Batch (byte-verifiziert, 1 Com
 2. `zauberer gladbeck` ist mit 7 Impressionen (Pos 18,3) die **staerkste Query der Domain** — staerker als jede Pantomime-Query. Das ist ein weiteres Argument fuer **Vorschlag 7.2** (Cross-Link von zauberer-liar.de auf pantomime-la-france.eu): die Zauberer-Nachfrage in Gladbeck existiert messbar und laeuft bisher ungebuendelt.
 
 **Weiterhin offen bei Michael:** Vorschlag 6 (Google Unternehmensprofil, Prio 1), Vorschlag 7.1 + 7.2 (Links auf liar-entertainer.com / zauberer-liar.de), Vorschlag 8 (H1 der Startseite mit Fokus-Keyword).
+
+---
+
+## Vorschlag 9 — 2026-08-11 (Tag 28): Content-Tiefe der Stadt-Pilotseite /pantomime-essen/
+
+**Status: WARTET AUF FREIGABE von Michael**
+**Typ: Content-Erweiterung (sichtbarer Fliesstext) — kein Auto-Commit erlaubt**
+
+**Datenlage (GSC 28 Tage, 13.07.–09.08.26):** `/pantomime-essen/` hat 20 Impressionen (3.-meiste Seite) bei **Position 40,3** — die schlechteste Position aller Seiten. Queries sind vollstaendig anonymisiert ("Keine Daten"), es ist also nicht ablesbar, wofuer die Seite ausgeliefert wird.
+
+**Heute bereits per Auto-Commit behoben (Technik, keine Freigabe noetig):** Die Seite hatte nur **einen einzigen** internen Link (aus der NRW-Pantomime-Seite). Jetzt verlinken **7 Seiten** descriptiv darauf (5 weitere Figurenseiten + Staedte-Chip der Startseite). Das interne Link-Signal war die groesste technische Schwaeche und ist gefixt.
+
+**Verbleibende Schwaeche (Freigabe noetig):** Der Kern-Fliesstext der Seite ist mit rund 1.300 Zeichen deutlich duenner als die Vergleichsseiten `/figuren/der-pantomime-in-nrw/` und `/walk-act/`. Die Referenzliste (8 belegte Essener Auftraggeber) ist der staerkste, aber unkommentierte Teil.
+
+**Vorschlag (nur belegte Fakten aus INHALTE-VERIFIZIERT.md):**
+1. Referenz-Cluster einordnen statt nur auflisten — 2–3 Saetze, welche Art von Anlaessen das waren (Messe, Stadtfest, soziale Traeger), ohne neue Zahlen oder Details zu erfinden.
+2. Einen Absatz "Pantomime auf Messen in Essen" ergaenzen (Messe Essen ist belegte Referenz) — bedient die naheliegende kommerzielle Suchintention.
+3. Zwei weitere FAQ-Eintraege (Vorlaufzeit, Auftrittsdauer) — Text muss identisch in `faq_block` UND `faq_schema`.
+
+**Messvorgabe:** Wirkung der heutigen internen Verlinkung erst 3–4 Wochen beobachten. Wenn die Position dann unter ~30 faellt, ist die Seitenvorlage tragfaehig und weitere Staedte sind vertretbar. Faellt sie nicht, ist die Vorlage zu duenn — dann Content zuerst, Ausweitung spaeter.
+
+---
+
+## Tag 28 — 2026-08-11: Befund zu "zauberer gladbeck" (Ergaenzung zu Vorschlag 7.2)
+
+`zauberer gladbeck` ist mit 12 Impressionen (3M) die mit Abstand staerkste Query der Domain, Position 18,1. **Neu ermittelt (Query-Filter in GSC):** Google liefert dafuer **`/ueber-mich/` (11 Impressionen)** und `/impressum/` (1) aus — **nicht** die thematisch passende Seite `/figuren/der-zauberer/` (die hat ueber alle Queries nur 2 Impressionen).
+
+Bewertung: Die Zauberer-Nachfrage in Gladbeck existiert messbar, landet aber auf einer Seite ohne Buchungs-Fokus. Da "Zauberer" nicht Fokus-Keyword dieser Domain ist und mit `zauberer-liar.de` eine eigene Domain existiert, ist das kein Anlass, hier Zauberer-Content aufzubauen — es ist das **staerkste bisherige Argument fuer Vorschlag 7.2** (Cross-Link von zauberer-liar.de hierher bzw. Buendelung der Zauberer-Nachfrage auf der Zauberer-Domain). Entscheidung liegt bei Michael.

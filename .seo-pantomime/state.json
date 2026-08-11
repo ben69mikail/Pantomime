@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 27,
-  "letzter_lauf": "2026-08-09",
-  "WICHTIG_naechster_lauf": "TAG 27 (09.08., autonom) ABGESCHLOSSEN. (1) DURCHBRUCH INDEXIERUNG: alle 6 am 08.08. beantragten Seiten sind indexiert, damit 15/15 Seiten live per URL-Pruefung bestaetigt. (2) GSC 3M (14.06.-07.08.): 131 Impr. (von 120), Pos 23,0 (von 24,2), 0 Klicks. 28T (11.07.-07.08.): 94 Impr. (von 84), Pos 23,0 (von 24,5). Queries 3M: 'zauberer gladbeck' 7 (von 4, Pos 18,3) = neue Nr.1, 'clown pantomime' 4 (Pos 10,5), 'pantomime clown' 4 (Pos 13,5), 'clown liar' 3, dann je 1 (liar clown / pantomime clowns / clown zauberer liar / zauberer liar / pantomime buchen Pos 37). Weiterhin KEINE Walk-Act-Query, 0 Klicks. Seiten 28T: der-clown 26, pantomime-essen 19 (Pos 41,9 = schlechteste), der-pantomime-in-nrw 18, Startseite 17, ueber-mich 13, walk-act 7, figuren 6, referenzen 1 (erstmals mit Daten). (3) Meta-Desc-Aenderungen vom 07.08. (walk-act/referenzen/ueber-mich): Impressionen leicht hoch (walk-act 6 auf 7, ueber-mich 10 auf 13, referenzen 0 auf 1), CTR weiter 0 Prozent - nur 2 Tage Datenlage, noch keine belastbare CTR-Aussage. (4) NEU im Seiten-Report: '403 blockiert' 1 Seite = http://pantomime-la-france.eu/ (Crawl 15.06.), Validierung laeuft seit 27.07. Live-Check mit Googlebot-UA: alle 4 Varianten 301 auf https://www.pantomime-la-france.eu/ (200). Historisch, kein Fix. (5) AUTO-COMMIT (1 von max. 2): Service-Schema auf /walk-act/ ergaenzt. Rebuild-Diff sauber: walk-act/index.html +1 Zeile, sitemap lastmod 2026-08-09, keine Asset-Hash-Bumps, keine DSGVO-Regression (keine externen Google-Fonts), 16/16 Seiten valide, alle JSON-LD parsen. (6) Technik-Audit ohne Befund: alle 15 Titles 49-60 Z., alle Descriptions 143-160 Z. (Startseite 161 Z. nur wegen Entities, gerendert 153), 1 H1 je Seite, Canonicals/OG/Twitter vollstaendig, leeres alt nur bei aria-hidden-Hero-Backgrounds (korrekt, NICHT aendern). (7) OFFEN bei Michael: Vorschlag 6 (Google Unternehmensprofil), Vorschlag 7.1+7.2 (Links auf liar-entertainer.com / zauberer-liar.de), Vorschlag 8 (H1 Startseite).",
+  "aktueller_plan_tag": 28,
+  "letzter_lauf": "2026-08-11",
+  "WICHTIG_naechster_lauf": "TAG 28 (11.08., autonom) ABGESCHLOSSEN. (1) GSC 3M (14.06.-09.08.): 156 Impr. (von 131), Pos 24,5 (von 23,0 - leicht schlechter, weil neue Seiten mit tiefer Position mitzaehlen), 0 Klicks. 28T (13.07.-09.08.): 116 Impr., Pos 25,4. (2) Queries 3M: 'zauberer gladbeck' 12 (von 7) = klare Nr.1, 'clown pantomime' 4, 'pantomime clown' 4, 'clown liar' 3, 'zauberer liar' 2, dann je 1 (liar clown / pantomime clowns / clown zauberer liar / pantomime buchen). WEITERHIN KEINE Walk-Act-Query, 0 Klicks bei 156 Impressionen. (3) NEUER BEFUND per GSC-Query-Filter: 'zauberer gladbeck' wird mit /ueber-mich/ (11 Impr.) und /impressum/ (1) ausgeliefert, NICHT mit /figuren/der-zauberer/ (nur 2 Impr. gesamt). Staerkstes Argument bisher fuer Vorschlag 7.2 (Zauberer-Nachfrage auf zauberer-liar.de buendeln). In vorschlaege.md dokumentiert. (4) Seiten 28T: der-clown 26, der-pantomime-in-nrw 20, pantomime-essen 20 (Pos 40,3 = weiter schlechteste), ueber-mich 18, Start 17, walk-act 16 (von 7 - deutlicher Anstieg nach Meta-Desc + Service-Schema aus Tag 27!), figuren 9, der-zauberer 2, referenzen 1, impressum 1. (5) AUTO-COMMIT (1 von max. 2): /pantomime-essen/ hatte nur EINEN internen Link (aus der NRW-Pantomime-Seite) - das war die groesste technische Schwaeche hinter Pos 40,3. Jetzt 7 interne Links: build.py-Bedingung entfernt (Staedte-Absatz aller 6 Figurenseiten verlinkt 'Essen' descriptiv) + Startseiten-Staedte-Chip 'Essen' als <a class=chip>. Title (51 Z.) und Description (153 Z.) der Essen-Seite waren bereits sauber - kein Fix noetig. (6) VERIFIKATION: Baseline-Rebuild VOR der Aenderung reproduziert live-HTML byte-identisch (einziger Diff = sitemap-lastmod) -> build.py weiterhin synchron, keine Divergenz. Nach der Aenderung: Diff = 5 Figurenseiten + index.html je 1 Zeile + build.py 7 Zeilen + sitemap lastmod. Keine Asset-Hash-Bumps, keine externen Google-Fonts, Consent-Checkbox intakt, 16/16 Seiten valide (</html>, genau 1 H1), alle JSON-LD parsen. Commit 3383e3a gepusht. (7) VORSCHLAG 9 angefuegt (Content-Tiefe /pantomime-essen/, ~1.300 Z. Kerntext vs. Vergleichsseiten) - WARTET AUF FREIGABE. Messvorgabe: Wirkung der internen Verlinkung 3-4 Wochen beobachten, erst dann ueber weitere Stadtseiten entscheiden. (8) OFFEN bei Michael: Vorschlag 6 (Google Unternehmensprofil, Prio 1), Vorschlag 7.1+7.2 (Links auf liar-entertainer.com / zauberer-liar.de), Vorschlag 8 (H1 Startseite mit Fokus-Keyword), NEU Vorschlag 9 (Content-Tiefe Essen).",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -275,10 +275,20 @@
       "datum": "2026-08-09",
       "titel": "Indexierungs-Nachpruefung der 6 Antraege vom 08.08. + GSC-Auswertung + Service-Schema /walk-act/",
       "ergebnis": "ALLE 6 am 08.08. beantragten Seiten jetzt live per URL-Pruefung 'URL ist auf Google / Seite ist indexiert': /figuren/der-nussknacker/, /figuren/der-weihnachtsmann/, /figuren/der-zauberer/, /figuren/der-crazy-kellner/, /impressum/, /datenschutz/. Damit 15/15 Seiten indexiert (Seiten-Report laggt: Stand 05.08. meldet noch 7 indexiert / 9 nicht). NEU im Seiten-Report: Fehlergruppe 'Wegen Zugriffsverbot (403) blockiert' = 1 Seite, betroffen ist http://pantomime-la-france.eu/ (letztes Crawling 15.06.26), Validierung seit 27.07. 'Gestartet'. Live gegengeprueft mit Googlebot-UA: http/https, mit/ohne www liefern alle 301 auf https://www.pantomime-la-france.eu/ (200). Historischer Eintrag, KEIN Code-Fix noetig. AUTO-COMMIT: Service-Schema auf /walk-act/ ergaenzt (einzige Service-Seite ohne Service-Markup; alle Figurenseiten und /pantomime-essen/ hatten es). Beschreibung deckungsgleich mit sichtbarem Inhalt und Meta-Description."
+    },
+    {
+      "tag": 28,
+      "datum": "2026-08-11",
+      "schritt": "Tag 28: GSC-Auswertung (3M/28T, Query-Filter) + /pantomime-essen/ On-Page schaerfen",
+      "ergebnis": "GSC 3M 156 Impr./Pos 24,5/0 Klicks; 28T 116 Impr./Pos 25,4. 'zauberer gladbeck' 12 Impr. = Nr.1-Query, rankt per Query-Filter mit /ueber-mich/ statt /figuren/der-zauberer/. /pantomime-essen/: 20 Impr., Pos 40,3, Queries anonymisiert. Title/Desc sauber -> echte Schwaeche war internes Link-Signal (nur 1 eingehender Link). AUTO-FIX: build.py-Bedingung entfernt + Startseiten-Chip verlinkt -> 7 eingehende interne Links mit descriptivem Anchor 'Essen'. Baseline-Rebuild vorab byte-identisch zu live (keine build.py-Divergenz). Verifiziert: 16/16 Seiten valide, JSON-LD parst, keine DSGVO-Regression. Vorschlag 9 (Content-Tiefe Essen) angefuegt.",
+      "commits": [
+        "SEO: Tag 28 - interne Verlinkung auf /pantomime-essen/ von 1 auf 7 Seiten (5 Figurenseiten + Startseiten-Staedte-Chip, descriptiver Anchor 'Essen') + Rebuild (sitemap lastmod) (3383e3a)",
+        "SEO: State Tag 28 + Vorschlag 9 (Content-Tiefe /pantomime-essen/) + GSC-Snapshot 11.08."
+      ]
     }
   ],
-  "naechster_plan_tag": 28,
-  "naechster_schritt": "Tag 28: (a) Erste Crawl-/Impressionsdaten der 6 neu indexierten Seiten in GSC pruefen (Seiten-Report sollte auf 15 indexiert nachziehen). (b) 'zauberer gladbeck' (jetzt staerkste Query, 7 Impr., Pos 18,3) - pruefen welche Seite rankt; Cross-Link-Argument fuer Vorschlag 7.2 (zauberer-liar.de). (c) /pantomime-essen/ hat mit Pos 41,9 die schlechteste Position bei 19 Impressionen - Titel/Description/On-Page schaerfen pruefen. (d) Vorschlag 8 (H1 Startseite mit Fokus-Keyword) bleibt offen und wartet auf Michael. (e) Weiterhin 0 Klicks bei 131 Impressionen - Snippet-Attraktivitaet der Top-Seiten (der-clown Pos 27,7) beobachten.",
+  "naechster_plan_tag": 29,
+  "naechster_schritt": "Tag 29: (a) Wirkung der internen Verlinkung auf /pantomime-essen/ pruefen (Position 40,3 als Referenzwert; Effekt fruehestens nach erneutem Crawl sichtbar). (b) /walk-act/ weiter beobachten - Impressionen 7 -> 16 nach Tag-27-Massnahmen, aber immer noch KEINE einzige Walk-Act-Query in GSC; pruefen mit welchen Queries die Seite ueberhaupt ausgeliefert wird (Query-Filter auf die Seite). (c) 0 Klicks bei 156 Impressionen bleibt das Kernproblem - Snippet-Attraktivitaet der Top-Seite /figuren/der-clown/ (26 Impr.) pruefen: Title/Desc sind formal sauber, aber CTR 0 Prozent; ggf. Description handlungsorientierter (Auto-Fix erlaubt). (d) Vorschlaege 6 / 7.1 / 7.2 / 8 / 9 bleiben offen und warten auf Michael - im Bericht erneut nennen.",
   "offene_vorschlaege": [
     {
       "nr": "IONOS-ESKALATION (kein klassischer Vorschlag, sondern Server-Ops)",
@@ -307,6 +317,13 @@
       "titel": "H1 der Startseite enthaelt kein Fokus-Keyword ('Eine Kunst, die ohne Worte begeistert.'), obwohl die Startseite fuer 'pantomime buchen' (Pos 37) und mit 16 Impressionen rankt. Vorschlag: H1 um das Fokus-Keyword ergaenzen (z.B. 'Pantomime & Walk Act - eine Kunst, die ohne Worte begeistert.') und den bisherigen Claim als Unterzeile erhalten.",
       "status": "WARTET AUF FREIGABE von Michael",
       "typ": "Content/Struktur (H1-Aenderung, daher kein Auto-Commit)"
+    },
+    {
+      "nr": 9,
+      "datum_vorschlag": "2026-08-11",
+      "titel": "Content-Tiefe der Stadt-Pilotseite /pantomime-essen/ erhoehen (Referenz-Cluster einordnen, Messe-Absatz, 2 weitere FAQ) - erst nach 3-4 Wochen Messung der heutigen internen Verlinkung entscheiden",
+      "status": "WARTET AUF FREIGABE von Michael",
+      "typ": "Content-Erweiterung (sichtbarer Fliesstext + FAQ, Schema muss mitgezogen werden)"
     }
   ],
   "erledigte_vorschlaege": [
@@ -1048,6 +1065,108 @@
         }
       ],
       "hinweis": "Impressionen und Position verbessern sich stetig, Klicks weiterhin 0. Keine Walk-Act-Query attribuiert."
+    },
+    {
+      "datum": "2026-08-11",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "3M 14.06.-09.08.26 / 28T 13.07.-09.08.26",
+      "klicks": 0,
+      "impressionen": 156,
+      "ctr_prozent": 0,
+      "durchschnitt_position": 24.5,
+      "impressionen_28t": 116,
+      "position_28t": 25.4,
+      "top_queries": [
+        {
+          "query": "zauberer gladbeck",
+          "klicks": 0,
+          "impressionen": 12
+        },
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 4
+        },
+        {
+          "query": "pantomime clown",
+          "klicks": 0,
+          "impressionen": 4
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 3
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 2
+        },
+        {
+          "query": "liar clown",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "pantomime clowns",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 1
+        },
+        {
+          "query": "pantomime buchen",
+          "klicks": 0,
+          "impressionen": 1
+        }
+      ],
+      "top_pages_28t": [
+        {
+          "url": "/figuren/der-clown/",
+          "impressionen": 26
+        },
+        {
+          "url": "/figuren/der-pantomime-in-nrw/",
+          "impressionen": 20
+        },
+        {
+          "url": "/pantomime-essen/",
+          "impressionen": 20,
+          "position": 40.3
+        },
+        {
+          "url": "/ueber-mich/",
+          "impressionen": 18
+        },
+        {
+          "url": "/",
+          "impressionen": 17
+        },
+        {
+          "url": "/walk-act/",
+          "impressionen": 16
+        },
+        {
+          "url": "/figuren/",
+          "impressionen": 9
+        },
+        {
+          "url": "/figuren/der-zauberer/",
+          "impressionen": 2
+        },
+        {
+          "url": "/referenzen/",
+          "impressionen": 1
+        },
+        {
+          "url": "/impressum/",
+          "impressionen": 1
+        }
+      ],
+      "hinweis": "Live via Chrome. 3M-Impressionen 131->156, Pos 23,0->24,5 (leicht schlechter durch neu indexierte Seiten mit tiefer Position). Query-Filter-Befund: 'zauberer gladbeck' (Pos 18,1) wird mit /ueber-mich/ 11 + /impressum/ 1 ausgeliefert, NICHT mit der Zauberer-Figurenseite. /pantomime-essen/ Pos 40,3 (von 41,9), Queries anonymisiert. /walk-act/ 7->16 Impr. nach Tag-27-Massnahmen. Weiterhin 0 Klicks und keine Walk-Act-Query."
     }
   ],
   "technische_hinweise": {
@@ -1059,7 +1178,7 @@
     "datenschutz_stand": "datenschutz/index.html hat seit V5-Reconciliation hart 'Stand: 2026-07-02' (kein Auto-Bump; bei echten Datenschutz-Aenderungen manuell bumpen).",
     "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de, seit V5 (2026-07-20) mit descriptiven Ankern.",
     "schema_stand": "Stand 2026-08-09: BreadcrumbList auf allen 15 Seiten; FAQPage auf Startseite, allen 6 Figurenseiten, /walk-act/ und /pantomime-essen/; Service auf allen 6 Figurenseiten, /pantomime-essen/ und ab 09.08. auch /walk-act/; PerformingGroup+LocalBusiness auf der Startseite; ContactPage auf /kontakt/; Person auf /ueber-mich/. Alle JSON-LD parsen fehlerfrei.",
-    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner verlinken via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen. /pantomime-essen/ von /figuren/der-pantomime-in-nrw/-Staedteliste verlinkt.",
+    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner verlinken via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen. /pantomime-essen/ von /figuren/der-pantomime-in-nrw/-Staedteliste verlinkt. TAG 28 (2026-08-11): /pantomime-essen/ hatte nur 1 eingehenden internen Link -> jetzt 7. build.py: Staedte-Absatz ALLER Figurenseiten verlinkt 'Essen' (frueher nur der-pantomime-in-nrw, Bedingung entfernt, Zeile ~544); Startseiten-Chip 'Essen' ist <a class=\"chip\" href=\"/pantomime-essen/\"> (Zeile ~495). Global gilt a{color:inherit;text-decoration:none} -> optisch identisch zum span, kein CSS-Risiko.",
     "sitemap_robots_stand": "Seit 24.07. (edaab12): sitemap.xml (15 URLs) + sitemap.txt (15 URLs, plain text) via build.py; robots.txt mit 2 Sitemap-Zeilen. STATUS 27.07.: sitemap.txt in GSC 'Erfolgreich' (gelesen 25.07., 15 erkannte Seiten, 2. Lauf in Folge stabil) - FUNKTIONIERT. sitemap.xml-Eintrag (22.07.) weiter 'Konnte nicht abgerufen werden' - kosmetisch, txt uebernimmt; Eintrag kann spaeter entfernt werden, wenn txt stabil bleibt. 404.html nicht in sitemap.",
     "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Seit V5-Batch (2026-07-20): style.css?v=fc99917e, app.js?v=45732809. Bei style.css-Aenderung alle HTML mitcommitten.",
     "fokus_keywords": [
@@ -1078,6 +1197,7 @@
     "cross_link_stand": "FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener), seit V5 descriptiv. REVERSE: liar-entertainer.com -> 'Pantomime' auf alte Subdomain (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 (Fremd-Domains, freigegeben, Umsetzung durch Michael offen).",
     "indexierung_stand": "Stand 08.08.2026: 9 Seiten bestaetigt indexiert (/, /figuren/, /figuren/der-clown/, /figuren/der-pantomime-in-nrw/, /walk-act/, /pantomime-essen/, /ueber-mich/, /kontakt/, /referenzen/). 6 Seiten 'Gefunden - zurzeit nicht indexiert' und noch nie gecrawlt (Nussknacker, Weihnachtsmann, Zauberer, Crazy-Kellner, Impressum, Datenschutz) - Indexierung am 08.08. fuer alle 6 beantragt. GSC-Feld 'Verweisende Seite: Nicht gefunden' ist bei dieser Site ein Crawl-Lag-Artefakt: alle 15 Seiten verlinken per Navigation auf alle Figurenseiten und Impressum/Datenschutz (im Repo verifiziert).",
     "binaer_push_hinweis": "GitHub-MCP (push_files/create_or_update_file) speichert Content NUR als Text - Binaerdateien (Bilder) UNMOEGLICH. Workaround: GitHub-Web-Upload in Michaels Chrome (github.com/ben69mikail/Pantomime/upload/main/<pfad>).",
-    "stadtseiten_stand": "/pantomime-essen/ seit 2026-07-21 live (Pilot), seit spaetestens 26.07. INDEXIERT. Jetzt 4-6 Wochen GSC-Wirkung messen ('Pantomime Essen'-Queries), erst danach ggf. weitere Staedte - NUR mit eigener belegter Referenzbasis."
+    "stadtseiten_stand": "/pantomime-essen/ seit 2026-07-21 live (Pilot), seit spaetestens 26.07. INDEXIERT. Jetzt 4-6 Wochen GSC-Wirkung messen ('Pantomime Essen'-Queries), erst danach ggf. weitere Staedte - NUR mit eigener belegter Referenzbasis.",
+    "build_py_sync_stand": "Tag 28 (2026-08-11): Baseline-Rebuild VOR jeder Aenderung reproduziert live-HTML byte-identisch, einziger Diff = sitemap-lastmod. build.py und live-HTML sind synchron; die alte KRITISCH_build_py_divergenz ist seit V5-Rollout (2026-07-20) erledigt."
   }
 }
