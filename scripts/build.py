@@ -492,7 +492,7 @@ home_body = f"""<main>
       ("Messe &amp; Event", 'Als <a href="/walk-act/">Walk Act</a> zieht der Pantomime die Aufmerksamkeit an Ihren Stand — auf Messen, in Autohäusern und bei Geschäftseröffnungen, ganz ohne Sprachbarrieren.'),
       ("Stadtfest", 'Straßentheater für Publikum jeden Alters: wortlose Situationskomik, die jede Sprache versteht — als Hauptattraktion oder <a href="/figuren/der-pantomime-in-nrw/">Pantomime</a> auf Stadtfesten in ganz NRW.'),
   ]) + f"""
-  <div class="chips reveal" style="margin-top:2rem;justify-content:center">{"".join(f'<span class="chip">{c}</span>' for c in CITIES)}</div>
+  <div class="chips reveal" style="margin-top:2rem;justify-content:center">{"".join(f'<a class="chip" href="/pantomime-essen/">{c}</a>' if c == "Essen" else f'<span class="chip">{c}</span>' for c in CITIES)}</div>
 </div></section>
 {faq_block(home_faq)}
 </main>
@@ -541,9 +541,8 @@ HEROIMG = {
 }
 for slug in FIG_ORDER:
     f = FIGUREN[slug]
-    cities_txt = ", ".join(CITIES[:7])
-    if slug == "der-pantomime-in-nrw":
-        cities_txt = cities_txt.replace("Essen", '<a href="/pantomime-essen/">Essen</a>')
+    cities_txt = ", ".join(CITIES[:7]).replace(
+        "Essen", '<a href="/pantomime-essen/">Essen</a>')
     body = f"""<main>
 <section class="subhero subhero--img">
   {subimg(*HEROIMG[slug])}
