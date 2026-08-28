@@ -262,3 +262,20 @@ Michael hat V5 freigegeben. Umgesetzt im heutigen Batch (byte-verifiziert, 1 Com
 `zauberer gladbeck` ist mit 12 Impressionen (3M) die mit Abstand staerkste Query der Domain, Position 18,1. **Neu ermittelt (Query-Filter in GSC):** Google liefert dafuer **`/ueber-mich/` (11 Impressionen)** und `/impressum/` (1) aus — **nicht** die thematisch passende Seite `/figuren/der-zauberer/` (die hat ueber alle Queries nur 2 Impressionen).
 
 Bewertung: Die Zauberer-Nachfrage in Gladbeck existiert messbar, landet aber auf einer Seite ohne Buchungs-Fokus. Da "Zauberer" nicht Fokus-Keyword dieser Domain ist und mit `zauberer-liar.de` eine eigene Domain existiert, ist das kein Anlass, hier Zauberer-Content aufzubauen — es ist das **staerkste bisherige Argument fuer Vorschlag 7.2** (Cross-Link von zauberer-liar.de hierher bzw. Buendelung der Zauberer-Nachfrage auf der Zauberer-Domain). Entscheidung liegt bei Michael.
+
+---
+
+## Tag 29 — 2026-08-28: Erste Klicks + verschaerfter Befund zu Vorschlag 6 und 7.2
+
+**Neue Datenlage (GSC 3 Monate, 14.06.–25.08.26):** Die Domain hat erstmals Klicks: **6 Klicks bei 432 Impressionen (CTR 1,4 %, Pos 25,4)**. Die einzige Klick-Query ist `pantomime clown` (13 Impressionen, 2 Klicks) auf `/figuren/der-clown/`.
+
+**Heute per Auto-Commit behoben (Technik, keine Freigabe noetig):** Title von `/figuren/der-clown/` auf die Wortfolge der Klick-Query umgestellt (48 → 56 Zeichen), Meta-Description von `/ueber-mich/` von rein biografisch auf handlungsorientiert mit Ort und Anfrage-CTA (155 Zeichen). Commit `bbd9cb3`.
+
+**Verschaerfung Vorschlag 6 (Google Unternehmensprofil) — Prio 1, unveraendert offen:**
+`zauberer gladbeck` ist von 12 auf **54 Impressionen** gestiegen und damit mit Abstand die groesste Einzel-Query der Domain — bei **0 Klicks**. Das ist eine lokale Dienstleister-Suche mit Ortsbezug. Genau diese Suchen werden in der Praxis ueber das Google Unternehmensprofil (Local Pack / Maps) bedient, nicht ueber ein organisches Ergebnis auf Position ~18. Solange kein Profil existiert, bleibt dieser Nachfrageblock unbeantwortet. Aktion liegt bei Michael (Kontoanlage), Profiltexte liegen fertig in `.seo-pantomime/v6-v7-texte.md`.
+
+**Verschaerfung Vorschlag 7.2 (Zauberer-Nachfrage buendeln) — freigegeben, Einbau offen:**
+Query-Filter auf `/figuren/der-zauberer/` zeigt: `zauberer liar` 6, `zauberer gladbeck` 3, `zauberer bochum` 3, `zauberer gelsenkirchen` 1, `zauberer nrw` 1 — bei Position 54,5 und 68 Impressionen. Die Zauberer-Nachfrage ist inzwischen der **zweitgroesste Traffic-Treiber dieser Domain**, obwohl „Zauberer" hier kein Fokus-Keyword ist und mit `zauberer-liar.de` eine eigene Domain existiert. Empfehlung bleibt: Nachfrage per Cross-Link auf die Zauberer-Domain buendeln statt hier Zauberer-Content aufzubauen. Link-Snippets liegen in `.seo-pantomime/v6-v7-texte.md`.
+
+**Erster Walk-Act-Erfolg (kein Handlungsbedarf, nur Beobachtung):**
+`walking act essen` erscheint erstmals als Query — auf `/pantomime-essen/`, nicht auf `/walk-act/`. Nach 29 Tagen ist das die erste Walk-Act-Query der Domain ueberhaupt. Wird in Tag 30 weiter beobachtet; falls sich das verstetigt, ist zu pruefen, ob `/walk-act/` als Zielseite gestaerkt werden muss.
