@@ -300,7 +300,7 @@ FIGUREN = {
   },
   "der-clown": {
     "name": "Der Clown", "menu": "Clown",
-    "title": "Clown & Pantomime in NRW buchen – LIAR | Walk Act",
+    "title": "Pantomime-Clown in NRW buchen – LIAR | Walk Act & Comedy",
     "desc": "Pantomime-Clown & Comedy-Walk-Act in NRW buchen: LIAR bringt mit Mimik und Slapstick alle zum Lachen – für Kinderfeste, Stadtfeste & Firmenfeiern.",
     "card": "geburtstag.webp", "card_alt": "Clown LIAR bei einem Kinderfest in NRW",
     "hero_alt": "Clown LIAR bringt Menschen zum Lachen",
@@ -669,7 +669,7 @@ ueber_body = f"""<main>
 </main>
 """ + cta_band()
 built.append(page("/ueber-mich/", "Über mich – LIAR | Künstler & Pantomime aus Gladbeck",
-     "Über LIAR (Michael Prescler): Jahrgang 1976, geboren in Frankreich, seit 2009 hauptberuflich Künstler in NRW, seit 2021 Pantomime. Vom Mathe-Studium zur Bühne.",
+     "LIAR (Michael Prescler) aus Gladbeck: seit 2009 hauptberuflich Künstler in NRW – Pantomime, Clown und Zauberer. Jetzt unverbindlich für Ihr Event anfragen.",
      ueber_body, [breadcrumb([("Start", "/"), ("Über mich", "/ueber-mich/")]),
                   {"@context": "https://schema.org", "@type": "Person", "name": "Michael Prescler",
                    "alternateName": "LIAR", "birthDate": "1976", "nationality": "Französisch",
