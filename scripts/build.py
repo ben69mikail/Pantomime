@@ -745,7 +745,7 @@ ge_faq = [("Tritt LIAR als Pantomime auch in Gelsenkirchen auf?", "Ja. Gelsenkir
 GE_REFS = ["Stadt Gelsenkirchen", "AWO Gelsenkirchen", "Schalke 04"]
 ge_body = f"""<main>
 <section class="subhero subhero--img">
-  {subimg('pantomime-ruhrgebiet-scaled.webp', '50% 24%')}
+  {subimg('pantomime-9-scaled.webp', '32% 52%')}
   <div class="container">
     <span class="kicker">Pantomime &amp; Walk Act in Gelsenkirchen</span>
     <h1>Pantomime in Gelsenkirchen buchen</h1>
