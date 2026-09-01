@@ -410,7 +410,7 @@ home_body = f"""<main>
   <div class="hero-bg" aria-hidden="true">{img('cropped-pantomime-11.webp','').replace('loading="lazy"','fetchpriority="high"').replace('alt=""','alt="" role="presentation"')}</div>
   <div class="hero-inner">
     <p class="kicker reveal">Brillant &amp; charmant — aus Frankreich</p>
-    <h1 class="reveal" style="--d:.1s">Eine Kunst, die <em>ohne Worte</em> begeistert.</h1>
+    <h1 class="reveal" style="--d:.1s">Pantomime &amp; Walk Act in NRW<span class="h1-claim">Eine Kunst, die <em>ohne Worte</em> begeistert.</span></h1>
     <p class="hero-lead reveal" style="--d:.25s">Pantomime &amp; Walk Act für Hochzeit, Firmenfeier, Messe und Stadtfest — in ganz Nordrhein-Westfalen. Gestik, Mimik und Kreativität schaffen Momente, die jede Sprache verstehen.</p>
     <div class="hero-actions reveal" style="--d:.4s">
       <a href="/kontakt/" class="btn btn-primary">Künstler anfragen</a>
@@ -492,7 +492,7 @@ home_body = f"""<main>
       ("Messe &amp; Event", 'Als <a href="/walk-act/">Walk Act</a> zieht der Pantomime die Aufmerksamkeit an Ihren Stand — auf Messen, in Autohäusern und bei Geschäftseröffnungen, ganz ohne Sprachbarrieren.'),
       ("Stadtfest", 'Straßentheater für Publikum jeden Alters: wortlose Situationskomik, die jede Sprache versteht — als Hauptattraktion oder <a href="/figuren/der-pantomime-in-nrw/">Pantomime</a> auf Stadtfesten in ganz NRW.'),
   ]) + f"""
-  <div class="chips reveal" style="margin-top:2rem;justify-content:center">{"".join(f'<a class="chip" href="/pantomime-essen/">{c}</a>' if c == "Essen" else f'<span class="chip">{c}</span>' for c in CITIES)}</div>
+  <div class="chips reveal" style="margin-top:2rem;justify-content:center">{"".join(f'<a class="chip" href="/pantomime-{c.lower()}/">{c}</a>' if c in ("Essen", "Gelsenkirchen") else f'<span class="chip">{c}</span>' for c in CITIES)}</div>
 </div></section>
 {faq_block(home_faq)}
 </main>
@@ -542,6 +542,7 @@ HEROIMG = {
 for slug in FIG_ORDER:
     f = FIGUREN[slug]
     cities_txt = ", ".join(CITIES[:7]).replace(
+        "Gelsenkirchen", '<a href="/pantomime-gelsenkirchen/">Gelsenkirchen</a>').replace(
         "Essen", '<a href="/pantomime-essen/">Essen</a>')
     body = f"""<main>
 <section class="subhero subhero--img">
@@ -680,7 +681,9 @@ built.append(page("/ueber-mich/", "Über mich – LIAR | Künstler & Pantomime a
 # ---- Pantomime in Essen (Stadt-Landingpage, Pilot — Vorschlag 4, freigegeben 2026-07-21)
 essen_faq = [("Tritt LIAR als Pantomime auch in Essen auf?", "Ja. Essen gehört zum Kerngebiet: Zu den Referenzen zählen u. a. Messe Essen, Stadt Essen, Sparkasse Essen und AWO Essen."),
              ("Braucht der Auftritt in Essen eine Bühne oder Technik?", "Nein. Pantomime und Walk Act kommen ohne Bühne und ohne Ton- oder Lichttechnik aus — platzsparend und schnell vorbereitet."),
-             ("Für welche Anlässe in Essen ist der Pantomime buchbar?", "Für Messen, Stadtfeste, Firmenevents und Geschäftseröffnungen — als Hauptattraktion oder Walking Act, für Publikum jeden Alters.")]
+             ("Für welche Anlässe in Essen ist der Pantomime buchbar?", "Für Messen, Stadtfeste, Firmenevents und Geschäftseröffnungen — als Hauptattraktion oder Walking Act, für Publikum jeden Alters."),
+             ("Wie frage ich einen Auftritt in Essen an?", "Über das Kontaktformular, telefonisch oder per WhatsApp. Je mehr Angaben zu Datum, Ort, Art der Veranstaltung und gewünschtem Programm vorliegen, desto genauer fällt das Angebot aus."),
+             ("Lässt sich der Auftritt auf das Publikum abstimmen?", "Ja. Ich gestalte individuelle Darbietungen — humorvoll, poetisch oder interaktiv — passend zum Anlass und zum Publikum.")]
 ESSEN_REFS = ["Messe Essen", "Stadt Essen", "Sparkasse Essen", "AWO Essen",
               "VKJ Essen", "Kinderschutzbund Essen", "St-Gobain Essen", "Feldschlösschen Essen"]
 essen_body = f"""<main>
@@ -701,6 +704,11 @@ essen_body = f"""<main>
         <p>Der Auftritt braucht keine Bühne und keine Technik: Als <a href="/walk-act/">Walk Act</a> mische ich mich unter die Gäste oder trete als Hauptattraktion auf — platzsparend, schnell vorbereitet und für alle Altersgruppen geeignet. Mehr über die Figur erfahren Sie auf der Seite <a href="/figuren/der-pantomime-in-nrw/">Der Pantomime in NRW</a>.</p>
         <p>Ob humorvoll, poetisch oder interaktiv: Ich entwickle individuelle Darbietungen, abgestimmt auf Ihre Veranstaltung in Essen und Umgebung.</p>
       </div>
+      <h2 style="margin-top:2.6rem;font-size:clamp(1.5rem,2.6vw,2rem)">Pantomime auf Messen in Essen</h2>
+      <div class="prose" style="margin-top:1rem">
+        <p>Die Messe Essen zählt zu meinen Auftraggebern. Auf Messen zeigt sich die Stärke der Pantomime besonders deutlich: Ein Walk Act zieht Aufmerksamkeit zum Stand, ohne den Standbetrieb zu stören — kein Mikrofon, keine Bühne, keine Beschallung, die Gespräche übertönt.</p>
+        <p>Weil die Darstellung allein über Körpersprache, Mimik und Gestik funktioniert, erreicht sie internationales Fachpublikum ohne Sprachbarriere. Das gilt ebenso für Geschäftseröffnungen und Firmenevents in Essen.</p>
+      </div>
     </div>
     <div class="split-media reveal">{img('walk-act-fest-essen.webp', 'LIAR als Walk Act bei einem Fest in Essen')}</div>
   </div>
@@ -709,6 +717,10 @@ essen_body = f"""<main>
 <section class="section section--paper2"><div class="container">
   <div class="section-head reveal"><span class="kicker">Vor Ort bewährt</span><h2>Referenzen aus Essen</h2>
   <p>Diese Auftraggeber aus Essen haben LIAR bereits gebucht:</p></div>
+  <div class="prose reveal" style="max-width:68ch;margin-bottom:1.8rem">
+    <p>Die Liste zeigt drei Auftraggebertypen, die in Essen zusammenkommen: Wirtschaft und Messe (Messe Essen, St-Gobain Essen, Feldschlösschen Essen, Sparkasse Essen), die öffentliche Hand (Stadt Essen) sowie soziale Träger und Kinder- und Jugendeinrichtungen (AWO Essen, VKJ Essen, Kinderschutzbund Essen).</p>
+    <p>Für die Praxis heißt das: Das Programm funktioniert vor Fachpublikum am Messestand genauso wie vor Familien beim Stadtfest — weil Pantomime ohne Sprache auskommt und sich in Tempo und Tonfall an das jeweilige Publikum anpassen lässt.</p>
+  </div>
   <div class="chips reveal">{"".join(f'<span class="chip">{r}</span>' for r in ESSEN_REFS)}</div>
 </div></section>
 {faq_block(essen_faq, "Häufige Fragen – Pantomime in Essen")}
@@ -723,6 +735,56 @@ essen_schema = [breadcrumb([("Start", "/"), ("Pantomime in Essen", "/pantomime-e
 built.append(page("/pantomime-essen/", "Pantomime in Essen buchen – LIAR | Walk Act & Messe",
      "Pantomime in Essen buchen: LIAR begeistert wortlos auf Messen, Stadtfesten und Firmenevents – Referenzen u. a. Messe Essen, Stadt Essen, Sparkasse Essen.",
      essen_body, essen_schema, active="/pantomime-essen/"))
+
+# ---- Pantomime in Gelsenkirchen (Stadtseite 2 — Vorschlag 10, freigegeben 2026-09-01)
+ge_faq = [("Tritt LIAR als Pantomime auch in Gelsenkirchen auf?", "Ja. Gelsenkirchen liegt im Kerngebiet rund um Gladbeck. Zu den Auftraggebern zählen u. a. die Stadt Gelsenkirchen, die AWO Gelsenkirchen und Schalke 04."),
+          ("Braucht der Auftritt in Gelsenkirchen eine Bühne oder Technik?", "Nein. Pantomime und Walk Act kommen ohne Bühne und ohne Ton- oder Lichttechnik aus — platzsparend und schnell vorbereitet."),
+          ("Für welche Anlässe in Gelsenkirchen ist der Pantomime buchbar?", "Für Stadtfeste, Firmenevents, Messen und Geschäftseröffnungen — als Hauptattraktion oder Walking Act, für Publikum jeden Alters."),
+          ("Wie frage ich einen Auftritt in Gelsenkirchen an?", "Über das Kontaktformular, telefonisch oder per WhatsApp. Je mehr Angaben zu Datum, Ort, Art der Veranstaltung und gewünschtem Programm vorliegen, desto genauer fällt das Angebot aus.")]
+GE_REFS = ["Stadt Gelsenkirchen", "AWO Gelsenkirchen", "Schalke 04"]
+ge_body = f"""<main>
+<section class="subhero subhero--img">
+  {subimg('pantomime-ruhrgebiet-scaled.webp', '50% 24%')}
+  <div class="container">
+    <span class="kicker">Pantomime &amp; Walk Act in Gelsenkirchen</span>
+    <h1>Pantomime in Gelsenkirchen buchen</h1>
+    <p class="intro">Wortlose Kunst aus Körpersprache, Mimik und Gestik — für Stadtfeste, Firmenevents, Messen und Geschäftseröffnungen in Gelsenkirchen.</p>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="split">
+    <div class="reveal">
+      <p class="lead">Von Gladbeck aus ist Gelsenkirchen direkt nebenan — kurze Wege, verlässliche Planung, und ein Programm, das ohne Bühne und ohne Technik auskommt.</p>
+      <div class="prose" style="margin-top:1.6rem">
+        <p>Als Pantomime erzähle ich Geschichten allein über Körpersprache. Das funktioniert vor gemischtem Publikum genauso wie vor internationalen Gästen, weil keine gemeinsame Sprache nötig ist. Als <a href="/walk-act/">Walk Act</a> mische ich mich unter die Gäste, als Hauptattraktion übernehme ich den Mittelpunkt — je nachdem, was Ihre Veranstaltung braucht.</p>
+        <p>Mehr über die Figur und das Repertoire steht auf der Seite <a href="/figuren/der-pantomime-in-nrw/">Der Pantomime in NRW</a>. Wer im Nachbarstadtgebiet plant, findet unter <a href="/pantomime-essen/">Pantomime in Essen</a> die zweite Stadtseite.</p>
+      </div>
+    </div>
+    <div class="split-media reveal">{img('pantomime-1.webp', 'LIAR als Pantomime im Ruhrgebiet — wortlose Darstellung mit Mimik und Gestik')}</div>
+  </div>
+</section>
+
+<section class="section section--paper2"><div class="container">
+  <div class="section-head reveal"><span class="kicker">Vor Ort bewährt</span><h2>Referenzen aus Gelsenkirchen</h2>
+  <p>Diese Auftraggeber aus Gelsenkirchen haben LIAR bereits gebucht:</p></div>
+  <div class="chips reveal">{"".join(f'<span class="chip">{r}</span>' for r in GE_REFS)}</div>
+  <div class="prose reveal" style="max-width:68ch;margin-top:1.8rem">
+    <p>Auch hier decken die Auftraggeber unterschiedliche Bereiche ab: die öffentliche Hand (Stadt Gelsenkirchen), ein sozialer Träger (AWO Gelsenkirchen) und der Sport (Schalke 04). Dieselbe Darbietung trägt vor sehr unterschiedlichem Publikum — das ist der praktische Vorteil einer Kunstform ohne Worte.</p>
+  </div>
+</div></section>
+{faq_block(ge_faq, "Häufige Fragen – Pantomime in Gelsenkirchen")}
+</main>
+""" + cta_band()
+ge_schema = [breadcrumb([("Start", "/"), ("Pantomime in Gelsenkirchen", "/pantomime-gelsenkirchen/")]),
+             faq_schema(ge_faq),
+             {"@context": "https://schema.org", "@type": "Service",
+              "serviceType": "Pantomime & Walk Act", "provider": {"@id": DOMAIN + "/#liar"},
+              "areaServed": "Gelsenkirchen",
+              "description": "Pantomime in Gelsenkirchen buchen: LIAR begeistert wortlos auf Stadtfesten, Firmenevents und Messen \u2013 als Hauptattraktion oder Walk Act."}]
+built.append(page("/pantomime-gelsenkirchen/", "Pantomime in Gelsenkirchen buchen – LIAR | Walk Act",
+     "Pantomime in Gelsenkirchen buchen: LIAR begeistert wortlos auf Stadtfesten, Firmenevents und Messen – Referenzen u. a. Stadt Gelsenkirchen, AWO, Schalke 04.",
+     ge_body, ge_schema, active="/pantomime-gelsenkirchen/"))
 
 # ---- Referenzen
 REFS = ["OPEL", "IKEA", "Metro", "Champions League UEFA", "Messe Essen", "Extraschicht",
@@ -917,11 +979,11 @@ for p in built:
 
 # ---------------------------------------------------------------- sitemap + robots
 PAGES_FOR_SITEMAP = ["/", "/figuren/"] + [f"/figuren/{s}/" for s in FIG_ORDER] + \
-    ["/walk-act/", "/pantomime-essen/", "/ueber-mich/", "/referenzen/", "/kontakt/", "/impressum/", "/datenschutz/"]
+    ["/walk-act/", "/pantomime-essen/", "/pantomime-gelsenkirchen/", "/ueber-mich/", "/referenzen/", "/kontakt/", "/impressum/", "/datenschutz/"]
 urls = "\n".join(
     f"  <url><loc>{DOMAIN}{p}</loc><lastmod>{TODAY}</lastmod>"
     f"<changefreq>{'weekly' if p=='/' else 'monthly'}</changefreq>"
-    f"<priority>{'1.0' if p=='/' else ('0.8' if p.startswith('/figuren/') or p=='/walk-act/' or p=='/pantomime-essen/' else '0.6')}</priority></url>"
+    f"<priority>{'1.0' if p=='/' else ('0.8' if p.startswith('/figuren/') or p=='/walk-act/' or p.startswith('/pantomime-') else '0.6')}</priority></url>"
     for p in PAGES_FOR_SITEMAP)
 (ROOT / "sitemap.xml").write_text(
     '<?xml version="1.0" encoding="UTF-8"?>\n'

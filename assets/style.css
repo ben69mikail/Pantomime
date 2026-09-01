@@ -133,8 +133,9 @@ main,.site-header,.site-footer{position:relative;z-index:var(--z-base)}
   linear-gradient(180deg,rgba(250,243,228,.32),transparent 26%,transparent 72%,rgba(248,240,221,.32))}
 @media (max-width:760px){.hero::after{background:linear-gradient(180deg,rgba(250,243,228,.67),rgba(248,240,221,.63))}}
 .hero-inner{position:relative;z-index:1;max-width:var(--maxw);margin-inline:auto;width:100%}
-.hero h1{max-width:15ch;margin-bottom:1.3rem;text-shadow:0 1px 16px rgba(250,243,228,.55)}
+.hero h1{max-width:16ch;margin-bottom:1.3rem;text-shadow:0 1px 16px rgba(250,243,228,.55)}
 .hero h1 em{font-style:italic;color:var(--crimson)}
+.hero h1 .h1-claim{display:block;margin-top:.42rem;max-width:20ch;font-size:clamp(1.4rem,3vw,2.3rem);font-weight:400;line-height:1.12;letter-spacing:-.015em;color:var(--ink-soft)}
 .hero-lead{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--ink-soft);max-width:46ch;margin-bottom:2.1rem;line-height:1.7;text-shadow:0 1px 10px rgba(250,243,228,.85),0 0 4px rgba(250,243,228,.7)}
 .hero-actions{display:flex;flex-wrap:wrap;gap:1rem}
 .hero-scroll{margin-top:2.6rem;font-family:var(--display);font-style:italic;font-size:1.1rem;color:var(--gold-deep)}
