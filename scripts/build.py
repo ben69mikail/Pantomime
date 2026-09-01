@@ -615,7 +615,7 @@ walk_body = f"""<main>
         <li>Für jede Altersgruppe — Kinder, Erwachsene, Senioren</li>
       </ul>
     </div>
-    <div class="split-media reveal">{img('walk-act-fest-essen.webp','LIAR als Walk Act im Regen bei einem Stadtfest')}</div>
+    <div class="split-media reveal">{img('walk-act-fest-essen.webp','LIAR als Walk Act im Regen bei einem Stadtfest in Essen')}</div>
   </div>
 </section>
 
@@ -623,7 +623,7 @@ walk_body = f"""<main>
   <div class="section-head reveal"><span class="kicker">Einsatzorte</span><h2>Wo ein Walk Act glänzt</h2></div>
   {WARUM_GRID([
       ("Messe & Stand", "Zieht Aufmerksamkeit zum Messestand und bleibt im Gedächtnis."),
-      ("Stadtfest & Straße", "Straßentheater, das mitten im Publikum entsteht."),
+      ("Stadtfest & Straße", 'Straßentheater, das mitten im Publikum entsteht — zum Beispiel als <a href="/pantomime-essen/">Walk Act in Essen</a>.'),
       ("Firmenfeier & Gala", "Lockert die Stimmung — mal subtil, mal spektakulär."),
       ("Einkaufszentrum & Markt", "Festliche Walking-Acts wie Nussknacker und Weihnachtsmann."),
   ])}
