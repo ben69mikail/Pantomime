@@ -31,15 +31,24 @@
 
   /* ---------- Reveal on scroll ---------- */
   var reveals = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window && reveals.length) {
+  function revealAll() {
+    for (var i = 0; i < reveals.length; i++) { reveals[i].classList.add("in"); }
+  }
+  /* IntersectionObserver feuert nicht, wenn das Dokument im Hintergrund rendert
+     (Hintergrund-Tab, Prerender, headless). Ohne Fallback bliebe der Inhalt unsichtbar. */
+  if (!("IntersectionObserver" in window) || !reveals.length || document.visibilityState !== "visible") {
+    revealAll();
+  } else {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
       });
     }, { threshold: 0.12 });
     reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add("in"); });
+    /* Sicherheitsnetz: Falls nach 3 s noch nichts eingeblendet wurde, hart einblenden. */
+    setTimeout(function () {
+      if (!document.querySelector(".reveal.in")) { revealAll(); }
+    }, 3000);
   }
 
   /* ---------- Jahr im Footer ---------- */

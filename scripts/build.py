@@ -108,6 +108,7 @@ def head(title, desc, path, schema, og_img="/assets/img/og-pantomime.jpg"):
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.className+=" js";</script>
 <title>{title}</title>
 <meta name="description" content="{desc}" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
