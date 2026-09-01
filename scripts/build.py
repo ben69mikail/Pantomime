@@ -762,7 +762,7 @@ ge_body = f"""<main>
         <p>Mehr über die Figur und das Repertoire steht auf der Seite <a href="/figuren/der-pantomime-in-nrw/">Der Pantomime in NRW</a>. Wer im Nachbarstadtgebiet plant, findet unter <a href="/pantomime-essen/">Pantomime in Essen</a> die zweite Stadtseite.</p>
       </div>
     </div>
-    <div class="split-media reveal">{img('pantomime-1.webp', 'LIAR als Pantomime im Ruhrgebiet — wortlose Darstellung mit Mimik und Gestik')}</div>
+    <div class="split-media reveal">{img('pantomime-3-scaled.webp', 'Pantomime LIAR bei einer Veranstaltung im Ruhrgebiet — Gäste an gedeckten Tischen im Hintergrund')}</div>
   </div>
 </section>
 
