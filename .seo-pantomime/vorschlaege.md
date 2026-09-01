@@ -279,3 +279,45 @@ Query-Filter auf `/figuren/der-zauberer/` zeigt: `zauberer liar` 6, `zauberer gl
 
 **Erster Walk-Act-Erfolg (kein Handlungsbedarf, nur Beobachtung):**
 `walking act essen` erscheint erstmals als Query — auf `/pantomime-essen/`, nicht auf `/walk-act/`. Nach 29 Tagen ist das die erste Walk-Act-Query der Domain ueberhaupt. Wird in Tag 30 weiter beobachtet; falls sich das verstetigt, ist zu pruefen, ob `/walk-act/` als Zielseite gestaerkt werden muss.
+
+---
+
+## Tag 30 — 2026-09-01: Stadtseiten-Pilot Essen ist bestaetigt — Vorschlag 10 (Ausweitung) + Zyklus-1-Bilanz
+
+**Messvorgabe aus Vorschlag 9 ist erfuellt.** Vorgabe war: „Wenn die Position nach 3–4 Wochen unter ~30 faellt, ist die Seitenvorlage tragfaehig." Ergebnis GSC 28-Tage-Fenster (02.08.–29.08.26): `/pantomime-essen/` steht bei **Position 10,0** (8 Impressionen). Im 3-Monats-Fenster ist es 33,5, im Fenster vom 25.08. war es 34,9 — der Sprung ist also frisch und faellt zeitlich mit der internen Verlinkung aus Tag 28 zusammen. Zusaetzlich ist die Essen-Seite die **einzige Seite der Domain, die fuer eine Walk-Act-Query rankt**: `walking act essen`, Position 7,0.
+
+Damit ist belegt: **Stadt + Leistung** funktioniert auf dieser Domain deutlich besser als die generische NRW-Seite. `/walk-act/` selbst liegt im gleichen Fenster bei Position 34,2 (21 Impressionen) und bekommt fuer seine eigenen Queries von Google keine Aufschluesselung (anonymisiert).
+
+**Heute per Auto-Commit umgesetzt (Technik, keine Freigabe noetig):** `/walk-act/` verlinkt jetzt descriptiv auf `/pantomime-essen/` („Walk Act in Essen") — bis heute verlinkte **keine einzige Seite** von `/walk-act/` auf die Stadt-Pilotseite, obwohl die Gegenrichtung seit Tag 28 auf 7 Seiten existiert. Ausserdem Alt-Text des Essen-Fotos auf `/walk-act/` praezisiert (gleiche Bilddatei, auf der Essen-Seite bereits mit Ortsbezug beschriftet). Commit `55c16a3`.
+
+### Vorschlag 10 — WARTET AUF FREIGABE von Michael: zweite Stadtseite nach dem Essen-Muster
+
+Vorgeschlagen wird **genau eine** weitere Stadtseite als zweiter Pilot, nicht mehrere auf einmal. Auswahlkriterium bleibt wie bei Essen: **belegte Referenzbasis in `INHALTE-VERIFIZIERT.md`**, damit die Seite eigenen, wahren Inhalt hat und keine Thin Page wird.
+
+Kandidaten nach belegter Referenzdichte:
+1. **Gladbeck** — Sparkasse Gladbeck, Kulturamt Gladbeck; ausserdem Wohnort/Standort (NAP-Ort). Zusaetzlich staerkste Ortsnachfrage der Domain ueberhaupt (`zauberer gladbeck`, 64 Impressionen). Nachteil: Die Nachfrage ist Zauberer-, nicht Pantomime-Nachfrage — eine Pantomime-Seite bedient sie nur teilweise.
+2. **Gelsenkirchen** — AWO Gelsenkirchen, Stadt Gelsenkirchen, Schalke 04.
+3. **Bochum** — VFL Bochum (nur eine Referenz; `zauberer bochum` rankt mit 8 Impressionen auf Position 93,6, also praktisch unsichtbar).
+
+**Empfehlung:** Gelsenkirchen, weil die Referenzbasis dort aus zwei unabhaengigen Auftraggebertypen (Stadt, sozialer Traeger, Verein) besteht und die Seite damit denselben E-E-A-T-Charakter wie Essen bekommt. Gladbeck waere die Alternative, wenn Michael parallel Vorschlag 6 (Google Unternehmensprofil) umsetzt — dann greifen Profil und Stadtseite am selben Ort ineinander.
+
+**Nicht empfohlen:** mehr als eine Seite gleichzeitig, oder Staedte ohne belegte Referenz. Das wuerde exakt das Thin-Page-Risiko erzeugen, das der Essen-Pilot vermieden hat.
+
+### Zyklus-1-Bilanz (Tag 1–30, 18.06.–01.09.26)
+
+| Kennzahl (3 Monate) | Start | heute |
+|---|---|---|
+| Klicks | 0 | 6 |
+| Impressionen | 0 | 481 |
+| Ø Position | – | 24,8 |
+| indexierte Seiten | 0 | 14 in GSC mit Daten |
+| Queries gesamt | 0 | 17 |
+
+**Engstelle bleibt die CTR (1,2 %), nicht die Sichtbarkeit.** Zyklus 2 wird deshalb auf Klick-Ausbeute priorisiert statt auf weitere Impressionen.
+
+### Weiterhin offen bei Michael (unveraendert)
+- **Vorschlag 6** — Google Unternehmensprofil (Prio 1). Bedient `zauberer gladbeck` (64 Impressionen, 0 Klicks) und generell lokale Suche. Texte liegen fertig in `.seo-pantomime/v6-v7-texte.md`.
+- **Vorschlag 7.1 / 7.2** — Cross-Links auf `liar-entertainer.com` und `zauberer-liar.de` einbauen (freigegeben, Einbau steht aus).
+- **Vorschlag 8** — H1 der Startseite um das Fokus-Keyword ergaenzen.
+- **Vorschlag 9** — Content-Tiefe `/pantomime-essen/`. Durch den Positionssprung auf 10,0 jetzt attraktiver: die Seite ist nah an Seite 1, zusaetzliche Tiefe koennte den Rest tragen.
+- **Vorschlag 10** — zweite Stadtseite (siehe oben).
