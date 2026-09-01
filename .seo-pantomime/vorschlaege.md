@@ -321,3 +321,47 @@ Kandidaten nach belegter Referenzdichte:
 - **Vorschlag 8** — H1 der Startseite um das Fokus-Keyword ergaenzen.
 - **Vorschlag 9** — Content-Tiefe `/pantomime-essen/`. Durch den Positionssprung auf 10,0 jetzt attraktiver: die Seite ist nah an Seite 1, zusaetzliche Tiefe koennte den Rest tragen.
 - **Vorschlag 10** — zweite Stadtseite (siehe oben).
+
+---
+
+## FREIGABE-ROLLOUT — 2026-09-01 (Michael: „Vorschlag 7.1 / 7.2 wie Vorschlag 8, 9 und 10 umsetzen")
+
+Alle fünf offenen Code-Vorschläge sind umgesetzt und live. Damit ist von den offenen Punkten nur noch **Vorschlag 6** (Google Unternehmensprofil) offen — der erfordert eine Kontoanlage durch Michael und keinen Code.
+
+### V7.1 — liar-entertainer.com (Repo `ben69mikail/Liar-Entertainer`, Astro) — Commit `dafcf11`
+- Header-Nav „Pantomime": Ziel von `https://pantomime.liar-entertainer.com` (alte Subdomain, nur per 301 erreichbar) auf `https://www.pantomime-la-france.eu/`. Redirect-Hop entfällt.
+- `rel="noopener noreferrer"` → `rel="noopener"` bei externen Nav-Links. `noreferrer` hatte die Referral-Zuordnung in GA4 der Zielseite unterdrückt.
+- Footer-Spalte „Hauptseiten": zusätzlicher descriptiver Link „Pantomime & Walk Act in NRW".
+- **Abweichung vom Vorschlag, bewusst:** Der descriptive Ankertext sitzt im Footer, nicht in der Hauptnavigation. Die Top-Nav hat bereits 10 Einträge; „Pantomime & Walk Act in NRW" als Nav-Label hätte die Leiste umbrechen lassen. Das Nav-Label bleibt „Pantomime", der Link zeigt aber auf das richtige Ziel.
+- **Live geprüft:** 0 verbleibende Links auf die alte Subdomain; 2 Header-Links (Desktop + Mobile) + 1 Footer-Link, alle `rel="noopener"`.
+
+### V7.2 — zauberer-liar.de (Repo `ben69mikail/ZAubererLIAR`, statisch) — Commit `bc2b11a`
+- Footer-Spalte „Shows" auf **allen 29 Seiten**: descriptiver externer Link „Pantomime & Walk Act".
+- `walk-act-zauberer.html`: zusätzlicher Kontext-Link im Inhalt unter „Wo ein Walk-Act glänzt" — thematisch passendste Seite, damit der Link nicht nur Footer-Boilerplate ist.
+- Keine CSS-/JS-Änderung, daher kein Cache-Bust-Bump nötig (Konvention des Repos eingehalten).
+- **Live geprüft:** 2 Links auf `walk-act-zauberer.html` (Content + Footer), `rel="noopener"`.
+
+### V8 — H1 der Startseite — Commit `0ea8f1d`
+H1 führt mit „Pantomime & Walk Act in NRW"; der Claim „Eine Kunst, die *ohne Worte* begeistert." bleibt als zweite Zeile im H1 (`span.h1-claim`, kleinere Display-Größe). Der Vorschlagstext („Pantomime & Walk Act – eine Kunst, die ohne Worte begeistert.") wäre als **eine** Displayzeile 61 Zeichen gewesen — bei `clamp(2.7rem,7vw,5.4rem)` und `max-width:15ch` hätte das fünf Zeilen ergeben und den Hero gesprengt. Die zweizeilige Hierarchie liefert dasselbe Keyword-Signal bei stabiler Hero-Höhe. Auf 375 px geprüft: kein Überlauf.
+
+### V9 — Content-Tiefe /pantomime-essen/ — Commit `0ea8f1d`
+1. Referenz-Cluster eingeordnet (Wirtschaft/Messe, öffentliche Hand, soziale Träger) — zwei Absätze, ausschließlich aus `INHALTE-VERIFIZIERT.md`.
+2. Neuer Abschnitt „Pantomime auf Messen in Essen".
+3. FAQ von 3 auf 5. **Bewusst NICHT umgesetzt:** die vorgeschlagenen FAQ zu Vorlaufzeit und Auftrittsdauer — dazu gibt es keine belegten Angaben in `INHALTE-VERIFIZIERT.md`. Stattdessen zwei belegte Fragen (Anfrageweg, Anpassung an das Publikum). Inhalts-Regel bleibt: nichts erfinden.
+
+### V10 — /pantomime-gelsenkirchen/ — Commit `0ea8f1d`
+- Aufbau nach dem bestätigten Essen-Muster; nur belegte Referenzen (Stadt Gelsenkirchen, AWO Gelsenkirchen, Schalke 04).
+- Interne Verlinkung beidseitig: Städte-Chip der Startseite, Städteliste der 6 Figurenseiten, Links von der GE-Seite auf `/pantomime-essen/`, `/walk-act/`, `/figuren/der-pantomime-in-nrw/`.
+- Schema: BreadcrumbList + FAQPage + Service (`areaServed: Gelsenkirchen`). Sitemap: 16 URLs, Priorität 0,8 für alle `/pantomime-*/`-Stadtseiten.
+- **Hinweis zur Referenzbasis:** Gelsenkirchen hat 3 belegte Auftraggeber gegenüber 8 in Essen. Die Seite ist damit dünner als der Pilot. Wenn die Position nach 4 Wochen nicht unter ~30 kommt, ist das der Beleg, dass die Vorlage eine dichtere Referenzbasis braucht — dann keine weiteren Städte.
+
+### Nebenbefunde aus dem Live-Check (nicht vorgeschlagen, aber gefunden und behoben)
+
+**1. Reveal-Animation blockierte die Sichtbarkeit — Commit `c181ced`.** Alle 27 `.reveal`-Elemente blieben auf `opacity:0`, wenn das Dokument im Hintergrund rendert (`document.visibilityState === "hidden"`): IntersectionObserver feuert dort nicht, die Klasse `in` wird nie gesetzt, die Seite ist inhaltlich leer. Betrifft Hintergrund-Tabs, Prerender und headless Renderer. Drei Ebenen abgesichert: `.reveal` ist jetzt standardmäßig sichtbar und wird nur unter `.js` versteckt (Klasse per Inline-Script im `<head>`) — ohne JavaScript ist die Seite vollständig lesbar; `app.js` blendet bei nicht sichtbarem Dokument sofort alles ein; zusätzlich ein 3-Sekunden-Sicherheitsnetz. Für normale Besucher ändert sich nichts.
+
+**2. Fließtext-Links waren nicht als Links erkennbar — Commit `7db2172`.** Global gilt `a{color:inherit;text-decoration:none}` — richtig für Navigation und Karten, aber im Lauftext fehlte jede Affordanz. Betroffen war die **gesamte interne Verlinkung, die seit Tag 5 aufgebaut wurde**: Leser konnten sie schlicht nicht sehen, der Klickpfad zwischen den Seiten lag brach. Jetzt Crimson mit dezenter Unterstreichung, Hover verstärkt, `:focus-visible` mit Outline; auf crimson-Flächen Gold-Variante.
+
+**3. Instagram-Selfie und Fehlausschnitt auf der neuen Stadtseite — Commits `7db2172`, `5ce50bf`.** Das ursprünglich gewählte `pantomime-1.webp` ist ein hochkant gedrehtes Instagram-Selfie mit eingebranntem Overlay („@BEN_MIKAIL, Bon Jovi – It's My Life") — auf einer Buchungsseite unbrauchbar. Ersetzt durch ein Veranstaltungsfoto. Das Hero-Motiv wurde zusätzlich getauscht, weil das Porträt im breiten Hero-Band auf Mütze und Wand beschnitten wurde und das Gesicht außerhalb des Ausschnitts lag.
+
+### Weiterhin offen bei Michael
+- **Vorschlag 6 — Google Unternehmensprofil (Prio 1).** Kein Code, sondern Kontoanlage. Bedient `zauberer gladbeck` (64 Impressionen, 0 Klicks). Fertige Texte in `.seo-pantomime/v6-v7-texte.md`.

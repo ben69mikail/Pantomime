@@ -2,7 +2,7 @@
   "plan_zyklus_start": "2026-06-18",
   "aktueller_plan_tag": 30,
   "letzter_lauf": "2026-09-01",
-  "WICHTIG_naechster_lauf": "TAG 30 (01.09., autonom) ABGESCHLOSSEN = ENDE ZYKLUS 1. LUECKE: zwischen 28.08. und 01.09. lief der Task nicht (4 Tage). (1) GSC 3M (14.06.-29.08.): 6 Klicks, 481 Impr. (von 432), CTR 1,2 Prozent, Pos 24,8 (von 25,4). 28T (02.08.-29.08.): 6 Klicks, 375 Impr., CTR 1,6 Prozent, Pos 24,8. Klicks stagnieren seit 25.08. bei 6 - Impressionen wachsen weiter, Klickausbeute ist die Engstelle. (2) DURCHBRUCH STADTSEITE: /pantomime-essen/ im 28T-Fenster Pos 10,0 bei 8 Impr. (3M 33,5; am 25.08. noch 34,9). Messvorgabe aus Vorschlag 9 (<30) damit uebererfuellt - Stadtseiten-Vorlage ist tragfaehig. (3) /pantomime-essen/ bleibt die EINZIGE Seite mit Walk-Act-Query: 'walking act essen' 1 Impr., Pos 7,0. Keine neue Walk-Act-Query in 4 Tagen, Query-Gesamtzahl unveraendert 17. /walk-act/ selbst: 28T 21 Impr., Pos 34,2 (3M 27 Impr., Pos 31,0); eigene Queries weiterhin anonymisiert. (4) Snippet-Aenderungen aus Tag 29 (28.08.) noch NICHT bewertbar - Re-Crawl laeuft. Referenzwerte fuer Tag 31: /figuren/der-clown/ 28T 95 Impr./2 Klicks/CTR 2,1 Prozent/Pos 18,3 (3M 148/2/1,4 Prozent/22,0); /ueber-mich/ 28T 71 Impr./0 Klicks/Pos 16,8. (5) 'zauberer gladbeck' weiter gewachsen: 54 -> 64 Impr. (3M), 0 Klicks, Pos 18,2, ausgeliefert ueber /ueber-mich/. 'zauberer bochum' 3 -> 8 Impr., aber Pos 93,6. Zauberer-Nachfrage bleibt zweitgroesster Treiber ohne Fokus-Keyword-Bezug -> Vorschlag 6 und 7.2. (6) AUTO-COMMIT (1 von max. 2): /walk-act/ verlinkt jetzt descriptiv auf /pantomime-essen/ ('Walk Act in Essen', Einsatzorte-Karte Stadtfest & Strasse) - bis heute verlinkte KEINE Seite von /walk-act/ auf die Stadt-Pilotseite, obwohl die Gegenrichtung seit Tag 28 auf 7 Seiten existiert. Zusaetzlich Alt-Text des Essen-Fotos auf /walk-act/ praezisiert (gleiche Datei walk-act-fest-essen.webp, auf /pantomime-essen/ schon mit Ortsbezug). Commit 55c16a3. (7) VERIFIKATION: Baseline-Rebuild VOR der Aenderung reproduziert live-HTML byte-identisch (einziger Diff = sitemap-lastmod) -> build.py weiterhin synchron. Nach Aenderung: Diff = build.py 2 Zeilen + walk-act/index.html 2 Zeilen + sitemap lastmod. 16/16 Seiten valide (genau 1 H1, schliessendes </html>, alle JSON-LD parsen). Push per git aus der Sandbox (Token aus .claude/settings.local.json) - GitHub-MCP war fuer 66-KB-build.py nicht noetig. (8) NEUER VORSCHLAG 10 (wartet auf Freigabe): zweite Stadtseite nach dem Essen-Muster, genau EINE, Auswahl nur mit belegter Referenzbasis. Empfehlung Gelsenkirchen (AWO/Stadt/Schalke 04), Alternative Gladbeck falls parallel Vorschlag 6 kommt. Nicht empfohlen: mehrere Staedte gleichzeitig oder Staedte ohne Referenz (Thin-Page-Risiko). (9) OFFEN bei Michael: Vorschlag 6 (Google Unternehmensprofil, Prio 1), 7.1+7.2 (Cross-Links auf den anderen Domains), 8 (H1 Startseite), 9 (Content-Tiefe Essen - durch Pos 10,0 jetzt attraktiver), 10 (zweite Stadtseite).",
+  "WICHTIG_naechster_lauf": "STAND NACH TAG 30 + FREIGABE-ROLLOUT (01.09.2026). Michael hat am selben Tag ALLE offenen Code-Vorschlaege freigegeben (\"Vorschlag 7.1 / 7.2 wie Vorschlag 8 und 9 und 10 umsetzen\"). V7.1, V7.2, V8, V9 und V10 sind umgesetzt, gepusht und LIVE geprueft. Von den offenen Punkten bleibt nur noch VORSCHLAG 6 (Google Unternehmensprofil) - kein Code, Kontoanlage durch Michael. COMMITS: pantomime-la-france.eu 0ea8f1d (V8+V9+V10), c181ced (Reveal-Fix), 7db2172 (Link-Styling + Bildtausch), 5ce50bf (Hero-Motiv GE). liar-entertainer.com dafcf11 (V7.1). zauberer-liar.de bc2b11a (V7.2). NEU IM REPO: /pantomime-gelsenkirchen/ (Stadtseite 2, Referenzen Stadt GE / AWO GE / Schalke 04 - nur 3 belegte gegenueber 8 in Essen, also duenner als der Pilot). WICHTIGE NEBENBEFUNDE aus dem Live-Check: (1) Alle .reveal-Elemente blieben unsichtbar, wenn das Dokument im Hintergrund rendert (IntersectionObserver feuert dort nicht) - jetzt dreifach abgesichert, .reveal ist ohne JS sichtbar. (2) Fliesstext-Links hatten KEINE visuelle Affordanz (global a{color:inherit;text-decoration:none}) - die gesamte interne Verlinkung seit Tag 5 war fuer Leser unsichtbar. Jetzt Crimson + Unterstreichung + focus-visible. (3) pantomime-1.webp ist ein Instagram-Selfie mit eingebranntem Overlay - fuer Landingpages unbrauchbar, nicht mehr verwenden. MESSAUFTRAG fuer die naechsten Laeufe: (a) Wirkung der Tag-29-Snippets (Clown-Title, ueber-mich-Description) ab ca. 05.09.; (b) /pantomime-gelsenkirchen/ Indexierung + Position - wenn nach 4 Wochen nicht unter ~30, ist die Vorlage ohne dichte Referenzbasis zu duenn, dann KEINE weiteren Staedte; (c) ob die jetzt sichtbaren Fliesstext-Links die Seiten-pro-Sitzung in GA4 heben; (d) Referral-Traffic aus liar-entertainer.com in GA4 (noreferrer ist entfernt) und Links-Bericht in GSC fuer die beiden neuen Cross-Links.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -305,10 +305,24 @@
         "SEO: Tag 30 - /walk-act/ verlinkt /pantomime-essen/ (descriptiver Anchor) + Alt-Text praezisiert (55c16a3)",
         "SEO: State Tag 30 - Zyklus-1-Bilanz + GSC-Snapshot 01.09. + Vorschlag 10"
       ]
+    },
+    {
+      "tag": 30,
+      "datum": "2026-09-01",
+      "schritt": "Freigabe-Rollout (Michael): Vorschlaege 7.1, 7.2, 8, 9, 10 umgesetzt - erstmals auch Code-Aenderungen an den beiden Nachbardomains",
+      "ergebnis": "Alle fuenf offenen Code-Vorschlaege umgesetzt, gepusht und live verifiziert. V7.1 (liar-entertainer.com, dafcf11): Nav-Link zeigt direkt auf pantomime-la-france.eu statt auf die alte Subdomain, noreferrer entfernt (GA4-Referral), descriptiver Footer-Link. V7.2 (zauberer-liar.de, bc2b11a): Footer-Link auf 29 Seiten + Kontext-Link auf walk-act-zauberer.html - der bis dahin komplett fehlende Cross-Link. V8/V9/V10 (0ea8f1d): H1 der Startseite mit Fokus-Keyword, Content-Tiefe Essen, neue Stadtseite /pantomime-gelsenkirchen/. Beim Live-Check drei echte Maengel gefunden und behoben: Reveal-Animation blockierte die Sichtbarkeit bei Hintergrund-Rendering (c181ced), Fliesstext-Links ohne visuelle Affordanz - die gesamte interne Verlinkung seit Tag 5 war fuer Leser unsichtbar (7db2172), Instagram-Selfie mit Overlay als Seitenbild und Hero-Fehlausschnitt auf der neuen Stadtseite (7db2172, 5ce50bf). 17/17 Seiten valide, FAQPage-Schema deckungsgleich mit sichtbarem FAQ.",
+      "commits": [
+        "SEO: Vorschlaege 8, 9, 10 umgesetzt (0ea8f1d)",
+        "fix(a11y/robustness): Reveal-Animation blockiert nicht mehr die Sichtbarkeit (c181ced)",
+        "fix(ui): Fliesstext-Links sichtbar + Instagram-Selfie ersetzt (7db2172)",
+        "fix(ui): Hero der GE-Stadtseite auf Stadtfest-Motiv (5ce50bf)",
+        "seo(v7.1): Liar-Entertainer dafcf11",
+        "seo(v7.2): ZAubererLIAR bc2b11a"
+      ]
     }
   ],
   "naechster_plan_tag": 31,
-  "naechster_schritt": "ZYKLUS 2, Tag 31 - Schwerpunkt Klickausbeute statt Impressionen (Impressionen 481, Klicks nur 6). (a) Wirkung der Tag-29-Snippets messen: /figuren/der-clown/ (Referenz 28T: 95 Impr., 2 Klicks, CTR 2,1 Prozent, Pos 18,3) und /ueber-mich/ (71 Impr., 0 Klicks, Pos 16,8). Ab ca. 05.09. aussagekraeftig. (b) /pantomime-essen/ Position 10,0 halten/verbessern beobachten - erst stabil unter 10 rechtfertigt Vorschlag 10 (zweite Stadtseite). (c) Seiten mit guter Position aber 0 Klicks priorisieren (CTR-Logik): /ueber-mich/ Pos 16,8 bei 71 Impr., /figuren/ Pos 18,2 bei 19 Impr., /figuren/der-weihnachtsmann/ Pos 11,8 bei 10 Impr., /figuren/der-nussknacker/ Pos 7,6 bei 5 Impr. - dort Title/Description schaerfen (Auto-Fix erlaubt). (d) 'walking act essen' weiter beobachten: kommen weitere Walk-Act-Queries? Wenn ja, /walk-act/ als Zielseite pruefen (Pos 34,2, Queries anonymisiert). (e) Vorschlaege 6 / 7.1 / 7.2 / 8 / 9 / 10 bleiben offen und warten auf Michael - im Bericht erneut nennen. (f) Scheduler pruefen: seit Zyklusbeginn zwei Ausfaelle (11.08.-28.08. = 17 Tage, 28.08.-01.09. = 4 Tage).",
+  "naechster_schritt": "ZYKLUS 2, Tag 31 - Schwerpunkt Klickausbeute (Impressionen 481, Klicks 6). (a) Indexierung von /pantomime-gelsenkirchen/ anstossen/pruefen (URL-Pruefung in GSC) und Position verfolgen. (b) Wirkung der Tag-29-Snippets messen: /figuren/der-clown/ (Referenz 28T: 95 Impr., 2 Klicks, CTR 2,1 Prozent, Pos 18,3) und /ueber-mich/ (71 Impr., 0 Klicks, Pos 16,8). (c) Seiten mit guter Position aber 0 Klicks priorisieren: /ueber-mich/ Pos 16,8, /figuren/ Pos 18,2, /figuren/der-weihnachtsmann/ Pos 11,8, /figuren/der-nussknacker/ Pos 7,6 - Title/Description schaerfen (Auto-Fix erlaubt). (d) 'walking act essen' und weitere Walk-Act-Queries beobachten. (e) GSC-Links-Bericht auf die neuen Cross-Links pruefen (liar-entertainer.com, zauberer-liar.de). (f) Einziger offener Vorschlag: Nr. 6 (Google Unternehmensprofil) - im Bericht weiter nennen. (g) Scheduler pruefen: zwei Ausfaelle im Zyklus 1 (17 Tage, 4 Tage).",
   "offene_vorschlaege": [
     {
       "nr": "IONOS-ESKALATION (kein klassischer Vorschlag, sondern Server-Ops)",
@@ -323,34 +337,6 @@
       "titel": "Backlinks/Verzeichnisse: Google Unternehmensprofil (prio 1) + Kuenstler-/Eventportale + lokale Verzeichnisse, NAP-konsistent - erfordert Konten/Entscheidungen von Michael",
       "status": "FREIGEGEBEN 2026-07-21. Profiltexte vorbereitet (.seo-pantomime/v6-v7-texte.md). OFFEN: Kontoanlage/Eintraege durch Michael (Google Unternehmensprofil prio 1).",
       "typ": "Off-Page (externe Eintraege/Profile, keine Code-Aenderung)"
-    },
-    {
-      "nr": 7,
-      "datum_vorschlag": "2026-07-17",
-      "titel": "Reziproke Cross-Domain-Links haerten: (1) liar-entertainer.com 'Pantomime'-Link direkt auf https://www.pantomime-la-france.eu (statt alte Subdomain via 301) + descriptiv; (2) zauberer-liar.de Cross-Link zur Pantomime-Domain ergaenzen (fehlt ganz); (3) Footer-Anker auf pantomime-la-france.eu von nackter Domain -> descriptiv (im V5-build.py-Batch). [Punkt 3 am 2026-07-20 im V5-Batch ERLEDIGT; offen bleiben Punkt 1+2 auf den Fremd-Domains]",
-      "status": "FREIGEGEBEN 2026-07-21 (Punkte 1+2). Link-Snippets vorbereitet (.seo-pantomime/v6-v7-texte.md). OFFEN: Einbau durch Michael auf liar-entertainer.com + zauberer-liar.de. Punkt 3 seit 2026-07-20 erledigt (V5-Batch).",
-      "typ": "Cross-Domain-Verlinkung (2 Eigen-Domains) + gekoppelter On-Page-Micro-Fix (V5)"
-    },
-    {
-      "nr": 8,
-      "datum_vorschlag": "2026-08-08",
-      "titel": "H1 der Startseite enthaelt kein Fokus-Keyword ('Eine Kunst, die ohne Worte begeistert.'), obwohl die Startseite fuer 'pantomime buchen' (Pos 37) und mit 16 Impressionen rankt. Vorschlag: H1 um das Fokus-Keyword ergaenzen (z.B. 'Pantomime & Walk Act - eine Kunst, die ohne Worte begeistert.') und den bisherigen Claim als Unterzeile erhalten.",
-      "status": "WARTET AUF FREIGABE von Michael",
-      "typ": "Content/Struktur (H1-Aenderung, daher kein Auto-Commit)"
-    },
-    {
-      "nr": 9,
-      "datum_vorschlag": "2026-08-11",
-      "titel": "Content-Tiefe der Stadt-Pilotseite /pantomime-essen/ erhoehen (Referenz-Cluster einordnen, Messe-Absatz, 2 weitere FAQ) - erst nach 3-4 Wochen Messung der heutigen internen Verlinkung entscheiden",
-      "status": "WARTET AUF FREIGABE von Michael",
-      "typ": "Content-Erweiterung (sichtbarer Fliesstext + FAQ, Schema muss mitgezogen werden)"
-    },
-    {
-      "nr": 10,
-      "datum_vorschlag": "2026-09-01",
-      "titel": "Zweite Stadtseite nach dem bestaetigten Essen-Muster - genau EINE, nur mit belegter Referenzbasis. Empfehlung Gelsenkirchen (AWO/Stadt/Schalke 04), Alternative Gladbeck bei paralleler Umsetzung von Vorschlag 6",
-      "status": "WARTET AUF FREIGABE von Michael",
-      "typ": "Neue Unterseite (neuer URL + Schema + interne Verlinkung)"
     }
   ],
   "erledigte_vorschlaege": [
@@ -399,6 +385,38 @@
       "status": "ERLEDIGT: freigegeben + umgesetzt 2026-07-21 (Freigabe-Rollout), byte-verifiziert, gepusht. NACHTRAG 26.07.: Seite ist INDEXIERT ('URL ist auf Google').",
       "typ": "Neue Unterseite (neuer URL + Schema + interne Verlinkung)",
       "datum_umgesetzt": "2026-07-21"
+    },
+    {
+      "nr": 7,
+      "datum_vorschlag": "2026-07-17",
+      "titel": "Reziproke Cross-Domain-Links haerten: (1) liar-entertainer.com 'Pantomime'-Link direkt auf https://www.pantomime-la-france.eu (statt alte Subdomain via 301) + descriptiv; (2) zauberer-liar.de Cross-Link zur Pantomime-Domain ergaenzen (fehlt ganz); (3) Footer-Anker auf pantomime-la-france.eu von nackter Domain -> descriptiv (im V5-build.py-Batch). [Punkt 3 am 2026-07-20 im V5-Batch ERLEDIGT; offen bleiben Punkt 1+2 auf den Fremd-Domains]",
+      "status": "UMGESETZT 2026-09-01. V7.1 liar-entertainer.com Commit dafcf11 (Nav-Ziel korrigiert, noreferrer entfernt, descriptiver Footer-Link). V7.2 zauberer-liar.de Commit bc2b11a (Footer-Link auf 29 Seiten + Kontext-Link auf walk-act-zauberer.html). Live geprueft.",
+      "typ": "Cross-Domain-Verlinkung (2 Eigen-Domains) + gekoppelter On-Page-Micro-Fix (V5)",
+      "datum_umgesetzt": "2026-09-01"
+    },
+    {
+      "nr": 8,
+      "datum_vorschlag": "2026-08-08",
+      "titel": "H1 der Startseite enthaelt kein Fokus-Keyword ('Eine Kunst, die ohne Worte begeistert.'), obwohl die Startseite fuer 'pantomime buchen' (Pos 37) und mit 16 Impressionen rankt. Vorschlag: H1 um das Fokus-Keyword ergaenzen (z.B. 'Pantomime & Walk Act - eine Kunst, die ohne Worte begeistert.') und den bisherigen Claim als Unterzeile erhalten.",
+      "status": "UMGESETZT 2026-09-01, Commit 0ea8f1d. H1 fuehrt mit 'Pantomime & Walk Act in NRW', Claim als zweite Zeile im H1 erhalten. Auf 375px ohne Ueberlauf geprueft.",
+      "typ": "Content/Struktur (H1-Aenderung, daher kein Auto-Commit)",
+      "datum_umgesetzt": "2026-09-01"
+    },
+    {
+      "nr": 9,
+      "datum_vorschlag": "2026-08-11",
+      "titel": "Content-Tiefe der Stadt-Pilotseite /pantomime-essen/ erhoehen (Referenz-Cluster einordnen, Messe-Absatz, 2 weitere FAQ) - erst nach 3-4 Wochen Messung der heutigen internen Verlinkung entscheiden",
+      "status": "UMGESETZT 2026-09-01, Commit 0ea8f1d. Referenz-Cluster eingeordnet, Abschnitt 'Pantomime auf Messen in Essen', FAQ 3->5. FAQ zu Vorlaufzeit/Auftrittsdauer bewusst weggelassen (keine belegten Angaben).",
+      "typ": "Content-Erweiterung (sichtbarer Fliesstext + FAQ, Schema muss mitgezogen werden)",
+      "datum_umgesetzt": "2026-09-01"
+    },
+    {
+      "nr": 10,
+      "datum_vorschlag": "2026-09-01",
+      "titel": "Zweite Stadtseite nach dem bestaetigten Essen-Muster - genau EINE, nur mit belegter Referenzbasis. Empfehlung Gelsenkirchen (AWO/Stadt/Schalke 04), Alternative Gladbeck bei paralleler Umsetzung von Vorschlag 6",
+      "status": "UMGESETZT 2026-09-01, Commit 0ea8f1d. /pantomime-gelsenkirchen/ live, beidseitig verlinkt, Schema + sitemap. Referenzbasis mit 3 Auftraggebern duenner als Essen (8) - Position nach 4 Wochen als Qualitaetstest.",
+      "typ": "Neue Unterseite (neuer URL + Schema + interne Verlinkung)",
+      "datum_umgesetzt": "2026-09-01"
     }
   ],
   "gsc_snapshots": [
@@ -1634,7 +1652,7 @@
     "datenschutz_stand": "datenschutz/index.html hat seit V5-Reconciliation hart 'Stand: 2026-07-02' (kein Auto-Bump; bei echten Datenschutz-Aenderungen manuell bumpen).",
     "footer_struktur": "Footer-Spaltentitel = <p class=footer-h> (seit 2026-06-23). Footer enthaelt Cross-Domain-Links liar-entertainer.com + zauberer-liar.de, seit V5 (2026-07-20) mit descriptiven Ankern.",
     "schema_stand": "Stand 2026-08-09: BreadcrumbList auf allen 15 Seiten; FAQPage auf Startseite, allen 6 Figurenseiten, /walk-act/ und /pantomime-essen/; Service auf allen 6 Figurenseiten, /pantomime-essen/ und ab 09.08. auch /walk-act/; PerformingGroup+LocalBusiness auf der Startseite; ContactPage auf /kontakt/; Person auf /ueber-mich/. Alle JSON-LD parsen fehlerfrei.",
-    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner verlinken via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen. /pantomime-essen/ von /figuren/der-pantomime-in-nrw/-Staedteliste verlinkt. TAG 28 (2026-08-11): /pantomime-essen/ hatte nur 1 eingehenden internen Link -> jetzt 7. build.py: Staedte-Absatz ALLER Figurenseiten verlinkt 'Essen' (frueher nur der-pantomime-in-nrw, Bedingung entfernt, Zeile ~544); Startseiten-Chip 'Essen' ist <a class=\"chip\" href=\"/pantomime-essen/\"> (Zeile ~495). Global gilt a{color:inherit;text-decoration:none} -> optisch identisch zum span, kein CSS-Risiko. Tag 30 (2026-09-01): /walk-act/ verlinkt jetzt descriptiv auf /pantomime-essen/ ('Walk Act in Essen', Einsatzorte-Karte). Damit ist die Verlinkung zur Stadt-Pilotseite beidseitig (7 Seiten hin seit Tag 28, /walk-act/ neu).",
+    "interne_verlinkung_stand": "Seit Tag 5: Walk-Act -> Figurenseiten descriptiv. Tag 8: Pantomime-Seite -> /walk-act/. Tag 9: Nussknacker + Weihnachtsmann -> /walk-act/. Tag 10: Zauberer/Clown/Crazy-Kellner verlinken via Nav auf /walk-act/. Gegenrichtung-Linking abgeschlossen. /pantomime-essen/ von /figuren/der-pantomime-in-nrw/-Staedteliste verlinkt. TAG 28 (2026-08-11): /pantomime-essen/ hatte nur 1 eingehenden internen Link -> jetzt 7. build.py: Staedte-Absatz ALLER Figurenseiten verlinkt 'Essen' (frueher nur der-pantomime-in-nrw, Bedingung entfernt, Zeile ~544); Startseiten-Chip 'Essen' ist <a class=\"chip\" href=\"/pantomime-essen/\"> (Zeile ~495). Global gilt a{color:inherit;text-decoration:none} -> optisch identisch zum span, kein CSS-Risiko. Tag 30 (2026-09-01): /walk-act/ verlinkt jetzt descriptiv auf /pantomime-essen/ ('Walk Act in Essen', Einsatzorte-Karte). Damit ist die Verlinkung zur Stadt-Pilotseite beidseitig (7 Seiten hin seit Tag 28, /walk-act/ neu). 01.09.2026 (Freigabe-Rollout): /pantomime-gelsenkirchen/ ist beidseitig verlinkt (Staedte-Chip Startseite + Staedteliste der 6 Figurenseiten hin; GE-Seite verlinkt auf /pantomime-essen/, /walk-act/, /figuren/der-pantomime-in-nrw/). Cross-Domain: liar-entertainer.com verlinkt jetzt direkt (kein 301-Hop, kein noreferrer), zauberer-liar.de verlinkt erstmals ueberhaupt hierher.",
     "sitemap_robots_stand": "Tag 30 (2026-09-01): lastmod=2026-09-01 (echter Content-Change auf /walk-act/). 14 URLs, 404.html bewusst nicht in sitemap. build.py setzt lastmod=TODAY.",
     "css_versionierung": "build.py setzt style.css?v=<md5[:8]>. Seit V5-Batch (2026-07-20): style.css?v=fc99917e, app.js?v=45732809. Bei style.css-Aenderung alle HTML mitcommitten.",
     "fokus_keywords": [
@@ -1653,10 +1671,14 @@
     "cross_link_stand": "FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener), seit V5 descriptiv. REVERSE: liar-entertainer.com -> 'Pantomime' auf alte Subdomain (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 (Fremd-Domains, freigegeben, Umsetzung durch Michael offen).",
     "indexierung_stand": "Stand 08.08.2026: 9 Seiten bestaetigt indexiert (/, /figuren/, /figuren/der-clown/, /figuren/der-pantomime-in-nrw/, /walk-act/, /pantomime-essen/, /ueber-mich/, /kontakt/, /referenzen/). 6 Seiten 'Gefunden - zurzeit nicht indexiert' und noch nie gecrawlt (Nussknacker, Weihnachtsmann, Zauberer, Crazy-Kellner, Impressum, Datenschutz) - Indexierung am 08.08. fuer alle 6 beantragt. GSC-Feld 'Verweisende Seite: Nicht gefunden' ist bei dieser Site ein Crawl-Lag-Artefakt: alle 15 Seiten verlinken per Navigation auf alle Figurenseiten und Impressum/Datenschutz (im Repo verifiziert).",
     "binaer_push_hinweis": "GitHub-MCP (push_files/create_or_update_file) speichert Content NUR als Text - Binaerdateien (Bilder) UNMOEGLICH. Workaround: GitHub-Web-Upload in Michaels Chrome (github.com/ben69mikail/Pantomime/upload/main/<pfad>).",
-    "stadtseiten_stand": "/pantomime-essen/ seit 2026-07-21 live (Pilot), seit spaetestens 26.07. INDEXIERT. Jetzt 4-6 Wochen GSC-Wirkung messen ('Pantomime Essen'-Queries), erst danach ggf. weitere Staedte - NUR mit eigener belegter Referenzbasis.",
+    "stadtseiten_stand": "Essen (Pilot, 8 belegte Referenzen): 28T Pos 10,0 am 01.09. Gelsenkirchen (Stadtseite 2, ab 01.09. live, 3 belegte Referenzen: Stadt GE, AWO GE, Schalke 04). Naechste Stadt erst, wenn Gelsenkirchen zeigt, dass auch eine duennere Referenzbasis traegt. Kandidat mit belegter Basis waere Gladbeck (Sparkasse + Kulturamt + Standort).",
     "build_py_sync_stand": "Stand 2026-08-28 (Tag 29): Baseline-Rebuild aus unveraendertem HEAD reproduziert live-HTML byte-identisch, einziger Diff = sitemap-lastmod. build.py und ausgelieferte HTML sind synchron. Vor JEDEM Aenderungs-Rebuild diesen Baseline-Test wiederholen.",
     "ctr_stand": "Tag 29: Erste Klicks (6 bei 432 Impr. = CTR 1,4 Prozent). Klick-Seiten: der-clown 2, Startseite 2, der-zauberer 1, der-crazy-kellner 1. Null-Klick-Seiten mit hohen Impressionen: /ueber-mich/ 65, /figuren/der-pantomime-in-nrw/ 52, /walk-act/ 24, /pantomime-essen/ 24. Diese sind die CTR-Baustellen fuer Zyklus 2.",
     "scheduler_luecke": "Zwischen Tag 28 (11.08.2026) und Tag 29 (28.08.2026) lief der Scheduled Task 17 Tage nicht. Ursache unbekannt - bei erneutem Ausfall Michael informieren.",
-    "walk_act_stand": "Tag 30: /walk-act/ 3M 27 Impr./Pos 31,0, 28T 21 Impr./Pos 34,2, eigene Queries von Google anonymisiert ('Keine Daten'). Die einzige Walk-Act-Query der Domain ('walking act essen', Pos 7,0) rankt mit /pantomime-essen/, nicht mit /walk-act/. Hypothese fuer Zyklus 2: Stadt+Leistung schlaegt generisches NRW; ggf. /walk-act/ staerker auf Anlaesse/Orte ausrichten (Freigabe noetig, da Fliesstext)."
+    "walk_act_stand": "Tag 30: /walk-act/ 3M 27 Impr./Pos 31,0, 28T 21 Impr./Pos 34,2, eigene Queries von Google anonymisiert ('Keine Daten'). Die einzige Walk-Act-Query der Domain ('walking act essen', Pos 7,0) rankt mit /pantomime-essen/, nicht mit /walk-act/. Hypothese fuer Zyklus 2: Stadt+Leistung schlaegt generisches NRW; ggf. /walk-act/ staerker auf Anlaesse/Orte ausrichten (Freigabe noetig, da Fliesstext).",
+    "fliesstext_links": "SEIT 01.09.2026: .prose/.lead/.intro/.feature-list/.anlass p/.faq-a-Links sind crimson + unterstrichen, Hover verstaerkt, :focus-visible mit Outline; auf .section--crimson Gold-Variante. Davor galt global a{color:inherit;text-decoration:none} auch im Lauftext - alle internen Links waren unsichtbar. Beim Anlegen neuer Textbloecke nichts weiter tun, das Styling greift ueber die Container-Klassen.",
+    "reveal_stand": "SEIT 01.09.2026: .reveal ist standardmaessig SICHTBAR; versteckt wird nur unter .js (Klasse per Inline-Script im <head>). app.js blendet sofort alles ein, wenn document.visibilityState != 'visible', plus 3-Sekunden-Sicherheitsnetz. Grund: IntersectionObserver feuert im Hintergrund-Rendering nicht, die Seite war dort inhaltlich leer. Beim Testen mit Headless-/Hintergrund-Tabs beachten.",
+    "bild_hinweis": "pantomime-1.webp ist ein hochkant gedrehtes Instagram-Selfie mit eingebranntem Overlay (@BEN_MIKAIL / Bon Jovi) - NICHT auf Landingpages verwenden. Hero-Motive: Start cropped-pantomime-11, Walk-Act pantomime-5, Essen walk-act-fest-essen, Gelsenkirchen pantomime-9-scaled (32%/52%), Figuren pantomime-ruhrgebiet-scaled, Ueber-mich pantomime-3-scaled. Bei Portraetmotiven im breiten Hero-Band die object-position pruefen - 50%/24% schneidet Gesichter ab.",
+    "fremd_repos": "liar-entertainer.com = ben69mikail/Liar-Entertainer (Astro, src/components/Header.astro + Footer.astro, site: https://liar-entertainer.com). zauberer-liar.de = ben69mikail/ZAubererLIAR (statisch, nur site/ geht live, 29 HTML-Seiten, Commit-Identitaet 'Michael (LIAR)', Cache-Bust ?v=N nur bei CSS/JS-Aenderungen). Beide sind per Token aus Pantomime/.claude/settings.local.json klon- und pushbar. ACHTUNG Liar-Entertainer: eigener Wochen-Check-Task schreibt dort mit - vor dem Push fetchen und rebasen, nie force-pushen."
   }
 }
