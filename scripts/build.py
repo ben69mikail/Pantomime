@@ -347,8 +347,8 @@ FIGUREN = {
   },
   "der-nussknacker": {
     "name": "Der Nussknacker", "menu": "Nussknacker",
-    "title": "Nussknacker buchen – LIAR | Walking-Act zur Weihnachtszeit",
-    "desc": "Lebendiger Nussknacker buchen: LIAR bringt als Walking-Act märchenhafte Weihnachtsstimmung auf Weihnachtsmärkte, Firmenfeiern und in Einkaufszentren.",
+    "title": "Nussknacker buchen in NRW – LIAR | Walk Act für Weihnachten",
+    "desc": "Lebendiger Nussknacker in NRW buchen: LIAR bringt als Walk Act märchenhafte Weihnachtsstimmung auf Weihnachtsmärkte, Firmenfeiern und in Einkaufszentren.",
     "card": "nussknacker-scaled.webp", "card_alt": "Lebendiger Nussknacker LIAR",
     "hero_alt": "Der Nussknacker als lebendiger Walking-Act",
     "intro": "Der Nussknacker ist eine besondere Mischung aus Märchen und Nostalgie.",
@@ -527,8 +527,8 @@ figuren_body = f"""<main>
 </section>
 </main>
 """ + cta_band()
-built.append(page("/figuren/", "Figuren & Charaktere – LIAR Pantomime | Clown, Zauberer",
-     "Die Figuren von LIAR: Pantomime, Zauberer, Clown, Crazy Kellner, Nussknacker und Weihnachtsmann — klassisch oder modern, für jeden Anlass in NRW buchbar.",
+built.append(page("/figuren/", "Pantomime-Figuren buchen in NRW – LIAR | Clown & Zauberer",
+     "Pantomime-Figuren von LIAR buchen: Pantomime, Zauberer, Clown, Crazy Kellner, Nussknacker und Weihnachtsmann — klassisch oder modern, für jeden Anlass in NRW.",
      figuren_body, [breadcrumb([("Start", "/"), ("Figuren", "/figuren/")])], active="/figuren/"))
 
 # ---- Figuren-Detailseiten
