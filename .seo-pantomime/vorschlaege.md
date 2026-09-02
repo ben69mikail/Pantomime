@@ -365,3 +365,21 @@ H1 führt mit „Pantomime & Walk Act in NRW"; der Claim „Eine Kunst, die *ohn
 
 ### Weiterhin offen bei Michael
 - **Vorschlag 6 — Google Unternehmensprofil (Prio 1).** Kein Code, sondern Kontoanlage. Bedient `zauberer gladbeck` (64 Impressionen, 0 Klicks). Fertige Texte in `.seo-pantomime/v6-v7-texte.md`.
+
+---
+
+## Vorschlag 11 — Zielseiten-Konflikt „zauberer gladbeck" (02.09.2026) — WARTET AUF FREIGABE
+
+**Befund (GSC, 28 Tage 03.08.–30.08.2026).** `zauberer gladbeck` ist mit **67 Impressionen** die mit Abstand größte Einzelquery der Domain — rund 17 % aller Impressionen — und liefert **0 Klicks**. Ausgeliefert wird dafür `/ueber-mich/` (Position 17,1), nicht die Zauberer-Figurenseite. `/figuren/der-zauberer/` hat mit 93 Impressionen die zweithöchste Sichtbarkeit der ganzen Domain, steht aber auf **Position 55,2**. Der Grund ist banal: `/ueber-mich/` nennt Gladbeck sechsmal, `/figuren/der-zauberer/` nur zweimal und weder im Title noch in der Description. Google wählt daher die biografische Seite statt der Buchungsseite.
+
+Dazu kommen vier neue Stadt-Zauberer-Queries im selben Fenster: `zauberer laer` (Pos 39), `zauberer warendorf` (45), `zauberer ratingen` (86), `zauberer gelsenkirchen` (82,5). Der Bedarf ist also breiter als eine Stadt.
+
+**Warum das nicht auto-committet wurde.** Ein reiner On-Page-Fix wäre technisch trivial und laut Regelwerk erlaubt. Er hätte aber eine strategische Nebenwirkung: er baut Zauberer-Sichtbarkeit auf der **Pantomime**-Domain aus, obwohl es mit `zauberer-liar.de` eine eigene Domain für genau dieses Thema gibt. Die beiden Eigen-Domains würden dann gegeneinander optimiert. Das ist eine Entscheidung für Michael, nicht für den Autopiloten.
+
+**Option A — On-Page hier schärfen.** Title/Description von `/figuren/der-zauberer/` mit Ortsbezug Gladbeck/Ruhrgebiet, dazu ein descriptiver interner Link von `/ueber-mich/` auf die Zauberer-Seite. Schnell umsetzbar, holt die Query voraussichtlich auf die richtige Seite. Preis: Zauberer-Traffic wächst auf der Pantomime-Domain.
+
+**Option B — Query bewusst abgeben.** Auf `pantomime-la-france.eu` nichts verstärken, stattdessen den Cross-Link zu `zauberer-liar.de` an dieser Stelle prominenter setzen. Saubere Domain-Trennung. Preis: rund 67 Impressionen im Monat wandern aus dieser Property heraus.
+
+**Option C — Mischform (Empfehlung).** `/figuren/der-zauberer/` bleibt Übersicht und Teaser, verlinkt aber descriptiv weiter auf `zauberer-liar.de`. `/ueber-mich/` behält seine biografisch korrekte Zauberer-Nennung, bekommt aber einen klaren Weiterleitungspfad zur Zauberer-Domain. Damit geht der Nutzer nicht verloren, und die Fokus-Keywords dieser Domain — Pantomime und Walk Act — bleiben unverwässert.
+
+**Empfehlung: Option C.** Ergänzend bleibt Vorschlag 6 (Google Unternehmensprofil) der wirksamste Hebel für genau diese lokale Query, weil ein Unternehmensprofil bei `zauberer gladbeck` über dem organischen Ergebnis steht.

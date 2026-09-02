@@ -1,8 +1,8 @@
 {
   "plan_zyklus_start": "2026-06-18",
-  "aktueller_plan_tag": 30,
-  "letzter_lauf": "2026-09-01",
-  "WICHTIG_naechster_lauf": "STAND NACH TAG 30 + FREIGABE-ROLLOUT (01.09.2026). Michael hat am selben Tag ALLE offenen Code-Vorschlaege freigegeben (\"Vorschlag 7.1 / 7.2 wie Vorschlag 8 und 9 und 10 umsetzen\"). V7.1, V7.2, V8, V9 und V10 sind umgesetzt, gepusht und LIVE geprueft. Von den offenen Punkten bleibt nur noch VORSCHLAG 6 (Google Unternehmensprofil) - kein Code, Kontoanlage durch Michael. COMMITS: pantomime-la-france.eu 0ea8f1d (V8+V9+V10), c181ced (Reveal-Fix), 7db2172 (Link-Styling + Bildtausch), 5ce50bf (Hero-Motiv GE). liar-entertainer.com dafcf11 (V7.1). zauberer-liar.de bc2b11a (V7.2). NEU IM REPO: /pantomime-gelsenkirchen/ (Stadtseite 2, Referenzen Stadt GE / AWO GE / Schalke 04 - nur 3 belegte gegenueber 8 in Essen, also duenner als der Pilot). WICHTIGE NEBENBEFUNDE aus dem Live-Check: (1) Alle .reveal-Elemente blieben unsichtbar, wenn das Dokument im Hintergrund rendert (IntersectionObserver feuert dort nicht) - jetzt dreifach abgesichert, .reveal ist ohne JS sichtbar. (2) Fliesstext-Links hatten KEINE visuelle Affordanz (global a{color:inherit;text-decoration:none}) - die gesamte interne Verlinkung seit Tag 5 war fuer Leser unsichtbar. Jetzt Crimson + Unterstreichung + focus-visible. (3) pantomime-1.webp ist ein Instagram-Selfie mit eingebranntem Overlay - fuer Landingpages unbrauchbar, nicht mehr verwenden. MESSAUFTRAG fuer die naechsten Laeufe: (a) Wirkung der Tag-29-Snippets (Clown-Title, ueber-mich-Description) ab ca. 05.09.; (b) /pantomime-gelsenkirchen/ Indexierung + Position - wenn nach 4 Wochen nicht unter ~30, ist die Vorlage ohne dichte Referenzbasis zu duenn, dann KEINE weiteren Staedte; (c) ob die jetzt sichtbaren Fliesstext-Links die Seiten-pro-Sitzung in GA4 heben; (d) Referral-Traffic aus liar-entertainer.com in GA4 (noreferrer ist entfernt) und Links-Bericht in GSC fuer die beiden neuen Cross-Links.",
+  "aktueller_plan_tag": 31,
+  "letzter_lauf": "2026-09-02",
+  "WICHTIG_naechster_lauf": "STAND NACH TAG 31 (02.09.2026), erster Lauf in Zyklus 2. GSC-Datenfenster endet am 30.08. und enthaelt den Freigabe-Rollout vom 01.09. NOCH NICHT - Impressionen 510 (3M), Klicks unveraendert 6 seit 25.08. AUTO-COMMIT heute: fa2bab0 (Titles/Descs /figuren/ und /figuren/der-nussknacker/). NEUER OFFENER PUNKT: Vorschlag 11 - 'zauberer gladbeck' (67 Impr./28T, groesste Einzelquery, 0 Klicks) wird von /ueber-mich/ ausgeliefert statt von /figuren/der-zauberer/ (93 Impr., Pos 55,2). Das ist bewusst NICHT auto-gefixt worden, weil die richtige Antwort eine Domain-Entscheidung gegenueber zauberer-liar.de ist (Empfehlung: Option C). Weiter offen: Vorschlag 6 (Google Unternehmensprofil, Kontoanlage durch Michael). MESSAUFTRAEGE fuer die naechsten Laeufe: (a) ab ca. 05.09. Wirkung der Tag-29-Snippets (Clown-Title, ueber-mich-Description); (b) ab ca. 08.09. erste Daten zum Rollout vom 01.09. (H1 Startseite, Content-Tiefe Essen, sichtbare Fliesstext-Links); (c) /pantomime-gelsenkirchen/ Indexierung - taucht am 02.09. erwartungsgemaess noch nicht in GSC auf; wenn nach 4 Wochen nicht unter Pos ~30, ist die Stadtseiten-Vorlage ohne dichte Referenzbasis zu duenn, dann KEINE weiteren Staedte; (d) /pantomime-essen/ steht 28T auf Pos 6,0 - erste Klicks abwarten, das ist der aussagekraefigste Test der Vorlage; (e) ab ca. 15.09. GSC-Links-Bericht erneut auf zauberer-liar.de pruefen; (f) /walk-act/ bleibt das ungeloeste Kernproblem: Pos 34,2, alle Queries anonymisiert, die einzige Walk-Act-Query der Domain liegt auf der Essen-Seite. SCHEDULER: Tag 30 (01.09.) -> Tag 31 (02.09.), keine Luecke.",
   "erledigte_schritte": [
     {
       "tag": 1,
@@ -319,10 +319,20 @@
         "seo(v7.1): Liar-Entertainer dafcf11",
         "seo(v7.2): ZAubererLIAR bc2b11a"
       ]
+    },
+    {
+      "tag": 31,
+      "datum": "2026-09-02",
+      "schritt": "Zyklus 2, Tag 31: GSC-Auswertung 3M/28T + Links-Bericht + Snippet-Schaerfung der Seiten mit guter Position und 0 Klicks",
+      "ergebnis": "GSC 3M 6 Klicks / 510 Impr. / CTR 1,2 / Pos 25,4; 28T 6 / 398 / 1,5 / 25,6; 20 Queries. /pantomime-essen/ 28T auf Pos 6,0 (von 10,0). AUTO-FIX (1 Commit, build.py): /figuren/ Title von 'Figuren & Charaktere' auf 'Pantomime-Figuren buchen in NRW - LIAR | Clown & Zauberer' (Fokus-Keyword vorn + Buchungsintention; Seite steht auf Pos 17,5 mit 20 Impr. und 0 Klicks, Query 'pantomime figuren' Pos 11) und /figuren/der-nussknacker/ Title+Desc auf NRW-Bezug und Fokus-Keyword 'Walk Act' statt 'Walking-Act' (Pos 7,6 - beste Position aller Figurenseiten, 0 Klicks, Saison startet im Oktober). Descriptions synchron in meta/og/Service-Schema. NICHT angefasst: /ueber-mich/ (73 Impr., Pos 17,1, 0 Klicks) - Snippet wurde erst am 28.08. geaendert, Wirkung muss gemessen werden statt ueberschrieben. Baseline-Rebuild vor der Aenderung byte-identisch zu live, danach 17/17 Seiten valide, alle JSON-LD parsen, alle indexierbaren Titles 50-60 / Descriptions 120-160 Zeichen. NEU: Vorschlag 11 (Zielseiten-Konflikt 'zauberer gladbeck' - beruehrt die Domain-Strategie gegenueber zauberer-liar.de, daher freigabepflichtig). Links-Bericht geprueft: 141 externe Links, alle von liar-entertainer.com; zauberer-liar.de noch nicht erfasst.",
+      "commits": [
+        "SEO: Tag 31 - Snippets /figuren/ und /figuren/der-nussknacker/ geschaerft (build.py) (fa2bab0)",
+        "SEO: State Tag 31 + GSC-Snapshot 02.09. + Vorschlag 11"
+      ]
     }
   ],
-  "naechster_plan_tag": 31,
-  "naechster_schritt": "ZYKLUS 2, Tag 31 - Schwerpunkt Klickausbeute (Impressionen 481, Klicks 6). (a) Indexierung von /pantomime-gelsenkirchen/ anstossen/pruefen (URL-Pruefung in GSC) und Position verfolgen. (b) Wirkung der Tag-29-Snippets messen: /figuren/der-clown/ (Referenz 28T: 95 Impr., 2 Klicks, CTR 2,1 Prozent, Pos 18,3) und /ueber-mich/ (71 Impr., 0 Klicks, Pos 16,8). (c) Seiten mit guter Position aber 0 Klicks priorisieren: /ueber-mich/ Pos 16,8, /figuren/ Pos 18,2, /figuren/der-weihnachtsmann/ Pos 11,8, /figuren/der-nussknacker/ Pos 7,6 - Title/Description schaerfen (Auto-Fix erlaubt). (d) 'walking act essen' und weitere Walk-Act-Queries beobachten. (e) GSC-Links-Bericht auf die neuen Cross-Links pruefen (liar-entertainer.com, zauberer-liar.de). (f) Einziger offener Vorschlag: Nr. 6 (Google Unternehmensprofil) - im Bericht weiter nennen. (g) Scheduler pruefen: zwei Ausfaelle im Zyklus 1 (17 Tage, 4 Tage).",
+  "naechster_plan_tag": 32,
+  "naechster_schritt": "ZYKLUS 2, Tag 32. Reihenfolge: (1) GSC 3M/28T + Query-Filter je Seite; pruefen ob das Datenfenster inzwischen den 01.09.-Rollout abdeckt. (2) /pantomime-gelsenkirchen/ Indexierung pruefen (URL-Pruefung in GSC, ggf. Indexierung beantragen) - die Seite ist seit 01.09. live. (3) Schwerpunkt bleibt /walk-act/: Pos 34,2 bei 21 Impressionen, alle Queries anonymisiert, waehrend die einzige Walk-Act-Query der Domain auf /pantomime-essen/ rankt. Pruefen, ob die Ursache eine zu duenne oder zu generische On-Page-Abdeckung ist (Auto-Fix bei Title/Desc/interner Verlinkung erlaubt, Content-Erweiterung nur als Vorschlag). (4) Vorschlag 11 im Bericht erneut vorlegen, solange keine Entscheidung vorliegt. (5) Nicht anfassen: /figuren/, /figuren/der-nussknacker/ (heute geaendert), /figuren/der-clown/, /ueber-mich/ (28.08. geaendert) - Messzeitraum laeuft.",
   "offene_vorschlaege": [
     {
       "nr": "IONOS-ESKALATION (kein klassischer Vorschlag, sondern Server-Ops)",
@@ -337,6 +347,20 @@
       "titel": "Backlinks/Verzeichnisse: Google Unternehmensprofil (prio 1) + Kuenstler-/Eventportale + lokale Verzeichnisse, NAP-konsistent - erfordert Konten/Entscheidungen von Michael",
       "status": "FREIGEGEBEN 2026-07-21. Profiltexte vorbereitet (.seo-pantomime/v6-v7-texte.md). OFFEN: Kontoanlage/Eintraege durch Michael (Google Unternehmensprofil prio 1).",
       "typ": "Off-Page (externe Eintraege/Profile, keine Code-Aenderung)"
+    },
+    {
+      "nr": 11,
+      "datum_vorschlag": "2026-09-02",
+      "titel": "Zielseiten-Konflikt 'zauberer gladbeck' aufloesen - und zwar als DOMAIN-Entscheidung, nicht als reiner On-Page-Fix",
+      "befund": "'zauberer gladbeck' ist mit 67 Impressionen im 28T-Fenster die groesste Einzelquery der Domain (17 Prozent aller Impressionen), hat aber 0 Klicks. Ausgeliefert wird /ueber-mich/ (Pos 17,1), nicht die Zauberer-Figurenseite (/figuren/der-zauberer/, 93 Impr., Pos 55,2). Dazu vier neue Stadt-Zauberer-Queries: laer (Pos 39), warendorf (45), ratingen (86), gelsenkirchen (82,5). /figuren/der-zauberer/ nennt Gladbeck nur zweimal, /ueber-mich/ sechsmal - Google waehlt deshalb die biografische Seite.",
+      "optionen": [
+        "A) On-Page auf pantomime-la-france.eu schaerfen: Title/Desc von /figuren/der-zauberer/ mit Ortsbezug Gladbeck/Ruhrgebiet, interne Verlinkung von /ueber-mich/ auf die Zauberer-Seite mit descriptivem Anchor. Schnell, aber baut Zauberer-Sichtbarkeit auf der PANTOMIME-Domain aus.",
+        "B) Die Query bewusst an zauberer-liar.de abgeben: auf pantomime-la-france.eu nichts verstaerken, stattdessen den Cross-Link zu zauberer-liar.de an der Stelle prominenter setzen. Saubere Domain-Trennung, gibt aber 67 Impressionen/Monat aus der Hand.",
+        "C) Mischform: /figuren/der-zauberer/ bleibt Uebersicht/Teaser, verlinkt aber descriptiv auf zauberer-liar.de; /ueber-mich/ verliert die Zauberer-Keyword-Dichte nicht (biografisch korrekt), bekommt aber einen klaren Weiterleitungspfad."
+      ],
+      "empfehlung": "C. Fokus-Keywords dieser Domain sind 'Pantomime' und 'Walk Act'; Zauberer-Traffic gehoert strategisch auf zauberer-liar.de. Ein reiner On-Page-Push (A) wuerde die beiden Eigen-Domains gegeneinander optimieren.",
+      "status": "WARTET AUF FREIGABE von Michael",
+      "typ": "Domain-Strategie + Content/Verlinkung (kein reiner Technik-Fix, daher nicht auto-committet)"
     }
   ],
   "erledigte_vorschlaege": [
@@ -1641,6 +1665,245 @@
         }
       ],
       "hinweis": "Live via Chrome. Zyklus-1-Abschluss. Klicks stagnieren bei 6 seit 25.08., Impressionen +49 (432->481). KERNBEFUND: /pantomime-essen/ 28T Pos 10,0 - starker Sprung, zeitlich passend zur internen Verlinkung aus Tag 28; im 3M-Mittel noch 33,5, weil die alten Wochen mitzaehlen. Weiterhin genau EINE Walk-Act-Query ('walking act essen', Pos 7,0) und die liegt auf der Essen-Seite, nicht auf /walk-act/. Tag-29-Snippets (Clown-Title, ueber-mich-Description) noch nicht bewertbar - Aenderung erst am 28.08. live."
+    },
+    {
+      "datum": "2026-09-02",
+      "property": "sc-domain:pantomime-la-france.eu",
+      "zeitraum": "3M 14.06.-30.08.26 / 28T 03.08.-30.08.26",
+      "klicks": 6,
+      "impressionen": 510,
+      "ctr_prozent": 1.2,
+      "durchschnitt_position": 25.4,
+      "klicks_28t": 6,
+      "impressionen_28t": 398,
+      "ctr_prozent_28t": 1.5,
+      "position_28t": 25.6,
+      "queries_gesamt": 20,
+      "top_queries_28t": [
+        {
+          "query": "pantomime clown",
+          "klicks": 2,
+          "impressionen": 13,
+          "position": 8.3
+        },
+        {
+          "query": "zauberer gladbeck",
+          "klicks": 0,
+          "impressionen": 67,
+          "position": 18.3
+        },
+        {
+          "query": "zauberer bochum",
+          "klicks": 0,
+          "impressionen": 10,
+          "position": 94.2
+        },
+        {
+          "query": "zauberer liar",
+          "klicks": 0,
+          "impressionen": 6,
+          "position": 7.0
+        },
+        {
+          "query": "clown liar",
+          "klicks": 0,
+          "impressionen": 6,
+          "position": 7.7
+        },
+        {
+          "query": "clown zauberer liar",
+          "klicks": 0,
+          "impressionen": 5,
+          "position": 9.4
+        },
+        {
+          "query": "zauberer gelsenkirchen",
+          "klicks": 0,
+          "impressionen": 2,
+          "position": 82.5
+        },
+        {
+          "query": "keine clowns",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 4.0
+        },
+        {
+          "query": "liar clown",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 6.0
+        },
+        {
+          "query": "mehr info",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 6.0
+        },
+        {
+          "query": "liar liar clown",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 7.0
+        },
+        {
+          "query": "pantomime clowns",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 7.0
+        },
+        {
+          "query": "walking act essen",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 7.0
+        },
+        {
+          "query": "clown pantomime",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 9.0
+        },
+        {
+          "query": "pantomime figuren",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 11.0
+        },
+        {
+          "query": "pantomime buchen",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 37.0
+        },
+        {
+          "query": "zauberer laer",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 39.0
+        },
+        {
+          "query": "zauberer warendorf",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 45.0
+        },
+        {
+          "query": "zauberer nrw",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 86.0
+        },
+        {
+          "query": "zauberer ratingen",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 86.0
+        }
+      ],
+      "top_pages_28t": [
+        {
+          "seite": "/figuren/der-clown/",
+          "klicks": 2,
+          "impressionen": 104,
+          "position": 18.6
+        },
+        {
+          "seite": "/",
+          "klicks": 2,
+          "impressionen": 47,
+          "position": 19.1
+        },
+        {
+          "seite": "/figuren/der-zauberer/",
+          "klicks": 1,
+          "impressionen": 93,
+          "position": 55.2
+        },
+        {
+          "seite": "/figuren/der-crazy-kellner/",
+          "klicks": 1,
+          "impressionen": 5,
+          "position": 20.2
+        },
+        {
+          "seite": "/ueber-mich/",
+          "klicks": 0,
+          "impressionen": 73,
+          "position": 17.1
+        },
+        {
+          "seite": "/figuren/der-pantomime-in-nrw/",
+          "klicks": 0,
+          "impressionen": 38,
+          "position": 33.2
+        },
+        {
+          "seite": "/walk-act/",
+          "klicks": 0,
+          "impressionen": 21,
+          "position": 34.2
+        },
+        {
+          "seite": "/figuren/",
+          "klicks": 0,
+          "impressionen": 20,
+          "position": 17.5
+        },
+        {
+          "seite": "/figuren/der-weihnachtsmann/",
+          "klicks": 0,
+          "impressionen": 12,
+          "position": 10.6
+        },
+        {
+          "seite": "/impressum/",
+          "klicks": 0,
+          "impressionen": 11,
+          "position": 19.9
+        },
+        {
+          "seite": "/kontakt/",
+          "klicks": 0,
+          "impressionen": 9,
+          "position": 49.4
+        },
+        {
+          "seite": "/pantomime-essen/",
+          "klicks": 0,
+          "impressionen": 8,
+          "position": 6.0
+        },
+        {
+          "seite": "/referenzen/",
+          "klicks": 0,
+          "impressionen": 7,
+          "position": 53.4
+        },
+        {
+          "seite": "/figuren/der-nussknacker/",
+          "klicks": 0,
+          "impressionen": 5,
+          "position": 7.6
+        },
+        {
+          "seite": "/datenschutz/",
+          "klicks": 0,
+          "impressionen": 1,
+          "position": 35.0
+        }
+      ],
+      "links_bericht": {
+        "externe_links_gesamt": 141,
+        "verweisende_websites": [
+          {
+            "domain": "liar-entertainer.com",
+            "links": 141
+          }
+        ],
+        "hinweis": "zauberer-liar.de taucht noch NICHT als verweisende Website auf - der Cross-Link (V7.2, bc2b11a) ging erst am 01.09. live, Google hat ihn noch nicht erfasst. Interne Links im GSC-Bericht nur 32 gesamt, /pantomime-essen/ mit 1 - der Bericht hinkt der Realitaet hinterher (seit Tag 28 verlinken 7 Seiten dorthin, seit Tag 30 zusaetzlich /walk-act/)."
+      },
+      "hinweis": "Live via Chrome. Erster Lauf in Zyklus 2 (Tag 31), einen Tag nach dem Freigabe-Rollout. Impressionen 481 -> 510 (3M), Klicks unveraendert 6 seit 25.08., Queries 17 -> 20. KERNBEFUND 1: /pantomime-essen/ im 28T-Fenster auf Pos 6,0 (von 10,0 am 01.09., von 34,9 am 25.08.) - die Stadtseiten-Vorlage traegt weiter. KERNBEFUND 2: /figuren/der-zauberer/ hat mit 93 Impressionen die zweithoechste Sichtbarkeit der Domain, steht aber auf Pos 55,2, waehrend /ueber-mich/ (73 Impr., Pos 17,1) die Query 'zauberer gladbeck' (67 Impr.) ausliefert - falsche Zielseite, seit 11.08. unveraendert. 4 neue Stadt-Zauberer-Queries (laer, warendorf, ratingen, gelsenkirchen), alle Pos 39-86. KERNBEFUND 3: weiterhin genau EINE Walk-Act-Query ('walking act essen', Pos 7,0), und sie liegt auf der Essen-Seite, nicht auf /walk-act/ (Pos 34,2, alle Queries anonymisiert). Datenfenster endet am 30.08. - der Rollout vom 01.09. (H1 Startseite, Content-Tiefe Essen, /pantomime-gelsenkirchen/, sichtbare Fliesstext-Links) ist NICHT enthalten. Auch die Tag-29-Snippets sind nur mit 2 Tagen im Fenster."
     }
   ],
   "technische_hinweise": {
@@ -1668,7 +1931,7 @@
     "buildpy_reconciliation_stand": "ERLEDIGT 2026-07-20 (V5-Batch): build.py reconciled mit live-HTML (self-hosted fonts.css, Consent-Checkbox, aktueller Datenschutz-Text, Stand hart 2026-07-02). REBUILD-SPERRE AUFGEHOBEN - normale Auto-Fix-Regeln gelten. | 2026-08-07 verifiziert: Rebuild-Diff enthielt NUR die beabsichtigten Description-Zeilen + sitemap lastmod, keine Font-/Consent-/Asset-Hash-Regression. Reconciliation ist final.",
     "cwv_stand": "Tag 20 (25.07., PSI live mobil): der-clown Perf 97 (FCP 1,1/LCP 2,0/TBT 0/CLS 0/SI 4,2 orange), Startseite Perf 99 (LCP 2,1). A11y 100, SEO 100, BP 92. V5-Fixes (fetchpriority + Rekompression) live wirksam bestaetigt. Kein Handlungsbedarf; SI-Orange = Hero-bg auf 4G-Drossel, kein CWV. CrUX-Felddaten noch 'Keine Daten'. Original-Aufloesungen der 4 rekomprimierten Heroes reduziert (1600->1280/1440w) - bei Bildtausch Originale von Michael anfordern.",
     "lokaler_mount_hinweis": "Cowork-Mount haengt auf altem Checkout 88ca226. .git/HEAD.lock + .git/index.lock nicht loeschbar (Mount verbietet unlink) -> git commit/checkout im Mount UNMOEGLICH. Schreiben in Repo NUR via GitHub-MCP. State IMMER von remote main lesen.",
-    "cross_link_stand": "FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener), seit V5 descriptiv. REVERSE: liar-entertainer.com -> 'Pantomime' auf alte Subdomain (301 -> pantomime-la-france.eu); zauberer-liar.de KEIN Pantomime-Link. Beide Reverse-Fixes = Vorschlag 7 (Fremd-Domains, freigegeben, Umsetzung durch Michael offen).",
+    "cross_link_stand": "FORWARD-Footer verlinkt beide Eigen-Domains, follow (rel=noopener), seit V5 descriptiv. REVERSE seit 01.09. ERLEDIGT (V7.1 dafcf11 / V7.2 bc2b11a): liar-entertainer.com verlinkt direkt auf https://www.pantomime-la-france.eu (kein 301-Hop, kein noreferrer); zauberer-liar.de verlinkt erstmals ueberhaupt hierher (Footer auf 29 Seiten + Kontext-Link). MESSSTAND 02.09.: GSC-Links-Bericht zeigt 141 externe Links, alle von liar-entertainer.com - zauberer-liar.de noch nicht erfasst, erneut pruefen ab ca. 15.09.",
     "indexierung_stand": "Stand 08.08.2026: 9 Seiten bestaetigt indexiert (/, /figuren/, /figuren/der-clown/, /figuren/der-pantomime-in-nrw/, /walk-act/, /pantomime-essen/, /ueber-mich/, /kontakt/, /referenzen/). 6 Seiten 'Gefunden - zurzeit nicht indexiert' und noch nie gecrawlt (Nussknacker, Weihnachtsmann, Zauberer, Crazy-Kellner, Impressum, Datenschutz) - Indexierung am 08.08. fuer alle 6 beantragt. GSC-Feld 'Verweisende Seite: Nicht gefunden' ist bei dieser Site ein Crawl-Lag-Artefakt: alle 15 Seiten verlinken per Navigation auf alle Figurenseiten und Impressum/Datenschutz (im Repo verifiziert).",
     "binaer_push_hinweis": "GitHub-MCP (push_files/create_or_update_file) speichert Content NUR als Text - Binaerdateien (Bilder) UNMOEGLICH. Workaround: GitHub-Web-Upload in Michaels Chrome (github.com/ben69mikail/Pantomime/upload/main/<pfad>).",
     "stadtseiten_stand": "Essen (Pilot, 8 belegte Referenzen): 28T Pos 10,0 am 01.09. Gelsenkirchen (Stadtseite 2, ab 01.09. live, 3 belegte Referenzen: Stadt GE, AWO GE, Schalke 04). Naechste Stadt erst, wenn Gelsenkirchen zeigt, dass auch eine duennere Referenzbasis traegt. Kandidat mit belegter Basis waere Gladbeck (Sparkasse + Kulturamt + Standort).",
@@ -1679,6 +1942,7 @@
     "fliesstext_links": "SEIT 01.09.2026: .prose/.lead/.intro/.feature-list/.anlass p/.faq-a-Links sind crimson + unterstrichen, Hover verstaerkt, :focus-visible mit Outline; auf .section--crimson Gold-Variante. Davor galt global a{color:inherit;text-decoration:none} auch im Lauftext - alle internen Links waren unsichtbar. Beim Anlegen neuer Textbloecke nichts weiter tun, das Styling greift ueber die Container-Klassen.",
     "reveal_stand": "SEIT 01.09.2026: .reveal ist standardmaessig SICHTBAR; versteckt wird nur unter .js (Klasse per Inline-Script im <head>). app.js blendet sofort alles ein, wenn document.visibilityState != 'visible', plus 3-Sekunden-Sicherheitsnetz. Grund: IntersectionObserver feuert im Hintergrund-Rendering nicht, die Seite war dort inhaltlich leer. Beim Testen mit Headless-/Hintergrund-Tabs beachten.",
     "bild_hinweis": "pantomime-1.webp ist ein hochkant gedrehtes Instagram-Selfie mit eingebranntem Overlay (@BEN_MIKAIL / Bon Jovi) - NICHT auf Landingpages verwenden. Hero-Motive: Start cropped-pantomime-11, Walk-Act pantomime-5, Essen walk-act-fest-essen, Gelsenkirchen pantomime-9-scaled (32%/52%), Figuren pantomime-ruhrgebiet-scaled, Ueber-mich pantomime-3-scaled. Bei Portraetmotiven im breiten Hero-Band die object-position pruefen - 50%/24% schneidet Gesichter ab.",
-    "fremd_repos": "liar-entertainer.com = ben69mikail/Liar-Entertainer (Astro, src/components/Header.astro + Footer.astro, site: https://liar-entertainer.com). zauberer-liar.de = ben69mikail/ZAubererLIAR (statisch, nur site/ geht live, 29 HTML-Seiten, Commit-Identitaet 'Michael (LIAR)', Cache-Bust ?v=N nur bei CSS/JS-Aenderungen). Beide sind per Token aus Pantomime/.claude/settings.local.json klon- und pushbar. ACHTUNG Liar-Entertainer: eigener Wochen-Check-Task schreibt dort mit - vor dem Push fetchen und rebasen, nie force-pushen."
+    "fremd_repos": "liar-entertainer.com = ben69mikail/Liar-Entertainer (Astro, src/components/Header.astro + Footer.astro, site: https://liar-entertainer.com). zauberer-liar.de = ben69mikail/ZAubererLIAR (statisch, nur site/ geht live, 29 HTML-Seiten, Commit-Identitaet 'Michael (LIAR)', Cache-Bust ?v=N nur bei CSS/JS-Aenderungen). Beide sind per Token aus Pantomime/.claude/settings.local.json klon- und pushbar. ACHTUNG Liar-Entertainer: eigener Wochen-Check-Task schreibt dort mit - vor dem Push fetchen und rebasen, nie force-pushen.",
+    "snippet_messauftrag": "Am 28.08. geaendert: /figuren/der-clown/ Title, /ueber-mich/ Description. Am 02.09. geaendert: /figuren/ Title+Desc, /figuren/der-nussknacker/ Title+Desc. Wirkung fruehestens 2-3 Wochen nach dem jeweiligen Re-Crawl bewerten - NICHT vorher erneut ueberschreiben."
   }
 }
