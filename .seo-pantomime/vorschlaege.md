@@ -383,3 +383,31 @@ Dazu kommen vier neue Stadt-Zauberer-Queries im selben Fenster: `zauberer laer` 
 **Option C — Mischform (Empfehlung).** `/figuren/der-zauberer/` bleibt Übersicht und Teaser, verlinkt aber descriptiv weiter auf `zauberer-liar.de`. `/ueber-mich/` behält seine biografisch korrekte Zauberer-Nennung, bekommt aber einen klaren Weiterleitungspfad zur Zauberer-Domain. Damit geht der Nutzer nicht verloren, und die Fokus-Keywords dieser Domain — Pantomime und Walk Act — bleiben unverwässert.
 
 **Empfehlung: Option C.** Ergänzend bleibt Vorschlag 6 (Google Unternehmensprofil) der wirksamste Hebel für genau diese lokale Query, weil ein Unternehmensprofil bei `zauberer gladbeck` über dem organischen Ergebnis steht.
+
+---
+
+## Vorschlag 12 — `/walk-act/` inhaltlich auf das Niveau der rankenden Seiten heben (03.09.2026) — WARTET AUF FREIGABE
+
+**Befund (GSC, 3 Monate 14.06.–31.08.2026).** `/walk-act/` hat 28 Impressionen, 0 Klicks, **Position 30,1** — und **sämtliche Suchanfragen sind anonymisiert**, d. h. jede einzelne kommt seltener als der GSC-Schwellenwert vor. Die Seite rankt also für nichts Wiederkehrendes. Gleichzeitig ist die einzige echte Walk-Act-Query der ganzen Domain — `walking act essen`, Position 7,0 — der **Essen-Stadtseite** zugeordnet, nicht dieser Seite. Das Fokus-Keyword „Walk Act" wird auf der eigenen Walk-Act-Seite also schlechter bedient als nebenbei auf einer Stadtseite.
+
+**Ursache ist messbar Substanz, nicht Technik.** Title, Description, H1-Hierarchie, Canonical, Schema und interne Verlinkung sind sauber (heute geprüft). Der Unterschied liegt im Umfang:
+
+| Seite | Wörter (Fließtext) | FAQ-Fragen | Städteblock | GSC-Position |
+|---|---|---|---|---|
+| `/pantomime-essen/` | 507 | 5 | ja (Ortsbezug) | **6,0** |
+| `/figuren/der-pantomime-in-nrw/` | 408 | 3 | ja | 24,6 |
+| `/walk-act/` | **335** | **2** | **nein** | **30,1** |
+
+`/walk-act/` ist die dünnste der drei — und als einzige der zehn Kernseiten ohne den Block „Buchbar in ganz NRW". Genau dieser Satz ist der Text, den Google für die sechs Figurenseiten aktuell als Snippet ausspielt (heute per `site:`-Abfrage verifiziert). Auf der Walk-Act-Seite fehlt damit jedes Ortssignal außer dem generischen „NRW".
+
+**Vorschlag (drei Bausteine, einzeln freigebbar):**
+
+1. **Städteblock ergänzen** — derselbe `Buchbar in ganz NRW`-Baustein wie auf den Figurenseiten, mit `CITIES` aus `build.py` (Gladbeck, Essen, Oberhausen, Gelsenkirchen, Dortmund, Bochum, Duisburg). Reiner Wiedereinsatz vorhandener, belegter Bausteine — kein neuer Faktenanspruch. Erwarteter Effekt: Ortssignal für „walk act + Stadt"-Queries, plus interner Linkpfad zu den beiden Stadtseiten.
+2. **FAQ von 2 auf 4–5 Fragen erweitern** — entlang tatsächlicher Buchungsfragen: Dauer/Anzahl der Auftrittsblöcke, Unterschied Walk Act ↔ Bühnenauftritt, Kostüm-/Figurenwahl, Einsatz draußen bei Wetter. Antworten ausschließlich aus `INHALTE-VERIFIZIERT.md`. FAQPage-Schema wird über `faq_block`/`faq_schema` automatisch deckungsgleich mitgeführt.
+3. **Ein Absatz Anlassbezug** in der Einsatzorte-Sektion, der die vier Karten in Fließtext auflöst (Messe, Stadtfest, Firmenfeier, Einkaufszentrum) — die vier Karten sind aktuell Einzeiler ohne Substanz.
+
+**Erwartetes Ergebnis:** rund 550–600 Wörter, gleiche Struktur wie die als Vorlage bestätigte Essen-Seite. Die Essen-Seite hat mit exakt diesem Muster in vier Wochen Position 34,9 → 6,0 gemacht — das ist der belastbarste Anhaltspunkt, den das Projekt bisher hat.
+
+**Nicht Teil des Vorschlags:** keine neuen Referenzen, keine neuen Zahlen, keine neue URL. Alles bleibt auf `/walk-act/`.
+
+**Warum heute nicht auto-committet:** Baustein 1–3 sind Fließtext-Erweiterung und fallen damit unter die Freigabepflicht. Auto-committet wurden heute nur die beiden technischen Teile (Title-Schärfung, interner Link).
