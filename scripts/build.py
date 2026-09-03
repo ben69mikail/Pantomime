@@ -625,7 +625,7 @@ walk_body = f"""<main>
   <div class="section-head reveal"><span class="kicker">Einsatzorte</span><h2>Wo ein Walk Act glänzt</h2></div>
   {WARUM_GRID([
       ("Messe & Stand", "Zieht Aufmerksamkeit zum Messestand und bleibt im Gedächtnis."),
-      ("Stadtfest & Straße", 'Straßentheater, das mitten im Publikum entsteht — zum Beispiel als <a href="/pantomime-essen/">Walk Act in Essen</a>.'),
+      ("Stadtfest & Straße", 'Straßentheater, das mitten im Publikum entsteht — zum Beispiel als <a href="/pantomime-essen/">Walk Act in Essen</a> oder <a href="/pantomime-gelsenkirchen/">Walk Act in Gelsenkirchen</a>.'),
       ("Firmenfeier & Gala", "Lockert die Stimmung — mal subtil, mal spektakulär."),
       ("Einkaufszentrum & Markt", "Festliche Walking-Acts wie Nussknacker und Weihnachtsmann."),
   ])}
@@ -633,7 +633,7 @@ walk_body = f"""<main>
 {faq_block(walk_faq)}
 </main>
 """ + cta_band("Walk Act für Ihr Event?", "Sagen Sie mir Datum, Ort und Art der Veranstaltung — ich entwickle den passenden Walk Act.")
-built.append(page("/walk-act/", "Walk Act in NRW buchen – LIAR | Mobile Unterhaltung",
+built.append(page("/walk-act/", "Walk Act in NRW buchen – LIAR | Walking Act & Messe",
      "Walk Act in NRW buchen: Pantomime, Nussknacker oder Weihnachtsmann mitten im Publikum – ohne Bühne, ohne Technik. Walking Act für Messe, Stadtfest &amp; Feier.",
      walk_body, [breadcrumb([("Start", "/"), ("Walk Act", "/walk-act/")]),
                  faq_schema(walk_faq),
